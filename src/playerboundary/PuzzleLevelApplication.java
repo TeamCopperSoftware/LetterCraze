@@ -27,7 +27,7 @@ public class PuzzleLevelApplication extends JPanel {
 		setLayout(null);
 		
 		JPanel leftPanel = new JPanel();
-		leftPanel.setBounds(0, 0, 300, 300);
+		leftPanel.setBounds(100, 100, 800, 600);
 		add(leftPanel);
 		leftPanel.setLayout(null);
 		

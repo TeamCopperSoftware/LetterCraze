@@ -36,7 +36,7 @@ public class TestWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 320);
+		frame.setBounds(100, 100, 800, 600);
 		frame.setContentPane(new PuzzleLevelApplication());
 		//frame.setContentPane(new LightningLevelView());
 		//frame.setContentPane(new ThemeLevelView());

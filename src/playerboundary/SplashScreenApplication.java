@@ -41,7 +41,7 @@ public class SplashScreenApplication extends JPanel {
      * Create the frame.
      */
     public SplashScreenApplication() {
-        setBounds(100, 100, 540, 413);
+        setBounds(100, 100, 800, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         GridBagLayout gbl_contentPane = new GridBagLayout();

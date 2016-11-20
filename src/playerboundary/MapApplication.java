@@ -45,7 +45,7 @@ public class MapApplication extends JFrame {
 	 */
 	public MapApplication() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 554, 346);
+		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 196, 222));
 		contentPane.setBorder(new EmptyBorder(2, 2, 2, 2));
