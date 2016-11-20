@@ -17,7 +17,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.Insets;
 
-public class SplashScreenApplication extends JFrame {
+public class SplashScreenApplication extends JPanel {
 
     private JPanel contentPane;
 
@@ -41,11 +41,9 @@ public class SplashScreenApplication extends JFrame {
      * Create the frame.
      */
     public SplashScreenApplication() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 540, 413);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
         GridBagLayout gbl_contentPane = new GridBagLayout();
         gbl_contentPane.columnWidths = new int[]{530, 0};
         gbl_contentPane.rowHeights = new int[]{63, 63, 63, 63, 63, 63, 0};
