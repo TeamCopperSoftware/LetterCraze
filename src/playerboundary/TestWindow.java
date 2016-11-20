@@ -1,4 +1,4 @@
-package boundary;
+package playerboundary;
 
 import java.awt.EventQueue;
 
@@ -37,7 +37,7 @@ public class TestWindow {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 320);
-		frame.setContentPane(new PuzzleLevelView());
+		frame.setContentPane(new PuzzleLevelApplication());
 		//frame.setContentPane(new LightningLevelView());
 		//frame.setContentPane(new ThemeLevelView());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

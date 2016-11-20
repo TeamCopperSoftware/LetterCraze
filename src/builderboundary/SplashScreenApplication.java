@@ -1,4 +1,4 @@
-package boundary;
+package builderboundary;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -17,7 +17,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.Insets;
 
-public class Splash extends JFrame {
+public class SplashScreenApplication extends JFrame {
 
     private JPanel contentPane;
 
@@ -28,7 +28,7 @@ public class Splash extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Splash frame = new Splash();
+                    SplashScreenApplication frame = new SplashScreenApplication();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -40,7 +40,7 @@ public class Splash extends JFrame {
     /**
      * Create the frame.
      */
-    public Splash() {
+    public SplashScreenApplication() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 540, 413);
         contentPane = new JPanel();

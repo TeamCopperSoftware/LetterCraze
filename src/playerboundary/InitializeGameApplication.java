@@ -1,4 +1,4 @@
-package boundary;
+package playerboundary;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -18,7 +18,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-public class MenuMain extends JFrame {
+public class InitializeGameApplication extends JFrame {
 
     private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class MenuMain extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    MenuMain frame = new MenuMain();
+                    InitializeGameApplication frame = new InitializeGameApplication();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -41,7 +41,7 @@ public class MenuMain extends JFrame {
     /**
      * Create the frame.
      */
-    public MenuMain() {
+    public InitializeGameApplication() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();

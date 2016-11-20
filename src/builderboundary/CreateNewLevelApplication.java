@@ -1,4 +1,4 @@
-package boundary;
+package builderboundary;
 
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
@@ -31,13 +31,13 @@ import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 
-public class CreateNewLevel extends JFrame {
+public class CreateNewLevelApplication extends JFrame {
 	private JTextField nameTextField;
 	JPanel cards;
 	private JTextField textField;
 	private JTextField textField_1;
 	
-	public CreateNewLevel() {
+	public CreateNewLevelApplication() {
 		getContentPane().setLayout(null);
 		
 		JPanel boardPanel = new JPanel();

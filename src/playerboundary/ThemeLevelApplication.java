@@ -1,4 +1,4 @@
-package boundary;
+package playerboundary;
 
 import javax.swing.JPanel;
 import java.awt.FlowLayout;
@@ -18,12 +18,12 @@ import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
-public class PuzzleLevelView extends JPanel {
+public class ThemeLevelApplication extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public PuzzleLevelView() {
+	public ThemeLevelApplication() {
 		setLayout(null);
 		
 		JPanel leftPanel = new JPanel();
@@ -31,7 +31,7 @@ public class PuzzleLevelView extends JPanel {
 		add(leftPanel);
 		leftPanel.setLayout(null);
 		
-		JLabel titleLabel = new JLabel("Puzzle");
+		JLabel titleLabel = new JLabel("Theme - something");
 		titleLabel.setVerticalAlignment(SwingConstants.TOP);
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		titleLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
@@ -246,12 +246,12 @@ public class PuzzleLevelView extends JPanel {
 		quitButton.setBounds(74, 6, 70, 29);
 		rightPanel.add(quitButton);
 		
-		JLabel objectiveLabel = new JLabel("Moves Left:");
+		JLabel objectiveLabel = new JLabel("Words Left:");
 		objectiveLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveLabel.setBounds(6, 40, 138, 16);
 		rightPanel.add(objectiveLabel);
 		
-		JLabel objectiveValueLabel = new JLabel("5");
+		JLabel objectiveValueLabel = new JLabel("4");
 		objectiveValueLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		objectiveValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveValueLabel.setBounds(6, 60, 138, 16);

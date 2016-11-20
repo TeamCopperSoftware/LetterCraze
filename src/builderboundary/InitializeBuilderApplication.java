@@ -1,4 +1,4 @@
-package boundary;
+package builderboundary;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -18,7 +18,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-public class MenuBuilder extends JFrame {
+public class InitializeBuilderApplication extends JFrame {
 
     private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class MenuBuilder extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    MenuBuilder frame = new MenuBuilder();
+                    InitializeBuilderApplication frame = new InitializeBuilderApplication();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -41,7 +41,7 @@ public class MenuBuilder extends JFrame {
     /**
      * Create the frame.
      */
-    public MenuBuilder() {
+    public InitializeBuilderApplication() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
         contentPane = new JPanel();

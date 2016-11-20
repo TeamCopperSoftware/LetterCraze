@@ -1,8 +1,7 @@
-package boundary;
-
+package builderboundary;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -11,7 +10,6 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -20,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
-public class PlayerMap extends JFrame {
+public class EditSavedLevelsApplication extends JFrame {
 
 	private JPanel contentPane;
 
@@ -31,7 +29,7 @@ public class PlayerMap extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PlayerMap frame = new PlayerMap();
+					EditSavedLevelsApplication frame = new EditSavedLevelsApplication();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +41,7 @@ public class PlayerMap extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PlayerMap() {
+	public EditSavedLevelsApplication() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 554, 346);
 		contentPane = new JPanel();
@@ -52,15 +50,19 @@ public class PlayerMap extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblPlayerMap = new JLabel("Adventure Map");
-		lblPlayerMap.setForeground(new Color(0, 0, 205));
+		JLabel label_3 = new JLabel("");
+		label_3.setBounds(123, 118, 81, 27);
+		contentPane.add(label_3);
+		
+		JLabel lblPlayerMap = new JLabel("Custom Map");
+		lblPlayerMap.setForeground(new Color(178, 34, 34));
 		lblPlayerMap.setFont(new Font("Snap ITC", Font.BOLD, 25));
 		lblPlayerMap.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPlayerMap.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblPlayerMap.setBounds(151, 11, 238, 33);
 		contentPane.add(lblPlayerMap);
 		
-		JButton btnNewButton = new JButton("Puzzle! \r\n1");
+		JButton btnNewButton = new JButton("1 Puzzle! ");
 		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnNewButton.setBackground(new Color(0, 128, 128));
@@ -72,24 +74,23 @@ public class PlayerMap extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Back");
-		btnNewButton_1.setForeground(Color.BLACK);
 		btnNewButton_1.setBackground(Color.RED);
-		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 9));
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton_1.setBounds(444, 20, 69, 27);
+		btnNewButton_1.setBounds(431, 20, 82, 27);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnLightning = new JButton("Lightning! \r\n2");
+		JButton btnLightning = new JButton("2 Lightning!");
 		btnLightning.setForeground(Color.BLACK);
 		btnLightning.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLightning.setBackground(new Color(0, 128, 128));
 		btnLightning.setBounds(113, 69, 96, 46);
 		contentPane.add(btnLightning);
 		
-		JButton btnThemeThree = new JButton("Theme! \r\n3");
+		JButton btnThemeThree = new JButton("3 Theme!");
 		btnThemeThree.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -100,7 +101,7 @@ public class PlayerMap extends JFrame {
 		btnThemeThree.setBounds(219, 69, 96, 46);
 		contentPane.add(btnThemeThree);
 		
-		JButton btnLock = new JButton("LOCK");
+		JButton btnLock = new JButton("");
 		btnLock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -111,63 +112,67 @@ public class PlayerMap extends JFrame {
 		btnLock.setBounds(325, 69, 96, 46);
 		contentPane.add(btnLock);
 		
-		JButton btnLock_1 = new JButton("LOCK");
+		JButton btnLock_1 = new JButton("");
 		btnLock_1.setForeground(Color.BLACK);
 		btnLock_1.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_1.setBackground(new Color(0, 128, 128));
 		btnLock_1.setBounds(431, 69, 96, 46);
 		contentPane.add(btnLock_1);
 		
-		JButton btnLock_2 = new JButton("LOCK");
+		JButton btnLock_2 = new JButton("");
+		btnLock_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnLock_2.setForeground(Color.BLACK);
 		btnLock_2.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_2.setBackground(new Color(0, 128, 128));
 		btnLock_2.setBounds(10, 154, 96, 46);
 		contentPane.add(btnLock_2);
 		
-		JButton btnLock_3 = new JButton("LOCK");
+		JButton btnLock_3 = new JButton("");
 		btnLock_3.setForeground(Color.BLACK);
 		btnLock_3.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_3.setBackground(new Color(0, 128, 128));
 		btnLock_3.setBounds(113, 154, 96, 46);
 		contentPane.add(btnLock_3);
 		
-		JButton btnLock_4 = new JButton("LOCK");
+		JButton btnLock_4 = new JButton("");
 		btnLock_4.setForeground(Color.BLACK);
 		btnLock_4.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_4.setBackground(new Color(0, 128, 128));
 		btnLock_4.setBounds(219, 154, 96, 46);
 		contentPane.add(btnLock_4);
 		
-		JButton btnLock_5 = new JButton("LOCK");
+		JButton btnLock_5 = new JButton("");
 		btnLock_5.setForeground(Color.BLACK);
 		btnLock_5.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_5.setBackground(new Color(0, 128, 128));
 		btnLock_5.setBounds(325, 154, 96, 46);
 		contentPane.add(btnLock_5);
 		
-		JButton btnLock_6 = new JButton("LOCK");
+		JButton btnLock_6 = new JButton("");
 		btnLock_6.setForeground(Color.BLACK);
 		btnLock_6.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_6.setBackground(new Color(0, 128, 128));
 		btnLock_6.setBounds(431, 154, 96, 46);
 		contentPane.add(btnLock_6);
 		
-		JButton btnLock_7 = new JButton("LOCK");
+		JButton btnLock_7 = new JButton("");
 		btnLock_7.setForeground(Color.BLACK);
 		btnLock_7.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_7.setBackground(new Color(0, 128, 128));
 		btnLock_7.setBounds(10, 230, 96, 46);
 		contentPane.add(btnLock_7);
 		
-		JButton btnLock_8 = new JButton("LOCK");
+		JButton btnLock_8 = new JButton("");
 		btnLock_8.setForeground(Color.BLACK);
 		btnLock_8.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_8.setBackground(new Color(0, 128, 128));
 		btnLock_8.setBounds(113, 230, 96, 46);
 		contentPane.add(btnLock_8);
 		
-		JButton btnLock_9 = new JButton("LOCK");
+		JButton btnLock_9 = new JButton("");
 		btnLock_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -178,14 +183,14 @@ public class PlayerMap extends JFrame {
 		btnLock_9.setBounds(219, 230, 96, 46);
 		contentPane.add(btnLock_9);
 		
-		JButton btnLock_10 = new JButton("LOCK");
+		JButton btnLock_10 = new JButton("");
 		btnLock_10.setForeground(Color.BLACK);
 		btnLock_10.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_10.setBackground(new Color(0, 128, 128));
 		btnLock_10.setBounds(325, 230, 96, 46);
 		contentPane.add(btnLock_10);
 		
-		JButton btnLock_11 = new JButton("LOCK");
+		JButton btnLock_11 = new JButton("");
 		btnLock_11.setForeground(Color.BLACK);
 		btnLock_11.setFont(new Font("Corbel", Font.BOLD, 11));
 		btnLock_11.setBackground(new Color(0, 128, 128));
@@ -229,6 +234,5 @@ public class PlayerMap extends JFrame {
 		lblNewLabel3.setIcon(new ImageIcon(img3));
 		lblNewLabel3.setBounds(225, 118, 81, 27);
 		contentPane.add(lblNewLabel3);
-
 	}
 }
