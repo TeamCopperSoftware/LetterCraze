@@ -43,7 +43,7 @@ public class EditSavedLevelsApplication extends JFrame {
 	 */
 	public EditSavedLevelsApplication() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 554, 346);
+		setBounds(100, 100, 600, 800);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(176, 196, 222));
 		contentPane.setBorder(new EmptyBorder(2, 2, 2, 2));

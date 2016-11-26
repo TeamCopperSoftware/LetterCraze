@@ -1,4 +1,4 @@
-package playerboundary;
+package builderboundary;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
