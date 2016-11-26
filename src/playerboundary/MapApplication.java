@@ -210,25 +210,27 @@ public class MapApplication extends JFrame {
 		//STAR IMAGES 
 		
 		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/StarsEmpty.png")).getImage();
-		img = img.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
-		lblNewLabel.setIcon(new ImageIcon(img));
+		Image image = new ImageIcon(this.getClass().getResource("/StarsEmpty.png")).getImage();
+		image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
+		lblNewLabel.setIcon(new ImageIcon(image));
 		lblNewLabel.setBounds(18, 118, 81, 27);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel2 = new JLabel("");
-		Image img2 = new ImageIcon(this.getClass().getResource("/StarsEmpty.png")).getImage();
-		img2 = img2.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
-		lblNewLabel2.setIcon(new ImageIcon(img2));
+		Image image2 = new ImageIcon(this.getClass().getResource("/StarsEmpty.png")).getImage();
+		image2 = image2.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
+		lblNewLabel2.setIcon(new ImageIcon(image2));
 		lblNewLabel2.setBounds(120, 118, 81, 27);
 		contentPane.add(lblNewLabel2);
 		
 		JLabel lblNewLabel3 = new JLabel("");
-		Image img3 = new ImageIcon(this.getClass().getResource("/StarsEmpty.png")).getImage();
-		img3 = img3.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
-		lblNewLabel3.setIcon(new ImageIcon(img3));
+		Image image3 = new ImageIcon(this.getClass().getResource("/StarsEmpty.png")).getImage();
+		image3 = image3.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
+		lblNewLabel3.setIcon(new ImageIcon(image3));
 		lblNewLabel3.setBounds(225, 118, 81, 27);
 		contentPane.add(lblNewLabel3);
 
+		
+		
 	}
 }
