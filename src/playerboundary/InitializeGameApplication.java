@@ -17,6 +17,7 @@ import javax.swing.JInternalFrame;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Font;
 
 public class InitializeGameApplication extends JFrame {
 
@@ -58,7 +59,8 @@ public class InitializeGameApplication extends JFrame {
         JLabel label_3 = new JLabel("");
         contentPane.add(label_3);
         
-        JLabel lblNewLabel = new JLabel("Letter Craze");
+        JLabel lblNewLabel = new JLabel("Letter Craze Player");
+        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 26));
         contentPane.add(lblNewLabel);
         
         JButton btnNewButton = new JButton("Play Game");

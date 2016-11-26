@@ -17,6 +17,7 @@ import javax.swing.JInternalFrame;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Font;
 
 public class InitializeBuilderApplication extends JFrame {
 
@@ -58,7 +59,8 @@ public class InitializeBuilderApplication extends JFrame {
         JLabel label_3 = new JLabel("");
         contentPane.add(label_3);
         
-        JLabel lblNewLabel = new JLabel("Boggle Builder");
+        JLabel lblNewLabel = new JLabel("LetterCraze Builder");
+        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
         contentPane.add(lblNewLabel);
         
         JButton btnNewButton = new JButton("Create");
