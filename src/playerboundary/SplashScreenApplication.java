@@ -16,6 +16,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.Font;
 
 public class SplashScreenApplication extends JPanel {
 
@@ -44,58 +45,31 @@ public class SplashScreenApplication extends JPanel {
         setBounds(100, 100, 800, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        GridBagLayout gbl_contentPane = new GridBagLayout();
-        gbl_contentPane.columnWidths = new int[]{530, 0};
-        gbl_contentPane.rowHeights = new int[]{63, 63, 63, 63, 63, 63, 0};
-        gbl_contentPane.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-        gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-        contentPane.setLayout(gbl_contentPane);
+        contentPane.setLayout(null);
         
-        JLabel lblNewLabel = new JLabel("Team Copper\n");
-        GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-        gbc_lblNewLabel.fill = GridBagConstraints.VERTICAL;
-        gbc_lblNewLabel.insets = new Insets(0, 0, 5, 0);
-        gbc_lblNewLabel.gridx = 0;
-        gbc_lblNewLabel.gridy = 0;
-        contentPane.add(lblNewLabel, gbc_lblNewLabel);
+        JLabel lblNewLabel = new JLabel("Team Copper Presents\r\n");
+        lblNewLabel.setBounds(169, 66, 162, 52);
+        lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 14));
+        contentPane.add(lblNewLabel);
         
-        JLabel lblNewLabel_1 = new JLabel("John");
-        GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-        gbc_lblNewLabel_1.fill = GridBagConstraints.VERTICAL;
-        gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 0);
-        gbc_lblNewLabel_1.gridx = 0;
-        gbc_lblNewLabel_1.gridy = 1;
-        contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
+        JLabel lblNewLabel_1 = new JLabel("John Dyer");
+        lblNewLabel_1.setBounds(204, 129, 88, 28);
+        contentPane.add(lblNewLabel_1);
         
-        JLabel lblNewLabel_3 = new JLabel("Annie");
-        GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
-        gbc_lblNewLabel_3.fill = GridBagConstraints.VERTICAL;
-        gbc_lblNewLabel_3.insets = new Insets(0, 0, 5, 0);
-        gbc_lblNewLabel_3.gridx = 0;
-        gbc_lblNewLabel_3.gridy = 2;
-        contentPane.add(lblNewLabel_3, gbc_lblNewLabel_3);
+        JLabel lblNewLabel_3 = new JLabel("Annie Hernandez");
+        lblNewLabel_3.setBounds(204, 156, 95, 28);
+        contentPane.add(lblNewLabel_3);
         
-        JLabel lblNewLabel_4 = new JLabel("Anthony");
-        GridBagConstraints gbc_lblNewLabel_4 = new GridBagConstraints();
-        gbc_lblNewLabel_4.fill = GridBagConstraints.VERTICAL;
-        gbc_lblNewLabel_4.insets = new Insets(0, 0, 5, 0);
-        gbc_lblNewLabel_4.gridx = 0;
-        gbc_lblNewLabel_4.gridy = 3;
-        contentPane.add(lblNewLabel_4, gbc_lblNewLabel_4);
+        JLabel lblNewLabel_4 = new JLabel("Anthony Gringeri");
+        lblNewLabel_4.setBounds(204, 182, 88, 28);
+        contentPane.add(lblNewLabel_4);
         
-        JLabel lblNewLabel_5 = new JLabel("James");
-        GridBagConstraints gbc_lblNewLabel_5 = new GridBagConstraints();
-        gbc_lblNewLabel_5.fill = GridBagConstraints.VERTICAL;
-        gbc_lblNewLabel_5.insets = new Insets(0, 0, 5, 0);
-        gbc_lblNewLabel_5.gridx = 0;
-        gbc_lblNewLabel_5.gridy = 4;
-        contentPane.add(lblNewLabel_5, gbc_lblNewLabel_5);
+        JLabel lblNewLabel_5 = new JLabel("James Kradjian");
+        lblNewLabel_5.setBounds(204, 206, 82, 28);
+        contentPane.add(lblNewLabel_5);
         
-        JLabel lblNewLabel_2 = new JLabel("Goutham");
-        GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-        gbc_lblNewLabel_2.fill = GridBagConstraints.VERTICAL;
-        gbc_lblNewLabel_2.gridx = 0;
-        gbc_lblNewLabel_2.gridy = 5;
-        contentPane.add(lblNewLabel_2, gbc_lblNewLabel_2);
+        JLabel lblNewLabel_2 = new JLabel("Goutham Deva");
+        lblNewLabel_2.setBounds(204, 237, 89, 19);
+        contentPane.add(lblNewLabel_2);
     }
 }
