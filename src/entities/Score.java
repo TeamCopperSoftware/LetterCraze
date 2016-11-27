@@ -33,8 +33,12 @@ public class Score {
     int getStar (int n) {
         return (star = n);
     }
+    int getScore (int n) {
+        return (numScore = n);
+    }
 
     int getScore (int n) {
         return (numScore = n);
     }
+    
 }

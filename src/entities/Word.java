@@ -13,6 +13,7 @@ public class Word {
         //      appendSquare(s);
         //would be better
         //or figure out how to keep appended squares
+        
     }
 
     void appendSquare (Square s) {
