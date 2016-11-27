@@ -27,14 +27,4 @@ public class Score {
         numScore = n;
     }
     
-    
-    
-    //Mistake in the UML doc?
-    int getStar (int n) {
-        return (star = n);
-    }
-
-    int getScore (int n) {
-        return (numScore = n);
-    }
 }
