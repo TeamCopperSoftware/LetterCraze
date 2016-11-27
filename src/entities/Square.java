@@ -18,6 +18,12 @@ public class Square {
         this.tile = null;
     }
     
+    public Square() {
+        //TODO remove at a later time;
+        
+    }
+    
+    
     void generateRandomTile () {
         //TODO pseudo-rand generator
     }

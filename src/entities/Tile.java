@@ -9,6 +9,4 @@ public class Tile {
         this.letter = letter;
         this.value = value;
     }
-    
-    
 }
