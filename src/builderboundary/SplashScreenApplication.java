@@ -1,6 +1,7 @@
 package builderboundary;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -20,56 +21,45 @@ import java.awt.Font;
 
 public class SplashScreenApplication extends JPanel {
 
-    private JPanel contentPane;
-
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    SplashScreenApplication frame = new SplashScreenApplication();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+	JLabel lblNewLabel;
+	JLabel lblNewLabel_1;
+	JLabel lblNewLabel_3;
+	JLabel lblNewLabel_4;
+	JLabel lblNewLabel_5;
+	JLabel lblNewLabel_2;
 
     /**
      * Create the frame.
      */
     public SplashScreenApplication() {
-        setBounds(100, 100, 800, 600);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setLayout(null);
+        setBounds(0, 0, 800, 600);
+        //this.setBackground(Color.BLUE);
+        this.setBorder(new EmptyBorder(5, 5, 5, 5));
+        this.setLayout(null);
         
-        JLabel lblNewLabel = new JLabel("Team Copper Presents\r\n");
+        lblNewLabel = new JLabel("Team Copper Presents\r\n");
         lblNewLabel.setBounds(169, 66, 162, 52);
         lblNewLabel.setFont(new Font("Bookman Old Style", Font.PLAIN, 14));
-        contentPane.add(lblNewLabel);
+        this.add(lblNewLabel);
         
-        JLabel lblNewLabel_1 = new JLabel("John Dyer");
+        lblNewLabel_1 = new JLabel("John Dyer");
         lblNewLabel_1.setBounds(204, 129, 88, 28);
-        contentPane.add(lblNewLabel_1);
+        this.add(lblNewLabel_1);
         
-        JLabel lblNewLabel_3 = new JLabel("Annie Hernandez");
+        lblNewLabel_3 = new JLabel("Annie Hernandez");
         lblNewLabel_3.setBounds(204, 156, 95, 28);
-        contentPane.add(lblNewLabel_3);
+        this.add(lblNewLabel_3);
         
-        JLabel lblNewLabel_4 = new JLabel("Anthony Gringeri");
+        lblNewLabel_4 = new JLabel("Anthony Gringeri");
         lblNewLabel_4.setBounds(204, 182, 88, 28);
-        contentPane.add(lblNewLabel_4);
+        this.add(lblNewLabel_4);
         
-        JLabel lblNewLabel_5 = new JLabel("James Kradjian");
+        lblNewLabel_5 = new JLabel("James Kradjian");
         lblNewLabel_5.setBounds(204, 206, 82, 28);
-        contentPane.add(lblNewLabel_5);
+        this.add(lblNewLabel_5);
         
-        JLabel lblNewLabel_2 = new JLabel("Goutham Deva");
+        lblNewLabel_2 = new JLabel("Goutham Deva");
         lblNewLabel_2.setBounds(204, 237, 89, 19);
-        contentPane.add(lblNewLabel_2);
+        this.add(lblNewLabel_2);
     }
 }
