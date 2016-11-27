@@ -1,14 +1,13 @@
 package playermain;
-
 import java.awt.EventQueue;
-import javax.swing.JFrame;
+import playerboundary.Application;
+import entities.Model;
 
-import builderboundary.SplashScreenApplication;
-import playerboundary.PuzzleLevelApplication;
 
 public class Main {
-
-	private JFrame frame;
+	
+	private Application app;
+	private Model model;
 
 	/**
 	 * Launch the application.
@@ -18,8 +17,7 @@ public class Main {
 			public void run() {
 				try {
 					Main window = new Main();
-					//SplashScreenApplication frame = new SplashScreenApplication();
-					window.frame.setVisible(true);
+					window.app.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,9 +36,30 @@ public class Main {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 800, 600);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		initializeModel();
+		initializeBoundary();
+		initializeController();
+	}
+
+	/**
+	 * Initialize the entity objects.
+	 */
+	private void initializeModel() {
+		model = new Model();
+	}
+
+	/**
+	 * Initialize the boundary objects.
+	 */
+	private void initializeBoundary() {
+		app = new Application();
+	}
+
+	/**
+	 * Initialize the controllers.
+	 */
+	private void initializeController() {
+		
 	}
 
 }
