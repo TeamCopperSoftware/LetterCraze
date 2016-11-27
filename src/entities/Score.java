@@ -36,9 +36,4 @@ public class Score {
     int getScore (int n) {
         return (numScore = n);
     }
-
-    int getScore (int n) {
-        return (numScore = n);
-    }
-    
 }
