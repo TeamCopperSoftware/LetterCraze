@@ -1,4 +1,4 @@
-package builderboundary;
+package playerboundary;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
