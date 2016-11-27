@@ -1,6 +1,6 @@
 package entities;
 
-public class LevelModel {
+public abstract class LevelModel {
     
     Board board;
     Goal goals;
