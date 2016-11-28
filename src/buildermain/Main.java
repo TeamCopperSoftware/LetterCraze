@@ -1,6 +1,7 @@
-package playermain;
+package buildermain;
+
 import java.awt.EventQueue;
-import playerboundary.Application;
+import builderboundary.Application;
 import entities.Model;
 
 
