@@ -24,13 +24,13 @@ public class Application extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Application(Model m) {
+	public Application(Model model) {
 		//pack(); not really sure what pack does
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		setTitle("LetterCraze Player");
 		
-		this.model = m;
+		this.model = model;
 		
 		// initialize views
 		splashScreen = new SplashScreenApplication();
