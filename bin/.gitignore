@@ -1,5 +1,3 @@
-/builderboundary/
-/img/
-/playerboundary/
-/playermain/
 /entities/
+/playerboundary/
+/playercontroller/

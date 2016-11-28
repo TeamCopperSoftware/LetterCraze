@@ -21,12 +21,15 @@ import java.awt.Font;
 
 public class InitializeGameApplication extends JPanel {
 
+	JButton playGameButton;
+	JButton playCustomLevelsButton;
+	
     public InitializeGameApplication() {
         setBounds(0, 0, 800, 600);
         this.setBorder(new EmptyBorder(5, 5, 5, 5));
         
-        JButton btnNewButton_1 = new JButton("Play Custom Levels");
-        btnNewButton_1.addActionListener(new ActionListener() {
+        playCustomLevelsButton = new JButton("Play Custom Levels");
+        playCustomLevelsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
@@ -39,28 +42,33 @@ public class InitializeGameApplication extends JPanel {
         lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 26));
         this.add(lblNewLabel);
         
-        JButton btnNewButton = new JButton("Play Game");
-        btnNewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
+        playGameButton = new JButton("Play Game");
         
         JLabel label = new JLabel("");
         this.add(label);
         
         JLabel label_4 = new JLabel("");
         this.add(label_4);
-        this.add(btnNewButton);
+        this.add(playGameButton);
         
         JLabel label_1 = new JLabel("");
         this.add(label_1);
         
         JLabel label_5 = new JLabel("");
         this.add(label_5);
-        this.add(btnNewButton_1);
+        this.add(playCustomLevelsButton);
         
         JLabel label_2 = new JLabel("");
         this.add(label_2);
+    }
+    
+    // return button for getting to main menu
+    public JButton getMapButton() {
+		return playGameButton;
+	}
+    
+    public JButton getCustomLevelsButton() {
+    	return playCustomLevelsButton;
     }
 
 }

@@ -19,72 +19,61 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
 
-public class InitializeBuilderApplication extends JFrame {
+public class InitializeBuilderApplication extends JPanel {
 
-    private JPanel contentPane;
-
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    InitializeBuilderApplication frame = new InitializeBuilderApplication();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    /**
-     * Create the frame.
-     */
+	JLabel label_3;
+	JLabel lblNewLabel;
+	JButton btnNewButton;
+	JLabel label;
+	JLabel label_4;
+	JLabel label_1;
+	JLabel label_5;
+	JLabel label_2;
+	
+    
     public InitializeBuilderApplication() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        setContentPane(contentPane);
+        
+        setBounds(0, 0, 800, 600);
+        this.setBorder(new EmptyBorder(5, 5, 5, 5));
+        this.setLayout(new GridLayout(0, 3, 0, 0));
+        
         
         JButton btnNewButton_1 = new JButton("Edit Saved Level");
         btnNewButton_1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
-        contentPane.setLayout(new GridLayout(0, 3, 0, 0));
+
         
-        JLabel label_3 = new JLabel("");
-        contentPane.add(label_3);
+        label_3 = new JLabel("");
+        this.add(label_3);
         
-        JLabel lblNewLabel = new JLabel("LetterCraze Builder");
+        lblNewLabel = new JLabel("LetterCraze Builder");
         lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-        contentPane.add(lblNewLabel);
+        this.add(lblNewLabel);
         
-        JButton btnNewButton = new JButton("Create");
+        btnNewButton = new JButton("Create");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
         
-        JLabel label = new JLabel("");
-        contentPane.add(label);
+        label = new JLabel("");
+        this.add(label);
         
-        JLabel label_4 = new JLabel("");
-        contentPane.add(label_4);
-        contentPane.add(btnNewButton);
+        label_4 = new JLabel("");
+        this.add(label_4);
+        this.add(btnNewButton);
         
-        JLabel label_1 = new JLabel("");
-        contentPane.add(label_1);
+        label_1 = new JLabel("");
+        this.add(label_1);
         
-        JLabel label_5 = new JLabel("");
-        contentPane.add(label_5);
-        contentPane.add(btnNewButton_1);
+        label_5 = new JLabel("");
+        this.add(label_5);
+        this.add(btnNewButton_1);
         
-        JLabel label_2 = new JLabel("");
-        contentPane.add(label_2);
+        label_2 = new JLabel("");
+        this.add(label_2);
     }
 
 }

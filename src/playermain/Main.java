@@ -1,6 +1,8 @@
 package playermain;
+
 import java.awt.EventQueue;
 import playerboundary.Application;
+import playercontroller.*;
 import entities.Model;
 
 
@@ -59,7 +61,8 @@ public class Main {
 	 * Initialize the controllers.
 	 */
 	private void initializeController() {
-		
+		app.getMainMenu().getMapButton().addActionListener(new MapMenuController(app, model));
+		app.getMapApplication().getBackButton().addActionListener(new MapApplicationBackButtonController(app, model));
 	}
 
 }
