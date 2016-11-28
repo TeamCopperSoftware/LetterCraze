@@ -67,6 +67,10 @@ public class SplashScreenApplication extends JPanel {
         lblNewLabel_2.setBounds(347, 349, 162, 19);
         this.add(lblNewLabel_2);
         
+        JLabel lblPlayer = new JLabel("Main Game");
+        lblPlayer.setFont(new Font("Bookman Old Style", Font.BOLD, 25));
+        lblPlayer.setBounds(312, 446, 162, 52);
+        add(lblPlayer);
+        
     }
-    
 }

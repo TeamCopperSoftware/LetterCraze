@@ -31,6 +31,7 @@ public class SplashScreenApplication extends JPanel {
 	JLabel lblNewLabel_4;
 	JLabel lblNewLabel_5;
 	JLabel lblNewLabel_2;
+	private JLabel lblBuilder;
 
 
     /**
@@ -66,6 +67,11 @@ public class SplashScreenApplication extends JPanel {
         lblNewLabel_2 = new JLabel("Goutham Deva");
         lblNewLabel_2.setBounds(347, 349, 162, 19);
         this.add(lblNewLabel_2);
+        
+        lblBuilder = new JLabel("Builder");
+        lblBuilder.setFont(new Font("Bookman Old Style", Font.BOLD, 25));
+        lblBuilder.setBounds(336, 412, 148, 52);
+        add(lblBuilder);
         
     }
     
