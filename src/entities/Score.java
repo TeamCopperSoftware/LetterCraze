@@ -27,8 +27,7 @@ public class Score {
         numScore = n;
     }
     
-<<<<<<< HEAD
-=======
+
     
     
     //Mistake in the UML doc?
@@ -38,5 +37,4 @@ public class Score {
     int getScore (int n) {
         return (numScore = n);
     }
->>>>>>> branch 'master' of https://github.com/TeamCopperSoftware/LetterCraze.git
 }
