@@ -7,9 +7,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import playercontroller.SplashScreenTimerController;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.Timer;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -27,6 +31,7 @@ public class SplashScreenApplication extends JPanel {
 	JLabel lblNewLabel_4;
 	JLabel lblNewLabel_5;
 	JLabel lblNewLabel_2;
+
 
     /**
      * Create the frame.
@@ -61,5 +66,7 @@ public class SplashScreenApplication extends JPanel {
         lblNewLabel_2 = new JLabel("Goutham Deva");
         lblNewLabel_2.setBounds(204, 237, 89, 19);
         this.add(lblNewLabel_2);
+        
     }
+    
 }
