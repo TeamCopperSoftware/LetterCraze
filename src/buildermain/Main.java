@@ -53,7 +53,7 @@ public class Main {
 	 * Initialize the boundary objects.
 	 */
 	private void initializeBoundary() {
-		app = new Application();
+		app = new Application(model);
 	}
 
 	/**

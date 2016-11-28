@@ -18,19 +18,26 @@ public class Board {
         //how would this work with a hashtable?
     }
 
-    Square lookUpSquare (Position pos) {
+    Square makeSquare (Position pos) {
         //TODO implement
-        return new Square();
+    	int x = pos.row;
+    	int y = pos.column;
+    	
+    	//Need a check to ensure new pos is valid
+        return new Square(pos, true);
     }
 
     Square lookUpSquare (int x, int y) {
-        return lookUpSquare(new Position(x, y));
+        //TODO implement
+    	return null;
     }
     
     void removeWord (Word w) {
         //TODO implement
     }
     
-    
+    void repopulate () {
+        //TODO implement
+    }
 
 }
