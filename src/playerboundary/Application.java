@@ -14,6 +14,7 @@ public class Application extends JFrame {
 	// All the other views should be stored as properties here
 	SplashScreenApplication splashScreen;
 	InitializeGameApplication mainMenu;
+	MapApplication mapMenu;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -35,6 +36,7 @@ public class Application extends JFrame {
 		// initialize views
 		splashScreen = new SplashScreenApplication();
 		mainMenu = new InitializeGameApplication();
+		mapMenu = new MapApplication();
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;
@@ -58,6 +60,10 @@ public class Application extends JFrame {
 	
 	public InitializeGameApplication getMainMenu() {
 		return mainMenu;
+	}
+	
+	public MapApplication getMapApplication() {
+		return mapMenu;
 	}
 
 }
