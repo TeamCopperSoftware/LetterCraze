@@ -36,11 +36,10 @@ public class Application extends JFrame {
 		splashScreen = new SplashScreenApplication();
 		mainMenu = new InitializeBuilderApplication();
 		
-		displayTime = 4;
+		// display splash screen for 4 seconds
+		displayTime = 4;  
         splashScreenTimer = new Timer(1000, new SplashScreenTimerController(this, this.model));
         splashScreenTimer.start();
-		this.setContentPane(splashScreen);
-		
 		this.setContentPane(splashScreen);
 		
 	}
