@@ -282,7 +282,7 @@ public class CreateNewLevelApplication extends JPanel {
 			public void itemStateChanged(ItemEvent e) {
 				CardLayout cl = (CardLayout)(cards.getLayout());
 				cl.show(cards, (String)e.getItem());
-				System.out.print((String)e.getItem());
+				//System.out.print((String)e.getItem());
 			}
 		});
 		gameModeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Puzzle", "Lightning", "Theme"}));

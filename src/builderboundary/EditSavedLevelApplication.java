@@ -258,21 +258,21 @@ public class EditSavedLevelApplication extends JPanel {
 
 		JLabel lblWords = new JLabel("Words:");
 		lblWords.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWords.setBounds(6, 100, 188, 16);
+		lblWords.setBounds(6, 75, 188, 16);
 		themePanel.add(lblWords);
 
 		JTextField textField_1 = new JTextField();
-		textField_1.setBounds(6, 128, 134, 28);
+		textField_1.setBounds(6, 103, 134, 28);
 		themePanel.add(textField_1);
 		textField_1.setColumns(10);
 
 		JButton btnNewButton = new JButton("Add");
-		btnNewButton.setBounds(144, 128, 50, 29);
+		btnNewButton.setBounds(144, 103, 50, 29);
 		themePanel.add(btnNewButton);
 
 		JList list = new JList();
 		list.setBorder(new LineBorder(new Color(0, 0, 0)));
-		list.setBounds(6, 168, 188, 247);
+		list.setBounds(6, 143, 188, 247);
 		themePanel.add(list);
 
 		// code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
@@ -282,7 +282,7 @@ public class EditSavedLevelApplication extends JPanel {
 			public void itemStateChanged(ItemEvent e) {
 				CardLayout cl = (CardLayout)(cards.getLayout());
 				cl.show(cards, (String)e.getItem());
-				System.out.print((String)e.getItem());
+				//System.out.print((String)e.getItem());
 			}
 		});
 		gameModeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Puzzle", "Lightning", "Theme"}));
@@ -318,11 +318,11 @@ public class EditSavedLevelApplication extends JPanel {
 		JSpinner starGoal3Spinner = new JSpinner();
 		starGoal3Spinner.setBounds(134, 123, 60, 28);
 		settingsPanel.add(starGoal3Spinner);
-		
+
 		JButton btnSaveLevel = new JButton("Save Level");
 		btnSaveLevel.setBounds(120, 520, 170, 37);
 		add(btnSaveLevel);
-		
+
 		JButton btnPublishToLettercraze = new JButton("Publish to LetterCraze");
 		btnPublishToLettercraze.setBounds(310, 520, 170, 37);
 		add(btnPublishToLettercraze);
