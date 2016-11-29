@@ -216,7 +216,7 @@ public class EditSavedLevelApplication extends JPanel {
 		cards.setLayout(new CardLayout(0, 0));
 		
 		JPanel puzzlePanel = new JPanel();
-		cards.add(puzzlePanel, "puzzlePanel");
+		cards.add(puzzlePanel, "Puzzle");
 		puzzlePanel.setLayout(null);
 		
 		JLabel numMovesLabel = new JLabel("Number of Moves Allowed:");
@@ -229,7 +229,7 @@ public class EditSavedLevelApplication extends JPanel {
 		puzzlePanel.add(numMovesSpinner);
 		
 		JPanel themePanel = new JPanel();
-		cards.add(themePanel, "themePanel");
+		cards.add(themePanel, "Theme");
 		themePanel.setLayout(null);
 		
 		JLabel timeLabel = new JLabel("Time (secs) Allowed:");
@@ -242,7 +242,7 @@ public class EditSavedLevelApplication extends JPanel {
 		themePanel.add(timeSpinner);
 		
 		JPanel lightningPanel = new JPanel();
-		cards.add(lightningPanel, "lightningPanel");
+		cards.add(lightningPanel, "Lightning");
 		lightningPanel.setLayout(null);
 		
 		JLabel themeLabel = new JLabel("Theme:");
@@ -274,7 +274,16 @@ public class EditSavedLevelApplication extends JPanel {
 		list.setBounds(6, 168, 188, 247);
 		lightningPanel.add(list);
 		
+		// code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
+		// this should maybe be separated out into a new controller class?
 		JComboBox gameModeComboBox = new JComboBox();
+		gameModeComboBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				CardLayout cl = (CardLayout)(cards.getLayout());
+				cl.show(cards, (String)e.getItem());
+				System.out.print((String)e.getItem());
+			}
+		});
 		gameModeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Puzzle", "Lightning", "Theme"}));
 		gameModeComboBox.setMaximumRowCount(3);
 		gameModeComboBox.setBounds(6, 34, 188, 27);
