@@ -24,10 +24,11 @@ public class PuzzleLevelApplication extends JPanel {
 	 * Create the panel.
 	 */
 	public PuzzleLevelApplication() {
+		setBounds(0,0,800,600);
 		setLayout(null);
 		
 		JPanel leftPanel = new JPanel();
-		leftPanel.setBounds(100, 100, 800, 600);
+		leftPanel.setBounds(0, 0, 600, 600);
 		add(leftPanel);
 		leftPanel.setLayout(null);
 		
@@ -238,7 +239,7 @@ public class PuzzleLevelApplication extends JPanel {
 		
 		JPanel rightPanel = new JPanel();
 		rightPanel.setBackground(Color.LIGHT_GRAY);
-		rightPanel.setBounds(300, 0, 150, 300);
+		rightPanel.setBounds(600, 0, 200, 600);
 		add(rightPanel);
 		rightPanel.setLayout(null);
 		
