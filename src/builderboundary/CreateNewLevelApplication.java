@@ -41,7 +41,7 @@ public class CreateNewLevelApplication extends JPanel {
 		setBounds(0, 0, 800, 600);
 		
 		backButton = new JButton("Back");
-		backButton.setBounds(6, 6, 75, 29);
+		backButton.setBounds(10, 10, 75, 29);
 		
 		JLabel nameLabel = new JLabel("Name:");
 		nameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
