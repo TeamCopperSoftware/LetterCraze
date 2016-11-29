@@ -61,10 +61,17 @@ public class Main {
 	 * Initialize the controllers.
 	 */
 	private void initializeController() {
+		// get from menu to map
 		app.getMainMenu().getMapButton().addActionListener(new MenuToMapController(app, model));
+		// get from map to menu
 		app.getMapApplication().getBackButton().addActionListener(new MapToMenuController(app, model));
+		// get from menu to custom levels
 		app.getMainMenu().getCustomLevelsButton().addActionListener(new MenuToCustomLevelsController(app, model));
+		// get from custom levels to menu
 		app.getViewCustomLevelsApplication().getBackButton().addActionListener(new CustomLevelsToMenuController(app, model));
+		
+		// get from the first level button to the first (nonfunctional) puzzle level
+		app.getMapApplication().getLevel1Button().addActionListener(new Level1ButtonToLevel1Controller(app, model));
 	}
 
 }

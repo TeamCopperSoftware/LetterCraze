@@ -23,6 +23,7 @@ import javax.swing.JProgressBar;
 public class MapApplication extends JPanel {
 
 	JButton backButton;
+	JButton level1Button;
 	/**
 	 * Create the frame.
 	 */
@@ -41,16 +42,16 @@ public class MapApplication extends JPanel {
 		lblPlayerMap.setBounds(151, 11, 238, 33);
 		this.add(lblPlayerMap);
 		
-		JButton btnNewButton = new JButton("Puzzle! \r\n1");
-		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setFont(new Font("Corbel", Font.BOLD, 11));
-		btnNewButton.setBackground(new Color(0, 128, 128));
-		btnNewButton.addActionListener(new ActionListener() {
+		level1Button = new JButton("Puzzle! \r\n1");
+		level1Button.setForeground(new Color(0, 0, 0));
+		level1Button.setFont(new Font("Corbel", Font.BOLD, 11));
+		level1Button.setBackground(new Color(0, 128, 128));
+		level1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(10, 69, 96, 46);
-		this.add(btnNewButton);
+		level1Button.setBounds(10, 69, 96, 46);
+		this.add(level1Button);
 		
 		backButton = new JButton("Back");
 		backButton.setForeground(Color.BLACK);
@@ -218,6 +219,10 @@ public class MapApplication extends JPanel {
 	public JButton getBackButton() {
     	return backButton;
     }
+	
+	public JButton getLevel1Button() {
+		return level1Button;
+	}
 	
 	
 }
