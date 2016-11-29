@@ -81,10 +81,8 @@ public class MapApplication extends JPanel {
 		this.add(lblPlayerMap);
 		
 		backButton = new JButton("Back");
-		backButton.setForeground(Color.BLACK);
-		backButton.setBackground(Color.RED);
-		backButton.setFont(new Font("Tahoma", Font.BOLD, 9));
-		backButton.setBounds(20, 20, 50, 30);
+		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
+		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
 		
 		level1Button = new JButton("Puzzle! \r\n1");
