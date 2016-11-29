@@ -62,18 +62,18 @@ public class Main {
 	 */
 	private void initializeController() {
 		// get from menu to map
-		app.getMainMenu().getMapButton().addActionListener(new MenuToMapController(app, model));
+		app.getMainMenu().getMapButton().addActionListener(new ViewAdventureMapController(app, model));
 		// get from map to menu
-		app.getMapApplication().getBackButton().addActionListener(new MapToMenuController(app, model));
+		app.getMapApplication().getBackButton().addActionListener(new ViewMainMenuController(app, model));
 		// get from menu to custom levels
-		app.getMainMenu().getCustomLevelsButton().addActionListener(new MenuToCustomLevelsController(app, model));
+		app.getMainMenu().getCustomLevelsButton().addActionListener(new ViewCustomLevelsController(app, model));
 		// get from custom levels to menu
-		app.getViewCustomLevelsApplication().getBackButton().addActionListener(new CustomLevelsToMenuController(app, model));
+		app.getViewCustomLevelsApplication().getBackButton().addActionListener(new ViewMainMenuController(app, model));
 		
 		// get from the first level button to the first (nonfunctional) puzzle level
-		app.getMapApplication().getLevel1Button().addActionListener(new Level1ButtonToLevel1Controller(app, model));
+		app.getMapApplication().getLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
 		// exit from level1
-		app.getPuzzleLevelApplication().getExitButton().addActionListener(new Level1ToMapController(app, model));
+		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
 	}
 
 }
