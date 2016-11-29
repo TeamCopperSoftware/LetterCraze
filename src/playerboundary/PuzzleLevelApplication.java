@@ -20,6 +20,8 @@ import javax.swing.ImageIcon;
 
 public class PuzzleLevelApplication extends JPanel {
 
+	JButton exitButton;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -245,9 +247,9 @@ public class PuzzleLevelApplication extends JPanel {
 
 		add(rightPanel);
 		
-		JButton quitButton = new JButton("Exit");
-		quitButton.setBounds(74, 6, 70, 29);
-		rightPanel.add(quitButton);
+		exitButton = new JButton("Exit");
+		exitButton.setBounds(74, 6, 70, 29);
+		rightPanel.add(exitButton);
 		
 		JLabel objectiveLabel = new JLabel("Moves Left:");
 		objectiveLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -297,5 +299,9 @@ public class PuzzleLevelApplication extends JPanel {
 			}
 		});
 
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
 	}
 }

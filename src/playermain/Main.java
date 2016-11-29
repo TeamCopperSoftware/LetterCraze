@@ -72,6 +72,8 @@ public class Main {
 		
 		// get from the first level button to the first (nonfunctional) puzzle level
 		app.getMapApplication().getLevel1Button().addActionListener(new Level1ButtonToLevel1Controller(app, model));
+		// exit from level1
+		app.getPuzzleLevelApplication().getExitButton().addActionListener(new Level1ToMapController(app, model));
 	}
 
 }
