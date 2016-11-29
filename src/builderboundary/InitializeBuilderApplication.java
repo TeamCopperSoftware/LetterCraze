@@ -18,11 +18,11 @@ public class InitializeBuilderApplication extends JPanel {
 
 		JLabel title = new JLabel("LetterCraze Builder");
 		title.setHorizontalAlignment(SwingConstants.CENTER);
-		title.setFont(new Font("Tahoma", Font.BOLD, 14));
-		title.setBounds(0, 200, 800, 17);
+		title.setFont(new Font("Tahoma", Font.BOLD, 26));
+		title.setBounds(0, 150, 800, 26);
 		this.add(title);
 
-		createLevelButton = new JButton("Create");
+		createLevelButton = new JButton("Create Level");
 		createLevelButton.setBounds(325, 250, 150, 100);
 		this.add(createLevelButton);
 
