@@ -23,52 +23,38 @@ public class InitializeGameApplication extends JPanel {
 
 	JButton playGameButton;
 	JButton playCustomLevelsButton;
-	
-    public InitializeGameApplication() {
-        setBounds(0, 0, 800, 600);
-        this.setBorder(new EmptyBorder(5, 5, 5, 5));
-        
-        playCustomLevelsButton = new JButton("Play Custom Levels");
-        playCustomLevelsButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        this.setLayout(new GridLayout(0, 3, 0, 0));
-        
-        JLabel label_3 = new JLabel("");
-        this.add(label_3);
-        
-        JLabel lblNewLabel = new JLabel("Letter Craze Player");
-        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 26));
-        this.add(lblNewLabel);
-        
-        playGameButton = new JButton("Play Game");
-        
-        JLabel label = new JLabel("");
-        this.add(label);
-        
-        JLabel label_4 = new JLabel("");
-        this.add(label_4);
-        this.add(playGameButton);
-        
-        JLabel label_1 = new JLabel("");
-        this.add(label_1);
-        
-        JLabel label_5 = new JLabel("");
-        this.add(label_5);
-        this.add(playCustomLevelsButton);
-        
-        JLabel label_2 = new JLabel("");
-        this.add(label_2);
-    }
-    
-    // return button for getting to main menu
-    public JButton getMapButton() {
+
+	public InitializeGameApplication() {
+		setBounds(0, 0, 800, 600);
+		this.setBorder(new EmptyBorder(5, 5, 5, 5));
+		this.setLayout(null);
+		
+		// Title
+		JLabel title = new JLabel("LetterCraze");
+		title.setHorizontalAlignment(SwingConstants.CENTER);
+		title.setFont(new Font("Tahoma", Font.BOLD, 26));
+		title.setBounds(0, 150, 800, 26);
+		this.add(title); 
+		
+		// Play Main Game Button
+		playGameButton = new JButton("Play Game");
+		playGameButton.setBounds(325, 250, 150, 100);
+		this.add(playGameButton);		
+		
+		// Play Custom Levels Button
+		playCustomLevelsButton = new JButton("Play Custom Levels");
+		playCustomLevelsButton.setBounds(325, 360, 150, 100);
+		this.add(playCustomLevelsButton);
+	}
+
+	// return button for getting to Main Game
+	public JButton getMapButton() {
 		return playGameButton;
 	}
-    
-    public JButton getCustomLevelsButton() {
-    	return playCustomLevelsButton;
-    }
+
+	// return button for getting to CustomLevelsMap
+	public JButton getCustomLevelsButton() {
+		return playCustomLevelsButton;
+	}
 
 }
