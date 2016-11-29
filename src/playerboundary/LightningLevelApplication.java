@@ -20,6 +20,8 @@ import javax.swing.ImageIcon;
 
 public class LightningLevelApplication extends JPanel {
 
+	JButton exitButton;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -243,9 +245,9 @@ public class LightningLevelApplication extends JPanel {
 		add(rightPanel);
 		rightPanel.setLayout(null);
 		
-		JButton quitButton = new JButton("Exit");
-		quitButton.setBounds(74, 6, 70, 29);
-		rightPanel.add(quitButton);
+		exitButton = new JButton("Exit");
+		exitButton.setBounds(74, 6, 70, 29);
+		rightPanel.add(exitButton);
 		
 		JLabel objectiveLabel = new JLabel("Time Left:");
 		objectiveLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -295,5 +297,9 @@ public class LightningLevelApplication extends JPanel {
 			}
 		});
 
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
 	}
 }

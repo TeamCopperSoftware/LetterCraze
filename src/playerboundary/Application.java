@@ -17,6 +17,8 @@ public class Application extends JFrame {
 	MapApplication mapMenu;
 	ViewCustomLevelsApplication customMenu;
 	PuzzleLevelApplication puzzleLevelApplication;
+	LightningLevelApplication lightningLevelApplication;
+	ThemeLevelApplication themeLevelApplication;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -41,6 +43,9 @@ public class Application extends JFrame {
 		mapMenu = new MapApplication();
 		customMenu = new ViewCustomLevelsApplication();
 		puzzleLevelApplication = new PuzzleLevelApplication();
+		lightningLevelApplication = new LightningLevelApplication();
+		themeLevelApplication = new ThemeLevelApplication();
+		
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;
@@ -76,6 +81,14 @@ public class Application extends JFrame {
 	
 	public PuzzleLevelApplication getPuzzleLevelApplication() {
 		return puzzleLevelApplication;
+	}
+	
+	public LightningLevelApplication getLightningLevelApplication() {
+		return lightningLevelApplication;
+	}
+	
+	public ThemeLevelApplication getThemeLevelApplication() {
+		return themeLevelApplication;
 	}
 
 }

@@ -31,12 +31,12 @@ import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 
-public class CreateNewLevelApplication extends JPanel {
+public class EditSavedLevelApplication extends JPanel {
 
 	JPanel cards;
 	JButton backButton;
 	
-	public CreateNewLevelApplication() {
+	public EditSavedLevelApplication() {
 		setLayout(null);
 		setBounds(0, 0, 800, 600);
 		
