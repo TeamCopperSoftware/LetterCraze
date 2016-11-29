@@ -68,7 +68,7 @@ public class Application extends JFrame {
 		return mapMenu;
 	}
 	
-	public ViewCustomLevelsApplication getCustomApplication() {
+	public ViewCustomLevelsApplication getViewCustomLevelsApplication() {
 		return customMenu;
 	}
 

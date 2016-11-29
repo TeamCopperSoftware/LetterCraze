@@ -5,7 +5,7 @@ import playerboundary.Application;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MapApplicationBackButtonController implements ActionListener {
+public class MapToMenuController implements ActionListener {
 	
 	Application app;
 	Model model;
@@ -15,7 +15,7 @@ public class MapApplicationBackButtonController implements ActionListener {
 		app.setContentPane(app.getMainMenu());
 	}
 	
-	public MapApplicationBackButtonController(Application app, Model m) {
+	public MapToMenuController(Application app, Model m) {
 		this.app = app;
 		this.model = m;
 	}

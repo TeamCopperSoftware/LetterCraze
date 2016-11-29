@@ -61,8 +61,10 @@ public class Main {
 	 * Initialize the controllers.
 	 */
 	private void initializeController() {
-		app.getMainMenu().getMapButton().addActionListener(new MapMenuController(app, model));
-		app.getMapApplication().getBackButton().addActionListener(new MapApplicationBackButtonController(app, model));
+		app.getMainMenu().getMapButton().addActionListener(new MenuToMapController(app, model));
+		app.getMapApplication().getBackButton().addActionListener(new MapToMenuController(app, model));
+		app.getMainMenu().getCustomLevelsButton().addActionListener(new MenuToCustomLevelsController(app, model));
+		app.getViewCustomLevelsApplication().getBackButton().addActionListener(new CustomLevelsToMenuController(app, model));
 	}
 
 }
