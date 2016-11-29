@@ -65,6 +65,7 @@ public class Main {
 		app.getMainMenu().getMapButton().addActionListener(new ViewAdventureMapController(app, model));
 		// get from map to menu
 		app.getMapApplication().getBackButton().addActionListener(new ViewMainMenuController(app, model));
+		
 		// get from menu to custom levels
 		app.getMainMenu().getCustomLevelsButton().addActionListener(new ViewCustomLevelsController(app, model));
 		// get from custom levels to menu
@@ -74,6 +75,9 @@ public class Main {
 		app.getMapApplication().getLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
 		// exit from level1
 		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+		
+		// get from the first custom level button to the first (nonfunctional) custom puzzle level
+		app.getViewCustomLevelsApplication().getCustomLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
 	}
 
 }

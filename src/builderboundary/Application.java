@@ -13,7 +13,10 @@ public class Application extends JFrame {
 	
 	// All the other views should be stored as properties here
 	SplashScreenApplication splashScreen;
-	InitializeBuilderApplication mainMenu;
+	InitializeBuilderApplication initializeBuilderApplication;
+	CreateNewLevelApplication createNewLevelApplication;
+	SavedLevelsMapApplication savedLevelsMapApplication;
+	EditSavedLevelApplication editSavedLevelApplication;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -34,7 +37,10 @@ public class Application extends JFrame {
 		
 		// initialize views
 		splashScreen = new SplashScreenApplication();
-		mainMenu = new InitializeBuilderApplication();
+		initializeBuilderApplication = new InitializeBuilderApplication();
+		createNewLevelApplication = new CreateNewLevelApplication();
+		savedLevelsMapApplication = new SavedLevelsMapApplication();
+		editSavedLevelApplication = new EditSavedLevelApplication();
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;  
@@ -56,8 +62,20 @@ public class Application extends JFrame {
 		displayTime--;
 	}
 	
-	public InitializeBuilderApplication getMainMenu() {
-		return mainMenu;
+	public InitializeBuilderApplication getInitializeBuilderApplication() {
+		return initializeBuilderApplication;
+	}
+	
+	public CreateNewLevelApplication getCreateNewLevelApplication() {
+		return createNewLevelApplication;
+	}
+	
+	public SavedLevelsMapApplication getSavedLevelsMapApplication() {
+		return savedLevelsMapApplication;
+	}
+	
+	public EditSavedLevelApplication getEditSavedLevelApplication() {
+		return editSavedLevelApplication;
 	}
 
 }

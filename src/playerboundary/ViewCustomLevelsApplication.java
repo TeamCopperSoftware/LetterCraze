@@ -22,7 +22,9 @@ import javax.swing.JProgressBar;
 
 public class ViewCustomLevelsApplication extends JPanel {
 
+	JButton customLevel1Button;
 	JButton backButton;
+	
 	/**
 	 * Create the frame.
 	 */
@@ -41,16 +43,16 @@ public class ViewCustomLevelsApplication extends JPanel {
 		lblPlayerMap.setBounds(151, 11, 238, 33);
 		this.add(lblPlayerMap);
 		
-		JButton btnNewButton = new JButton("1) Puzzle");
-		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setFont(new Font("Corbel", Font.BOLD, 11));
-		btnNewButton.setBackground(new Color(0, 128, 128));
-		btnNewButton.addActionListener(new ActionListener() {
+		customLevel1Button = new JButton("1) Puzzle");
+		customLevel1Button.setForeground(new Color(0, 0, 0));
+		customLevel1Button.setFont(new Font("Corbel", Font.BOLD, 11));
+		customLevel1Button.setBackground(new Color(0, 128, 128));
+		customLevel1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setBounds(10, 69, 96, 46);
-		this.add(btnNewButton);
+		customLevel1Button.setBounds(10, 69, 96, 46);
+		this.add(customLevel1Button);
 		
 		backButton = new JButton("Back");
 		backButton.setForeground(Color.BLACK);
@@ -231,5 +233,8 @@ public class ViewCustomLevelsApplication extends JPanel {
     	return backButton;
     }
 	
+	public JButton getCustomLevel1Button() {
+		return customLevel1Button;
+	}
 	
 }

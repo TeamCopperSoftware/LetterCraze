@@ -16,7 +16,7 @@ public class SplashScreenTimerController implements ActionListener {
 		if(app.getDisplayTime() == 0)
         {
             app.getSplashScreenTimer().stop();
-            app.setContentPane(app.getMainMenu());
+            app.setContentPane(app.getInitializeBuilderApplication());
         }
         else
         {

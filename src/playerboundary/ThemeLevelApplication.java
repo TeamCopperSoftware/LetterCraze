@@ -20,6 +20,8 @@ import javax.swing.ImageIcon;
 
 public class ThemeLevelApplication extends JPanel {
 
+	JButton exitButton;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -243,9 +245,9 @@ public class ThemeLevelApplication extends JPanel {
 		add(rightPanel);
 		rightPanel.setLayout(null);
 		
-		JButton quitButton = new JButton("Exit");
-		quitButton.setBounds(74, 6, 70, 29);
-		rightPanel.add(quitButton);
+		exitButton = new JButton("Exit");
+		exitButton.setBounds(74, 6, 70, 29);
+		rightPanel.add(exitButton);
 		
 		JLabel objectiveLabel = new JLabel("Words Left:");
 		objectiveLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -295,5 +297,9 @@ public class ThemeLevelApplication extends JPanel {
 			}
 		});
 
+	}
+	
+	public JButton getExitButton() {
+		return exitButton;
 	}
 }
