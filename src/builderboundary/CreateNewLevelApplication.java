@@ -228,51 +228,51 @@ public class CreateNewLevelApplication extends JPanel {
 		numMovesSpinner.setBounds(134, 34, 60, 28);
 		puzzlePanel.add(numMovesSpinner);
 		
-		JPanel themePanel = new JPanel();
-		cards.add(themePanel, "Theme");
-		themePanel.setLayout(null);
-		
-		JLabel timeLabel = new JLabel("Time (secs) Allowed:");
-		timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		timeLabel.setBounds(6, 6, 188, 16);
-		themePanel.add(timeLabel);
-		
-		JSpinner timeSpinner = new JSpinner();
-		timeSpinner.setBounds(134, 34, 60, 28);
-		themePanel.add(timeSpinner);
-		
 		JPanel lightningPanel = new JPanel();
 		cards.add(lightningPanel, "Lightning");
 		lightningPanel.setLayout(null);
 		
+		JLabel timeLabel = new JLabel("Time (secs) Allowed:");
+		timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		timeLabel.setBounds(6, 6, 188, 16);
+		lightningPanel.add(timeLabel);
+		
+		JSpinner timeSpinner = new JSpinner();
+		timeSpinner.setBounds(134, 34, 60, 28);
+		lightningPanel.add(timeSpinner);
+		
+		JPanel themePanel = new JPanel();
+		cards.add(themePanel, "Theme");
+		themePanel.setLayout(null);
+		
 		JLabel themeLabel = new JLabel("Theme:");
 		themeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		themeLabel.setBounds(6, 6, 188, 16);
-		lightningPanel.add(themeLabel);
+		themePanel.add(themeLabel);
 		
 		JTextField textField = new JTextField();
 		textField.setBounds(6, 34, 188, 28);
-		lightningPanel.add(textField);
+		themePanel.add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblWords = new JLabel("Words:");
 		lblWords.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWords.setBounds(6, 100, 188, 16);
-		lightningPanel.add(lblWords);
+		themePanel.add(lblWords);
 		
 		JTextField textField_1 = new JTextField();
 		textField_1.setBounds(6, 128, 134, 28);
-		lightningPanel.add(textField_1);
+		themePanel.add(textField_1);
 		textField_1.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Add");
 		btnNewButton.setBounds(144, 128, 50, 29);
-		lightningPanel.add(btnNewButton);
+		themePanel.add(btnNewButton);
 		
 		JList list = new JList();
 		list.setBorder(new LineBorder(new Color(0, 0, 0)));
 		list.setBounds(6, 168, 188, 247);
-		lightningPanel.add(list);
+		themePanel.add(list);
 		
 		// code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
 		// this should maybe be separated out into a new controller class?
