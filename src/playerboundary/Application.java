@@ -16,6 +16,7 @@ public class Application extends JFrame {
 	InitializeGameApplication mainMenu;
 	MapApplication mapMenu;
 	ViewCustomLevelsApplication customMenu;
+	PuzzleLevelApplication puzzleLevelApplication;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -39,6 +40,7 @@ public class Application extends JFrame {
 		mainMenu = new InitializeGameApplication();
 		mapMenu = new MapApplication();
 		customMenu = new ViewCustomLevelsApplication();
+		puzzleLevelApplication = new PuzzleLevelApplication();
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;
@@ -70,6 +72,10 @@ public class Application extends JFrame {
 	
 	public ViewCustomLevelsApplication getViewCustomLevelsApplication() {
 		return customMenu;
+	}
+	
+	public PuzzleLevelApplication getPuzzleLevelApplication() {
+		return puzzleLevelApplication;
 	}
 
 }

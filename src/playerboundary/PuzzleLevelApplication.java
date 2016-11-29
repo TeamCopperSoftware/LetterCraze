@@ -24,13 +24,14 @@ public class PuzzleLevelApplication extends JPanel {
 	 * Create the panel.
 	 */
 	public PuzzleLevelApplication() {
+		
 		setBounds(0,0,800,600);
-		setLayout(null);
+		this.setLayout(null);
 		
 		JPanel leftPanel = new JPanel();
 		leftPanel.setBounds(0, 0, 600, 600);
-		add(leftPanel);
 		leftPanel.setLayout(null);
+		add(leftPanel);
 		
 		JLabel titleLabel = new JLabel("Puzzle");
 		titleLabel.setVerticalAlignment(SwingConstants.TOP);
@@ -240,8 +241,9 @@ public class PuzzleLevelApplication extends JPanel {
 		JPanel rightPanel = new JPanel();
 		rightPanel.setBackground(Color.LIGHT_GRAY);
 		rightPanel.setBounds(600, 0, 200, 600);
-		add(rightPanel);
 		rightPanel.setLayout(null);
+
+		add(rightPanel);
 		
 		JButton quitButton = new JButton("Exit");
 		quitButton.setBounds(74, 6, 70, 29);
