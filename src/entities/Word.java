@@ -1,23 +1,27 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class Word {
 
-    Square square;
+    ArrayList<Square> square;
     String letters;
     int value;
 
     public Word(Square s) {
-        this.square = s;
-        //perhaps
-        //      letters = "";
-        //      appendSquare(s);
-        //would be better
-        //or figure out how to keep appended squares
-        
+        appendSquare (s);
+    }
+    
+    public Word() {
     }
 
     void appendSquare (Square s) {
-        //TODO
+        square.add(s);
+        letters.concat(s.tilePeek().toString());
+    }
+    
+    public String toString () {
+        return letters;
     }
 
     boolean isValid () {

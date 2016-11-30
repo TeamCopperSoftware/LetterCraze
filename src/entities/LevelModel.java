@@ -20,7 +20,7 @@ public abstract class LevelModel {
         //TODO double check this method header
     }
     
-    void initializeLevel(){
+    void initializeLevel() {
         
     }
     

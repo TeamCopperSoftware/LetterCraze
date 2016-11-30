@@ -8,14 +8,10 @@ public class Board {
     Word currentWord;
 
     public Board () {
-        //TODO
-        //is this constructor necessary?
     }
 
     public Board (Square[] squares) {
-        //TODO
-        //single array or double array?
-        //how would this work with a hashtable?
+        //TODO single array to hashtable
     }
 
     Square makeSquare (Position pos) {
