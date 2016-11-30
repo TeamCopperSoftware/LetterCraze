@@ -2,7 +2,7 @@ package entities;
 
 public class PuzzleLevel extends LevelModel {
     
-    int moveLimit; //TODO do we need a way to set this?
+    int moveLimit;
     int movesDone;
 
     public PuzzleLevel(Board b, Goal g, Dictionary d, int moveLimit) {

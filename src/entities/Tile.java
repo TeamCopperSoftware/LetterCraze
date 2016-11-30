@@ -9,4 +9,8 @@ public class Tile {
         this.letter = letter;
         this.value = value;
     }
+    
+    public String toString () {
+        return letter;
+    }
 }
