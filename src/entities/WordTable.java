@@ -3,6 +3,7 @@ package entities;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 
@@ -24,6 +25,21 @@ public class WordTable {
 		Iterator<String> it = new StringFileIterator(new File (".", wordTable));
 		while (it.hasNext()) {
 			String word = it.next();
+			word = word.trim();
+			table.put(word, Boolean.TRUE);
+		}
+	}
+	
+	/**
+	 * Load up word table from ArrayList of strings.
+	 * 
+	 */
+	public static void loadWordTable(ArrayList<String> words) {
+		table = new Hashtable<String,Boolean>();
+
+		int numWords = words.size();
+		for (int i = 0; i < numWords; i++) {
+			String word = words.get(i);
 			word = word.trim();
 			table.put(word, Boolean.TRUE);
 		}
