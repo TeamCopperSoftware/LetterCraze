@@ -15,15 +15,15 @@ public abstract class LevelModel {
     LevelModel(Board b, Goal g, Dictionary d) {
         this.board = b;
         this.goals = g;
-        
-        // Instead of setting Dictionary, load the default WordTable
-        try {
+        this.dictionary = d; // instead of setting dictionary we should call method initializeWordTable()
+    }
+    
+    void initializeWordTable() {
+    	try {
 			WordTable.loadWordTable();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        
-        this.dictionary = d;
     }
     
     void removeWord(Board b) {
