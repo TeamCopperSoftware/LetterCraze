@@ -16,18 +16,18 @@ public class Board {
             this.squares.put(squares[i].position, squares[i]);
         }
     }
+    
+    Square makeSquare (int x, int y) {
+        //TODO Need a check to ensure new pos is valid
+        return makeSquare (new Position(x, y));
+    }
 
     Square makeSquare (Position pos) {
-        //TODO implement 
-    	int x = pos.row;
-    	int y = pos.column;
-    	
-    	//Need a check to ensure new pos is valid
+    	//TODO Need a check to ensure new pos is valid
         return new Square(pos, true);
     }
 
     Square lookUpSquare (int x, int y) {
-        //TODO implement
     	return lookUpSquare (new Position(x, y));
     }
     
