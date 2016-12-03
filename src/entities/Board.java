@@ -11,11 +11,14 @@ public class Board {
     }
 
     public Board (Square[] squares) {
-        //TODO single array to hashtable
+        this.squares = new Hashtable<Position, Square>(squares.length);
+        for (int i = 0; i < squares.length; i++) {
+            this.squares.put(squares[i].position, squares[i]);
+        }
     }
 
     Square makeSquare (Position pos) {
-        //TODO implement
+        //TODO implement 
     	int x = pos.row;
     	int y = pos.column;
     	
@@ -25,12 +28,23 @@ public class Board {
 
     Square lookUpSquare (int x, int y) {
         //TODO implement
-    	return null;
+    	return lookUpSquare (new Position(x, y));
+    }
+    
+    Square lookUpSquare (Position pos) {
+        return squares.get(pos);
     }
     
     void removeWord (Word w) {
-        //TODO implement
+        for (int i = 0; i < w.letters.length(); i++) {
+            removeTile(w.square.get(i));
+        }
     }
+    
+    Tile removeTile (Square sq) {
+        return sq.tilePop();
+    }
+    
     
     void repopulate () {
         //TODO implement

@@ -45,6 +45,11 @@ public class Square {
     void tileRemove () {
         tile = null;
     }
+
+    Position position() {
+        return position;
+        
+    }
     
     
     
