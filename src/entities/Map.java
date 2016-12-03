@@ -7,11 +7,12 @@ public class Map {
 	ArrayList<LevelModel> levels;
 	int numUnlockedLevels; // probably should keep track of how many levels are locked/unlocked
 	
-	// not sure if one constructor is better than the other or if we should include both
+	// this is the constructor used when creating Map object in Model class
 	public Map() {
 		
 	}
 	
+	// probably don't need this constructor
 	public Map(ArrayList<LevelModel> levels) {
 		this.levels = levels;
 	}

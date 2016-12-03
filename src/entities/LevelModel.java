@@ -14,6 +14,9 @@ public abstract class LevelModel {
     LevelModel(Board b, Goal g) {
         this.board = b;
         this.goals = g;
+        bestScore = new Score();
+        currentScore = new Score();
+        isUnlocked = false;
     }
     
     void initializeWordTable() {
