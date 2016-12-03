@@ -8,4 +8,20 @@ public class Position {
         this.row = row;
         this.column = column;
     }
+    
+    void updateRow (int row) {
+        this.row = row;
+    }
+    
+    void updateColumn (int column) {
+        this.column = column;
+    }
+    
+    int getRow () {
+        return row;
+    }
+    
+    int getColumn() {
+        return column;
+    }
 }
