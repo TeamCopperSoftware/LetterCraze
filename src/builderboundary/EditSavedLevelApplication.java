@@ -29,14 +29,19 @@ import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
+
+import entities.Model;
+
 import java.awt.Color;
 
 public class EditSavedLevelApplication extends JPanel {
 
+	Model model;
 	JPanel cards;
 	JButton backButton;
 
-	public EditSavedLevelApplication() {
+	public EditSavedLevelApplication(Model m) {
+		model = m;
 		setLayout(null);
 		setBounds(0, 0, 800, 600);
 

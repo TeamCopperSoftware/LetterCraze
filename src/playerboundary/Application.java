@@ -38,13 +38,13 @@ public class Application extends JFrame {
 		this.model = model;
 		
 		// initialize views
-		splashScreen = new SplashScreenApplication();
-		mainMenu = new InitializeGameApplication();
-		mapMenu = new MapApplication();
-		customMenu = new ViewCustomLevelsApplication();
-		puzzleLevelApplication = new PuzzleLevelApplication();
-		lightningLevelApplication = new LightningLevelApplication();
-		themeLevelApplication = new ThemeLevelApplication();
+		splashScreen = new SplashScreenApplication(model);
+		mainMenu = new InitializeGameApplication(model);
+		mapMenu = new MapApplication(model);
+		customMenu = new ViewCustomLevelsApplication(model);
+		puzzleLevelApplication = new PuzzleLevelApplication(model);
+		lightningLevelApplication = new LightningLevelApplication(model);
+		themeLevelApplication = new ThemeLevelApplication(model);
 		
 		
 		// display splash screen for 4 seconds

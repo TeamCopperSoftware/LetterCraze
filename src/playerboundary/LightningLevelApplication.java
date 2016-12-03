@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.BoxLayout;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+
+import entities.Model;
+
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
@@ -20,14 +23,16 @@ import javax.swing.ImageIcon;
 
 public class LightningLevelApplication extends JPanel {
 
+	Model model;
 	JButton exitButton;
 
 	/**
 	 * Create the panel.
 	 */
-	public LightningLevelApplication() {
+	public LightningLevelApplication(Model m) {
 		setBounds(0,0,800,600);
 		setLayout(null);
+		model = m;
 
 		JPanel leftPanel = new JPanel();
 		leftPanel.setBounds(0, 0, 600, 600);

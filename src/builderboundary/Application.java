@@ -36,11 +36,11 @@ public class Application extends JFrame {
 		this.model = model;
 		
 		// initialize views
-		splashScreen = new SplashScreenApplication();
-		initializeBuilderApplication = new InitializeBuilderApplication();
-		createNewLevelApplication = new CreateNewLevelApplication();
-		savedLevelsMapApplication = new SavedLevelsMapApplication();
-		editSavedLevelApplication = new EditSavedLevelApplication();
+		splashScreen = new SplashScreenApplication(model);
+		initializeBuilderApplication = new InitializeBuilderApplication(model);
+		createNewLevelApplication = new CreateNewLevelApplication(model);
+		savedLevelsMapApplication = new SavedLevelsMapApplication(model);
+		editSavedLevelApplication = new EditSavedLevelApplication(model);
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;  

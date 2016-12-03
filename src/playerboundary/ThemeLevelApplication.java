@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.BoxLayout;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+
+import entities.Model;
+
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
@@ -20,12 +23,14 @@ import javax.swing.ImageIcon;
 
 public class ThemeLevelApplication extends JPanel {
 
+	Model model;
 	JButton exitButton;
 
 	/**
 	 * Create the panel.
 	 */
-	public ThemeLevelApplication() {
+	public ThemeLevelApplication(Model m) {
+		model = m;
 		setBounds(0,0,800,600);
 		setLayout(null);
 

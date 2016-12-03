@@ -5,6 +5,9 @@ import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import entities.Model;
+
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -19,6 +22,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
 public class SavedLevelsMapApplication extends JPanel {
+	
+	Model model;
+	
 	// Back button
 	JButton backButton;
 
@@ -59,7 +65,8 @@ public class SavedLevelsMapApplication extends JPanel {
 	/**
 	 * Create the frame.
 	 */
-	public SavedLevelsMapApplication() {
+	public SavedLevelsMapApplication(Model m) {
+		model = m;
 		setBounds(0, 0, 800, 600);
 		// we'll figure out a unified design later.. hopefully come together on a decision
 		//this.setBackground(new Color(176, 196, 222));

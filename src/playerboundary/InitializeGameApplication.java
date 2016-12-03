@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import entities.Model;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,13 +24,15 @@ import java.awt.Font;
 
 public class InitializeGameApplication extends JPanel {
 
+	Model model;
 	JButton playGameButton;
 	JButton playCustomLevelsButton;
 
-	public InitializeGameApplication() {
+	public InitializeGameApplication(Model m) {
 		setBounds(0, 0, 800, 600);
 		this.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setLayout(null);
+		model = m;
 		
 		// Title
 		JLabel title = new JLabel("LetterCraze");

@@ -8,6 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.BoxLayout;
 import java.awt.Component;
 import javax.swing.SwingConstants;
+
+import entities.Model;
+
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
@@ -20,12 +23,16 @@ import javax.swing.ImageIcon;
 
 public class PuzzleLevelApplication extends JPanel {
 
+	Model model;
 	JButton exitButton;
 	
 	/**
 	 * Create the panel.
 	 */
-	public PuzzleLevelApplication() {
+	public PuzzleLevelApplication(Model m) {
+		
+		model = m;
+				
 		setBounds(0,0,800,600);
 		this.setLayout(null);
 		

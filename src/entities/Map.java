@@ -9,7 +9,7 @@ public class Map {
 	
 	// this is the constructor used when creating Map object in Model class
 	public Map() {
-		
+		levels = new ArrayList<LevelModel>();
 	}
 	
 	// probably don't need this constructor
