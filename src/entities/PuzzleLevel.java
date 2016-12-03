@@ -5,8 +5,8 @@ public class PuzzleLevel extends LevelModel {
     int moveLimit;
     int movesDone;
 
-    public PuzzleLevel(Board b, Goal g, Dictionary d, int moveLimit) {
-        super(b, g, d);
+    public PuzzleLevel(Board b, Goal g, int moveLimit) {
+        super(b, g);
         this.moveLimit = moveLimit;
     }
     

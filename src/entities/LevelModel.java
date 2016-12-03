@@ -6,16 +6,14 @@ public abstract class LevelModel {
     
     Board board;
     Goal goals;
-    Dictionary dictionary; // now that we have WordTable we probably don't need a dictionary class anymore
     
     History history;
     Score bestScore, currentScore;
     Boolean isUnlocked;
     
-    LevelModel(Board b, Goal g, Dictionary d) {
+    LevelModel(Board b, Goal g) {
         this.board = b;
         this.goals = g;
-        this.dictionary = d; // instead of setting dictionary we should call method initializeWordTable()
     }
     
     void initializeWordTable() {
