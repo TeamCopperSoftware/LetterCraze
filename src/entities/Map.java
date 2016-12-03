@@ -31,5 +31,9 @@ public class Map {
 		
 		return false;
 	}
+	
+	public ArrayList<LevelModel> getLevels() {
+		return levels;
+	}
 
 }

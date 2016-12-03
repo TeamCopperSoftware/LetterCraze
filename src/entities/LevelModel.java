@@ -10,13 +10,15 @@ public abstract class LevelModel {
     History history;
     Score bestScore, currentScore;
     Boolean isUnlocked;
+    String type;
     
-    LevelModel(Board b, Goal g) {
+    LevelModel(Board b, Goal g, String type) {
         this.board = b;
         this.goals = g;
         bestScore = new Score();
         currentScore = new Score();
         isUnlocked = false;
+        this.type = type;
     }
     
     void initializeWordTable() {
@@ -45,6 +47,10 @@ public abstract class LevelModel {
     
     boolean updateScreen() {
         return false;
+    }
+    
+    public String getType() {
+    	return type;
     }
     
 }

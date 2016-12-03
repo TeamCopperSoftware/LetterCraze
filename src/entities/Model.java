@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Model {
 
-	Map mainLevels; // main levels are stored in a map in order to keep track of player's progress
+	private Map mainLevels; // main levels are stored in a map in order to keep track of player's progress
 	ArrayList<LevelModel> customLevels; // custom levels are always unlocked so they can be stored in an ArrayList
 
 	// creates default levels and organizes them into a Map
 	public Model() {		
 
-		mainLevels = new Map();
+		setMainLevels(new Map());
 		customLevels = new ArrayList<LevelModel>();
 		initializeDefaultLevels();
 		importCustomLevels();
@@ -70,7 +70,7 @@ public class Model {
 
 		PuzzleLevel l1 = new PuzzleLevel(b1, g1, moveLimit);
 		l1.isUnlocked = true; // first three levels should be unlocked
-		mainLevels.addLevel(l1);
+		getMainLevels().addLevel(l1);
 
 		// Create Level 2
 		squaresArray[0] = new Square(new Position(0,0), true);
@@ -121,7 +121,7 @@ public class Model {
 
 		LightningLevel l2 = new LightningLevel(b2, g2, timeLimit1);
 		l2.isUnlocked = true; // first three levels should be unlocked
-		mainLevels.addLevel(l2);
+		getMainLevels().addLevel(l2);
 
 		// Create Level 3
 		squaresArray[0] = new Square(new Position(0,0), true);
@@ -178,7 +178,7 @@ public class Model {
 
 		ThemeLevel l3 = new ThemeLevel(b3, g3, theme1, words1);
 		l3.isUnlocked = true; // first three levels should be unlocked
-		mainLevels.addLevel(l3);
+		getMainLevels().addLevel(l3);
 	
 	}
 
@@ -190,6 +190,14 @@ public class Model {
 		for (int i = 0; i < numCustomLevels; i++) {
 			customLevels.get(i).isUnlocked = true;
 		}
+	}
+
+	public Map getMainLevels() {
+		return mainLevels;
+	}
+
+	public void setMainLevels(Map mainLevels) {
+		this.mainLevels = mainLevels;
 	}
 
 }

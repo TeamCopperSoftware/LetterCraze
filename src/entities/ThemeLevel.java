@@ -9,7 +9,7 @@ public class ThemeLevel extends LevelModel {
     ArrayList<String> validWords;
     
     public ThemeLevel(Board b, Goal g, String theme, ArrayList<String> validWords) {
-        super(b, g);
+        super(b, g, "Theme");
         this.theme = theme;
         this.validWords = validWords;
     }

@@ -7,7 +7,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import entities.LevelModel;
+import entities.LightningLevel;
 import entities.Model;
+import entities.PuzzleLevel;
 
 import javax.swing.JTextPane;
 import javax.swing.JTextField;
@@ -93,7 +96,10 @@ public class MapApplication extends JPanel {
 		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
 		
-		level1Button = new JButton("Puzzle! \r\n1");
+		
+		LevelModel l1 = model.getMainLevels().getLevels().get(0);
+		level1Button = new JButton(l1.getType() + "! \r\n1");
+		//level1Button = new JButton("Puzzle! \r\n1");
 		level1Button.setForeground(new Color(0, 0, 0));
 		level1Button.setFont(new Font("Corbel", Font.BOLD, 11));
 		level1Button.setBackground(new Color(0, 128, 128));

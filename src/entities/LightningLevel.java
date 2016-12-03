@@ -9,7 +9,7 @@ public class LightningLevel extends LevelModel {
     int timeLimit;
     
     public LightningLevel(Board b, Goal g, int timeLimit) {
-        super(b, g);
+        super(b, g, "Lightning");
         this.timeLimit = timeLimit;
         timer = new Timer();    //TODO fix the timer class. 
                                 //I don't think Java.util is the right one
