@@ -12,8 +12,6 @@ public class Word {
         appendSquare (s);
     }
     
-    public Word() {
-    }
 
     void appendSquare (Square s) {
         square.add(s);
@@ -24,7 +22,7 @@ public class Word {
         return letters;
     }
 
-    boolean isValid () {
+    boolean isValid (String s) {
         //TODO
         return false;
     }
