@@ -337,6 +337,7 @@ public class PuzzleLevelApplication extends JPanel {
 		int currentSquare = 0;
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
+				
 				Square s = model.getMainLevels().getLevels().get(levelNumber).getBoard().lookUpSquare(x, y);
 				if (s.isEnabled()) {
 					squareButtons.get(currentSquare).setVisible(true);
@@ -347,6 +348,7 @@ public class PuzzleLevelApplication extends JPanel {
 				else {
 					squareButtons.get(currentSquare).setVisible(false);
 				}
+				
 				currentSquare++;
 				
 			}

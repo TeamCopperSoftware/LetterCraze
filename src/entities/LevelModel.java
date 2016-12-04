@@ -61,4 +61,8 @@ public abstract class LevelModel {
     	return bestScore;
     }
     
+    public Board getBoard() {
+    	return board;
+    }
+    
 }
