@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import entities.LevelModel;
 import entities.Model;
 
 import javax.swing.JTextPane;
@@ -20,6 +21,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
@@ -29,7 +31,15 @@ public class ViewCustomLevelsApplication extends JPanel {
 	
 	// Back button
 	JButton backButton;
+	
+	// Level Buttons
+	ArrayList<JButton> levelButtons;
+	// Level Num Scores
+	ArrayList<JLabel> levelScores;
+	// Labels to display stars
+	ArrayList<JLabel> stars;
 
+	/*
 	// Level Buttons
 	JButton level1Button;
 	JButton level2Button;
@@ -46,6 +56,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 	JButton level13Button;
 	JButton level14Button;
 	JButton level15Button;
+	
 
 	// Level Num Scores
 	JLabel level1NumScore;
@@ -63,6 +74,8 @@ public class ViewCustomLevelsApplication extends JPanel {
 	JLabel level13NumScore;
 	JLabel level14NumScore;
 	JLabel level15NumScore;
+	
+	*/
 
 	/**
 	 * Create the frame.
@@ -92,7 +105,39 @@ public class ViewCustomLevelsApplication extends JPanel {
 		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
+		
+		levelButtons = new ArrayList<JButton>();
+		levelScores = new ArrayList<JLabel>();
+		stars = new ArrayList<JLabel>();
 
+		// Creates 15 buttons for levels, 15 labels for scores, and 15 labels for stars
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 5; x++) {
+				JButton b = new JButton();
+				JLabel l = new JLabel();
+				JLabel s = new JLabel();
+				b.setForeground(Color.BLACK);
+				b.setFont(new Font("Corbel", Font.BOLD, 11));
+				b.setBackground(new Color(0, 128, 128));
+				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
+				b.setText("Empty");
+				levelButtons.add(b);
+				this.add(b);
+				l.setHorizontalAlignment(SwingConstants.CENTER);
+				l.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+				l.setBounds(50+(x*143), 110+(y*150), 125, 14);
+				levelScores.add(l);
+				this.add(l);
+				s.setBounds(70+(x*143), 225+(y*150), 81, 27);
+				stars.add(s);
+				this.add(s);
+			}
+		}
+
+		// updates buttons and labels based on data in the entity classes
+		refreshPanel();
+
+		/*
 		level1Button = new JButton("Puzzle! \r\n1");
 		level1Button.setForeground(new Color(0, 0, 0));
 		level1Button.setFont(new Font("Corbel", Font.BOLD, 11));
@@ -240,14 +285,60 @@ public class ViewCustomLevelsApplication extends JPanel {
 		level3Stars.setIcon(new ImageIcon(image3));
 		level3Stars.setBounds(356, 225, 81, 27);
 		this.add(level3Stars);
+		*/
+	}
+	
+	// updates buttons and labels based on data in the entity classes
+	public void refreshPanel() {
+
+		int currentLevel = 0;
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 5 && currentLevel < model.getCustomLevels().size(); x++) {
+				LevelModel lm = model.getCustomLevels().get(currentLevel);
+				Image image;
+				if (lm.getIsUnlocked()) {
+					levelButtons.get(currentLevel).setText(lm.getType() + "! \r\n" + (currentLevel+1));
+					levelScores.get(currentLevel).setText(String.valueOf(lm.getBestScore().getScore()));
+					if (lm.getBestScore().getStar() == 0) {
+						image = new ImageIcon("image/StarsEmpty.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else if (lm.getBestScore().getStar() == 1) {
+						image = new ImageIcon("image/StarsOne.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else if (lm.getBestScore().getStar() == 2) {
+						image = new ImageIcon("image/StarsTwo.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else {
+						image = new ImageIcon("image/StarsThree.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					stars.get(currentLevel).setIcon(new ImageIcon(image));
+
+				}
+				else {
+					levelButtons.get(currentLevel).setText("Locked");
+				}
+				currentLevel++;
+			}
+		}
+
 	}
 
 	public JButton getBackButton() {
 		return backButton;
 	}
 
+	/*
 	public JButton getCustomLevel1Button() {
 		return level1Button;
+	}
+	*/
+	
+	public ArrayList<JButton> getLevelButtons() {
+		return levelButtons;
 	}
 
 }

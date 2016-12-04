@@ -222,6 +222,10 @@ public class Model {
 	public void importCustomLevels() {
 		// looks for custom level files, creates Level objects, adds them to list
 		
+		// This level is just a placeholder
+		PuzzleLevel l1 = (PuzzleLevel)mainLevels.getLevels().get(0);
+		customLevels.add(l1);
+		
 		// all custom levels should always be unlocked
 		int numCustomLevels = customLevels.size();
 		for (int i = 0; i < numCustomLevels; i++) {
@@ -231,6 +235,10 @@ public class Model {
 
 	public Map getMainLevels() {
 		return mainLevels;
+	}
+	
+	public ArrayList<LevelModel> getCustomLevels() {
+		return customLevels;
 	}
 
 	public void setMainLevels(Map mainLevels) {
