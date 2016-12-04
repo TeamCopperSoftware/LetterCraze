@@ -85,9 +85,6 @@ public class MapApplication extends JPanel {
 	public MapApplication(Model m) {
 		
 		model = m;
-		levelButtons = new ArrayList<JButton>();
-		levelScores = new ArrayList<JLabel>();
-		stars = new ArrayList<JLabel>();
 		
 		setBounds(0, 0, 800, 600);
 		// we'll figure out a unified design later.. hopefully come together on a decision
@@ -111,41 +108,16 @@ public class MapApplication extends JPanel {
 		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
 		
-		// adds Buttons, scores, and stars to Map based on hard coded levels in Map entity class
-		int currentLevel = 0;
-		// 3 columns and 5 rows
+		levelButtons = new ArrayList<JButton>();
+		levelScores = new ArrayList<JLabel>();
+		stars = new ArrayList<JLabel>();
+		
+		// Creates 15 buttons for levels, 15 labels for scores, and 15 labels for stars
 		for (int y = 0; y < 3; y++) {
 			for (int x = 0; x < 5; x++) {
-				LevelModel lm = model.getMainLevels().getLevels().get(currentLevel);
 				JButton b = new JButton();
 				JLabel l = new JLabel();
 				JLabel s = new JLabel();
-				Image image;
-				if (lm.getIsUnlocked()) {
-					b.setText(lm.getType() + "! \r\n" + (currentLevel+1));
-					l.setText(String.valueOf(lm.getBestScore().getScore()));
-					if (lm.getBestScore().getStar() == 0) {
-						image = new ImageIcon("image/StarsEmpty.png").getImage();
-						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
-					}
-					else if (lm.getBestScore().getStar() == 1) {
-						image = new ImageIcon("image/StarsOne.png").getImage();
-						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
-					}
-					else if (lm.getBestScore().getStar() == 2) {
-						image = new ImageIcon("image/StarsTwo.png").getImage();
-						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
-					}
-					else {
-						image = new ImageIcon("image/StarsThree.png").getImage();
-						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
-					}
-					s.setIcon(new ImageIcon(image));
-					
-				}
-				else {
-					b.setText("Locked");
-				}
 				b.setForeground(Color.BLACK);
 				b.setFont(new Font("Corbel", Font.BOLD, 11));
 				b.setBackground(new Color(0, 128, 128));
@@ -160,9 +132,11 @@ public class MapApplication extends JPanel {
 				s.setBounds(70+(x*143), 225+(y*150), 81, 27);
 				stars.add(s);
 				this.add(s);
-				currentLevel++;
 			}
 		}
+		
+		// updates buttons and labels based on data in the entity classes
+		refreshPanel();
 		
 		/*
 		LevelModel l1 = model.getMainLevels().getLevels().get(0);
@@ -409,10 +383,45 @@ public class MapApplication extends JPanel {
 		level5Stars.setBounds(650, 225, 81, 27);
 		this.add(level5Stars);
 		*/
+	}
 		
+		
+	// updates buttons and labels based on data in the entity classes
+	public void refreshPanel() {
+		
+		int currentLevel = 0;
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 5; x++) {
+				LevelModel lm = model.getMainLevels().getLevels().get(currentLevel);
+				Image image;
+				if (lm.getIsUnlocked()) {
+					levelButtons.get(currentLevel).setText(lm.getType() + "! \r\n" + (currentLevel+1));
+					levelScores.get(currentLevel).setText(String.valueOf(lm.getBestScore().getScore()));
+					if (lm.getBestScore().getStar() == 0) {
+						image = new ImageIcon("image/StarsEmpty.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else if (lm.getBestScore().getStar() == 1) {
+						image = new ImageIcon("image/StarsOne.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else if (lm.getBestScore().getStar() == 2) {
+						image = new ImageIcon("image/StarsTwo.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else {
+						image = new ImageIcon("image/StarsThree.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					stars.get(currentLevel).setIcon(new ImageIcon(image));
 
-		
-	
+				}
+				else {
+					levelButtons.get(currentLevel).setText("Locked");
+				}
+				currentLevel++;
+			}
+		}
 	}
 	
 	public JButton getBackButton() {

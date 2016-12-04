@@ -12,7 +12,8 @@ public class ViewAdventureMapController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		app.setContentPane(app.getMapApplication());
+		app.getMapApplication().refreshPanel(); // refresh content before displaying panel
+		app.setContentPane(app.getMapApplication()); // display panel
 	}
 	
 	public ViewAdventureMapController(Application app, Model m) {
