@@ -15,8 +15,8 @@ public abstract class LevelModel {
     LevelModel(Board b, Goal g, String type) {
         this.board = b;
         this.goals = g;
-//        bestScore = new Score();
-//        currentScore = new Score();
+        bestScore = new Score();
+        currentScore = new Score();
         isUnlocked = false;
         this.type = type;
     }
