@@ -71,15 +71,18 @@ public class Main {
 		// get from custom levels to menu
 		app.getViewCustomLevelsApplication().getBackButton().addActionListener(new ViewMainMenuController(app, model));
 		
-		// get from the first level button to the first (nonfunctional) puzzle level
-		//app.getMapApplication().getLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
-		app.getMapApplication().getLevelButtons().get(0).addActionListener(new ViewLevel1Controller(app, model));
+		// get from Map to any unlocked level
+		for (int i = 0; i < 15; i++) {
+			app.getMapApplication().getLevelButtons().get(i).addActionListener(new ViewLevelController(app, model, i));
+		}
 		
-		// exit from level1
+		// exit from any level
 		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+		app.getLightningLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+		app.getThemeLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
 		
 		// get from the first custom level button to the first (nonfunctional) custom puzzle level
-		app.getViewCustomLevelsApplication().getCustomLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
+		app.getViewCustomLevelsApplication().getCustomLevel1Button().addActionListener(new ViewLevelController(app, model, 0));
 	}
 
 }
