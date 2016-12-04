@@ -24,7 +24,7 @@ public class TestTile extends TestCase {
 		Tile tile4 = new Tile("b", -2);
 		//keep score positive
 	}
-	
+	//
 	//Java auto disallows new Tile("z", 999999999);
 	//No need for test for too large a number
 }
