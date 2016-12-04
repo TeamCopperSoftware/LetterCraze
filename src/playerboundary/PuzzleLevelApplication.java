@@ -279,7 +279,7 @@ public class PuzzleLevelApplication extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		resetButton.setBounds(124, 540, 70, 29);
+		resetButton.setBounds(120, 560, 70, 29);
 		rightPanel.add(resetButton);
 		
 		JButton undoButton = new JButton("Undo");
@@ -287,7 +287,7 @@ public class PuzzleLevelApplication extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		undoButton.setBounds(6, 540, 70, 29);
+		undoButton.setBounds(10, 560, 70, 29);
 		rightPanel.add(undoButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -305,6 +305,14 @@ public class PuzzleLevelApplication extends JPanel {
 				return values[index];
 			}
 		});
+		
+		JButton confirmButton = new JButton("Confirm");
+		confirmButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		confirmButton.setBounds(63, 520, 70, 29);
+		rightPanel.add(confirmButton);
 
 	}
 	

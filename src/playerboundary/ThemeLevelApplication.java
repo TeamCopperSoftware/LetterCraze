@@ -276,7 +276,7 @@ public class ThemeLevelApplication extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		resetButton.setBounds(124, 540, 70, 29);
+		resetButton.setBounds(124, 560, 70, 29);
 		rightPanel.add(resetButton);
 
 		JButton undoButton = new JButton("Undo");
@@ -284,7 +284,7 @@ public class ThemeLevelApplication extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		undoButton.setBounds(6, 540, 70, 29);
+		undoButton.setBounds(6, 560, 70, 29);
 		rightPanel.add(undoButton);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -302,6 +302,14 @@ public class ThemeLevelApplication extends JPanel {
 				return values[index];
 			}
 		});
+		
+		JButton confirmButton = new JButton("Confirm");
+		confirmButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		confirmButton.setBounds(66, 521, 70, 29);
+		rightPanel.add(confirmButton);
 
 	}
 
