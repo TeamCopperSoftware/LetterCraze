@@ -53,4 +53,8 @@ public abstract class LevelModel {
     	return type;
     }
     
+    public boolean getIsUnlocked() {
+    	return isUnlocked;
+    }
+    
 }

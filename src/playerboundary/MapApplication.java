@@ -23,6 +23,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
@@ -34,6 +35,7 @@ public class MapApplication extends JPanel {
 	JButton backButton;
 	
 	// Level Buttons
+	ArrayList<JButton> levelButtons;
 	JButton level1Button;
 	JButton level2Button;
 	JButton level3Button;
@@ -50,6 +52,7 @@ public class MapApplication extends JPanel {
 	JButton level14Button;
 	JButton level15Button;
 	
+	ArrayList<JLabel> levelScores;
 	// Level Num Scores
 	JLabel level1NumScore;
 	JLabel level2NumScore;
@@ -73,6 +76,8 @@ public class MapApplication extends JPanel {
 	public MapApplication(Model m) {
 		
 		model = m;
+		levelButtons = new ArrayList<JButton>();
+		levelScores = new ArrayList<JLabel>();
 		
 		setBounds(0, 0, 800, 600);
 		// we'll figure out a unified design later.. hopefully come together on a decision
@@ -96,7 +101,29 @@ public class MapApplication extends JPanel {
 		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
 		
+		// adds Buttons to screen based on actual levels from the Map entity
+		int currentLevel = 0;
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 5; x++) {
+				LevelModel l = model.getMainLevels().getLevels().get(currentLevel);
+				JButton b = new JButton();
+				if (l.getIsUnlocked()) {
+					b.setText(l.getType() + "! \r\n" + (currentLevel+1));
+				}
+				else {
+					b.setText("Locked");
+				}
+				b.setForeground(Color.BLACK);
+				b.setFont(new Font("Corbel", Font.BOLD, 11));
+				b.setBackground(new Color(0, 128, 128));
+				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
+				levelButtons.add(b);
+				this.add(b);
+				currentLevel++;
+			}
+		}
 		
+		/*
 		LevelModel l1 = model.getMainLevels().getLevels().get(0);
 		level1Button = new JButton(l1.getType() + "! \r\n1");
 		//level1Button = new JButton("Puzzle! \r\n1");
@@ -203,6 +230,7 @@ public class MapApplication extends JPanel {
 		level15Button.setBackground(new Color(0, 128, 128));
 		level15Button.setBounds(625, 425, 125, 100);
 		this.add(level15Button);
+		*/
 		
 		// NUM SCORES
 		
@@ -254,6 +282,10 @@ public class MapApplication extends JPanel {
 	
 	public JButton getLevel1Button() {
 		return level1Button;
+	}
+	
+	public ArrayList<JButton> getLevelButtons() {
+		return levelButtons;
 	}
 	
 	

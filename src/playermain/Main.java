@@ -72,7 +72,9 @@ public class Main {
 		app.getViewCustomLevelsApplication().getBackButton().addActionListener(new ViewMainMenuController(app, model));
 		
 		// get from the first level button to the first (nonfunctional) puzzle level
-		app.getMapApplication().getLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
+		//app.getMapApplication().getLevel1Button().addActionListener(new ViewLevel1Controller(app, model));
+		app.getMapApplication().getLevelButtons().get(0).addActionListener(new ViewLevel1Controller(app, model));
+		
 		// exit from level1
 		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
 		

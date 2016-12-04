@@ -179,6 +179,43 @@ public class Model {
 		ThemeLevel l3 = new ThemeLevel(b3, g3, theme1, words1);
 		l3.isUnlocked = true; // first three levels should be unlocked
 		getMainLevels().addLevel(l3);
+		
+		// Levels 4-15 (just placeholders for now)
+		PuzzleLevel l4 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l4);
+		
+		PuzzleLevel l5 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l5);
+		
+		PuzzleLevel l6 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l6);
+		
+		PuzzleLevel l7 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l7);
+		
+		PuzzleLevel l8 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l8);
+		
+		PuzzleLevel l9 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l9);
+		
+		PuzzleLevel l10 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l10);
+		
+		PuzzleLevel l11 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l11);
+		
+		PuzzleLevel l12 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l12);
+		
+		PuzzleLevel l13 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l13);
+		
+		PuzzleLevel l14 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l14);
+		
+		PuzzleLevel l15 = new PuzzleLevel(b1, g1, moveLimit);
+		getMainLevels().addLevel(l15);
 	
 	}
 
