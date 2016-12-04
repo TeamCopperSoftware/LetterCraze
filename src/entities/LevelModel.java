@@ -57,4 +57,8 @@ public abstract class LevelModel {
     	return isUnlocked;
     }
     
+    public Score getBestScore() {
+    	return bestScore;
+    }
+    
 }

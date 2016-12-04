@@ -36,6 +36,8 @@ public class MapApplication extends JPanel {
 	
 	// Level Buttons
 	ArrayList<JButton> levelButtons;
+	
+	/* shouldn't need these since we have the array of buttons
 	JButton level1Button;
 	JButton level2Button;
 	JButton level3Button;
@@ -51,6 +53,7 @@ public class MapApplication extends JPanel {
 	JButton level13Button;
 	JButton level14Button;
 	JButton level15Button;
+	*/
 	
 	ArrayList<JLabel> levelScores;
 	// Level Num Scores
@@ -105,13 +108,16 @@ public class MapApplication extends JPanel {
 		int currentLevel = 0;
 		for (int y = 0; y < 3; y++) {
 			for (int x = 0; x < 5; x++) {
-				LevelModel l = model.getMainLevels().getLevels().get(currentLevel);
+				LevelModel lm = model.getMainLevels().getLevels().get(currentLevel);
 				JButton b = new JButton();
-				if (l.getIsUnlocked()) {
-					b.setText(l.getType() + "! \r\n" + (currentLevel+1));
+				JLabel l = new JLabel();
+				if (lm.getIsUnlocked()) {
+					b.setText(lm.getType() + "! \r\n" + (currentLevel+1));
+					l.setText(String.valueOf(lm.getBestScore().getScore()));
 				}
 				else {
 					b.setText("Locked");
+					//l.setText(String.valueOf(0));
 				}
 				b.setForeground(Color.BLACK);
 				b.setFont(new Font("Corbel", Font.BOLD, 11));
@@ -119,6 +125,11 @@ public class MapApplication extends JPanel {
 				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
 				levelButtons.add(b);
 				this.add(b);
+				l.setHorizontalAlignment(SwingConstants.CENTER);
+				l.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+				l.setBounds(50+(x*143), 110+(y*150), 125, 14);
+				levelScores.add(l);
+				this.add(l);
 				currentLevel++;
 			}
 		}
@@ -238,6 +249,7 @@ public class MapApplication extends JPanel {
 		
 		// NUM SCORES
 		
+		/*
 		level1NumScore = new JLabel("0000000000");
 		level1NumScore.setHorizontalAlignment(SwingConstants.CENTER);
 		level1NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
@@ -327,6 +339,7 @@ public class MapApplication extends JPanel {
 		level15NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
 		level15NumScore.setBounds(625, 408, 125, 14);
 		this.add(level15NumScore);
+		*/
 
 		
 		//STAR IMAGES 
@@ -376,9 +389,11 @@ public class MapApplication extends JPanel {
     	return backButton;
     }
 	
+	/* don't need this since we can return the array of buttons
 	public JButton getLevel1Button() {
 		return level1Button;
 	}
+	*/
 	
 	public ArrayList<JButton> getLevelButtons() {
 		return levelButtons;

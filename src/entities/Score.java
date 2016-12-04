@@ -10,20 +10,20 @@ public class Score {
         numScore = 0;
     }
 
-    int getStar () {
+    public int getStar () {
         return star;
     }
 
-    int getScore () {
+    public int getScore () {
         return numScore;
     }
 
     
-    void setStar (int n) {
+    public void setStar (int n) {
         star = n;
     }
 
-    void setScore (int n) {
+    public void setScore (int n) {
         numScore = n;
     }
   
