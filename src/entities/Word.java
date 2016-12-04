@@ -5,19 +5,19 @@ import java.util.ArrayList;
 public class Word {
 
     ArrayList<Square> squares;
-    Square s;
     String letters;
     int value;
 
     public Word(Square s) {
-    	this.s = s;
+    	squares = new ArrayList<Square>();
+    	letters = "";
     	appendSquare(s);
     }
     
 
     void appendSquare (Square s) {
         squares.add(s);
-        if (!(squares.isEmpty())) { letters.concat(s.tilePeek().toString()); }
+        letters += (s.tilePeek().toString()); 
     }
     
     public String toString () {
