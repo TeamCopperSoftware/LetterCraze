@@ -324,6 +324,20 @@ public class MapApplication extends JPanel {
 		level3Stars.setBounds(356, 225, 81, 27);
 		this.add(level3Stars);
 		
+		JLabel level4Stars = new JLabel("");
+		Image image4 = new ImageIcon("image/StarsEmpty.png").getImage();
+		image4 = image4.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
+		level4Stars.setIcon(new ImageIcon(image4));
+		level4Stars.setBounds(500, 225, 81, 27);
+		this.add(level4Stars);
+		
+		JLabel level5Stars = new JLabel("");
+		Image image5 = new ImageIcon("image/StarsEmpty.png").getImage();
+		image5 = image5.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
+		level5Stars.setIcon(new ImageIcon(image5));
+		level5Stars.setBounds(650, 225, 81, 27);
+		this.add(level5Stars);
+		
 		
 
 		
