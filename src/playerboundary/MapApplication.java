@@ -99,6 +99,10 @@ public class MapApplication extends JPanel {
 		
 		LevelModel l1 = model.getMainLevels().getLevels().get(0);
 		level1Button = new JButton(l1.getType() + "! \r\n1");
+		level1Button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		//level1Button = new JButton("Puzzle! \r\n1");
 		level1Button.setForeground(new Color(0, 0, 0));
 		level1Button.setFont(new Font("Corbel", Font.BOLD, 11));
@@ -138,35 +142,35 @@ public class MapApplication extends JPanel {
 		level6Button.setForeground(Color.BLACK);
 		level6Button.setFont(new Font("Corbel", Font.BOLD, 11));
 		level6Button.setBackground(new Color(0, 128, 128));
-		level6Button.setBounds(50, 275, 125, 100);
+		level6Button.setBounds(50, 272, 125, 100);
 		this.add(level6Button);
 		
 		level7Button = new JButton("LOCK");
 		level7Button.setForeground(Color.BLACK);
 		level7Button.setFont(new Font("Corbel", Font.BOLD, 11));
 		level7Button.setBackground(new Color(0, 128, 128));
-		level7Button.setBounds(193, 275, 125, 100);
+		level7Button.setBounds(193, 272, 125, 100);
 		this.add(level7Button);
 		
 		level8Button = new JButton("LOCK");
 		level8Button.setForeground(Color.BLACK);
 		level8Button.setFont(new Font("Corbel", Font.BOLD, 11));
 		level8Button.setBackground(new Color(0, 128, 128));
-		level8Button.setBounds(336, 275, 125, 100);
+		level8Button.setBounds(336, 272, 125, 100);
 		this.add(level8Button);
 		
 		level9Button = new JButton("LOCK");
 		level9Button.setForeground(Color.BLACK);
 		level9Button.setFont(new Font("Corbel", Font.BOLD, 11));
 		level9Button.setBackground(new Color(0, 128, 128));
-		level9Button.setBounds(479, 275, 125, 100);
+		level9Button.setBounds(479, 272, 125, 100);
 		this.add(level9Button);
 		
 		level10Button = new JButton("LOCK");
 		level10Button.setForeground(Color.BLACK);
 		level10Button.setFont(new Font("Corbel", Font.BOLD, 11));
 		level10Button.setBackground(new Color(0, 128, 128));
-		level10Button.setBounds(625, 275, 125, 100);
+		level10Button.setBounds(625, 272, 125, 100);
 		this.add(level10Button);
 		
 		level11Button = new JButton("LOCK");
@@ -223,6 +227,79 @@ public class MapApplication extends JPanel {
 		level3NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
 		level3NumScore.setBounds(336, 107, 125, 14);
 		this.add(level3NumScore);
+				
+		level4NumScore = new JLabel("0000000000");
+		level4NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level4NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level4NumScore.setBounds(479, 107, 125, 14);
+		this.add(level4NumScore);
+		
+		level5NumScore = new JLabel("0000000000");
+		level5NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level5NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level5NumScore.setBounds(625, 106, 125, 14);
+		this.add(level5NumScore);
+		
+		level6NumScore = new JLabel("0000000000");
+		level6NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level6NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level6NumScore.setBounds(50, 255, 125, 14);
+		this.add(level6NumScore);
+		
+		level7NumScore = new JLabel("0000000000");
+		level7NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level7NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level7NumScore.setBounds(193, 255, 125, 14);
+		this.add(level7NumScore);
+		
+		level8NumScore = new JLabel("0000000000");
+		level8NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level8NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level8NumScore.setBounds(336, 255, 125, 14);
+		this.add(level8NumScore);
+				
+		level9NumScore = new JLabel("0000000000");
+		level9NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level9NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level9NumScore.setBounds(479, 255, 125, 14);
+		this.add(level9NumScore);
+		
+		level10NumScore = new JLabel("0000000000");
+		level10NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level10NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level10NumScore.setBounds(625, 255, 125, 14);
+		this.add(level10NumScore);
+		
+		level11NumScore = new JLabel("0000000000");
+		level11NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level11NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level11NumScore.setBounds(50, 408, 125, 14);
+		this.add(level11NumScore);
+		
+		level12NumScore = new JLabel("0000000000");
+		level12NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level12NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level12NumScore.setBounds(193, 408, 125, 14);
+		this.add(level12NumScore);
+		
+		level13NumScore = new JLabel("0000000000");
+		level13NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level13NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level13NumScore.setBounds(336, 408, 125, 14);
+		this.add(level13NumScore);
+				
+		level14NumScore = new JLabel("0000000000");
+		level14NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level14NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level14NumScore.setBounds(479, 408, 125, 14);
+		this.add(level14NumScore);
+		
+		level15NumScore = new JLabel("0000000000");
+		level15NumScore.setHorizontalAlignment(SwingConstants.CENTER);
+		level15NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
+		level15NumScore.setBounds(625, 408, 125, 14);
+		this.add(level15NumScore);
+
 		
 		//STAR IMAGES 
 		
@@ -246,6 +323,11 @@ public class MapApplication extends JPanel {
 		level3Stars.setIcon(new ImageIcon(image3));
 		level3Stars.setBounds(356, 225, 81, 27);
 		this.add(level3Stars);
+		
+		
+
+		
+	
 	}
 	
 	public JButton getBackButton() {
