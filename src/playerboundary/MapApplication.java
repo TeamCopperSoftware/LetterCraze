@@ -55,8 +55,10 @@ public class MapApplication extends JPanel {
 	JButton level15Button;
 	*/
 	
-	ArrayList<JLabel> levelScores;
 	// Level Num Scores
+	ArrayList<JLabel> levelScores;
+	
+	/* shouldn't need these since we have the array of level scores
 	JLabel level1NumScore;
 	JLabel level2NumScore;
 	JLabel level3NumScore;
@@ -72,6 +74,10 @@ public class MapApplication extends JPanel {
 	JLabel level13NumScore;
 	JLabel level14NumScore;
 	JLabel level15NumScore;
+	*/
+	
+	// Labels to display stars
+	ArrayList<JLabel> stars;
 	
 	/**
 	 * Create the frame.
@@ -81,6 +87,7 @@ public class MapApplication extends JPanel {
 		model = m;
 		levelButtons = new ArrayList<JButton>();
 		levelScores = new ArrayList<JLabel>();
+		stars = new ArrayList<JLabel>();
 		
 		setBounds(0, 0, 800, 600);
 		// we'll figure out a unified design later.. hopefully come together on a decision
@@ -104,20 +111,40 @@ public class MapApplication extends JPanel {
 		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
 		
-		// adds Buttons to screen based on actual levels from the Map entity
+		// adds Buttons, scores, and stars to Map based on hard coded levels in Map entity class
 		int currentLevel = 0;
+		// 3 columns and 5 rows
 		for (int y = 0; y < 3; y++) {
 			for (int x = 0; x < 5; x++) {
 				LevelModel lm = model.getMainLevels().getLevels().get(currentLevel);
 				JButton b = new JButton();
 				JLabel l = new JLabel();
+				JLabel s = new JLabel();
+				Image image;
 				if (lm.getIsUnlocked()) {
 					b.setText(lm.getType() + "! \r\n" + (currentLevel+1));
 					l.setText(String.valueOf(lm.getBestScore().getScore()));
+					if (lm.getBestScore().getStar() == 0) {
+						image = new ImageIcon("image/StarsEmpty.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else if (lm.getBestScore().getStar() == 1) {
+						image = new ImageIcon("image/StarsOne.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else if (lm.getBestScore().getStar() == 2) {
+						image = new ImageIcon("image/StarsTwo.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					else {
+						image = new ImageIcon("image/StarsThree.png").getImage();
+						image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+					}
+					s.setIcon(new ImageIcon(image));
+					
 				}
 				else {
 					b.setText("Locked");
-					//l.setText(String.valueOf(0));
 				}
 				b.setForeground(Color.BLACK);
 				b.setFont(new Font("Corbel", Font.BOLD, 11));
@@ -130,6 +157,9 @@ public class MapApplication extends JPanel {
 				l.setBounds(50+(x*143), 110+(y*150), 125, 14);
 				levelScores.add(l);
 				this.add(l);
+				s.setBounds(70+(x*143), 225+(y*150), 81, 27);
+				stars.add(s);
+				this.add(s);
 				currentLevel++;
 			}
 		}
@@ -343,7 +373,7 @@ public class MapApplication extends JPanel {
 
 		
 		//STAR IMAGES 
-		
+		/*
 		JLabel level1Stars = new JLabel("");
 		Image image = new ImageIcon("image/StarsEmpty.png").getImage();
 		image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
@@ -378,7 +408,7 @@ public class MapApplication extends JPanel {
 		level5Stars.setIcon(new ImageIcon(image5));
 		level5Stars.setBounds(650, 225, 81, 27);
 		this.add(level5Stars);
-		
+		*/
 		
 
 		
