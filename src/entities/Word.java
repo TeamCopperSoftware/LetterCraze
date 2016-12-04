@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 public class Word {
 
-    ArrayList<Square> square;
+    ArrayList<Square> squares;
+    Square s;
     String letters;
     int value;
 
     public Word(Square s) {
-        appendSquare (s);
+    	this.s = s;
+    	appendSquare(s);
     }
     
 
     void appendSquare (Square s) {
-        square.add(s);
-        letters.concat(s.tilePeek().toString());
+        squares.add(s);
+        if (!(squares.isEmpty())) { letters.concat(s.tilePeek().toString()); }
     }
     
     public String toString () {
