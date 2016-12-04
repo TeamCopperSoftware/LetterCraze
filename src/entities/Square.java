@@ -32,7 +32,7 @@ public class Square {
         this.tile = t;
     }
     
-    Tile tilePeek () {
+    public Tile tilePeek () {
         return tile;
     }
     
@@ -49,6 +49,17 @@ public class Square {
     Position position() {
         return position;
         
+    }
+    
+    public boolean isEnabled() {
+    	return enabled;
+    }
+    
+    public boolean hasTile() {
+    	if (tile != null) {
+    		return true;
+    	}
+    	return false;
     }
     
     

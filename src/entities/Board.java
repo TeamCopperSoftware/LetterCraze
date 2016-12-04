@@ -4,16 +4,21 @@ import java.util.Hashtable;
 
 public class Board {
 
-    Hashtable<Position, Square> squares;
+    //Hashtable<Position, Square> squares;
+    Square[][] squares;
     Word currentWord;
 
     public Board () {
     }
 
     public Board (Square[] squares) {
-        this.squares = new Hashtable<Position, Square>(squares.length);
-        for (int i = 0; i < squares.length; i++) {
-            this.squares.put(squares[i].position, squares[i]);
+    	int n = 0;
+        this.squares = new Square[6][6];
+        for (int y = 0; y < 6; y++) {
+        	for (int x = 0; x < 6; x++) {
+        		this.squares[x][y] = squares[n];
+        		n++;
+        	}
         }
     }
     
@@ -27,12 +32,12 @@ public class Board {
         return new Square(pos, true);
     }
 
-    Square lookUpSquare (int x, int y) {
-    	return lookUpSquare (new Position(x, y));
+    public Square lookUpSquare (int x, int y) {
+    	return squares[x][y];
     }
     
-    Square lookUpSquare (Position pos) {
-        return squares.get(pos);
+    public Square lookUpSquare (Position pos) {
+        return lookUpSquare(pos.column, pos.row);
     }
     
     void removeWord (Word w) {

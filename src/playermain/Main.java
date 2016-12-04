@@ -1,9 +1,13 @@
 package playermain;
 
 import java.awt.EventQueue;
+import java.util.Hashtable;
+
 import playerboundary.Application;
 import playercontroller.*;
 import entities.Model;
+import entities.Position;
+import entities.Square;
 
 
 public class Main {
@@ -15,6 +19,7 @@ public class Main {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

@@ -10,11 +10,13 @@ import java.awt.Component;
 import javax.swing.SwingConstants;
 
 import entities.Model;
+import entities.Square;
 
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JProgressBar;
@@ -25,6 +27,7 @@ public class PuzzleLevelApplication extends JPanel {
 
 	Model model;
 	JButton exitButton;
+	ArrayList<JButton> squareButtons;
 	
 	/**
 	 * Create the panel.
@@ -48,6 +51,19 @@ public class PuzzleLevelApplication extends JPanel {
 		titleLabel.setBounds(6, 50, 588, 29);
 		leftPanel.add(titleLabel);
 		
+		// create 36 squareButtons
+		squareButtons = new ArrayList<JButton>();
+		for (int y = 0; y < 6; y++) {
+			for (int x = 0; x < 6; x++) {
+				JButton b = new JButton();
+				b.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+				b.setBounds(120+(x*60), 120+(y*60), 60, 60);
+				squareButtons.add(b);
+				leftPanel.add(b);
+			}
+		}
+		
+		/*
 		JButton square1 = new JButton("A");
 		square1.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		square1.setBounds(120, 120, 60, 60);
@@ -227,6 +243,7 @@ public class PuzzleLevelApplication extends JPanel {
 		square36.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		square36.setBounds(420, 420, 60, 60);
 		leftPanel.add(square36);
+		*/
 		
 		JLabel scoreLabel = new JLabel("Score: 3333");
 		scoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -314,6 +331,26 @@ public class PuzzleLevelApplication extends JPanel {
 		confirmButton.setBounds(63, 520, 70, 29);
 		rightPanel.add(confirmButton);
 
+	}
+	
+	public void refreshPanel(int levelNumber) {
+		int currentSquare = 0;
+		for (int y = 0; y < 6; y++) {
+			for (int x = 0; x < 6; x++) {
+				Square s = model.getMainLevels().getLevels().get(levelNumber).getBoard().lookUpSquare(x, y);
+				if (s.isEnabled()) {
+					squareButtons.get(currentSquare).setVisible(true);
+					if (s.hasTile()) {
+						squareButtons.get(currentSquare).setText(s.tilePeek().toString());
+					}
+				}
+				else {
+					squareButtons.get(currentSquare).setVisible(false);
+				}
+				currentSquare++;
+				
+			}
+		}
 	}
 	
 	public JButton getExitButton() {
