@@ -13,4 +13,15 @@ public class Tile {
     public String toString () {
         return letter;
     }
+
+	public String getTile() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Tile getPoints() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
+
