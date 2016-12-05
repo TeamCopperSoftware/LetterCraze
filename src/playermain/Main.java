@@ -81,6 +81,13 @@ public class Main {
 			app.getMapApplication().getLevelButtons().get(i).addActionListener(new ViewLevelController(app, model, i));
 		}
 		
+		// set controllers for buttons on PuzzleLevelApplication
+		for (int x = 0; x < 6; x++) {
+			for (int y = 0; y < 6; y++) {
+				app.getPuzzleLevelApplication().getButtonList()[x][y].addActionListener(new SelectLetterController(app, model, x, y));
+			}
+		}
+		
 		// exit from any main level to Map
 		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
 		app.getLightningLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));

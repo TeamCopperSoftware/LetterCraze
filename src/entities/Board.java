@@ -54,16 +54,18 @@ public class Board {
         	for (int x = 0; x < 6; x++) {
         		// if square is enabled but doesn't have tile iterate over the squares underneath it
         		if (squares[x][y].enabled && !squares[x][y].hasTile()) {
-        			for (int y2 = y; y2 < 6; y2++) {
+        			for (int y2 = y+1; y2 < 6; y2++) {
         				// if lower square is enabled and has a tile, remove it and add it to 1st square
         				if(squares[x][y2].enabled && squares[x][y2].hasTile()) {
         					Tile t = squares[x][y2].tilePop();
         					squares[x][y].tileAdd(t);
+        					break;
         				}
         			}
         		}
         	}
         }
+        
         // Iterate over every square on board
         for (int y = 0; y < 6; y++) {
         	for (int x = 0; x < 6; x++) {

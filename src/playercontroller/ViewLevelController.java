@@ -19,6 +19,7 @@ public class ViewLevelController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		LevelModel level = model.getMainLevels().getLevels().get(levelNumber);
 		if (level.getIsUnlocked()) {
+			level.initializeLevel();
 			if (level.getType().equals("Puzzle")) {
 				app.getPuzzleLevelApplication().refreshPanel((PuzzleLevel)level);
 				app.setContentPane(app.getPuzzleLevelApplication());
