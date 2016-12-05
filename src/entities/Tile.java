@@ -19,9 +19,9 @@ public class Tile {
 		return null;
 	}
 
-	public Tile getPoints() {
+	public int getPoints() {
 		// TODO Auto-generated method stub
-		return null;
+		return value;
 	}
 }
 
