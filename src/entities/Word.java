@@ -24,8 +24,11 @@ public class Word {
         return letters;
     }
 
-    boolean isValid (String s) {
-        return WordTable.isWord(letters);
+    boolean isValid () {
+   		if (WordTable.isWord(letters)) {
+   			if (letters.length() >= 3) { return true; }
+   		}
+   		return false;
     }
     
     ArrayList<Square> getSquares() {

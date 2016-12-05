@@ -25,7 +25,12 @@ public class Move {
 	
 	public boolean doMove() {
 		if (isValidMove()) {
-			//do Move
+			//TODO: do Move
+			//Get point value of the word
+			//Remove word from board
+			//Add word to completed word list
+			//Fill empty squares with floating physics
+			//Repopulate empty squares w/ rando letters (IF NOT A THEME LEVEL)
 			return true;
 		}
 		return false;
@@ -37,7 +42,7 @@ public class Move {
 	
 	public boolean isValidMove() {
 		if (WordTable.isWord(word.toString())) {
-			return true;
+			if (word.toString().length() >= 3) { return true; }
 		}
 		return false;
 	}
