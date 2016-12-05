@@ -431,7 +431,7 @@ public class Model {
 		words5.add("swift");
 		
 		ThemeLevel l15 = new ThemeLevel(b15, g15, theme5, words5);
-		l15.isUnlocked = false; // locked
+		l15.isUnlocked = false; // locked 
 		getMainLevels().addLevel(l15);
 	
 	}
