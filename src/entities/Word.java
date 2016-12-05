@@ -25,8 +25,7 @@ public class Word {
     }
 
     boolean isValid (String s) {
-        //TODO
-        return false;
+        return WordTable.isWord(letters);
     }
 
 }
