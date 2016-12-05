@@ -29,8 +29,8 @@ public abstract class LevelModel {
 		}
     }
     
-    void removeWord(Board b) {
-        //TODO double check this method header
+    void removeWord() {
+        
     }
     
     void initializeLevel() {

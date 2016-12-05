@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Word {
 
-    ArrayList<Square> squares;
-    String letters;
-    int value;
+    private ArrayList<Square> squares;
+    private String letters;
+    private int value;
 
     public Word(Square s) {
     	squares = new ArrayList<Square>();
@@ -26,6 +26,10 @@ public class Word {
 
     boolean isValid (String s) {
         return WordTable.isWord(letters);
+    }
+    
+    ArrayList<Square> getSquares() {
+        return squares;
     }
 
 }
