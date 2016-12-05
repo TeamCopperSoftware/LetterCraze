@@ -1,13 +1,14 @@
 package entities;
 
 import java.io.IOException;
+import java.util.Stack;
 
 public abstract class LevelModel {
     
     Board board;
     Goal goals;
     
-    History history;
+    Stack<Move> history;
     Score bestScore, currentScore;
     Boolean isUnlocked;
     String type;
@@ -19,6 +20,7 @@ public abstract class LevelModel {
         currentScore = new Score();
         isUnlocked = false;
         this.type = type;
+        history = new Stack<Move>();
     }
     
     void initializeWordTable() {
@@ -29,8 +31,12 @@ public abstract class LevelModel {
 		}
     }
     
-    void removeWord(Board b) {
-        //TODO double check this method header
+    void removeWord() {
+    	// Not sure at all if this is correct 
+        Move m = new Move(board.currentWord, this);
+        if (m.doMove()) {
+        	history.push(m);
+        }
     }
     
     void initializeLevel() {

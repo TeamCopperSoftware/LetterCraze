@@ -18,11 +18,11 @@ public class TestWord extends TestCase {
 		Tile t3 = new Tile("s", 4);
 		Square s3 = new Square(p3, true, t3);
 		
-		Word word = new Word(s1); //Getting a null pointer ex. when constructing word??
+		Word word = new Word(s1);
 		word.appendSquare(s2);
 		word.appendSquare(s3);
 		assertEquals(word.toString(), "yes");
-		//assertTrue(word.isValid()); //Need a "isValid()" method or similar
+		assertTrue(word.isValid());
 	}
 	
 	public void testWordNotValid() {
@@ -37,6 +37,6 @@ public class TestWord extends TestCase {
 		Word word = new Word(s1);
 		word.appendSquare(s2);
 		assertEquals(word.toString(), "no");
-		//assertFalse(word.isValid()); //Need a "isValid()" method or similar
+		assertFalse(word.isValid());
 	}
 }

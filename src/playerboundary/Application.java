@@ -1,8 +1,11 @@
 package playerboundary;
 
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
+import entities.LevelModel;
 import entities.Model;
 import playerboundary.SplashScreenApplication;
 import playercontroller.SplashScreenTimerController;
@@ -50,8 +53,7 @@ public class Application extends JFrame {
 		themeLevelApplication = new ThemeLevelApplication(model);
 		customPuzzleLevelApplication = new PuzzleLevelApplication(model);
 		customLightningLevelApplication = new LightningLevelApplication(model);
-		customThemeLevelApplication = new ThemeLevelApplication(model);
-		
+		customThemeLevelApplication = new ThemeLevelApplication(model);		
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;
