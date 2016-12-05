@@ -8,6 +8,14 @@ public class TestPosition extends TestCase {
 		Position pos = new Position(4, 6);
 		assertEquals(pos.getX(), 4);
 		assertEquals(pos.getY(), 6);
+		
+		pos.updateX(2);
+		assertEquals(pos.getX(), 2);
+		assertEquals(pos.getY(), 6);
+		
+		pos.updateY(1);
+		assertEquals(pos.getX(), 2);
+		assertEquals(pos.getY(), 1);
 	}
 	
 	public void testPosNotValid() {

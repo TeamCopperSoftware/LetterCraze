@@ -4,7 +4,7 @@ public class Board {
 
     //Hashtable<Position, Square> squares;
     Square[][] squares;
-    Word currentWord;
+    Word currentWord;  //TODO: Never used anywhere???
 
     public Board () {
     }
