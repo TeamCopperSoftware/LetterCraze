@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Hashtable;
-
 public class Board {
 
     //Hashtable<Position, Square> squares;
@@ -12,13 +10,11 @@ public class Board {
     }
 
     public Board (Square[] squares) {
-    	int n = 0;
+        
         this.squares = new Square[6][6];
-        for (int y = 0; y < 6; y++) {
-        	for (int x = 0; x < 6; x++) {
-        		this.squares[x][y] = squares[n];
-        		n++;
-        	}
+        
+        for (int n = 0; n < squares.length; n++) {
+            this.squares[squares[n].position().getX()][squares[n].position().getY()] = squares[n];
         }
     }
     
@@ -37,7 +33,7 @@ public class Board {
     }
     
     public Square lookUpSquare (Position pos) {
-        return lookUpSquare(pos.column, pos.row);
+        return lookUpSquare(pos.getX(), pos.getY());
     }
     
     void removeWord (Word w) {

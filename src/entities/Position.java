@@ -1,27 +1,27 @@
 package entities;
 
 public class Position {
-    int row;
-    int column;
+    int x;
+    int y;
     
-    public Position (int row, int column) {
-        this.row = row;
-        this.column = column;
+    public Position (int x, int y) {
+        this.x = x;
+        this.y = y;
     }
     
-    void updateRow (int row) {
-        this.row = row;
+    void updateY (int y) {
+        this.y = y;
+    } 
+    
+    void updateX (int x) {
+        this.x = x;
     }
     
-    void updateColumn (int column) {
-        this.column = column;
+    int getX () {
+        return x;
     }
     
-    int getRow () {
-        return row;
-    }
-    
-    int getColumn() {
-        return column;
+    int getY() {
+        return y;
     }
 }

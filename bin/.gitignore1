@@ -1,0 +1,8 @@
+/entities/
+/playerboundary/
+/playercontroller/
+/builderboundary/
+/buildercontroller/
+/buildermain/
+/playermain/
+.gitignore
