@@ -150,7 +150,7 @@ public class Model {
 		squaresArray[20] = new Square(new Position(2,3), true, new Tile("N", 1));
 		squaresArray[21] = new Square(new Position(3,3), true, new Tile("K", 1));
 		squaresArray[22] = new Square(new Position(4,3), true, new Tile("M", 1));
-		squaresArray[23] = new Square(new Position(5,3), false);
+		squaresArray[23] = new Square(new Position(5,3), true, new Tile("P", 1));
 
 		squaresArray[24] = new Square(new Position(0,4), false);
 		squaresArray[25] = new Square(new Position(1,4), true, new Tile("A", 1));
