@@ -24,6 +24,10 @@ public class Move {
 	}
 	
 	public boolean doMove() {
+		if (isValidMove()) {
+			//do Move
+			return true;
+		}
 		return false;
 	}
 	
