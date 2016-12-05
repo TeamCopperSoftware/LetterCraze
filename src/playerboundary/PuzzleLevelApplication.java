@@ -28,7 +28,7 @@ public class PuzzleLevelApplication extends JPanel {
 
 	Model model;
 	JButton exitButton;
-	ArrayList<JButton> squareButtons;
+	JButton[][] squareButtons;
 	JLabel objectiveValueLabel; // displays moves left
 	
 	/**
@@ -54,13 +54,15 @@ public class PuzzleLevelApplication extends JPanel {
 		leftPanel.add(titleLabel);
 		
 		// create 36 squareButtons
-		squareButtons = new ArrayList<JButton>();
+		squareButtons = new JButton[6][6];
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				JButton b = new JButton();
 				b.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 				b.setBounds(120+(x*60), 120+(y*60), 60, 60);
-				squareButtons.add(b);
+				b.setOpaque(true);
+				b.setBackground(Color.WHITE);
+				squareButtons[x][y] = b;
 				leftPanel.add(b);
 			}
 		}
@@ -344,13 +346,13 @@ public class PuzzleLevelApplication extends JPanel {
 				
 				Square s = level.getBoard().lookUpSquare(x, y);
 				if (s.isEnabled()) {
-					squareButtons.get(currentSquare).setVisible(true);
+					squareButtons[x][y].setVisible(true);
 					if (s.hasTile()) {
-						squareButtons.get(currentSquare).setText(s.tilePeek().toString());
+						squareButtons[x][y].setText(s.tilePeek().toString());
 					}
 				}
 				else {
-					squareButtons.get(currentSquare).setVisible(false);
+					squareButtons[x][y].setVisible(false);
 				}
 				
 				currentSquare++;
@@ -364,4 +366,9 @@ public class PuzzleLevelApplication extends JPanel {
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	
+	public JButton[][] getButtonList() {
+		return squareButtons;
+	}
+	
 }

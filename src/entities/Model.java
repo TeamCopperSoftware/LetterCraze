@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Model {
 
-	private Map mainLevels; // main levels are stored in a map in order to keep track of player's progress
+	Map mainLevels; // main levels are stored in a map in order to keep track of player's progress
 	ArrayList<LevelModel> customLevels; // custom levels are always unlocked so they can be stored in an ArrayList
 
 	// creates default levels and organizes them into a Map
