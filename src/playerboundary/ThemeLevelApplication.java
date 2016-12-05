@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 
 import entities.Model;
 import entities.Square;
+import entities.ThemeLevel;
 
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -28,6 +29,7 @@ public class ThemeLevelApplication extends JPanel {
 	Model model;
 	JButton exitButton;
 	ArrayList<JButton> squareButtons;
+	JLabel objectiveValueLabel; // words left
 
 	/**
 	 * Create the panel.
@@ -277,7 +279,7 @@ public class ThemeLevelApplication extends JPanel {
 		objectiveLabel.setBounds(6, 40, 188, 16);
 		rightPanel.add(objectiveLabel);
 
-		JLabel objectiveValueLabel = new JLabel("5");
+		objectiveValueLabel = new JLabel("");
 		objectiveValueLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 24));
 		objectiveValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveValueLabel.setBounds(6, 60, 188, 40);
@@ -330,12 +332,12 @@ public class ThemeLevelApplication extends JPanel {
 
 	}
 
-	public void refreshPanel(int levelNumber) {
+	public void refreshPanel(ThemeLevel level) {
 		int currentSquare = 0;
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 
-				Square s = model.getMainLevels().getLevels().get(levelNumber).getBoard().lookUpSquare(x, y);
+				Square s = level.getBoard().lookUpSquare(x, y);
 				if (s.isEnabled()) {
 					squareButtons.get(currentSquare).setVisible(true);
 					if (s.hasTile()) {
@@ -350,6 +352,8 @@ public class ThemeLevelApplication extends JPanel {
 
 			}
 		}
+		
+		objectiveValueLabel.setText(String.valueOf(level.getValidWords().size()));
 	}
 
 	public JButton getExitButton() {

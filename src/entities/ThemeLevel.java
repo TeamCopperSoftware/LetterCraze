@@ -19,8 +19,12 @@ public class ThemeLevel extends LevelModel {
     	WordTable.loadWordTable(validWords);
     }
     
-    String getTheme() {
+    public String getTheme() {
         return theme;
+    }
+    
+    public ArrayList<String> getValidWords() {
+    	return validWords;
     }
     
 }

@@ -9,6 +9,7 @@ import javax.swing.BoxLayout;
 import java.awt.Component;
 import javax.swing.SwingConstants;
 
+import entities.LightningLevel;
 import entities.Model;
 import entities.Square;
 
@@ -28,6 +29,7 @@ public class LightningLevelApplication extends JPanel {
 	Model model;
 	JButton exitButton;
 	ArrayList<JButton> squareButtons;
+	JLabel objectiveValueLabel;
 
 	/**
 	 * Create the panel.
@@ -277,7 +279,7 @@ public class LightningLevelApplication extends JPanel {
 		objectiveLabel.setBounds(6, 40, 188, 16);
 		rightPanel.add(objectiveLabel);
 
-		JLabel objectiveValueLabel = new JLabel("60");
+		objectiveValueLabel = new JLabel("");
 		objectiveValueLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 24));
 		objectiveValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveValueLabel.setBounds(6, 60, 188, 40);
@@ -330,12 +332,12 @@ public class LightningLevelApplication extends JPanel {
 
 	}
 
-	public void refreshPanel(int levelNumber) {
+	public void refreshPanel(LightningLevel level) {
 		int currentSquare = 0;
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 
-				Square s = model.getMainLevels().getLevels().get(levelNumber).getBoard().lookUpSquare(x, y);
+				Square s = level.getBoard().lookUpSquare(x, y);
 				if (s.isEnabled()) {
 					squareButtons.get(currentSquare).setVisible(true);
 					if (s.hasTile()) {
@@ -349,6 +351,15 @@ public class LightningLevelApplication extends JPanel {
 				currentSquare++;
 
 			}
+		}
+		
+		int minutes = level.getTimeLimit()/60;
+		int seconds = level.getTimeLimit()%60;
+		if (seconds < 10) {
+			objectiveValueLabel.setText((level.getTimeLimit()/60) + ":0" + level.getTimeLimit()%60);
+		}
+		else {
+			objectiveValueLabel.setText((level.getTimeLimit()/60) + ":" + level.getTimeLimit()%60);
 		}
 	}
 

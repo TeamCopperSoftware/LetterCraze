@@ -10,11 +10,11 @@ public class PuzzleLevel extends LevelModel {
         this.moveLimit = moveLimit;
     }
     
-    int getMoveLimit() {
+    public int getMoveLimit() {
         return moveLimit;
     }
     
-    int getMovesDone() {
+    public int getMovesDone() {
         return movesDone;
     }
 

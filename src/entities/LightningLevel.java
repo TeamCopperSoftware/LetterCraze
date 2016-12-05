@@ -15,7 +15,7 @@ public class LightningLevel extends LevelModel {
                                 //I don't think Java.util is the right one
     }
     
-    int getTimeLimit() {
+    public int getTimeLimit() {
         return timeLimit;
     }
     
