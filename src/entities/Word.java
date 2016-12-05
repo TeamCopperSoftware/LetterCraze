@@ -6,7 +6,7 @@ public class Word {
 
     private ArrayList<Square> squares;
     private String letters;
-    private int value;
+    private int value; //TODO
 
     public Word(Square s) {
     	squares = new ArrayList<Square>();

@@ -56,15 +56,7 @@ public class Square {
     }
     
     public boolean hasTile() {
-    	if (tile != null) {
-    		return true;
-    	}
-    	return false;
+    	return tile != null;
     }
-    
-    
-    
-    
-    
 
 }
