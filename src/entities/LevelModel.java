@@ -21,6 +21,7 @@ public abstract class LevelModel {
         isUnlocked = false;
         this.type = type;
         history = new Stack<Move>();
+        
     }
     
     void initializeWordTable() {
@@ -39,12 +40,14 @@ public abstract class LevelModel {
         }
     }
     
-    void initializeLevel() {
-        
+    // call this whenever a level is loaded from Map
+    public void initializeLevel() {
+    	initializeWordTable();
+        board.repopulate();
     }
     
     void resetBoard() {
-        
+    	
     }
     
     boolean undoMove() {
