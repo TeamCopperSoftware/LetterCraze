@@ -107,7 +107,6 @@ public class Square {
     	};
     	int totalWeight = 99999; // this is the sum of the weights above (don't know if it should be 100000)
     	int random = (int)(Math.floor(Math.random() * totalWeight));
-    	System.out.println("random: " + random);
     	Tile t = new Tile("", 0);
     	int sum = 0;
     	for (int i = 0; i < weights.length; i++) {
