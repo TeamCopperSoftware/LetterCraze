@@ -187,7 +187,61 @@ public class Model {
 		PuzzleLevel l5 = new PuzzleLevel(b1, g1, moveLimit);
 		getMainLevels().addLevel(l5);
 		
-		PuzzleLevel l6 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 6
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("T", 1));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("A", 1));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("T", 1));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("I", 1));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("A", 1));
+		squaresArray[5] = new Square(new Position(5,0), true, new Tile("S", 1));
+
+		squaresArray[6] = new Square(new Position(0,1), true, new Tile("L", 1));
+		squaresArray[7] = new Square(new Position(1,1), true, new Tile("A", 1));
+		squaresArray[8] = new Square(new Position(2,1), true, new Tile("R", 1));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("I", 1));
+		squaresArray[10] = new Square(new Position(4,1), true, new Tile("N", 1));
+		squaresArray[11] = new Square(new Position(5,1), true, new Tile("O", 1));
+
+		squaresArray[12] = new Square(new Position(0,2), true, new Tile("A", 1));
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("N", 1));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("N", 1));
+		squaresArray[15] = new Square(new Position(3,2), true, new Tile("C", 1));
+		squaresArray[16] = new Square(new Position(4,2), true, new Tile("D", 1));
+		squaresArray[17] = new Square(new Position(5,2), true, new Tile("U", 1));
+
+		squaresArray[18] = new Square(new Position(0,3), true, new Tile("I", 1));
+		squaresArray[19] = new Square(new Position(1,3), true, new Tile("T", 1));
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("P", 1));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("A", 1));
+		squaresArray[22] = new Square(new Position(4,3), true, new Tile("I", 1));
+		squaresArray[23] = new Square(new Position(5,3), true, new Tile("T", 1));
+
+		squaresArray[24] = new Square(new Position(0,4), true, new Tile("C", 1));
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("A", 1));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("C", 1));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("I", 1));
+		squaresArray[28] = new Square(new Position(4,4), true, new Tile("H", 1));
+		squaresArray[29] = new Square(new Position(5,4), false);
+
+		squaresArray[30] = new Square(new Position(0,5), false);
+		squaresArray[31] = new Square(new Position(1,5), false);
+		squaresArray[32] = new Square(new Position(2,5), true, new Tile("F", 1));
+		squaresArray[33] = new Square(new Position(3,5), true, new Tile("I", 1));
+		squaresArray[34] = new Square(new Position(4,5), true, new Tile("C", 1));
+		squaresArray[35] = new Square(new Position(5,5), false);
+		
+		Board b6 = new Board(squaresArray);
+		Goal g6 = new Goal(3, 4, 5);
+		String theme2 = "Oceans";
+		ArrayList<String> words2 = new ArrayList<String>();
+		words2.add("atlantic");
+		words2.add("artic");
+		words2.add("indian");
+		words2.add("pacific");
+		words2.add("south");
+
+		ThemeLevel l6 = new ThemeLevel(b6, g6, theme2, words2);
+		l6.isUnlocked = false; // locked
 		getMainLevels().addLevel(l6);
 		
 		PuzzleLevel l7 = new PuzzleLevel(b1, g1, moveLimit);
@@ -195,8 +249,62 @@ public class Model {
 		
 		PuzzleLevel l8 = new PuzzleLevel(b1, g1, moveLimit);
 		getMainLevels().addLevel(l8);
+
+		// Create Level 9
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("L", 1));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("B", 1));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("O", 1));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("N", 1));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("H", 1));
+		squaresArray[5] = new Square(new Position(5,0), true, new Tile("R", 1));
+
+		squaresArray[6] = new Square(new Position(0,1), false);
+		squaresArray[7] = new Square(new Position(1,1), true, new Tile("I", 1));
+		squaresArray[8] = new Square(new Position(2,1), true, new Tile("E", 1));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("I", 1));
+		squaresArray[10] = new Square(new Position(4,1), false);
+		squaresArray[11] = new Square(new Position(5,1), false);
+
+		squaresArray[12] = new Square(new Position(0,2), false);
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("O", 1));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("N", 1));
+		squaresArray[15] = new Square(new Position(3,2), true, new Tile("A", 1));
+		squaresArray[16] = new Square(new Position(4,2), false);
+		squaresArray[17] = new Square(new Position(5,2), false);
+
+		squaresArray[18] = new Square(new Position(0,3), false);
+		squaresArray[19] = new Square(new Position(1,3), false);
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("R", 1));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("N", 1));
+		squaresArray[22] = new Square(new Position(4,3), false);
+		squaresArray[23] = new Square(new Position(5,3), false);
+
+		squaresArray[24] = new Square(new Position(0,4), false);
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("P", 1));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("A", 1));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("D", 1));
+		squaresArray[28] = new Square(new Position(4,4), true, new Tile("A", 1));
+		squaresArray[29] = new Square(new Position(5,4), false);
+
+		squaresArray[30] = new Square(new Position(0,5), true, new Tile("H", 1));
+		squaresArray[31] = new Square(new Position(1,5), true, new Tile("I", 1));
+		squaresArray[32] = new Square(new Position(2,5), true, new Tile("S", 1));
+		squaresArray[33] = new Square(new Position(3,5), true, new Tile("F", 1));
+		squaresArray[34] = new Square(new Position(4,5), false);
+		squaresArray[35] = new Square(new Position(5,5), false);
 		
-		PuzzleLevel l9 = new PuzzleLevel(b1, g1, moveLimit);
+		Board b9 = new Board(squaresArray);
+		Goal g9 = new Goal(3, 4, 5);
+		String theme3 = "Animals";
+		ArrayList<String> words3 = new ArrayList<String>();
+		words3.add("bear");
+		words3.add("fish");
+		words3.add("lion");
+		words3.add("rhino");
+		words3.add("panda");
+
+		ThemeLevel l9 = new ThemeLevel(b9, g9, theme3, words3);
+		l6.isUnlocked = false; // locked
 		getMainLevels().addLevel(l9);
 		
 		PuzzleLevel l10 = new PuzzleLevel(b1, g1, moveLimit);
@@ -205,7 +313,62 @@ public class Model {
 		PuzzleLevel l11 = new PuzzleLevel(b1, g1, moveLimit);
 		getMainLevels().addLevel(l11);
 		
-		PuzzleLevel l12 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 12
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("H", 1));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("S", 1));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("O", 1));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("C", 1));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("G", 1));
+		squaresArray[5] = new Square(new Position(5,0), true, new Tile("F", 1));
+
+		squaresArray[6] = new Square(new Position(0,1), true, new Tile("O", 1));
+		squaresArray[7] = new Square(new Position(1,1), true, new Tile("C", 1));
+		squaresArray[8] = new Square(new Position(2,1), true, new Tile("C", 1));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("O", 1));
+		squaresArray[10] = new Square(new Position(4,1), true, new Tile("L", 1));
+		squaresArray[11] = new Square(new Position(5,1), true, new Tile("T", 1));
+
+		squaresArray[12] = new Square(new Position(0,2), true, new Tile("E", 1));
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("K", 1));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("E", 1));
+		squaresArray[15] = new Square(new Position(3,2), true, new Tile("R", 1));
+		squaresArray[16] = new Square(new Position(4,2), true, new Tile("N", 1));
+		squaresArray[17] = new Square(new Position(5,2), true, new Tile("E", 1));
+
+		squaresArray[18] = new Square(new Position(0,3), true, new Tile("B", 1));
+		squaresArray[19] = new Square(new Position(1,3), true, new Tile("Y", 1));
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("I", 1));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("S", 1));
+		squaresArray[22] = new Square(new Position(4,3), true, new Tile("I", 1));
+		squaresArray[23] = new Square(new Position(5,3), true, new Tile("N", 1));
+
+		squaresArray[24] = new Square(new Position(0,4), true, new Tile("O", 1));
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("X", 1));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("N", 1));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("N", 1));
+		squaresArray[28] = new Square(new Position(4,4), true, new Tile("G", 1));
+		squaresArray[29] = new Square(new Position(5,4), true, new Tile("B", 1));
+
+		squaresArray[30] = new Square(new Position(0,5), true, new Tile("G", 1));
+		squaresArray[31] = new Square(new Position(1,5), true, new Tile("N", 1));
+		squaresArray[32] = new Square(new Position(2,5), true, new Tile("I", 1));
+		squaresArray[33] = new Square(new Position(3,5), true, new Tile("L", 1));
+		squaresArray[34] = new Square(new Position(4,5), true, new Tile("W", 1));
+		squaresArray[35] = new Square(new Position(5,5), true, new Tile("O", 1));
+		
+		Board b12 = new Board(squaresArray);
+		Goal g12 = new Goal(4, 5, 6);
+		String theme4 = "Sports";
+		ArrayList<String> words4 = new ArrayList<String>();
+		words4.add("boxing");
+		words4.add("tennis");
+		words4.add("bowling");
+		words4.add("golf");
+		words4.add("soccer");
+		words4.add("hockey");
+		
+		ThemeLevel l12 = new ThemeLevel(b12, g12, theme4, words4);
+		l12.isUnlocked = false; // locked
 		getMainLevels().addLevel(l12);
 		
 		PuzzleLevel l13 = new PuzzleLevel(b1, g1, moveLimit);
@@ -214,7 +377,61 @@ public class Model {
 		PuzzleLevel l14 = new PuzzleLevel(b1, g1, moveLimit);
 		getMainLevels().addLevel(l14);
 		
-		PuzzleLevel l15 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 15
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("T", 1));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("P", 1));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("R", 1));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("S", 1));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("A", 1));
+		squaresArray[5] = new Square(new Position(5,0), true, new Tile("S", 1));
+
+		squaresArray[6] = new Square(new Position(0,1), false);
+		squaresArray[7] = new Square(new Position(1,1), true, new Tile("I", 1));
+		squaresArray[8] = new Square(new Position(2,1), true, new Tile("C", 1));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("S", 1));
+		squaresArray[10] = new Square(new Position(4,1), true, new Tile("A", 1));
+		squaresArray[11] = new Square(new Position(5,1), false);
+
+		squaresArray[12] = new Square(new Position(0,2), true, new Tile("J", 1));
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("A", 1));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("S", 1));
+		squaresArray[15] = new Square(new Position(3,2), true, new Tile("W", 1));
+		squaresArray[16] = new Square(new Position(4,2), true, new Tile("L", 1));
+		squaresArray[17] = new Square(new Position(5,2), true, new Tile("I", 1));
+
+		squaresArray[18] = new Square(new Position(0,3), true, new Tile("A", 1));
+		squaresArray[19] = new Square(new Position(1,3), true, new Tile("V", 1));
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("A", 1));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("I", 1));
+		squaresArray[22] = new Square(new Position(4,3), true, new Tile("E", 1));
+		squaresArray[23] = new Square(new Position(5,3), true, new Tile("S", 1));
+
+		squaresArray[24] = new Square(new Position(0,4), false);
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("A", 1));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("V", 1));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("F", 1));
+		squaresArray[28] = new Square(new Position(4,4), true, new Tile("T", 1));
+		squaresArray[29] = new Square(new Position(5,4), false);
+
+		squaresArray[30] = new Square(new Position(0,5), true, new Tile("J", 1));
+		squaresArray[31] = new Square(new Position(1,5), true, new Tile("L", 1));
+		squaresArray[32] = new Square(new Position(2,5), true, new Tile("L", 1));
+		squaresArray[33] = new Square(new Position(3,5), true, new Tile("E", 1));
+		squaresArray[34] = new Square(new Position(4,5), true, new Tile("H", 1));
+		squaresArray[35] = new Square(new Position(5,5), true, new Tile("S", 1));
+		
+		Board b15 = new Board(squaresArray);
+		Goal g15 = new Goal(3, 4, 5);
+		String theme5 = "CS Languages";
+		ArrayList<String> words5 = new ArrayList<String>();
+		words5.add("java");
+		words5.add("lisp");
+		words5.add("sass");
+		words5.add("javascript");
+		words5.add("swift");
+		
+		ThemeLevel l15 = new ThemeLevel(b15, g15, theme5, words5);
+		l15.isUnlocked = false; // locked
 		getMainLevels().addLevel(l15);
 	
 	}
