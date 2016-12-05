@@ -7,16 +7,25 @@ public class ThemeLevel extends LevelModel {
 
     String theme;
     ArrayList<String> validWords;
+    Board startingBoard; // keeps track of the initial Board setup in case player wants to reset board;
     
     public ThemeLevel(Board b, Goal g, String theme, ArrayList<String> validWords) {
         super(b, g, "Theme");
         this.theme = theme;
         this.validWords = validWords;
+        this.startingBoard = b;
     }
     
     @Override
     void initializeWordTable() {
     	WordTable.loadWordTable(validWords);
+    }
+    
+    @Override
+    void resetBoard() {
+    	this.board = startingBoard;
+    	currentScore = new Score(); // set currentScore to 0;
+    	history.clear(); // clear move history
     }
     
     public String getTheme() {

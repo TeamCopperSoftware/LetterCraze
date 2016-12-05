@@ -40,13 +40,21 @@ public abstract class LevelModel {
         }
     }
     
-    // call this whenever a level is loaded from Map
+    /**
+     * called whenever level is loaded from Map
+     */
     public void initializeLevel() {
     	initializeWordTable();
-        board.repopulate();
+        resetBoard();
     }
     
+    /**
+     * called whenever player hits reset button, or level is initialized
+     */
     void resetBoard() {
+    	board.reset(); // reset board
+    	currentScore = new Score(); // set currentScore to 0;
+    	history.clear(); // clear move history
     	
     }
     

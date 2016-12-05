@@ -46,7 +46,9 @@ public class Board {
         return sq.tilePop();
     }
     
-    
+    /**
+     * floats tiles up and repopulates empty squares with random generated tiles
+     */
     void repopulate () {
     	// Iterate over every square on board (except bottom row)
     	// don't need to check bottom squares because we know they don't have squares beneath them to take tiles from
@@ -72,6 +74,20 @@ public class Board {
         		// if square is enabled and doesn't have a tile generate a new one
         		if (squares[x][y].enabled && !squares[x][y].hasTile()) {
         			squares[x][y].generateRandomTile();
+        		}
+        	}
+        }
+    }
+    
+    /**
+     * generates a new tile for each square on the board
+     */
+    void reset() {
+    	// Iterate over every square on board
+        for (int y = 0; y < 6; y++) {
+        	for (int x = 0; x < 6; x++) {
+        		if (squares[x][y].enabled) {
+        			squares[x][y].generateRandomTile();	
         		}
         	}
         }
