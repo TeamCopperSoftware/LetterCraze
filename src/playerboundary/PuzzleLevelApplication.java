@@ -10,6 +10,7 @@ import java.awt.Component;
 import javax.swing.SwingConstants;
 
 import entities.Model;
+import entities.PuzzleLevel;
 import entities.Square;
 
 import javax.swing.JScrollPane;
@@ -28,6 +29,7 @@ public class PuzzleLevelApplication extends JPanel {
 	Model model;
 	JButton exitButton;
 	ArrayList<JButton> squareButtons;
+	JLabel objectiveValueLabel; // displays moves left
 	
 	/**
 	 * Create the panel.
@@ -280,7 +282,7 @@ public class PuzzleLevelApplication extends JPanel {
 		objectiveLabel.setBounds(6, 40, 188, 16);
 		rightPanel.add(objectiveLabel);
 		
-		JLabel objectiveValueLabel = new JLabel("5");
+		objectiveValueLabel = new JLabel("5");
 		objectiveValueLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 24));
 		objectiveValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveValueLabel.setBounds(6, 60, 188, 40);
@@ -333,12 +335,14 @@ public class PuzzleLevelApplication extends JPanel {
 
 	}
 	
-	public void refreshPanel(int levelNumber) {
+	public void refreshPanel(PuzzleLevel level) {
+		
+		// set board
 		int currentSquare = 0;
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				
-				Square s = model.getMainLevels().getLevels().get(levelNumber).getBoard().lookUpSquare(x, y);
+				Square s = level.getBoard().lookUpSquare(x, y);
 				if (s.isEnabled()) {
 					squareButtons.get(currentSquare).setVisible(true);
 					if (s.hasTile()) {
@@ -350,9 +354,11 @@ public class PuzzleLevelApplication extends JPanel {
 				}
 				
 				currentSquare++;
-				
 			}
 		}
+		
+		objectiveValueLabel.setText(String.valueOf(level.getMoveLimit()));
+		
 	}
 	
 	public JButton getExitButton() {
