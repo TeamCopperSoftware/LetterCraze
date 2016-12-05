@@ -124,48 +124,48 @@ public class Model {
 		getMainLevels().addLevel(l2);
 
 		// Create Level 3
-		squaresArray[0] = new Square(new Position(0,0), true);
-		squaresArray[1] = new Square(new Position(1,0), true);
-		squaresArray[2] = new Square(new Position(2,0), true);
-		squaresArray[3] = new Square(new Position(3,0), true);
-		squaresArray[4] = new Square(new Position(4,0), true);
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("N", 1));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("C", 1));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("R", 1));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("A", 1));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("N", 1));
 		squaresArray[5] = new Square(new Position(5,0), false);
 
-		squaresArray[6] = new Square(new Position(0,1), true);
-		squaresArray[7] = new Square(new Position(1,1), true);
-		squaresArray[8] = new Square(new Position(2,1), true);
-		squaresArray[9] = new Square(new Position(3,1), true);
-		squaresArray[10] = new Square(new Position(4,1), true);
+		squaresArray[6] = new Square(new Position(0,1), true, new Tile("O", 1));
+		squaresArray[7] = new Square(new Position(1,1), true, new Tile("O", 1));
+		squaresArray[8] = new Square(new Position(2,1), true, new Tile("N", 1));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("E", 1));
+		squaresArray[10] = new Square(new Position(4,1), true, new Tile("N", 1));
 		squaresArray[11] = new Square(new Position(5,1), false);
 
-		squaresArray[12] = new Square(new Position(0,2), true);
-		squaresArray[13] = new Square(new Position(1,2), true);
-		squaresArray[14] = new Square(new Position(2,2), true);
-		squaresArray[15] = new Square(new Position(3,2), true);
-		squaresArray[16] = new Square(new Position(4,2), true);
+		squaresArray[12] = new Square(new Position(0,2), true, new Tile("E", 1));
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("I", 1));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("B", 1));
+		squaresArray[15] = new Square(new Position(3,2), true, new Tile("I", 1));
+		squaresArray[16] = new Square(new Position(4,2), true, new Tile("K", 1));
 		squaresArray[17] = new Square(new Position(5,2), false);
 
 		squaresArray[18] = new Square(new Position(0,3), false);
-		squaresArray[19] = new Square(new Position(1,3), true);
-		squaresArray[20] = new Square(new Position(2,3), true);
-		squaresArray[21] = new Square(new Position(3,3), true);
-		squaresArray[22] = new Square(new Position(4,3), true);
+		squaresArray[19] = new Square(new Position(1,3), true, new Tile("L", 1));
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("N", 1));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("K", 1));
+		squaresArray[22] = new Square(new Position(4,3), true, new Tile("M", 1));
 		squaresArray[23] = new Square(new Position(5,3), false);
 
 		squaresArray[24] = new Square(new Position(0,4), false);
-		squaresArray[25] = new Square(new Position(1,4), true);
-		squaresArray[26] = new Square(new Position(2,4), true);
-		squaresArray[27] = new Square(new Position(3,4), true);
-		squaresArray[28] = new Square(new Position(4,4), true);
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("A", 1));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("O", 1));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("U", 1));
+		squaresArray[28] = new Square(new Position(4,4), true, new Tile("P", 1));
 		squaresArray[29] = new Square(new Position(5,4), false);
 
 		squaresArray[30] = new Square(new Position(0,5), false);
 		squaresArray[31] = new Square(new Position(1,5), false);
-		squaresArray[32] = new Square(new Position(2,5), true);
+		squaresArray[32] = new Square(new Position(2,5), true, new Tile("K", 1));
 		squaresArray[33] = new Square(new Position(3,5), false);
 		squaresArray[34] = new Square(new Position(4,5), false);
 		squaresArray[35] = new Square(new Position(5,5), false);
-
+		
 		Board b3 = new Board(squaresArray);
 		Goal g3 = new Goal(3, 4, 5);
 		String theme1 = "Vegetables";
