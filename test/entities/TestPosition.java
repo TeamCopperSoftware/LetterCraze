@@ -6,8 +6,8 @@ public class TestPosition extends TestCase {
 
 	public void testPosValid() {
 		Position pos = new Position(4, 6);
-		assertEquals(pos.row, 4);
-		assertEquals(pos.column, 6);
+		assertEquals(pos.x, 4);
+		assertEquals(pos.y, 6);
 	}
 	
 	public void testPosNotValid() {
