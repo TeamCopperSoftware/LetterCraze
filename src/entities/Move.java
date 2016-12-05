@@ -41,10 +41,11 @@ public class Move {
 	}
 	
 	public boolean isValidMove() {
-		if (WordTable.isWord(word.toString())) {
-			if (word.toString().length() >= 3) { return true; }
+		if (word.isValid()) {
+		//are there any more stipulations? Check if timer has run out/etc.?
+		return true;
 		}
-		return false;
+		else return false;
 	}
 
 }
