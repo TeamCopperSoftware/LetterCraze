@@ -311,7 +311,7 @@ public class ThemeLevelApplication extends JPanel {
 		JList wordsList = new JList();
 		scrollPane.setViewportView(wordsList);
 		wordsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"this", "area", "is", "where", "all", "of", "the", "completed", "words", "will", "go"};
+			String[] values = new String[] {"bean", "corn", "kale", "onion", "pumpkin"};
 			public int getSize() {
 				return values.length;
 			}
