@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import entities.LevelModel;
 import entities.*;
 import playerboundary.Application;
+import playerboundary.LevelApplication;
 
 public class SelectLetterController implements ActionListener {
 	LevelApplication app;
@@ -20,7 +21,7 @@ public class SelectLetterController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JButton[][] buttonList = app.getPuzzleLevelApplication().getButtonList();
+		JButton[][] buttonList = app.getButtonList();
 		int numSelected = 0; // 0 are selected by default
 
 		// Check if any buttons are selected
@@ -203,7 +204,7 @@ public class SelectLetterController implements ActionListener {
 		System.out.println(numSelected);
 	}
 
-	public SelectLetterController(Application app, Model m, int levelNumber, int x, int y) {
+	public SelectLetterController(LevelApplication app, LevelModel m, int levelNumber, int x, int y) {
 		this.app = app;
 		this.model = m;
 		this.levelNumber = levelNumber;

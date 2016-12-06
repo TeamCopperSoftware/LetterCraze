@@ -27,45 +27,17 @@ import javax.swing.ImageIcon;
 
 public class ThemeLevelApplication extends LevelApplication {
 
-	ThemeLevel model;
-	JButton exitButton;
-	ArrayList<JButton> squareButtons;
-	JLabel objectiveValueLabel; // words left
 
 	/**
 	 * Create the panel.
 	 */
 	public ThemeLevelApplication(ThemeLevel m) {
-		
+
 		super(m);
 		titleLabel.setText("Theme - " + m.getTheme());
 		objectiveLabel.setText("Words Left");
-		objectiveValueLabel.setText(String.valueOf(m.get));
+		objectiveValueLabel.setText(String.valueOf(m.getValidWords().size()));
 
-	}
-
-	public void refreshPanel(ThemeLevel level) {
-		int currentSquare = 0;
-		for (int y = 0; y < 6; y++) {
-			for (int x = 0; x < 6; x++) {
-
-				Square s = level.getBoard().lookUpSquare(x, y);
-				if (s.isEnabled()) {
-					squareButtons.get(currentSquare).setVisible(true);
-					if (s.hasTile()) {
-						squareButtons.get(currentSquare).setText(s.tilePeek().toString());
-					}
-				}
-				else {
-					squareButtons.get(currentSquare).setVisible(false);
-				}
-
-				currentSquare++;
-
-			}
-		}
-		
-		objectiveValueLabel.setText(String.valueOf(level.getValidWords().size()));
 	}
 
 	public JButton getExitButton() {

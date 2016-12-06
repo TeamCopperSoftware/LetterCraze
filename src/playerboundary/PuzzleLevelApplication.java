@@ -26,11 +26,6 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 
 public class PuzzleLevelApplication extends LevelApplication {
-
-	PuzzleLevel model;
-	JButton exitButton;
-	JButton[][] squareButtons;
-	JLabel objectiveValueLabel; // displays moves left
 	
 	/**
 	 * Create the panel.

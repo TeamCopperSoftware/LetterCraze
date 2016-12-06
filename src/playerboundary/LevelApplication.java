@@ -149,7 +149,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	}
 
-	public void refreshPanel(PuzzleLevel level) {
+	public void refreshPanel(LevelModel level) {
 
 		// set board
 		int currentSquare = 0;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
-import entities.LevelModel;
+import entities.*;
 import entities.Model;
 import playerboundary.SplashScreenApplication;
 import playercontroller.SplashScreenTimerController;
@@ -29,6 +29,7 @@ public class Application extends JFrame {
 	*/
 	
 	ArrayList<LevelApplication> levelApplications;
+	ArrayList<LevelApplication> customLevelApplications;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -61,17 +62,34 @@ public class Application extends JFrame {
 		customThemeLevelApplication = new ThemeLevelApplication(model);
 		*/
 		levelApplications = new ArrayList<LevelApplication>();
+		customLevelApplications = new ArrayList<LevelApplication>();
+		
+		
 		int numMainLevels = model.getMainLevels().getLevels().size();
 		for (int i = 0; i < numMainLevels; i++) {
 			LevelModel l = model.getMainLevels().getLevels().get(i);
 			if (l.getType().equals("Puzzle")) {
-				levelApplications.add(new PuzzleLevelApplication(l));
+				levelApplications.add(new PuzzleLevelApplication((PuzzleLevel)l));
 			}
 			else if (l.getType().equals("Lightning")) {
-				levelApplications.add(new LightningLevelApplication(l));
+				levelApplications.add(new LightningLevelApplication((LightningLevel)l));
 			}
 			else {
-				levelApplications.add(new ThemeLevelApplication(l));
+				levelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
+			}
+		}
+		
+		int numCustomLevels = model.getCustomLevels().size();
+		for (int i = 0; i < numCustomLevels; i++) {
+			LevelModel l = model.getMainLevels().getLevels().get(i);
+			if (l.getType().equals("Puzzle")) {
+				customLevelApplications.add(new PuzzleLevelApplication((PuzzleLevel)l));
+			}
+			else if (l.getType().equals("Lightning")) {
+				customLevelApplications.add(new LightningLevelApplication((LightningLevel)l));
+			}
+			else {
+				customLevelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
 			}
 		}
 		
@@ -135,6 +153,10 @@ public class Application extends JFrame {
 	
 	public ArrayList<LevelApplication> getLevelApplications() {
 		return levelApplications;
+	}
+	
+	public ArrayList<LevelApplication> getCustomLevelApplications() {
+		return customLevelApplications;
 	}
 
 }

@@ -21,16 +21,16 @@ public class ViewLevelController implements ActionListener {
 		if (level.getIsUnlocked()) {
 			level.initializeLevel();
 			if (level.getType().equals("Puzzle")) {
-				app.getPuzzleLevelApplication().refreshPanel((PuzzleLevel)level);
-				app.setContentPane(app.getPuzzleLevelApplication());
+				app.getLevelApplications().get(levelNumber).refreshPanel((PuzzleLevel)level);
+				app.setContentPane(app.getLevelApplications().get(levelNumber));
 			}
 			else if (level.getType().equals("Lightning")) {
-				app.getLightningLevelApplication().refreshPanel((LightningLevel)level);
-				app.setContentPane(app.getLightningLevelApplication());
+				app.getLevelApplications().get(levelNumber).refreshPanel((LightningLevel)level);
+				app.setContentPane(app.getLevelApplications().get(levelNumber));
 			}
 			else {
-				app.getThemeLevelApplication().refreshPanel((ThemeLevel)level);
-				app.setContentPane(app.getThemeLevelApplication());
+				app.getLevelApplications().get(levelNumber).refreshPanel((ThemeLevel)level);
+				app.setContentPane(app.getLevelApplications().get(levelNumber));
 			}
 		}
 	}

@@ -20,16 +20,16 @@ public class ViewCustomLevelController implements ActionListener {
 		LevelModel level = model.getCustomLevels().get(levelNumber);
 		if (level.getIsUnlocked()) {
 			if (level.getType().equals("Puzzle")) {
-				app.getCustomPuzzleLevelApplication().refreshPanel((PuzzleLevel)level);
-				app.setContentPane(app.getCustomPuzzleLevelApplication());
+				app.getCustomLevelApplications().get(levelNumber).refreshPanel((PuzzleLevel)level);
+				app.setContentPane(app.getCustomLevelApplications().get(levelNumber));
 			}
 			else if (level.getType().equals("Lightning")) {
-				app.getCustomLightningLevelApplication().refreshPanel((LightningLevel)level);
-				app.setContentPane(app.getCustomLightningLevelApplication());
+				app.getCustomLevelApplications().get(levelNumber).refreshPanel((LightningLevel)level);
+				app.setContentPane(app.getCustomLevelApplications().get(levelNumber));
 			}
 			else {
-				app.getCustomThemeLevelApplication().refreshPanel((ThemeLevel)level);
-				app.setContentPane(app.getCustomThemeLevelApplication());
+				app.getCustomLevelApplications().get(levelNumber).refreshPanel((ThemeLevel)level);
+				app.setContentPane(app.getCustomLevelApplications().get(levelNumber));
 			}
 		}
 	}

@@ -81,20 +81,11 @@ public class Main {
 			app.getMapApplication().getLevelButtons().get(i).addActionListener(new ViewLevelController(app, model, i));
 		}
 
-		// set controllers for buttons on PuzzleLevelApplication
-		for (int i = 0; i < 1; i++) {
-			for (int x = 0; x < 6; x++) {
-				for (int y = 0; y < 6; y++) {
-					app.getPuzzleLevelApplication().getButtonList()[x][y].addActionListener(new SelectLetterController(app, model, i, x, y));
-				}
-			}
-		}
-
 		// exit from any main level to Map
-		for (int i = 0; i <)
-		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
-		app.getLightningLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
-		app.getThemeLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+		int numMainLevels = model.getMainLevels().getLevels().size();
+		for (int i = 0; i < numMainLevels; i++) {
+			app.getLevelApplications().get(i).getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+		}
 
 		// get from Custom Level map to any unlocked level
 		int numCustomLevels = model.getCustomLevels().size();
@@ -102,13 +93,23 @@ public class Main {
 			app.getViewCustomLevelsApplication().getLevelButtons().get(i).addActionListener(new ViewCustomLevelController(app, model, i));
 		}
 
-		// get from the first custom level button to the first (nonfunctional) custom puzzle level
-		//app.getViewCustomLevelsApplication().getCustomLevel1Button().addActionListener(new ViewCustomLevelController(app, model, 0));
-
 		// exit from any custom level to Custom Level Map
-		app.getCustomPuzzleLevelApplication().getExitButton().addActionListener(new ViewCustomLevelsController(app, model));
-		app.getCustomLightningLevelApplication().getExitButton().addActionListener(new ViewCustomLevelsController(app, model));
-		app.getCustomThemeLevelApplication().getExitButton().addActionListener(new ViewCustomLevelsController(app, model));
+		for (int i = 0; i < numCustomLevels; i++) {
+			app.getCustomLevelApplications().get(i).getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+		}
+
+		// set controllers for square buttons in LevelApplications
+		for (int i = 0; i < 15; i++) {
+			for (int x = 0; x < 6; x++) {
+				for (int y = 0; y < 6; y++) {
+					app.getLevelApplications().get(i).getButtonList()[x][y].addActionListener(new SelectLetterController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i), i, x, y));
+				}
+			}
+		}
+
+
+
+		
 	}
 
 }
