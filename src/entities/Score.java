@@ -7,22 +7,22 @@ public class Score {
     //int firstStarGoalScore; Score class doesn't need information about goals, we have Goal class for that.
     //int secondStarGoalScore;
     //int thirdStarGoalScore;
-    
+
     public Score() {
         this.star = 0;
         this.numScore = 0;
         //this.firstStarGoalScore = firstStarGoalScore;
         //this.secondStarGoalScore = secondStarGoalScore;
         //this.thirdStarGoalScore = thirdStarGoalScore;
-    
+
     }
-    
-	public int updateScore(int change) {
-		return numScore +=change;
-	}
-	
-	/* Use setStart to update the star value
-	 * LevelModel should be responsible for comparing Score to Goal and updating the stars in Score
+
+    public int updateScore(int change) {
+        return numScore +=change;
+    }
+
+    /* Use setStart to update the star value
+     * LevelModel should be responsible for comparing Score to Goal and updating the stars in Score
 	public int updateStar() {
 		if(numScore >= thirdStarGoalScore) {
 			star = 3; 
@@ -38,7 +38,7 @@ public class Score {
 		}
 		return star;
 	}
-	*/
+     */
 
     public int getStar () {
         return star;
@@ -48,7 +48,7 @@ public class Score {
         return numScore;
     }
 
-    
+
     public void setStar (int n) {
         star = n;
     }
@@ -56,5 +56,5 @@ public class Score {
     public void setScore (int n) {
         numScore = n;
     }
-  
+
 }
