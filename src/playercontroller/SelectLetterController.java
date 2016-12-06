@@ -16,8 +16,7 @@ public class SelectLetterController implements ActionListener {
 	Model model;
 	int x;
 	int y;
-	//PuzzleLevel level = (PuzzleLevel)model.getMainLevels().getLevels().get(1);
-	Word currentWord;
+	int levelNumber;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -31,33 +30,45 @@ public class SelectLetterController implements ActionListener {
 					numSelected++;
 				} 
 			}
-
+		}
+		
+		// If the button has no tile, do nothing
+		if (model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y).hasTile() == false) {
+			System.out.println("There's no tile here!");
+			return;
 		}
 
 		// If the button is selected, deselect it
 		if (buttonList[x][y].getBackground().equals(Color.YELLOW)) {
 			buttonList[x][y].setBackground(Color.WHITE);
+			numSelected--;
 			return;
 		}
 
 		// User should be able to select a button if none are selected (selecting first letter of a word)
 		// In the case that no buttons are selected and there are no buttons selected...
 		if (numSelected == 0) {
-			buttonList.get(buttonNumber).setBackground(Color.YELLOW);
-			currentWord = new Word(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y))
+			buttonList[x][y].setBackground(Color.YELLOW);
+			model.getMainLevels().getLevels().get(0).getBoard().setWord(new Word(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y)));
+			numSelected++;
+			System.out.println(model.getMainLevels().getLevels().get(0).getBoard().getWord());
+			System.out.println(numSelected);
+			return;
 		}
 
 		// If at least one letter is selected, we need to check if it has a neighbor that is selected
 		if (numSelected > 0) {
 
 			// top left corner
-			if (buttonNumber == 0) { 
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber + 1).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 6).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 7).getBackground().equals(Color.YELLOW)) ) {
+			if (x == 0 && y == 0) { 
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x+1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y+1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x+1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 
 				}
@@ -65,88 +76,103 @@ public class SelectLetterController implements ActionListener {
 			} 
 
 			// left side
-			else if ((buttonNumber == 6) || (buttonNumber == 12) || (buttonNumber == 18) || (buttonNumber == 24)) {
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber + 1).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 6).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 6).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 7).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 5).getBackground().equals(Color.YELLOW)) ) {
+			else if ((x == 0) && (y > 0) && (y < 5)) {
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x+1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x][y+1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x+1][y+1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 				}
 			}
 
 			// bottom left corner
-			else if ((buttonNumber == 30)) {
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber + 1).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 6).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber - 5).getBackground().equals(Color.YELLOW)) ) {
+			else if ((x == 5) && (y == 5)) {
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x+1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 				} 
 			}
 
 			// bottom
-			else if ((buttonNumber == 31) || (buttonNumber == 32) || (buttonNumber == 33) || (buttonNumber == 34)) {
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber - 1).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 1).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 6).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 7).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 5).getBackground().equals(Color.YELLOW)) ) {
+			else if ((y == 5) && (x > 0) && (x < 5)) {
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x-1][y].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x+1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x-1][y-1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 				} 
 			}
 
 			// bottom right corner
-			else if (buttonNumber == 35) {
-				if (       (buttonList.get(buttonNumber - 1).getBackground().equals(Color.YELLOW))
-						|| (buttonList.get(buttonNumber - 6).getBackground().equals(Color.YELLOW))
-						|| (buttonList.get(buttonNumber - 7).getBackground().equals(Color.YELLOW)) ) {
+			else if ((x == 5) && (y == 5)) {
+				if (       (buttonList[x-1][y].getBackground().equals(Color.YELLOW))
+						|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW))
+						|| (buttonList[x-1][y-1].getBackground().equals(Color.YELLOW)) ) {
 					// change button to selected
-					buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+					buttonList[x][y].setBackground(Color.YELLOW);
+					model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+					numSelected++;
 				}
 			}
 
 			// right side
-			else if ((buttonNumber == 11) || (buttonNumber == 17) || (buttonNumber == 23) || (buttonNumber == 29)) {
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber - 1).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 6).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 6).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 7).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 5).getBackground().equals(Color.YELLOW)) ) {
+			else if ((x == 5) && (y > 0) && (y < 5)) {
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x-1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x][y+1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x-1][y-1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 				}
 			}
 
 			// top right corner 
-			else if (buttonNumber == 5) {
-				if (       (buttonList.get(buttonNumber - 1).getBackground().equals(Color.YELLOW)) 
-						|| (buttonList.get(buttonNumber + 6).getBackground().equals(Color.YELLOW))
-						|| (buttonList.get(buttonNumber + 5).getBackground().equals(Color.YELLOW)) ) {
+			else if ((x == 5) && (y == 0)) {
+				if (       (buttonList[x-1][y].getBackground().equals(Color.YELLOW)) 
+						|| (buttonList[x][y+1].getBackground().equals(Color.YELLOW))
+						|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 					// change button to selected
-					buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+					buttonList[x][y].setBackground(Color.YELLOW);
+					model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+					numSelected++;
 				}
 			}
 
-			else if ((buttonNumber == 1) || (buttonNumber == 2) || (buttonNumber == 3) || (buttonNumber == 4)) {
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber - 1).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 1).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 6).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 7).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 5).getBackground().equals(Color.YELLOW)) ) {
+			// top
+			else if ((y == 0) && (x > 0) && (x < 5)) {
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x-1][y].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x+1][y].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x][y+1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x+1][y+1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 				}
 			}
@@ -154,27 +180,33 @@ public class SelectLetterController implements ActionListener {
 			// if the button is anywhere on inside
 			else { 
 				// check all surrounding buttons
-				if (buttonList.get(buttonNumber).getBackground().equals(Color.WHITE)) {
-					if (       (buttonList.get(buttonNumber - 1).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 1).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 6).getBackground().equals(Color.YELLOW)) 
-							|| (buttonList.get(buttonNumber + 6).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 7).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 7).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber - 5).getBackground().equals(Color.YELLOW))
-							|| (buttonList.get(buttonNumber + 5).getBackground().equals(Color.YELLOW)) ) {
+				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
+					if (       (buttonList[x+1][y+1].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x+1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y+1].getBackground().equals(Color.YELLOW)) 
+							|| (buttonList[x-1][y-1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x-1][y].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW))
+							|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
-						buttonList.get(buttonNumber).setBackground(Color.YELLOW);
+						buttonList[x][y].setBackground(Color.YELLOW);
+						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						numSelected++;
 					}
 				}
 			}
 
 		}
+
+		System.out.println(model.getMainLevels().getLevels().get(0).getBoard().getWord());
+		System.out.println(numSelected);
 	}
 
-	public SelectLetterController(Application app, Model m, int x, int y) {
+	public SelectLetterController(Application app, Model m, int levelNumber, int x, int y) {
 		this.app = app;
 		this.model = m;
+		this.levelNumber = levelNumber;
 		this.x = x;
 		this.y = y;
 	}

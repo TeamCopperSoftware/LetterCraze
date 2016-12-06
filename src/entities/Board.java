@@ -74,5 +74,13 @@ public class Board {
         	}
         }
     }
+    
+    public Word getWord() {
+    	return currentWord;
+    }
+    
+    public void setWord(Word word) {
+    	this.currentWord = word;
+    }
 
 }

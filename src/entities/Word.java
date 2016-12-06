@@ -15,7 +15,7 @@ public class Word {
     }
     
 
-    void appendSquare (Square s) {
+    public void appendSquare (Square s) {
         squares.add(s);
         letters += (s.tilePeek().toString()); 
     }
