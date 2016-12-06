@@ -65,8 +65,8 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), false);
 
 		Board b1 = new Board(squaresArray);
-		Goal g1 = new Goal(1000, 2000, 3000);
-		int moveLimit = 10;
+		Goal g1 = new Goal(50, 100, 150);
+		int moveLimit = 3;
 
 		PuzzleLevel l1 = new PuzzleLevel(b1, g1, moveLimit);
 		l1.isUnlocked = true; // first three levels should be unlocked
@@ -116,7 +116,7 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), true);
 
 		Board b2 = new Board(squaresArray);
-		Goal g2 = new Goal(1000, 2000, 3000);
+		Goal g2 = new Goal(50, 100, 150);
 		int timeLimit1 = 120; // seconds?
 
 		LightningLevel l2 = new LightningLevel(b2, g2, timeLimit1);

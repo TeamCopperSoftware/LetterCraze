@@ -40,17 +40,17 @@ public abstract class LevelModel {
      */
     public void initializeLevel() {
     	initializeWordTable();
-        resetBoard();
+        resetLevel();
     }
     
     /**
      * called whenever player hits reset button, or level is initialized
      */
-    void resetBoard() {
+    public void resetLevel() {
     	board.reset(); // reset board
     	currentScore = new Score(); // set currentScore to 0;
     	history.clear(); // clear move history
-    	
+    	wordList.clear();
     }
     
     /**

@@ -202,5 +202,13 @@ public abstract class LevelApplication extends JPanel {
 	public LevelModel getLevelModel() {
 		return model;
 	}
+	
+	public JLabel getObjectiveValueLabel() {
+		return objectiveValueLabel;
+	}
+	
+	public int getObjectiveValue() {
+		return Integer.parseInt(objectiveValueLabel.getText());
+	}
 
 }

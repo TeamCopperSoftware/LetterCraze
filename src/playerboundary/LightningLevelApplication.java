@@ -39,7 +39,10 @@ public class LightningLevelApplication extends LevelApplication {
 		titleLabel.setText("Lightning");
 		objectiveLabel.setText("Time Left");
 		this.timer = t;
+		objectiveValueLabel.setText(String.valueOf(m.getTimeLimit()));
 		
+		// leaving this here in case we want to format it differently
+		/*
 		int minutes = m.getTimeLimit()/60;
 		int seconds = m.getTimeLimit()%60;
 		if (seconds < 10) {
@@ -48,6 +51,7 @@ public class LightningLevelApplication extends LevelApplication {
 		else {
 			objectiveValueLabel.setText((m.getTimeLimit()/60) + ":" + m.getTimeLimit()%60);
 		}
+		*/
 	}
 	
 	@Override

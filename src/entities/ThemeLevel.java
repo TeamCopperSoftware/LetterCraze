@@ -22,7 +22,7 @@ public class ThemeLevel extends LevelModel {
     }
     
     @Override
-    void resetBoard() {
+    public void resetLevel() {
     	this.board = startingBoard;
     	currentScore = new Score(); // set currentScore to 0;
     	history.clear(); // clear move history

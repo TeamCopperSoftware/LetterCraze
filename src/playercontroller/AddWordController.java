@@ -5,10 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import entities.*;
+import playerboundary.Application;
 import playerboundary.LevelApplication;
 
 public class AddWordController implements ActionListener {
-	LevelApplication app;
+	Application topLevelApp;
+	LevelApplication level;
 	public LevelModel model;
 
 	public void actionPerformed(ActionEvent ae) {
@@ -20,16 +22,44 @@ public class AddWordController implements ActionListener {
 			model.pushToHistory(move);
 			
 			// add word to list of found words
-			app.getListModel().addElement(wordObject.toString());
+			level.getListModel().addElement(wordObject.toString());
 			
 			// decrement objectiveView if it is puzzle
 			if (model.getType().equals("Puzzle")) {
-				app.updateObjectiveValue(-1);
+				level.updateObjectiveValue(-1);
+				int currentLabel = level.getObjectiveValue();
+				if (currentLabel == 0) {
+					model.exitLevel();
+					// reset levelModel
+					model.resetLevel();
+					// reset application views
+					PuzzleLevel thisLevel = (PuzzleLevel)(model);
+					thisLevel.resetMovesDone();
+					level.resetObjectiveValue(thisLevel.getMoveLimit());
+					level.clearList();
+					// return to mainmenu
+					topLevelApp.getMapApplication().refreshPanel();
+					topLevelApp.setContentPane(topLevelApp.getMapApplication());
+				}
 			}
 
 			// decrement objectiveView if it is theme
 			if (model.getType().equals("Theme")) {
-				app.updateObjectiveValue(-1);
+				level.updateObjectiveValue(-1);
+				int currentLabel = level.getObjectiveValue();
+				if (currentLabel == 0) {
+					model.exitLevel();
+					// reset levelModel
+					model.resetLevel();
+					// reset application views
+					ThemeLevel thisLevel = (ThemeLevel)(model);
+					//TODO
+					level.resetObjectiveValue(thisLevel.getWordList().size());
+					level.clearList();
+					// return to main menu
+					topLevelApp.getMapApplication().refreshPanel();
+					topLevelApp.setContentPane(topLevelApp.getMapApplication());
+				}
 			}
 			
 			// (HACK) set the current word to a placeholder that isn't valid
@@ -38,12 +68,13 @@ public class AddWordController implements ActionListener {
 		}
 
 		// refresh board and update numScore
-		app.refreshPanel(model);
+		level.refreshPanel(model);
 
 	}
 
-	public AddWordController(LevelApplication app, LevelModel model) {
-		this.app = app;
+	public AddWordController(Application topLevelApp, LevelApplication level, LevelModel model) {
+		this.topLevelApp = topLevelApp;
+		this.level = level;
 		this.model = model;
 	}
 

@@ -113,7 +113,7 @@ public class Main {
 		
 		// set controllers for add word buttons in LevelApplications
 		for (int i = 0; i < 15; i++) {
-			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
 		}
 
 		// set controllers for square buttons in customLevelApplications
