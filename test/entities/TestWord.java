@@ -8,7 +8,7 @@ public class TestWord extends TestCase {
 		Position p1 = new Position(2, 1);
 		Tile t1 = new Tile("y", 7);
 		Square s1 = new Square(p1, true, t1);
-		assertEquals(s1.tile.toString(), "y");
+		assertEquals(s1.tile.toString(), "Y");
 		
 		Position p2 = new Position(2, 2);
 		Tile t2 = new Tile("e", 3);
@@ -21,7 +21,7 @@ public class TestWord extends TestCase {
 		Word word = new Word(s1);
 		word.appendSquare(s2);
 		word.appendSquare(s3);
-		assertEquals(word.toString(), "yes");
+		assertEquals(word.toString(), "YES");
 		assertTrue(word.isValid());
 	}
 	
@@ -36,7 +36,7 @@ public class TestWord extends TestCase {
 				
 		Word word = new Word(s1);
 		word.appendSquare(s2);
-		assertEquals(word.toString(), "no");
+		assertEquals(word.toString(), "NO");
 		assertFalse(word.isValid());
 	}
 }
