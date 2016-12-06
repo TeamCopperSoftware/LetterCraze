@@ -14,12 +14,18 @@ public class Word {
     	if (s.getTile() != null) {
     		appendSquare(s);
     	}
+    	value = s.tilePeek().getPoints();
     }
     
 
     public void appendSquare (Square s) {
         squares.add(s);
-        letters += (s.tilePeek().toString()); 
+        letters += (s.tilePeek().toString());
+        value = 0;
+        for (int i = 0; i < squares.size(); i++) {
+        	value += squares.get(i).tilePeek().getPoints();
+        }
+        value = value * (squares.size()-2);
     }
     
     public String toString () {
