@@ -53,6 +53,17 @@ public abstract class LevelModel {
     	
     }
     
+    /**
+     * called whenever player requests to leave level or level is over
+     * updates best score if current score is better
+     */
+    public void exitLevel() {
+    	if (currentScore.getScore() > bestScore.getScore()) {
+    		bestScore.setScore(currentScore.getScore());
+    		bestScore.setStar(currentScore.getStar());
+    	}
+    }
+    
     boolean undoMove() {
         return false;
     }

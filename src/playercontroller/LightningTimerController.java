@@ -19,6 +19,8 @@ public class LightningTimerController implements ActionListener {
 		if(l.getTimeLeft() == 0)
         {
             l.getTimer().stop();
+            l.getLevelModel().exitLevel();
+            app.getMapApplication().refreshPanel();
             app.setContentPane(app.getMapApplication());
         }
         else

@@ -196,5 +196,9 @@ public abstract class LevelApplication extends JPanel {
 	public JButton getUndoButton() {
 		return undoButton;
 	}
+	
+	public LevelModel getLevelModel() {
+		return model;
+	}
 
 }
