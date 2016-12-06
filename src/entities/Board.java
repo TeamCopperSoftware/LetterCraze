@@ -4,7 +4,7 @@ public class Board {
 
     //Hashtable<Position, Square> squares;
     Square[][] squares;
-    Word currentWord;
+    Word currentWord;  //TODO: Never used anywhere???
 
     public Board () {
     }
@@ -46,7 +46,9 @@ public class Board {
         return sq.tilePop();
     }
     
-    
+    /**
+     * floats tiles up and repopulates empty squares with random generated tiles
+     */
     void repopulate () {
     	// Iterate over every square on board (except bottom row)
     	// don't need to check bottom squares because we know they don't have squares beneath them to take tiles from
@@ -54,16 +56,18 @@ public class Board {
         	for (int x = 0; x < 6; x++) {
         		// if square is enabled but doesn't have tile iterate over the squares underneath it
         		if (squares[x][y].enabled && !squares[x][y].hasTile()) {
-        			for (int y2 = y; y2 < 6; y2++) {
+        			for (int y2 = y+1; y2 < 6; y2++) {
         				// if lower square is enabled and has a tile, remove it and add it to 1st square
         				if(squares[x][y2].enabled && squares[x][y2].hasTile()) {
         					Tile t = squares[x][y2].tilePop();
         					squares[x][y].tileAdd(t);
+        					break;
         				}
         			}
         		}
         	}
         }
+        
         // Iterate over every square on board
         for (int y = 0; y < 6; y++) {
         	for (int x = 0; x < 6; x++) {
@@ -81,6 +85,20 @@ public class Board {
     
     public void setWord(Word word) {
     	this.currentWord = word;
+    }
+    	
+    /**
+     * generates a new tile for each square on the board
+     */
+    void reset() {
+    	// Iterate over every square on board
+        for (int y = 0; y < 6; y++) {
+        	for (int x = 0; x < 6; x++) {
+        		if (squares[x][y].enabled) {
+        			squares[x][y].generateRandomTile();	
+        		}
+        	}
+        }
     }
 
 }
