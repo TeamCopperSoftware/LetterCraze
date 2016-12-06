@@ -64,7 +64,7 @@ public class AddWordController implements ActionListener {
 			
 			// (HACK) set the current word to a placeholder that isn't valid
 			// this is to make sure you can't keep playing the same word without making a new selection
-			model.getBoard().setWord(new Word(new Square(new Position(0, 0), false, new Tile("", 0))));
+			model.getBoard().setWord(new Word(new Square(new Position(0, 0), false, new Tile(""))));
 		}
 
 		// refresh board and update numScore

@@ -44,14 +44,7 @@ public class Word {
     }
     
     public int getScore() {
-    	int score = 0;
-    	if (squares.size() < 1) {
-    		return 0;
-    	}
-    	for (int i = 0; i < squares.size(); i++) {
-    		score += squares.get(i).getTile().getPoints();
-    	}
-    	return score;
+    	return value;
     }
 
 }
