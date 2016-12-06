@@ -18,6 +18,8 @@ public abstract class LevelApplication extends JPanel {
 	DefaultListModel<String> listModel; // keeps element of list
 	JList<String> wordsList;
 	JScrollPane scrollPane;
+	JButton resetButton;
+	JButton undoButton;
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -99,11 +101,11 @@ public abstract class LevelApplication extends JPanel {
 		wordsLabel.setBounds(15, 130, 170, 16);
 		rightPanel.add(wordsLabel);
 		
-		JButton resetButton = new JButton("Reset");
+		resetButton = new JButton("Reset");
 		resetButton.setBounds(120, 525, 70, 29);
 		rightPanel.add(resetButton);
 		
-		JButton undoButton = new JButton("Undo");
+		undoButton = new JButton("Undo");
 		undoButton.setBounds(10, 525, 70, 29);
 		rightPanel.add(undoButton);
 		
@@ -181,6 +183,18 @@ public abstract class LevelApplication extends JPanel {
 		int currentValue = Integer.parseInt(objectiveValueLabel.getText());
 		int newValue = (currentValue + change);
 		objectiveValueLabel.setText(String.valueOf(newValue));
+	}
+	
+	public void resetObjectiveValue(int resetTo) {
+		objectiveValueLabel.setText(String.valueOf(resetTo));
+	}
+	
+	public JButton getResetButton() {
+		return resetButton;
+	}
+	
+	public JButton getUndoButton() {
+		return undoButton;
 	}
 
 }
