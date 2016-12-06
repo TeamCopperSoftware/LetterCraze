@@ -125,6 +125,11 @@ public class Main {
 			}
 		}
 		
+		// set controllers for reset buttons on main levels
+		for (int i = 0; i < numMainLevels; i++) {
+			app.getLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
+		
 	}
 
 }

@@ -14,5 +14,13 @@ public class PuzzleLevel extends LevelModel {
     public int getMoveLimit() {
         return moveLimit;
     }
+    
+    public int getMovesDone() {
+    	return movesDone;
+    }
+    
+    public void resetMovesDone() {
+    	movesDone = 0;
+    }
 
 }
