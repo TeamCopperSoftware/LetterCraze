@@ -100,6 +100,14 @@ public abstract class LevelModel {
     public void popFromHistory(Move move) {
     	history.pop();
     }
+    
+    public void unlock() {
+        isUnlocked = true;
+    }
+    
+    public boolean getLockStatus() {
+        return isUnlocked;
+    }
 
     
 }
