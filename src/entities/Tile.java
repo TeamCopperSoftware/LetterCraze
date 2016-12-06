@@ -1,13 +1,15 @@
 package entities;
 
+import java.util.HashMap;
+
 public class Tile {
 
     String letter;
     int value;
 
-    public Tile (String letter, int value) {
+    public Tile (String letter) {
         this.letter = letter.toUpperCase();
-        this.value = value;
+        this.value = LetterInfo.getLetterValue(letter);
     }
 
     public String toString () {
