@@ -6,12 +6,12 @@ public class Tile {
     int value;
 
     public Tile (String letter, int value) {
-        this.letter = letter;
+        this.letter = letter.toUpperCase();
         this.value = value;
     }
 
     public String toString () {
-        return letter;
+        return letter.toUpperCase();
     }
 
     public int getPoints() {
