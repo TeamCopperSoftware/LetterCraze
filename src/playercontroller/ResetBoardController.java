@@ -31,8 +31,6 @@ public class ResetBoardController implements ActionListener {
 		}
 		// if it is lightning
 		if (m.getType().equals("Lightning")) {
-			LightningLevel thisLevel2 = (LightningLevel)(m);
-			app.resetObjectiveValue(thisLevel2.getTimeLimit());
 			app.refreshPanel(m);
 		}
 		// if it is theme

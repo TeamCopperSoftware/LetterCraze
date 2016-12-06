@@ -5,7 +5,7 @@ import entities.LightningLevel;
 import entities.Model;
 import entities.PuzzleLevel;
 import entities.ThemeLevel;
-import playerboundary.Application;
+import playerboundary.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,8 +25,11 @@ public class ViewLevelController implements ActionListener {
 				app.setContentPane(app.getLevelApplications().get(levelNumber));
 			}
 			else if (level.getType().equals("Lightning")) {
-				app.getLevelApplications().get(levelNumber).refreshPanel((LightningLevel)level);
-				app.setContentPane(app.getLevelApplications().get(levelNumber));
+				LightningLevelApplication l = (LightningLevelApplication)app.getLevelApplications().get(levelNumber);
+				l.refreshPanel((LightningLevel)level);
+				l.initializeTimeLeft();
+				l.getTimer().start();
+				app.setContentPane(l);
 			}
 			else {
 				app.getLevelApplications().get(levelNumber).refreshPanel((ThemeLevel)level);
