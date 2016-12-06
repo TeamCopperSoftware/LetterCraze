@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 
 import entities.*;
 import entities.Model;
@@ -11,7 +12,7 @@ import playerboundary.SplashScreenApplication;
 import playercontroller.SplashScreenTimerController;
 
 public class Application extends JFrame {
-	
+
 	Model model;
 
 	// All the other views should be stored as properties here
@@ -26,8 +27,8 @@ public class Application extends JFrame {
 	PuzzleLevelApplication customPuzzleLevelApplication;
 	LightningLevelApplication customLightningLevelApplication;
 	ThemeLevelApplication customThemeLevelApplication;
-	*/
-	
+	 */
+
 	ArrayList<LevelApplication> levelApplications;
 	ArrayList<LevelApplication> customLevelApplications;
 
@@ -35,8 +36,8 @@ public class Application extends JFrame {
 	int displayTime;
 	// Timer for determining how long splash screen should be displayed
 	Timer splashScreenTimer;
-	
-	
+
+
 	/**
 	 * Create the frame.
 	 */
@@ -45,9 +46,9 @@ public class Application extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		setTitle("LetterCraze Player");
-		
+
 		this.model = model;
-		
+
 		// initialize views
 		splashScreen = new SplashScreenApplication(model);
 		mainMenu = new InitializeGameApplication(model);
@@ -60,11 +61,11 @@ public class Application extends JFrame {
 		customPuzzleLevelApplication = new PuzzleLevelApplication(model);
 		customLightningLevelApplication = new LightningLevelApplication(model);
 		customThemeLevelApplication = new ThemeLevelApplication(model);
-		*/
+		 */
 		levelApplications = new ArrayList<LevelApplication>();
 		customLevelApplications = new ArrayList<LevelApplication>();
-		
-		
+
+
 		int numMainLevels = model.getMainLevels().getLevels().size();
 		for (int i = 0; i < numMainLevels; i++) {
 			LevelModel l = model.getMainLevels().getLevels().get(i);
@@ -78,7 +79,7 @@ public class Application extends JFrame {
 				levelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
 			}
 		}
-		
+
 		int numCustomLevels = model.getCustomLevels().size();
 		for (int i = 0; i < numCustomLevels; i++) {
 			LevelModel l = model.getMainLevels().getLevels().get(i);
@@ -92,69 +93,69 @@ public class Application extends JFrame {
 				customLevelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
 			}
 		}
-		
+
 		// display splash screen for 4 seconds
 		displayTime = 4;
-        splashScreenTimer = new Timer(1000, new SplashScreenTimerController(this, this.model));
-        splashScreenTimer.start();
+		splashScreenTimer = new Timer(1000, new SplashScreenTimerController(this, this.model));
+		splashScreenTimer.start();
 		this.setContentPane(splashScreen);
-		
+
 	}
-	
+
 	public int getDisplayTime() {
 		return displayTime;
 	}
-	
+
 	public Timer getSplashScreenTimer() {
 		return splashScreenTimer;
 	}
-	
+
 	public void decrementDisplayTime() {
 		displayTime--;
 	}
-	
+
 	public InitializeGameApplication getMainMenu() {
 		return mainMenu;
 	}
-	
+
 	public MapApplication getMapApplication() {
 		return mapMenu;
 	}
-	
+
 	public ViewCustomLevelsApplication getViewCustomLevelsApplication() {
 		return customMenu;
 	}
-	
+
 	/*
 	public PuzzleLevelApplication getPuzzleLevelApplication() {
 		return puzzleLevelApplication;
 	}
-	
+
 	public LightningLevelApplication getLightningLevelApplication() {
 		return lightningLevelApplication;
 	}
-	
+
 	public ThemeLevelApplication getThemeLevelApplication() {
 		return themeLevelApplication;
 	}
-	
+
 	public PuzzleLevelApplication getCustomPuzzleLevelApplication() {
 		return customPuzzleLevelApplication;
 	}
-	
+
 	public LightningLevelApplication getCustomLightningLevelApplication() {
 		return customLightningLevelApplication;
 	}
-	
+
 	public ThemeLevelApplication getCustomThemeLevelApplication() {
 		return customThemeLevelApplication;
 	}
-	*/
-	
+	 */
+
 	public ArrayList<LevelApplication> getLevelApplications() {
 		return levelApplications;
 	}
-	
+
 	public ArrayList<LevelApplication> getCustomLevelApplications() {
 		return customLevelApplications;
 	}

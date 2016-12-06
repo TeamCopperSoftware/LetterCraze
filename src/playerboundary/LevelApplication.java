@@ -2,30 +2,22 @@ package playerboundary;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.AbstractListModel;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
-
-import entities.LevelModel;
-import entities.PuzzleLevel;
-import entities.Square;
+import javax.swing.*;
+import entities.*;
 
 public abstract class LevelApplication extends JPanel {
 	
 	LevelModel model;
 	JButton exitButton;
+	JButton confirmButton;
 	JButton[][] squareButtons;
 	JLabel titleLabel;
+	JLabel scoreLabel;
 	JLabel objectiveLabel;
 	JLabel objectiveValueLabel; // displays moves left
+	DefaultListModel<String> listModel; // keeps element of list
+	JList<String> wordsList;
+	JScrollPane scrollPane;
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -53,6 +45,7 @@ public abstract class LevelApplication extends JPanel {
 				b.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 				b.setBounds(120+(x*60), 120+(y*60), 60, 60);
 				b.setOpaque(true);
+				b.setBorderPainted(false);
 				b.setBackground(Color.WHITE);
 				squareButtons[x][y] = b;
 				leftPanel.add(b);
@@ -60,7 +53,7 @@ public abstract class LevelApplication extends JPanel {
 		}
 		
 		
-		JLabel scoreLabel = new JLabel("Score: 3333");
+		scoreLabel = new JLabel("0");
 		scoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		scoreLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
 		scoreLabel.setBounds(50, 520, 508, 16);
@@ -95,7 +88,7 @@ public abstract class LevelApplication extends JPanel {
 		objectiveLabel.setBounds(6, 40, 188, 16);
 		rightPanel.add(objectiveLabel);
 		
-		objectiveValueLabel = new JLabel("");
+		objectiveValueLabel = new JLabel("0");
 		objectiveValueLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 24));
 		objectiveValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveValueLabel.setBounds(6, 60, 188, 40);
@@ -107,52 +100,28 @@ public abstract class LevelApplication extends JPanel {
 		rightPanel.add(wordsLabel);
 		
 		JButton resetButton = new JButton("Reset");
-		resetButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		resetButton.setBounds(120, 560, 70, 29);
+		resetButton.setBounds(120, 525, 70, 29);
 		rightPanel.add(resetButton);
 		
 		JButton undoButton = new JButton("Undo");
-		undoButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		undoButton.setBounds(10, 560, 70, 29);
+		undoButton.setBounds(10, 525, 70, 29);
 		rightPanel.add(undoButton);
 		
-		JScrollPane scrollPane = new JScrollPane();
+		listModel = new DefaultListModel<String>();
+		wordsList = new JList<String>(listModel);
+		scrollPane = new JScrollPane(wordsList);
+		scrollPane.setViewportView(wordsList);
 		scrollPane.setBounds(15, 150, 170, 360);
 		rightPanel.add(scrollPane);
 		
-		JList wordsList = new JList();
-		scrollPane.setViewportView(wordsList);
-		wordsList.setModel(new AbstractListModel() {
-			String[] values = new String[] {"this", "area", "is", "where", "all", "of", "the", "completed", "words", "will", "go"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		
-		JButton confirmButton = new JButton("Confirm");
-		confirmButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		confirmButton.setBounds(63, 520, 70, 29);
-		rightPanel.add(confirmButton);
-
-	
+		confirmButton = new JButton("Add word");
+		confirmButton.setBounds(470, 20, 110, 29);
+		leftPanel.add(confirmButton);
 	}
 
 	public void refreshPanel(LevelModel level) {
 
 		// set board
-		int currentSquare = 0;
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 
@@ -166,11 +135,18 @@ public abstract class LevelApplication extends JPanel {
 				else {
 					squareButtons[x][y].setVisible(false);
 				}
-
-				currentSquare++;
 			}
 		}
-
+		
+		// update score
+		scoreLabel.setText(String.valueOf(level.getCurrentScore().getScore()));
+		
+		// deselect panels
+		for (int x = 0; x < 6; x++) {
+			for (int y = 0; y < 6; y++) {
+				squareButtons[x][y].setBackground(Color.WHITE);
+			}
+		}
 	}
 	
 	public JButton getExitButton() {
@@ -179,6 +155,32 @@ public abstract class LevelApplication extends JPanel {
 	
 	public JButton[][] getButtonList() {
 		return squareButtons;
+	}
+	
+	public JButton getConfirmButton() {
+		return confirmButton;
+	}
+	
+	public void deselectButtons() {
+		for (int x = 0; x < 6; x++) {
+			for (int y = 0; y < 6; y++) {
+				squareButtons[x][y].setBackground(Color.WHITE);
+			}
+		}
+	}
+	
+	public DefaultListModel<String> getListModel() {
+		return listModel;
+	}
+	
+	public void clearList() {
+		listModel.clear();
+	}
+	
+	public void updateObjectiveValue(int change) {
+		int currentValue = Integer.parseInt(objectiveValueLabel.getText());
+		int newValue = (currentValue + change);
+		objectiveValueLabel.setText(String.valueOf(newValue));
 	}
 
 }

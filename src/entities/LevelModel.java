@@ -3,6 +3,8 @@ package entities;
 import java.io.IOException;
 import java.util.Stack;
 
+import javax.swing.DefaultListModel;
+
 public abstract class LevelModel {
     
     Board board;
@@ -12,6 +14,7 @@ public abstract class LevelModel {
     Score bestScore, currentScore;
     Boolean isUnlocked;
     String type;
+    DefaultListModel<String> wordList;
     
     LevelModel(Board b, Goal g, String type) {
         this.board = b;
@@ -21,7 +24,7 @@ public abstract class LevelModel {
         isUnlocked = false;
         this.type = type;
         history = new Stack<Move>();
-        
+        wordList = new DefaultListModel<String>();  
     }
     
     void initializeWordTable() {
@@ -30,14 +33,6 @@ public abstract class LevelModel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    }
-    
-    void removeWord() {
-    	// Not sure at all if this is correct 
-        Move m = new Move(board.currentWord, this);
-        if (m.doMove()) {
-        	history.push(m);
-        }
     }
     
     /**
@@ -78,8 +73,33 @@ public abstract class LevelModel {
     	return bestScore;
     }
     
+    public Score getCurrentScore() {
+    	return currentScore;
+    }
+    
     public Board getBoard() {
     	return board;
     }
+    
+    public DefaultListModel<String> getWordList() {
+    	return wordList;
+    }
+    
+    public Goal getGoals() {
+    	return goals;
+    }
+    
+    public int getHistorySize() {
+    	return history.size();
+    }
+    
+    public void pushToHistory(Move move) {
+    	history.push(move);
+    }
+    
+    public void popFromHistory(Move move) {
+    	history.pop();
+    }
+
     
 }

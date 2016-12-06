@@ -20,5 +20,6 @@ public class LightningLevel extends LevelModel {
     }
     
     
+    
 
 }

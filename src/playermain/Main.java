@@ -3,6 +3,8 @@ package playermain;
 import java.awt.EventQueue;
 import java.util.Hashtable;
 
+import javax.swing.UIManager;
+
 import playerboundary.Application;
 import playercontroller.*;
 import entities.Model;
@@ -25,6 +27,8 @@ public class Main {
 				try {
 					Main window = new Main();
 					window.app.setVisible(true);
+					// set feel to crossplatform (same for mac and pc)
+					UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -106,9 +110,11 @@ public class Main {
 				}
 			}
 		}
-
-
-
+		
+		// set controllers for add word buttons in LevelApplications
+		for (int i = 0; i < 15; i++) {
+			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
 		
 	}
 

@@ -18,12 +18,12 @@ public class Board {
         }
     }
     
-    Square makeSquare (int x, int y) {
+    public Square makeSquare (int x, int y) {
         //TODO Need a check to ensure new pos is valid
         return makeSquare (new Position(x, y));
     }
 
-    Square makeSquare (Position pos) {
+    public Square makeSquare (Position pos) {
     	//TODO Need a check to ensure new pos is valid
         return new Square(pos, true);
     }
@@ -36,20 +36,20 @@ public class Board {
         return lookUpSquare(pos.getX(), pos.getY());
     }
     
-    void removeWord (Word w) {
+    public void removeWord (Word w) {
         for (int i = 0; i < w.toString().length(); i++) {
             removeTile(w.getSquares().get(i));
         }
     }
     
-    Tile removeTile (Square sq) {
+    public Tile removeTile (Square sq) {
         return sq.tilePop();
     }
     
     /**
      * floats tiles up and repopulates empty squares with random generated tiles
      */
-    void repopulate () {
+    public void repopulate () {
     	// Iterate over every square on board (except bottom row)
     	// don't need to check bottom squares because we know they don't have squares beneath them to take tiles from
         for (int y = 0; y < 5; y++) {
@@ -90,7 +90,7 @@ public class Board {
     /**
      * generates a new tile for each square on the board
      */
-    void reset() {
+    public void reset() {
     	// Iterate over every square on board
         for (int y = 0; y < 6; y++) {
         	for (int x = 0; x < 6; x++) {

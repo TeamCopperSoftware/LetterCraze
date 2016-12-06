@@ -27,16 +27,11 @@ import javax.swing.ImageIcon;
 
 public class PuzzleLevelApplication extends LevelApplication {
 	
-	/**
-	 * Create the panel.
-	 */
 	public PuzzleLevelApplication(PuzzleLevel m) {
-		
 		super(m);
 		titleLabel.setText("Puzzle");
 		objectiveLabel.setText("Moves Left");
 		objectiveValueLabel.setText(String.valueOf(m.getMoveLimit()));
-
 	}
 	
 	public JButton getExitButton() {
@@ -46,5 +41,6 @@ public class PuzzleLevelApplication extends LevelApplication {
 	public JButton[][] getButtonList() {
 		return squareButtons;
 	}
+	
 	
 }

@@ -11,7 +11,9 @@ public class Word {
     public Word(Square s) {
     	squares = new ArrayList<Square>();
     	letters = "";
-    	appendSquare(s);
+    	if (s.getTile() != null) {
+    		appendSquare(s);
+    	}
     }
     
 
@@ -24,15 +26,26 @@ public class Word {
         return letters;
     }
 
-    boolean isValid () {
+    public boolean isValid () {
    		if (WordTable.isWord(letters)) {
    			if (letters.length() >= 3) { return true; }
    		}
    		return false;
     }
     
-    ArrayList<Square> getSquares() {
+    public ArrayList<Square> getSquares() {
         return squares;
+    }
+    
+    public int getScore() {
+    	int score = 0;
+    	if (squares.size() < 1) {
+    		return 0;
+    	}
+    	for (int i = 0; i < squares.size(); i++) {
+    		score += squares.get(i).getTile().getPoints();
+    	}
+    	return score;
     }
 
 }

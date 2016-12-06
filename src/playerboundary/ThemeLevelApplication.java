@@ -27,12 +27,10 @@ import javax.swing.ImageIcon;
 
 public class ThemeLevelApplication extends LevelApplication {
 
-
 	/**
 	 * Create the panel.
 	 */
 	public ThemeLevelApplication(ThemeLevel m) {
-
 		super(m);
 		titleLabel.setText("Theme - " + m.getTheme());
 		objectiveLabel.setText("Words Left");
@@ -42,5 +40,9 @@ public class ThemeLevelApplication extends LevelApplication {
 
 	public JButton getExitButton() {
 		return exitButton;
+	}
+	
+	public void refreshObjective(ThemeLevel level) {
+		objectiveValueLabel.setText(String.valueOf(level.getValidWords().size() - level.getHistorySize()));
 	}
 }

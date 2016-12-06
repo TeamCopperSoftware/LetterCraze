@@ -3,13 +3,8 @@ package playercontroller;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
-
-import entities.LevelModel;
 import entities.*;
-import playerboundary.Application;
 import playerboundary.LevelApplication;
 
 public class SelectLetterController implements ActionListener {
