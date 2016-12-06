@@ -22,8 +22,9 @@ public class TestMove extends TestCase {
 		assertEquals(lvlMod.board.currentWord.toString(), "WORD");
 		
 		assertEquals(lvlMod.board.lookUpSquare(2, 0).tilePeek().letter, "R");
-		lvlMod.removeWord();
-		//assertNotSame(lvlMod.board.lookUpSquare(2, 0).tilePeek().letter, "R");
+		Move move = new Move (word, lvlMod);
+		assertTrue(move.doMove());
+		assertNotSame(lvlMod.board.lookUpSquare(2, 0).tilePeek().letter, "R");
 		//Last line SHOULD BECOME true once we actully make the move remove the word as it should	
 	}
 	
@@ -40,9 +41,10 @@ public class TestMove extends TestCase {
 		lvlMod.board.currentWord = word;
 		assertEquals(lvlMod.board.currentWord.toString(), "WO");
 		
-		assertEquals(lvlMod.board.lookUpSquare(1, 0).tilePeek().letter, "O");
-		lvlMod.removeWord();
-		assertEquals(lvlMod.board.lookUpSquare(1, 0).tilePeek().letter, "O");
+		assertEquals(lvlMod.board.lookUpSquare(2, 0).tilePeek().letter, "R");
+		Move move = new Move (word, lvlMod);
+		assertFalse(move.doMove());
+		assertEquals(lvlMod.board.lookUpSquare(2, 0).tilePeek().letter, "R");
 		//Last line SHOULD STAY true once we actully make Move.java legit
 	}
 }
