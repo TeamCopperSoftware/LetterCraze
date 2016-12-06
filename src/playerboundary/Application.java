@@ -72,14 +72,20 @@ public class Application extends JFrame {
 		for (int i = 0; i < numMainLevels; i++) {
 			LevelModel l = model.getMainLevels().getLevels().get(i);
 			if (l.getType().equals("Puzzle")) {
-				levelApplications.add(new PuzzleLevelApplication((PuzzleLevel)l));
+				PuzzleLevelApplication pApp = new PuzzleLevelApplication((PuzzleLevel)l);
+				pApp.setName("mainlevel" + (i+1));
+				levelApplications.add(pApp);
 			}
 			else if (l.getType().equals("Lightning")) {
 				lightningLevelTimer = new Timer(1000, new LightningTimerController(this, this.model, i));
-				levelApplications.add(new LightningLevelApplication((LightningLevel)l, lightningLevelTimer));
+				LightningLevelApplication lApp = new LightningLevelApplication((LightningLevel)l, lightningLevelTimer);
+				lApp.setName("mainlevel" + (i+1));
+				levelApplications.add(lApp);
 			}
 			else {
-				levelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
+				ThemeLevelApplication tApp = new ThemeLevelApplication((ThemeLevel)l);
+				tApp.setName("mainlevel" + (i+1));
+				levelApplications.add(tApp);
 			}
 		}
 
@@ -87,14 +93,20 @@ public class Application extends JFrame {
 		for (int i = 0; i < numCustomLevels; i++) {
 			LevelModel l = model.getMainLevels().getLevels().get(i);
 			if (l.getType().equals("Puzzle")) {
-				customLevelApplications.add(new PuzzleLevelApplication((PuzzleLevel)l));
+				PuzzleLevelApplication pApp = new PuzzleLevelApplication((PuzzleLevel)l);
+				pApp.setName("customlevel" + (i+1));
+				customLevelApplications.add(pApp);
 			}
 			else if (l.getType().equals("Lightning")) {
 				lightningLevelTimer = new Timer(1000, new LightningTimerController(this, this.model, i));
-				customLevelApplications.add(new LightningLevelApplication((LightningLevel)l, lightningLevelTimer));
+				LightningLevelApplication lApp = new LightningLevelApplication((LightningLevel)l, lightningLevelTimer);
+				lApp.setName("customlevel" + (i+1));
+				customLevelApplications.add(lApp);
 			}
 			else {
-				customLevelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
+				ThemeLevelApplication tApp = new ThemeLevelApplication((ThemeLevel)l);
+				tApp.setName("customlevel" + (i+1));
+				customLevelApplications.add(tApp);
 			}
 		}
 

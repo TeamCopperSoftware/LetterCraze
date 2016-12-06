@@ -21,7 +21,10 @@ public class LightningTimerController implements ActionListener {
             l.getTimer().stop();
             l.getLevelModel().exitLevel();
             app.getMapApplication().refreshPanel();
-            app.setContentPane(app.getMapApplication());
+            // make sure we're still in the level before kicking us out to main menu
+            if (app.getContentPane().getName().equals(l.getName())) {
+            	app.setContentPane(app.getMapApplication());
+            }
         }
         else
         {
