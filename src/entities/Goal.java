@@ -8,11 +8,6 @@ public class Goal {
         this.star2 = star2;
         this.star3 = star3;
     }
-    public Goal() {
-        this.star1 = 0;
-        this.star2 = 0;
-        this.star3 = 0;
-    }
     
     int getStar1() {
         return star1;
