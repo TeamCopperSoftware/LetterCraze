@@ -12,11 +12,11 @@ import entities.*;
 import playerboundary.Application;
 
 public class SelectLetterController implements ActionListener {
-	Application app;
-	Model model;
+	LevelApplication app;
+	LevelModel model;
+	int levelNumber;
 	int x;
 	int y;
-	int levelNumber;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -33,7 +33,7 @@ public class SelectLetterController implements ActionListener {
 		}
 		
 		// If the button has no tile, do nothing
-		if (model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y).hasTile() == false) {
+		if (model.getBoard().lookUpSquare(x, y).hasTile() == false) {
 			System.out.println("There's no tile here!");
 			return;
 		}
@@ -49,9 +49,9 @@ public class SelectLetterController implements ActionListener {
 		// In the case that no buttons are selected and there are no buttons selected...
 		if (numSelected == 0) {
 			buttonList[x][y].setBackground(Color.YELLOW);
-			model.getMainLevels().getLevels().get(0).getBoard().setWord(new Word(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y)));
+			model.getBoard().setWord(new Word(model.getBoard().lookUpSquare(x, y)));
 			numSelected++;
-			System.out.println(model.getMainLevels().getLevels().get(0).getBoard().getWord());
+			System.out.println(model.getBoard().getWord());
 			System.out.println(numSelected);
 			return;
 		}
@@ -67,7 +67,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x+1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 
@@ -85,7 +85,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 				}
@@ -99,7 +99,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 				} 
@@ -115,7 +115,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x+1][y-1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 				} 
@@ -128,7 +128,7 @@ public class SelectLetterController implements ActionListener {
 						|| (buttonList[x-1][y-1].getBackground().equals(Color.YELLOW)) ) {
 					// change button to selected
 					buttonList[x][y].setBackground(Color.YELLOW);
-					model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+					model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 					numSelected++;
 				}
 			}
@@ -143,7 +143,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 				}
@@ -156,7 +156,7 @@ public class SelectLetterController implements ActionListener {
 						|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 					// change button to selected
 					buttonList[x][y].setBackground(Color.YELLOW);
-					model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+					model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 					numSelected++;
 				}
 			}
@@ -171,7 +171,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 				}
@@ -191,7 +191,7 @@ public class SelectLetterController implements ActionListener {
 							|| (buttonList[x-1][y+1].getBackground().equals(Color.YELLOW)) ) {
 						// change button to selected
 						buttonList[x][y].setBackground(Color.YELLOW);
-						model.getMainLevels().getLevels().get(0).getBoard().getWord().appendSquare(model.getMainLevels().getLevels().get(0).getBoard().lookUpSquare(x, y));
+						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
 					}
 				}
@@ -199,7 +199,7 @@ public class SelectLetterController implements ActionListener {
 
 		}
 
-		System.out.println(model.getMainLevels().getLevels().get(0).getBoard().getWord());
+		System.out.println(model.getBoard().getWord());
 		System.out.println(numSelected);
 	}
 

@@ -18,7 +18,6 @@ public class ViewAdventureMapController implements ActionListener {
 		app.setContentPane(app.getMapApplication()); // display panel
 		
 		// Deselect all tiles when we exit to MapApplication
-		
 	}
 	
 	public ViewAdventureMapController(Application app, Model m) {
