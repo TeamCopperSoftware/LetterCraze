@@ -154,11 +154,7 @@ public class Square {
 	}
 
 	public Tile getTile() {
-		if (!tile.equals(null)) {
-			return tile;
-		} else {
-			return null;
-		}
+		return tile;
 	}
 
 }

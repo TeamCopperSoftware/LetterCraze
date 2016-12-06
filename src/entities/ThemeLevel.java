@@ -36,4 +36,8 @@ public class ThemeLevel extends LevelModel {
     	return validWords;
     }
     
+    public Board getStartingBoard() {
+    	return startingBoard;
+    }
+    
 }

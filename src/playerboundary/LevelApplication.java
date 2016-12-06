@@ -132,6 +132,8 @@ public abstract class LevelApplication extends JPanel {
 					squareButtons[x][y].setVisible(true);
 					if (s.hasTile()) {
 						squareButtons[x][y].setText(s.tilePeek().toString());
+					} else {
+						squareButtons[x][y].setText("");
 					}
 				}
 				else {

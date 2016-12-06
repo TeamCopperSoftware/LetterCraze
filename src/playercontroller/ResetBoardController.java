@@ -15,8 +15,13 @@ public class ResetBoardController implements ActionListener {
 	LevelModel m;
 	
 	public void actionPerformed(ActionEvent ae) {
-		// reset board
-		m.getBoard().reset();
+		// reset board with new letters if it's not a theme level
+		if (!m.getType().equals("Theme")) {
+			m.getBoard().reset();
+		} else {
+			ThemeLevel themeLevel = (ThemeLevel)(m);
+			m.getBoard().resetToBoard(themeLevel.getStartingBoard());
+		}
 		// clear list
 		app.clearList();
 		// clear score
@@ -39,7 +44,8 @@ public class ResetBoardController implements ActionListener {
 		if (m.getType().equals("Theme")) {
 			ThemeLevel thisLevel3 = (ThemeLevel)(m);
 			app.resetObjectiveValue(thisLevel3.getValidWords().size());
-			//TODO need to find a way to revert back to original board
+			app.refreshPanel(m);
+			
 		}
 	}
 	

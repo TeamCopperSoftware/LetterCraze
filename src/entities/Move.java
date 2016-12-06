@@ -53,8 +53,15 @@ public class Move {
 			// remove word from board
 			model.getBoard().removeWord(word);
 			
-			// repopulate tiles
-			model.getBoard().repopulate();
+			// repopulate tiles if its a puzzle or lightning
+			if (!model.getType().equals("Theme")) {
+				// repopulate regularly
+				model.getBoard().repopulate();
+			} else {
+				//System.out.println("THEMEFLOAT");
+				// only want to float letters up, not generate new ones
+				model.getBoard().justFloatUp();
+			}
 			
 			// move completed
 			return true;
