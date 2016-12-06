@@ -38,6 +38,11 @@ public class LetterInfo {
         letterValues.put("", 0); // need this for a hack
 	}
 	
+	/**
+	 * calculates value of given letter
+	 * @param letter the letter
+	 * @return the point value of letter
+	 */
 	public static int getLetterValue(String letter) {
 		if (letterValues == null) {
 			initializeLetterInfo();
