@@ -91,6 +91,7 @@ public class Main {
 		}
 
 		// exit from any main level to Map
+		for (int i = 0; i <)
 		app.getPuzzleLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
 		app.getLightningLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));
 		app.getThemeLevelApplication().getExitButton().addActionListener(new ViewAdventureMapController(app, model));

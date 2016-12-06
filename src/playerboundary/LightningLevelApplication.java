@@ -9,6 +9,7 @@ import javax.swing.BoxLayout;
 import java.awt.Component;
 import javax.swing.SwingConstants;
 
+import entities.LevelModel;
 import entities.LightningLevel;
 import entities.Model;
 import entities.Square;
@@ -24,9 +25,9 @@ import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
-public class LightningLevelApplication extends JPanel {
+public class LightningLevelApplication extends LevelApplication {
 
-	Model model;
+	LevelModel model;
 	JButton exitButton;
 	ArrayList<JButton> squareButtons;
 	JLabel objectiveValueLabel;
@@ -34,7 +35,7 @@ public class LightningLevelApplication extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public LightningLevelApplication(Model m) {
+	public LightningLevelApplication(LevelModel m) {
 		setBounds(0,0,800,600);
 		setLayout(null);
 		model = m;

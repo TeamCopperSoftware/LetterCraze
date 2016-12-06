@@ -19,12 +19,16 @@ public class Application extends JFrame {
 	InitializeGameApplication mainMenu;
 	MapApplication mapMenu;
 	ViewCustomLevelsApplication customMenu;
+	/*
 	PuzzleLevelApplication puzzleLevelApplication;
 	LightningLevelApplication lightningLevelApplication;
 	ThemeLevelApplication themeLevelApplication;
 	PuzzleLevelApplication customPuzzleLevelApplication;
 	LightningLevelApplication customLightningLevelApplication;
 	ThemeLevelApplication customThemeLevelApplication;
+	*/
+	
+	ArrayList<LevelApplication> levelApplications;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -48,12 +52,28 @@ public class Application extends JFrame {
 		mainMenu = new InitializeGameApplication(model);
 		mapMenu = new MapApplication(model);
 		customMenu = new ViewCustomLevelsApplication(model);
+		/*
 		puzzleLevelApplication = new PuzzleLevelApplication(model);
 		lightningLevelApplication = new LightningLevelApplication(model);
 		themeLevelApplication = new ThemeLevelApplication(model);
 		customPuzzleLevelApplication = new PuzzleLevelApplication(model);
 		customLightningLevelApplication = new LightningLevelApplication(model);
-		customThemeLevelApplication = new ThemeLevelApplication(model);		
+		customThemeLevelApplication = new ThemeLevelApplication(model);
+		*/
+		levelApplications = new ArrayList<LevelApplication>();
+		int numMainLevels = model.getMainLevels().getLevels().size();
+		for (int i = 0; i < numMainLevels; i++) {
+			LevelModel l = model.getMainLevels().getLevels().get(i);
+			if (l.getType().equals("Puzzle")) {
+				levelApplications.add(new PuzzleLevelApplication(l));
+			}
+			else if (l.getType().equals("Lightning")) {
+				levelApplications.add(new LightningLevelApplication(l));
+			}
+			else {
+				levelApplications.add(new ThemeLevelApplication(l));
+			}
+		}
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;
@@ -87,6 +107,7 @@ public class Application extends JFrame {
 		return customMenu;
 	}
 	
+	/*
 	public PuzzleLevelApplication getPuzzleLevelApplication() {
 		return puzzleLevelApplication;
 	}
@@ -109,6 +130,11 @@ public class Application extends JFrame {
 	
 	public ThemeLevelApplication getCustomThemeLevelApplication() {
 		return customThemeLevelApplication;
+	}
+	*/
+	
+	public ArrayList<LevelApplication> getLevelApplications() {
+		return levelApplications;
 	}
 
 }
