@@ -9,7 +9,7 @@ public class TestSquare extends TestCase {
 		Tile t1 = new Tile("a", 3);
 		Tile t2 = new Tile("b", 4);
 		Square s1 = new Square(p1, true, t1);
-		assertEquals(s1.tile.toString(), "a");
+		assertEquals(s1.tile.toString(), "A");
 		
 		assertTrue(s1.isEnabled());
 		assertEquals(s1.position(), p1);
@@ -27,7 +27,7 @@ public class TestSquare extends TestCase {
 		Position p1 = new Position(2, 1);
 		Tile t1 = new Tile("@", 3);
 		Square s1 = new Square(p1, true, t1);
-		//assertEquals(s1.tile.toString(), "@"); //Needs not to happen
+		//assertNotSame(s1.tile.toString(), "@"); //Needs not to happen
 		//assertTrue(s1.isValid()); //Need a "isValid()" method or similar
 	}
 }

@@ -25,7 +25,8 @@ public class TestMove extends TestCase {
 		Move move = new Move (word, lvlMod);
 		assertTrue(move.doMove());
 		assertNotSame(lvlMod.board.lookUpSquare(2, 0).tilePeek().letter, "R");
-		//Last line SHOULD BECOME true once we actully make the move remove the word as it should	
+		//Last line sometimes fails when next tile to fill space just
+		//  HAPPENS to be R? Try running multiple times if error occurs
 	}
 	
 	public void testMoveNotValid() {

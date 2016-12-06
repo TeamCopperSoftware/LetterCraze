@@ -29,7 +29,18 @@ public class Map {
         //TODO
         // 1) check whether conditions are met for the next locked level to be unlocked
         // 2) if they are met unlock the level and update numUnlocked levels
+        
+        
+        //java.util.Iterator<LevelModel> iter = levels.iterator();
 
+        for (int i = 1; i < levels.size(); i++) {
+            if (levels.get(i-1).getBestScore().getStar() >= 1 && levels.get(i).getLockStatus()) {
+                levels.get(i).unlock();
+                return true;
+            }
+        }
+        
+        
         return false;
     }
 

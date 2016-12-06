@@ -9,6 +9,7 @@ import javax.swing.UIManager;
 import entities.*;
 import entities.Model;
 import playerboundary.SplashScreenApplication;
+import playercontroller.LightningTimerController;
 import playercontroller.SplashScreenTimerController;
 
 public class Application extends JFrame {
@@ -36,6 +37,7 @@ public class Application extends JFrame {
 	int displayTime;
 	// Timer for determining how long splash screen should be displayed
 	Timer splashScreenTimer;
+	Timer lightningLevelTimer;
 
 
 	/**
@@ -73,7 +75,8 @@ public class Application extends JFrame {
 				levelApplications.add(new PuzzleLevelApplication((PuzzleLevel)l));
 			}
 			else if (l.getType().equals("Lightning")) {
-				levelApplications.add(new LightningLevelApplication((LightningLevel)l));
+				lightningLevelTimer = new Timer(1000, new LightningTimerController(this, this.model, i));
+				levelApplications.add(new LightningLevelApplication((LightningLevel)l, lightningLevelTimer));
 			}
 			else {
 				levelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
@@ -87,7 +90,8 @@ public class Application extends JFrame {
 				customLevelApplications.add(new PuzzleLevelApplication((PuzzleLevel)l));
 			}
 			else if (l.getType().equals("Lightning")) {
-				customLevelApplications.add(new LightningLevelApplication((LightningLevel)l));
+				lightningLevelTimer = new Timer(1000, new LightningTimerController(this, this.model, i));
+				customLevelApplications.add(new LightningLevelApplication((LightningLevel)l, lightningLevelTimer));
 			}
 			else {
 				customLevelApplications.add(new ThemeLevelApplication((ThemeLevel)l));
@@ -99,6 +103,7 @@ public class Application extends JFrame {
 		splashScreenTimer = new Timer(1000, new SplashScreenTimerController(this, this.model));
 		splashScreenTimer.start();
 		this.setContentPane(splashScreen);
+		
 
 	}
 

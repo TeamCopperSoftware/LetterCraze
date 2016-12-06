@@ -1,6 +1,8 @@
 package entities;
 
-import java.util.Timer;
+import javax.swing.Timer;
+
+import playercontroller.LightningTimerController;
 
 public class LightningLevel extends LevelModel {
 
@@ -11,9 +13,12 @@ public class LightningLevel extends LevelModel {
     public LightningLevel(Board b, Goal g, int timeLimit) {
         super(b, g, "Lightning");
         this.timeLimit = timeLimit;
-        timer = new Timer();    //TODO fix the timer class. 
-                                //I don't think Java.util is the right one
+        
+         
+                                
     }
+    
+    
     
     public int getTimeLimit() {
         return timeLimit;
