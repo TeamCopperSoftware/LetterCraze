@@ -88,7 +88,7 @@ public class SelectLetterController implements ActionListener {
 			}
 
 			// bottom left corner
-			else if ((x == 5) && (y == 5)) {
+			else if ((x == 0) && (y == 5)) {
 				if (buttonList[x][y].getBackground().equals(Color.WHITE)) {
 					if (       (buttonList[x+1][y].getBackground().equals(Color.YELLOW))
 							|| (buttonList[x][y-1].getBackground().equals(Color.YELLOW)) 

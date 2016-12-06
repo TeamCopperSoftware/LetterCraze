@@ -99,10 +99,10 @@ public class Main {
 
 		// exit from any custom level to Custom Level Map
 		for (int i = 0; i < numCustomLevels; i++) {
-			app.getCustomLevelApplications().get(i).getExitButton().addActionListener(new ViewAdventureMapController(app, model));
+			app.getCustomLevelApplications().get(i).getExitButton().addActionListener(new ViewCustomLevelsController(app, model));
 		}
 
-		// set controllers for square buttons in LevelApplications
+		// set controllers for square buttons in main LevelApplications
 		for (int i = 0; i < 15; i++) {
 			for (int x = 0; x < 6; x++) {
 				for (int y = 0; y < 6; y++) {
@@ -114,6 +114,15 @@ public class Main {
 		// set controllers for add word buttons in LevelApplications
 		for (int i = 0; i < 15; i++) {
 			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
+
+		// set controllers for square buttons in customLevelApplications
+		for (int i = 0; i < numCustomLevels; i++) {
+			for (int x = 0; x < 6; x++) {
+				for (int y = 0; y < 6; y++) {
+					app.getCustomLevelApplications().get(i).getButtonList()[x][y].addActionListener(new SelectLetterController(app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i), i, x, y));
+				}
+			}
 		}
 		
 	}
