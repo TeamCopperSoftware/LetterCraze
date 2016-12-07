@@ -562,7 +562,7 @@ public class Model {
 		int moveLimit5 = 10;
 
 		PuzzleLevel l13 = new PuzzleLevel(b13, g13, moveLimit5);
-		l13.isUnlocked = false; // first three levels should be unlocked
+		l13.isUnlocked = false; 
 		getMainLevels().addLevel(l13);		
 		
 		PuzzleLevel l14 = new PuzzleLevel(b1, g1, moveLimit);
