@@ -37,8 +37,15 @@ public class Move {
 			model.getWordList().addElement(word.toString());
 			
 			// update numscore
-			int wordScore = word.getScore();
-			model.getCurrentScore().updateScore(wordScore);
+			if (!model.getType().equals("Theme")) {
+				int wordScore = word.getScore();
+				model.getCurrentScore().updateScore(wordScore);
+			}
+			// in theme levels score is based on how many words you find
+			else {
+				model.getCurrentScore().updateScore(1);
+			}
+			
 			
 			// update star score (if necessary)
 			// if current score is greater than star1 goal
