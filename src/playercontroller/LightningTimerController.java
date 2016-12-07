@@ -8,12 +8,24 @@ import playerboundary.Application;
 import playerboundary.LightningLevelApplication;
 import playerboundary.SplashScreenApplication;
 
+/**
+ * Controls all actions to do with Timer functionality in lightning levels.
+ * <p>
+ */
+
 public class LightningTimerController implements ActionListener {
 	
 	Application app;
 	Model model;
 	int levelNumber;
 
+	/**
+	 * Provides all actions to timer in lightning levels. Includes timer kicking user out
+	 * of level when time runs out, refreshing level, and keeping track of best time
+	 * <p>
+	 * @param ae ActionEvent
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		LightningLevelApplication l = (LightningLevelApplication) app.getLevelApplications().get(levelNumber);
@@ -39,6 +51,12 @@ public class LightningTimerController implements ActionListener {
            l.resetObjectiveValue(l.getTimeLeft());
         }
 	}
+	
+	/**
+	 * Sets parameters for LightningTimerController
+	 * <p>
+	 * @param app Application, m Model, levelNumber int
+	 */
 	
 	public LightningTimerController(Application app, Model m, int levelNumber) {
 		this.app = app;

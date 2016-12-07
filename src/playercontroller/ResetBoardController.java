@@ -9,10 +9,22 @@ import entities.PuzzleLevel;
 import entities.ThemeLevel;
 import playerboundary.LevelApplication;
 
+/**
+ * Controls all actions to do with Reseting Board in all levels
+ * <p>
+ */
+
 public class ResetBoardController implements ActionListener {
 
 	LevelApplication app;
 	LevelModel m;
+	
+	/**
+	 * Provides all actions that reset board in level. Resets board with random letters
+	 * and random words based on level type. Also resets score and list of words found.
+	 * <p>
+	 * @param ae ActionEvent
+	 */
 	
 	public void actionPerformed(ActionEvent ae) {
 		// reset board with new letters if it's not a theme level
@@ -46,6 +58,12 @@ public class ResetBoardController implements ActionListener {
 			
 		}
 	}
+	
+	/**
+	 * Sets parameters for ResetBoardController
+	 * <p>
+	 * @param app LevelApplication, m LevelModel
+	 */
 	
 	public ResetBoardController(LevelApplication app, LevelModel m) {
 		this.app = app;
