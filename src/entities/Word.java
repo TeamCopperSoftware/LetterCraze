@@ -25,7 +25,7 @@ public class Word {
         for (int i = 0; i < squares.size(); i++) {
         	value += squares.get(i).tilePeek().getPoints();
         }
-        value = value * (squares.size()-2);
+        value = value * (letters.length()-2);
     }
     
     public void removeSquare (Square s) {
@@ -36,7 +36,7 @@ public class Word {
         	letters += squares.get(i).tilePeek().letter;
         	value += squares.get(i).tilePeek().getPoints();
         }
-        value = value * (squares.size()-2);
+        value = value * (letters.length()-2);
     }
     
     public String toString () {

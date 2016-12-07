@@ -26,6 +26,7 @@ public class ThemeLevel extends LevelModel {
     	this.board = startingBoard;
     	currentScore = new Score(); // set currentScore to 0;
     	history.clear(); // clear move history
+    	wordList.clear();
     }
     
     public String getTheme() {

@@ -26,6 +26,10 @@ public class SelectLetterController implements ActionListener {
 			for (int y = 0; y < 6; y++) {
 				if (buttonList[x][y].getBackground().equals(Color.YELLOW)) {
 					numSelected++;
+					// QU counts as two letters
+					if (buttonList[x][y].getText().equals("QU")) {
+						numSelected++;
+					}
 				} 
 			}
 		}
@@ -43,6 +47,10 @@ public class SelectLetterController implements ActionListener {
 				buttonList[x][y].setBackground(Color.YELLOW);
 				model.getBoard().setWord(new Word(model.getBoard().lookUpSquare(x, y)));
 				numSelected++;
+				// QU counts as two letters
+				if (buttonList[x][y].getText().equals("QU")) {
+					numSelected++;
+				}
 				System.out.println(model.getBoard().getWord());
 				System.out.println(numSelected);
 				app.pushSelectedButton(buttonList[x][y]);
@@ -56,6 +64,9 @@ public class SelectLetterController implements ActionListener {
 					app.popSelectedButton();
 					buttonList[x][y].setBackground(Color.WHITE);
 					numSelected--;
+					if (buttonList[x][y].getText().equals("QU")) {
+						numSelected--;
+					}
 					model.getBoard().getWord().removeSquare(model.getBoard().lookUpSquare(x, y));
 					return;
 				}
@@ -73,6 +84,9 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 						
@@ -94,6 +108,9 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 				}
@@ -109,6 +126,9 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 				}
@@ -126,6 +146,9 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 				}
@@ -141,6 +164,9 @@ public class SelectLetterController implements ActionListener {
 						app.pushSelectedButton(buttonList[x][y]);
 						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
+						if (buttonList[x][y].getText().equals("QU")) {
+							numSelected++;
+						}
 					}
 					}
 				}
@@ -158,6 +184,9 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 					
@@ -174,6 +203,9 @@ public class SelectLetterController implements ActionListener {
 						app.pushSelectedButton(buttonList[x][y]);
 						model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 						numSelected++;
+						if (buttonList[x][y].getText().equals("QU")) {
+							numSelected++;
+						}
 					}
 					}
 				}
@@ -191,6 +223,9 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 				}
@@ -212,12 +247,16 @@ public class SelectLetterController implements ActionListener {
 							app.pushSelectedButton(buttonList[x][y]);
 							model.getBoard().getWord().appendSquare(model.getBoard().lookUpSquare(x, y));
 							numSelected++;
+							if (buttonList[x][y].getText().equals("QU")) {
+								numSelected++;
+							}
 						}
 					}
 					
 				}
 				
 				// button is already selected, but it is in the middle of a word so do nothing
+				// don't think this ever actually is executed
 				else {
 					System.out.println("Can't deselect this square!");
 					return;

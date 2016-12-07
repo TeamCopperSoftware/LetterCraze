@@ -33,7 +33,7 @@ public class LetterInfo {
         letterValues.put("K", 5);
         letterValues.put("J", 7);
         letterValues.put("X", 7);
-        letterValues.put("QU", 8);
+        letterValues.put("QU", 11); // 11 because it counts as two letters
         letterValues.put("Z", 8);
         letterValues.put("", 0); // need this for a hack
 	}

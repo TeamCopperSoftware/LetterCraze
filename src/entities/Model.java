@@ -124,12 +124,22 @@ public class Model {
 		getMainLevels().addLevel(l2);
 
 		// Create Level 3
+		
 		squaresArray[0] = new Square(new Position(0,0), true, new Tile("N"));
 		squaresArray[1] = new Square(new Position(1,0), true, new Tile("C"));
 		squaresArray[2] = new Square(new Position(2,0), true, new Tile("R"));
 		squaresArray[3] = new Square(new Position(3,0), true, new Tile("A"));
 		squaresArray[4] = new Square(new Position(4,0), true, new Tile("N"));
 		squaresArray[5] = new Square(new Position(5,0), false);
+		
+		/* uncomment if you want to test QU
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("QU"));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("E"));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("E"));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("N"));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("N"));
+		squaresArray[5] = new Square(new Position(5,0), false);
+		*/
 
 		squaresArray[6] = new Square(new Position(0,1), true, new Tile("O"));
 		squaresArray[7] = new Square(new Position(1,1), true, new Tile("O"));
@@ -175,6 +185,10 @@ public class Model {
 		words1.add("kale");
 		words1.add("onion");
 		words1.add("pumpkin");
+		/* uncomment if you want to test QU
+		words1.add("queen");
+		words1.add("quo");
+		*/
 
 		ThemeLevel l3 = new ThemeLevel(b3, g3, theme1, words1);
 		l3.isUnlocked = true; // first three levels should be unlocked

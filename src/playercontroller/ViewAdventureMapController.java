@@ -14,6 +14,12 @@ public class ViewAdventureMapController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		// Deselect all tiles when we exit to MapApplication
+		for (int i = 0; i < model.getMainLevels().getLevels().size(); i++) {
+			model.getMainLevels().getLevels().get(i).resetLevel();
+		}
+		
 		app.getMapApplication().refreshPanel(); // refresh content before displaying panel
 		app.setContentPane(app.getMapApplication()); // display panel
 		

@@ -37,7 +37,7 @@ public class Board {
 	}
 
 	public void removeWord (Word w) {
-		for (int i = 0; i < w.toString().length(); i++) {
+		for (int i = 0; i < w.getSquares().size(); i++) {
 			removeTile(w.getSquares().get(i));
 		}
 	}
