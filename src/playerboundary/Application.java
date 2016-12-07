@@ -176,5 +176,9 @@ public class Application extends JFrame {
 	public ArrayList<LevelApplication> getCustomLevelApplications() {
 		return customLevelApplications;
 	}
+	
+	public Model getModel() {
+		return model;
+	}
 
 }

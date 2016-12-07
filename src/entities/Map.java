@@ -34,7 +34,7 @@ public class Map {
         //java.util.Iterator<LevelModel> iter = levels.iterator();
 
         for (int i = 1; i < levels.size(); i++) {
-            if (levels.get(i-1).getBestScore().getStar() >= 1 && levels.get(i).getLockStatus()) {
+            if (levels.get(i-1).getBestScore().getStar() >= 1 && !levels.get(i).isUnlocked) {
                 levels.get(i).unlock();
                 return true;
             }

@@ -41,6 +41,7 @@ public class AddWordController implements ActionListener {
 					// return to mainmenu
 					System.out.println("Score: " + thisLevel.getBestScore().getScore());
 					System.out.println("Stars: " + thisLevel.getBestScore().getStar());
+					topLevelApp.getModel().getMainLevels().unlockNextLevel(); //possibly unlock next level
 					topLevelApp.getMapApplication().refreshPanel();
 					topLevelApp.setContentPane(topLevelApp.getMapApplication());
 				}
@@ -62,6 +63,7 @@ public class AddWordController implements ActionListener {
 					// return to main menu
 					System.out.println("Score: " + thisLevel.getBestScore().getScore());
 					System.out.println("Stars: " + thisLevel.getBestScore().getStar());
+					topLevelApp.getModel().getMainLevels().unlockNextLevel(); //possibly unlock next level
 					topLevelApp.getMapApplication().refreshPanel();
 					topLevelApp.setContentPane(topLevelApp.getMapApplication());
 				}

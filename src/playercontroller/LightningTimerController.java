@@ -28,6 +28,7 @@ public class LightningTimerController implements ActionListener {
                 LevelModel lm = model.getMainLevels().getLevels().get(levelNumber);
                 System.out.println("Score: " + lm.getBestScore().getScore());
 				System.out.println("Stars: " + lm.getBestScore().getStar());
+				model.getMainLevels().unlockNextLevel(); //possibly unlock next level
                 app.getMapApplication().refreshPanel();
             	app.setContentPane(app.getMapApplication());
             }

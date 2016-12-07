@@ -238,7 +238,7 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), false);
 
 		Board b4 = new Board(squaresArray);
-		Goal g4 = new Goal(1000, 2000, 3000);
+		Goal g4 = new Goal(50, 100, 150);
 		int moveLimit2 = 10;
 
 		PuzzleLevel l4 = new PuzzleLevel(b4, g4, moveLimit2);
@@ -397,7 +397,7 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), false);
 
 		Board b7 = new Board(squaresArray);
-		Goal g7 = new Goal(1000, 2000, 3000);
+		Goal g7 = new Goal(50, 100, 150);
 		int moveLimit3 = 10;
 
 		PuzzleLevel l7 = new PuzzleLevel(b7, g7, moveLimit3);
@@ -556,7 +556,7 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), false);
 
 		Board b10 = new Board(squaresArray);
-		Goal g10 = new Goal(1000, 2000, 3000);
+		Goal g10 = new Goal(50, 100, 150);
 		int moveLimit4 = 10;
 
 		PuzzleLevel l10 = new PuzzleLevel(b10, g10, moveLimit4);
@@ -716,7 +716,7 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), false);
 
 		Board b13 = new Board(squaresArray);
-		Goal g13 = new Goal(1000, 2000, 3000);
+		Goal g13 = new Goal(50, 100, 150);
 		int moveLimit5 = 10;
 
 		PuzzleLevel l13 = new PuzzleLevel(b13, g13, moveLimit5);

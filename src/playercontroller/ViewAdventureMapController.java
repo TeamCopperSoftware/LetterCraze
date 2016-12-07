@@ -20,6 +20,7 @@ public class ViewAdventureMapController implements ActionListener {
 			model.getMainLevels().getLevels().get(i).resetLevel();
 		}
 		
+		model.getMainLevels().unlockNextLevel();
 		app.getMapApplication().refreshPanel(); // refresh content before displaying panel
 		app.setContentPane(app.getMapApplication()); // display panel
 		
