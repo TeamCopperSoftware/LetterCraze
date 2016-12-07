@@ -111,10 +111,6 @@ public class Main {
 			}
 		}
 		
-		// set controllers for add word buttons in LevelApplications
-		for (int i = 0; i < 15; i++) {
-			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
-		}
 
 		// set controllers for square buttons in customLevelApplications
 		for (int i = 0; i < numCustomLevels; i++) {
@@ -125,9 +121,24 @@ public class Main {
 			}
 		}
 		
+		// set controllers for add word buttons in LevelApplications
+		for (int i = 0; i < 15; i++) {
+			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
+		
+		// set controllers for add word buttons in custom LevelApplications
+		for (int i = 0; i < numCustomLevels; i++) {
+			app.getCustomLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
+		}
+		
 		// set controllers for reset buttons on main levels
 		for (int i = 0; i < numMainLevels; i++) {
 			app.getLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
+		
+		// set controllers for reset buttons on custom levels
+		for (int i = 0; i < numCustomLevels; i++) {
+			app.getCustomLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
 		
 	}
