@@ -8,10 +8,22 @@ import entities.*;
 import playerboundary.Application;
 import playerboundary.LevelApplication;
 
+/**
+ * Controls all actions to do with mouse events over the Add Word Button in all levels.
+ * <p>
+ */
+
 public class AddWordController implements ActionListener {
 	Application topLevelApp;
 	LevelApplication level;
 	public LevelModel model;
+
+	/**
+	 * Provides all actions to add word button. Adds words to lists that were found.
+	 * Updates history of added words when board is refreshed and score updates
+	 * <p>
+	 * @param ae ActionEvent
+	 */
 
 	public void actionPerformed(ActionEvent ae) {
 		Word wordObject = model.getBoard().getWord();
@@ -20,10 +32,10 @@ public class AddWordController implements ActionListener {
 			Move move = new Move(wordObject, model);
 			move.doMove();
 			model.pushToHistory(move);
-			
+
 			// add word to list of found words
 			level.getListModel().addElement(wordObject.toString());
-			
+
 			// decrement objectiveView if it is puzzle
 			if (model.getType().equals("Puzzle")) {
 				level.updateObjectiveValue(-1);
@@ -37,7 +49,7 @@ public class AddWordController implements ActionListener {
 					thisLevel.resetMovesDone();
 					level.resetObjectiveValue(thisLevel.getMoveLimit());
 					level.clearList();
-					
+
 					// return to mainmenu
 					System.out.println("Score: " + thisLevel.getBestScore().getScore());
 					System.out.println("Stars: " + thisLevel.getBestScore().getStar());
@@ -68,7 +80,7 @@ public class AddWordController implements ActionListener {
 					topLevelApp.setContentPane(topLevelApp.getMapApplication());
 				}
 			}
-			
+
 			// (HACK) set the current word to a placeholder that isn't valid
 			// this is to make sure you can't keep playing the same word without making a new selection
 			model.getBoard().setWord(new Word(new Square(new Position(0, 0), false, new Tile(""))));
@@ -79,6 +91,14 @@ public class AddWordController implements ActionListener {
 
 	}
 
+
+	/**
+	 * Sets parameters for AddWordController setting up application, abstract level application
+	 * and all levels in model
+	 * <p>
+	 * @param topLevelApp Application, level LevelApplication, model LevelModel
+	 */
+	
 	public AddWordController(Application topLevelApp, LevelApplication level, LevelModel model) {
 		this.topLevelApp = topLevelApp;
 		this.level = level;
