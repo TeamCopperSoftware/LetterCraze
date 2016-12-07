@@ -231,7 +231,55 @@ public class Model {
 		l4.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l4);
 		
-		PuzzleLevel l5 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 5
+		squaresArray[0] = new Square(new Position(0,0), true);
+		squaresArray[1] = new Square(new Position(1,0), true);
+		squaresArray[2] = new Square(new Position(2,0), true);
+		squaresArray[3] = new Square(new Position(3,0), true);
+		squaresArray[4] = new Square(new Position(4,0), false);
+		squaresArray[5] = new Square(new Position(5,0), false);
+
+		squaresArray[6] = new Square(new Position(0,1), false);
+		squaresArray[7] = new Square(new Position(1,1), false);
+		squaresArray[8] = new Square(new Position(2,1), true);
+		squaresArray[9] = new Square(new Position(3,1), true);
+		squaresArray[10] = new Square(new Position(4,1), true);
+		squaresArray[11] = new Square(new Position(5,1), true);
+
+		squaresArray[12] = new Square(new Position(0,2), false);
+		squaresArray[13] = new Square(new Position(1,2), true);
+		squaresArray[14] = new Square(new Position(2,2), true);
+		squaresArray[15] = new Square(new Position(3,2), true);
+		squaresArray[16] = new Square(new Position(4,2), true);
+		squaresArray[17] = new Square(new Position(5,2), true);
+
+		squaresArray[18] = new Square(new Position(0,3), false);
+		squaresArray[19] = new Square(new Position(1,3), true);
+		squaresArray[20] = new Square(new Position(2,3), true);
+		squaresArray[21] = new Square(new Position(3,3), true);
+		squaresArray[22] = new Square(new Position(4,3), true);
+		squaresArray[23] = new Square(new Position(5,3), true);
+
+		squaresArray[24] = new Square(new Position(0,4), false);
+		squaresArray[25] = new Square(new Position(1,4), false);
+		squaresArray[26] = new Square(new Position(2,4), true);
+		squaresArray[27] = new Square(new Position(3,4), true);
+		squaresArray[28] = new Square(new Position(4,4), true);
+		squaresArray[29] = new Square(new Position(5,4), true);
+
+		squaresArray[30] = new Square(new Position(0,5), false);
+		squaresArray[31] = new Square(new Position(1,5), false);
+		squaresArray[32] = new Square(new Position(2,5), true);
+		squaresArray[33] = new Square(new Position(3,5), true);
+		squaresArray[34] = new Square(new Position(4,5), true);
+		squaresArray[35] = new Square(new Position(5,5), true);
+
+		Board b5 = new Board(squaresArray);
+		Goal g5 = new Goal(25, 35, 50);
+		int timeLimit2 = 120; // seconds
+
+		LightningLevel l5 = new LightningLevel(b5, g5, timeLimit2);
+		l5.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l5);
 		
 		// Create Level 6
@@ -342,7 +390,55 @@ public class Model {
 		l7.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l7);		
 		
-		PuzzleLevel l8 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 8
+		squaresArray[0] = new Square(new Position(0,0), false);
+		squaresArray[1] = new Square(new Position(1,0), false);
+		squaresArray[2] = new Square(new Position(2,0), false);
+		squaresArray[3] = new Square(new Position(3,0), false);
+		squaresArray[4] = new Square(new Position(4,0), true);
+		squaresArray[5] = new Square(new Position(5,0), true);
+
+		squaresArray[6] = new Square(new Position(0,1), false);
+		squaresArray[7] = new Square(new Position(1,1), false);
+		squaresArray[8] = new Square(new Position(2,1), false);
+		squaresArray[9] = new Square(new Position(3,1), true);
+		squaresArray[10] = new Square(new Position(4,1), true);
+		squaresArray[11] = new Square(new Position(5,1), true);
+
+		squaresArray[12] = new Square(new Position(0,2), false);
+		squaresArray[13] = new Square(new Position(1,2), false);
+		squaresArray[14] = new Square(new Position(2,2), true);
+		squaresArray[15] = new Square(new Position(3,2), true);
+		squaresArray[16] = new Square(new Position(4,2), true);
+		squaresArray[17] = new Square(new Position(5,2), true);
+
+		squaresArray[18] = new Square(new Position(0,3), false);
+		squaresArray[19] = new Square(new Position(1,3), true);
+		squaresArray[20] = new Square(new Position(2,3), true);
+		squaresArray[21] = new Square(new Position(3,3), true);
+		squaresArray[22] = new Square(new Position(4,3), true);
+		squaresArray[23] = new Square(new Position(5,3), true);
+
+		squaresArray[24] = new Square(new Position(0,4), true);
+		squaresArray[25] = new Square(new Position(1,4), true);
+		squaresArray[26] = new Square(new Position(2,4), true);
+		squaresArray[27] = new Square(new Position(3,4), true);
+		squaresArray[28] = new Square(new Position(4,4), true);
+		squaresArray[29] = new Square(new Position(5,4), true);
+
+		squaresArray[30] = new Square(new Position(0,5), true);
+		squaresArray[31] = new Square(new Position(1,5), true);
+		squaresArray[32] = new Square(new Position(2,5), true);
+		squaresArray[33] = new Square(new Position(3,5), true);
+		squaresArray[34] = new Square(new Position(4,5), true);
+		squaresArray[35] = new Square(new Position(5,5), true);
+
+		Board b8 = new Board(squaresArray);
+		Goal g8 = new Goal(25, 35, 50);
+		int timeLimit3 = 120; // seconds
+
+		LightningLevel l8 = new LightningLevel(b8, g8, timeLimit3);
+		l8.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l8);
 
 		// Create Level 9
@@ -453,7 +549,55 @@ public class Model {
 		l10.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l10);		
 		
-		PuzzleLevel l11 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 11
+		squaresArray[0] = new Square(new Position(0,0), true);
+		squaresArray[1] = new Square(new Position(1,0), true);
+		squaresArray[2] = new Square(new Position(2,0), true);
+		squaresArray[3] = new Square(new Position(3,0), true);
+		squaresArray[4] = new Square(new Position(4,0), true);
+		squaresArray[5] = new Square(new Position(5,0), true);
+
+		squaresArray[6] = new Square(new Position(0,1), false);
+		squaresArray[7] = new Square(new Position(1,1), true);
+		squaresArray[8] = new Square(new Position(2,1), true);
+		squaresArray[9] = new Square(new Position(3,1), true);
+		squaresArray[10] = new Square(new Position(4,1), true);
+		squaresArray[11] = new Square(new Position(5,1), false);
+
+		squaresArray[12] = new Square(new Position(0,2), false);
+		squaresArray[13] = new Square(new Position(1,2), false);
+		squaresArray[14] = new Square(new Position(2,2), true);
+		squaresArray[15] = new Square(new Position(3,2), true);
+		squaresArray[16] = new Square(new Position(4,2), false);
+		squaresArray[17] = new Square(new Position(5,2), false);
+
+		squaresArray[18] = new Square(new Position(0,3), false);
+		squaresArray[19] = new Square(new Position(1,3), true);
+		squaresArray[20] = new Square(new Position(2,3), true);
+		squaresArray[21] = new Square(new Position(3,3), true);
+		squaresArray[22] = new Square(new Position(4,3), true);
+		squaresArray[23] = new Square(new Position(5,3), false);
+
+		squaresArray[24] = new Square(new Position(0,4), false);
+		squaresArray[25] = new Square(new Position(1,4), true);
+		squaresArray[26] = new Square(new Position(2,4), true);
+		squaresArray[27] = new Square(new Position(3,4), true);
+		squaresArray[28] = new Square(new Position(4,4), true);
+		squaresArray[29] = new Square(new Position(5,4), false);
+
+		squaresArray[30] = new Square(new Position(0,5), false);
+		squaresArray[31] = new Square(new Position(1,5), false);
+		squaresArray[32] = new Square(new Position(2,5), true);
+		squaresArray[33] = new Square(new Position(3,5), true);
+		squaresArray[34] = new Square(new Position(4,5), false);
+		squaresArray[35] = new Square(new Position(5,5), false);
+
+		Board b11 = new Board(squaresArray);
+		Goal g11 = new Goal(25, 35, 50);
+		int timeLimit4 = 120; // seconds
+
+		LightningLevel l11 = new LightningLevel(b11, g11, timeLimit4);
+		l11.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l11);
 		
 		// Create Level 12
@@ -565,7 +709,55 @@ public class Model {
 		l13.isUnlocked = false; 
 		getMainLevels().addLevel(l13);		
 		
-		PuzzleLevel l14 = new PuzzleLevel(b1, g1, moveLimit);
+		// Create Level 14
+		squaresArray[0] = new Square(new Position(0,0), false);
+		squaresArray[1] = new Square(new Position(1,0), true);
+		squaresArray[2] = new Square(new Position(2,0), false);
+		squaresArray[3] = new Square(new Position(3,0), false);
+		squaresArray[4] = new Square(new Position(4,0), true);
+		squaresArray[5] = new Square(new Position(5,0), false);
+
+		squaresArray[6] = new Square(new Position(0,1), false);
+		squaresArray[7] = new Square(new Position(1,1), true);
+		squaresArray[8] = new Square(new Position(2,1), true);
+		squaresArray[9] = new Square(new Position(3,1), true);
+		squaresArray[10] = new Square(new Position(4,1), true);
+		squaresArray[11] = new Square(new Position(5,1), false);
+
+		squaresArray[12] = new Square(new Position(0,2), false);
+		squaresArray[13] = new Square(new Position(1,2), true);
+		squaresArray[14] = new Square(new Position(2,2), true);
+		squaresArray[15] = new Square(new Position(3,2), true);
+		squaresArray[16] = new Square(new Position(4,2), true);
+		squaresArray[17] = new Square(new Position(5,2), false);
+
+		squaresArray[18] = new Square(new Position(0,3), false);
+		squaresArray[19] = new Square(new Position(1,3), true);
+		squaresArray[20] = new Square(new Position(2,3), true);
+		squaresArray[21] = new Square(new Position(3,3), true);
+		squaresArray[22] = new Square(new Position(4,3), true);
+		squaresArray[23] = new Square(new Position(5,3), false);
+
+		squaresArray[24] = new Square(new Position(0,4), false);
+		squaresArray[25] = new Square(new Position(1,4), true);
+		squaresArray[26] = new Square(new Position(2,4), true);
+		squaresArray[27] = new Square(new Position(3,4), true);
+		squaresArray[28] = new Square(new Position(4,4), true);
+		squaresArray[29] = new Square(new Position(5,4), false);
+
+		squaresArray[30] = new Square(new Position(0,5), false);
+		squaresArray[31] = new Square(new Position(1,5), true);
+		squaresArray[32] = new Square(new Position(2,5), false);
+		squaresArray[33] = new Square(new Position(3,5), false);
+		squaresArray[34] = new Square(new Position(4,5), true);
+		squaresArray[35] = new Square(new Position(5,5), false);
+
+		Board b14 = new Board(squaresArray);
+		Goal g14 = new Goal(25, 35, 50);
+		int timeLimit5 = 120; // seconds
+
+		LightningLevel l14 = new LightningLevel(b14, g14, timeLimit5);
+		l14.isUnlocked = false; // first three levels should be unlocked
 		getMainLevels().addLevel(l14);
 		
 		// Create Level 15
