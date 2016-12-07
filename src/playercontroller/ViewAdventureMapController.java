@@ -7,11 +7,23 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controls all actions when interacting with Adventure Map interface
+ * <p>
+ */
+
 public class ViewAdventureMapController implements ActionListener {
 	
 	Application app;
 	Model model;
 
+	/**
+	 * Provides all actions to the main map. Resets levels when user exits.
+	 * Controls whether a level is accessible based on score.
+	 * <p>
+	 * @param ae ActionEvent
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -36,6 +48,13 @@ public class ViewAdventureMapController implements ActionListener {
 		
 		
 	}
+	
+	/**
+	 * Sets parameters for ViewAdventureMapController
+	 * <p>
+	 * @param app Application, m model
+	 */
+	
 	
 	public ViewAdventureMapController(Application app, Model m) {
 		this.app = app;

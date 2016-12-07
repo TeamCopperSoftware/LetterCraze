@@ -9,12 +9,23 @@ import playerboundary.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controls all actions when initializing Levels
+ * <p>
+ */
+
 public class ViewLevelController implements ActionListener {
 	
 	Application app;
 	Model model;
 	int levelNumber;
 
+	/**
+	 * Provides all actions to levels when accessed
+	 * <p>
+	 * @param ae ActionEvent
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		LevelModel level = model.getMainLevels().getLevels().get(levelNumber);
@@ -37,6 +48,13 @@ public class ViewLevelController implements ActionListener {
 			}
 		}
 	}
+	
+	/**
+	 * Sets parameters for ViewLevelController
+	 * <p>
+	 * @param app Application, m model, levelNumber int
+	 */
+	
 	
 	public ViewLevelController(Application app, Model m, int levelNumber) {
 		this.app = app;
