@@ -11,6 +11,26 @@ import entities.Model;
 import entities.Position;
 import entities.Square;
 
+/**
+ * LetterCraze Player PlugIn.
+ * <p>
+ * Instructions: Selecting Play game takes you to the adventure map menu where 
+ * you can play 15 levels with 3 different variations types being Puzzle, Lightning, 
+ * and Theme. Puzzle is based on high score, lightning is based on the amount of words
+ * found in the given time, and theme is based on finding specific words based on a common
+ * topic. 
+ * <p>
+ * Selecting words in a level are performed by clicking on letters in the tiles and following that
+ * tile path till it forms a word. Each tile has to be clicked and must be next to each other either
+ * across left, right, up, down, or diagonal of preceding tile. Words should also be no more than 3 
+ * letters. Once you selected a valid word by highlight the letter tiles in yellow in order, press
+ * the add word button to sucessfully add a word if valid. Levels can be unlocked one by one by achieving 
+ * at least one star in each level. Custom levels can also be played by going back to the Main Menu and 
+ * selecting custom levels. Same level rules apply for custom levels.
+ * <p>
+ * @author: Annie Hernandez, Anthony Gringeri, James Kradjian, John Dyer, and Goutham Deva
+ */
+
 
 public class Main {
 
