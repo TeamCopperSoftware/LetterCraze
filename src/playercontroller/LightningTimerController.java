@@ -2,6 +2,7 @@ package playercontroller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import entities.LevelModel;
 import entities.Model;
 import playerboundary.Application;
 import playerboundary.LightningLevelApplication;
@@ -24,6 +25,9 @@ public class LightningTimerController implements ActionListener {
             if (app.getContentPane().equals(l)) {
             	l.clearList();
                 l.getLevelModel().exitLevel();
+                LevelModel lm = model.getMainLevels().getLevels().get(levelNumber);
+                System.out.println("Score: " + lm.getBestScore().getScore());
+				System.out.println("Stars: " + lm.getBestScore().getStar());
                 app.getMapApplication().refreshPanel();
             	app.setContentPane(app.getMapApplication());
             }

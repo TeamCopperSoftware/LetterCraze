@@ -42,12 +42,12 @@ public class Move {
 			
 			// update star score (if necessary)
 			// if current score is greater than star1 goal
-			if (model.getCurrentScore().getScore() >= model.getGoals().getStar1()) {
-				model.getCurrentScore().setStar(1);
+			if (model.getCurrentScore().getScore() >= model.getGoals().getStar3()) {
+				model.getCurrentScore().setStar(3);
 			} else if (model.getCurrentScore().getScore() >= model.getGoals().getStar2()) {
 				model.getCurrentScore().setStar(2);
-			} else if (model.getCurrentScore().getScore() >= model.getGoals().getStar3()) {
-				model.getCurrentScore().setStar(3);
+			} else if (model.getCurrentScore().getScore() >= model.getGoals().getStar1()) {
+				model.getCurrentScore().setStar(1);
 			}
 			
 			// remove word from board

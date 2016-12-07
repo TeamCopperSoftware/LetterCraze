@@ -17,8 +17,8 @@ public class Score {
 
     }
 
-    public int updateScore(int change) {
-        return numScore +=change;
+    public void updateScore(int change) {
+        numScore +=change;
     }
 
     /* Use setStart to update the star value

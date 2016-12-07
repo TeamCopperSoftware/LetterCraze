@@ -37,7 +37,10 @@ public class AddWordController implements ActionListener {
 					thisLevel.resetMovesDone();
 					level.resetObjectiveValue(thisLevel.getMoveLimit());
 					level.clearList();
+					
 					// return to mainmenu
+					System.out.println("Score: " + thisLevel.getBestScore().getScore());
+					System.out.println("Stars: " + thisLevel.getBestScore().getStar());
 					topLevelApp.getMapApplication().refreshPanel();
 					topLevelApp.setContentPane(topLevelApp.getMapApplication());
 				}
@@ -57,6 +60,8 @@ public class AddWordController implements ActionListener {
 					level.resetObjectiveValue(thisLevel.getWordList().size());
 					level.clearList();
 					// return to main menu
+					System.out.println("Score: " + thisLevel.getBestScore().getScore());
+					System.out.println("Stars: " + thisLevel.getBestScore().getStar());
 					topLevelApp.getMapApplication().refreshPanel();
 					topLevelApp.setContentPane(topLevelApp.getMapApplication());
 				}

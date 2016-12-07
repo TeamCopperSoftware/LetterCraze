@@ -65,7 +65,7 @@ public class Model {
 		squaresArray[35] = new Square(new Position(5,5), false);
 
 		Board b1 = new Board(squaresArray);
-		Goal g1 = new Goal(50, 100, 150);
+		Goal g1 = new Goal(15, 25, 35);
 		int moveLimit = 3;
 
 		PuzzleLevel l1 = new PuzzleLevel(b1, g1, moveLimit);
