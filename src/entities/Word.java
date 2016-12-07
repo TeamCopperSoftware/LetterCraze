@@ -28,6 +28,17 @@ public class Word {
         value = value * (squares.size()-2);
     }
     
+    public void removeSquare (Square s) {
+        squares.remove(s);
+        letters = "";
+        value = 0;
+        for (int i = 0; i < squares.size(); i++) {
+        	letters += squares.get(i).tilePeek().letter;
+        	value += squares.get(i).tilePeek().getPoints();
+        }
+        value = value * (squares.size()-2);
+    }
+    
     public String toString () {
         return letters;
     }

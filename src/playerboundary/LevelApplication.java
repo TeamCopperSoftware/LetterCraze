@@ -2,6 +2,8 @@ package playerboundary;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Stack;
+
 import javax.swing.*;
 import entities.*;
 
@@ -20,6 +22,7 @@ public abstract class LevelApplication extends JPanel {
 	JScrollPane scrollPane;
 	JButton resetButton;
 	JButton undoButton;
+	Stack<JButton> selectedButtons;
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -119,6 +122,8 @@ public abstract class LevelApplication extends JPanel {
 		confirmButton = new JButton("Add word");
 		confirmButton.setBounds(470, 20, 110, 29);
 		leftPanel.add(confirmButton);
+		
+		selectedButtons = new Stack<JButton>();
 	}
 
 	public void refreshPanel(LevelModel level) {
@@ -209,6 +214,22 @@ public abstract class LevelApplication extends JPanel {
 	
 	public int getObjectiveValue() {
 		return Integer.parseInt(objectiveValueLabel.getText());
+	}
+	
+	public Stack<JButton> getSelectedButtons() {
+		return selectedButtons;
+	}
+	
+	public JButton popSelectedButton() {
+		return selectedButtons.pop();
+	}
+	
+	public JButton peekSelectedButton() {
+		return selectedButtons.peek();
+	}
+	
+	public void pushSelectedButton(JButton b) {
+		selectedButtons.push(b);
 	}
 
 }
