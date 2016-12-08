@@ -7,6 +7,7 @@ public class Board {
 	Word currentWord;  //TODO: Never used anywhere???
 
 	public Board () {
+		
 	}
 
 	public Board (Square[] squares) {
