@@ -57,6 +57,9 @@ public class Move {
 				model.getCurrentScore().setStar(1);
 			}
 			
+			// possibly update Best Score
+			model.updateBestScore();
+			
 			// remove word from board
 			model.getBoard().removeWord(word);
 			

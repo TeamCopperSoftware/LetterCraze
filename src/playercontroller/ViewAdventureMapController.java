@@ -1,7 +1,12 @@
 package playercontroller;
 
+import entities.LevelModel;
+import entities.LightningLevel;
 import entities.Model;
+import entities.PuzzleLevel;
+import entities.ThemeLevel;
 import playerboundary.Application;
+import playerboundary.LevelApplication;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -29,7 +34,23 @@ public class ViewAdventureMapController implements ActionListener {
 		
 		// Deselect all tiles when we exit to MapApplication
 		for (int i = 0; i < model.getMainLevels().getLevels().size(); i++) {
-			model.getMainLevels().getLevels().get(i).resetLevel();
+			LevelApplication levelapp = app.getLevelApplications().get(i);
+			LevelModel level = levelapp.getLevelModel();
+			level.resetLevel();
+			if (level.getType().equals("Puzzle")) {
+				PuzzleLevel plevel = (PuzzleLevel)level;
+				levelapp.resetObjectiveValue(plevel.getMoveLimit());
+			}
+			if (level.getType().equals("Lightning")) {
+				LightningLevel llevel = (LightningLevel)level;
+				levelapp.resetObjectiveValue(llevel.getTimeLimit());
+			}
+			if (level.getType().equals("Theme")) {
+				ThemeLevel tlevel = (ThemeLevel)level;
+				levelapp.resetObjectiveValue(tlevel.getValidWords().size());
+			}
+			
+			
 		}
 		
 		model.getMainLevels().unlockNextLevel();
