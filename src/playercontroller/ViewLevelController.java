@@ -21,7 +21,7 @@ public class ViewLevelController implements ActionListener {
 	int levelNumber;
 
 	/**
-	 * Provides all actions to levels when accessed
+	 * Provides all actions to level when accessed
 	 * <p>
 	 * @param ae ActionEvent
 	 */

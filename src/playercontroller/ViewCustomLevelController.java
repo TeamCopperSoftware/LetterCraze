@@ -11,12 +11,24 @@ import playerboundary.LightningLevelApplication;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controls all actions when initializing custom level views
+ * <p>
+ */
+
+
 public class ViewCustomLevelController implements ActionListener {
 	
 	Application app;
 	Model model;
 	int levelNumber;
 
+	/**
+	 * Provides all actions to level when accessed
+	 * <p>
+	 * @param ae ActionEvent
+	 */
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		LevelModel level = model.getCustomLevels().get(levelNumber);
@@ -39,6 +51,12 @@ public class ViewCustomLevelController implements ActionListener {
 			}
 		}
 	}
+	
+	/**
+	 * Sets parameters for ViewCustomLevelController
+	 * <p>
+	 * @param app Application, m model, levelNumber int
+	 */
 	
 	public ViewCustomLevelController(Application app, Model m, int levelNumber) {
 		this.app = app;
