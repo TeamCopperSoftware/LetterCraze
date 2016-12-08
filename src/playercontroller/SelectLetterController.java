@@ -9,12 +9,26 @@ import javax.swing.JButton;
 import entities.*;
 import playerboundary.LevelApplication;
 
+/**
+ * Controls all actions to do with mouse events when selecting letter/Tiles in all levels.
+ * <p>
+ */
+
 public class SelectLetterController implements ActionListener {
 	LevelApplication app;
 	LevelModel model;
 	int levelNumber;
 	int x;
 	int y;
+	
+	/**
+	 * Provides all actions to tile/letters. Checks if button is selected, and make sure 
+	 * nonTile entities are un-selectable. Marks tile as yellow when selected and keeps 
+	 * track of selected path of tiles
+	 * <p>
+	 * @param ae ActionEvent
+	 */
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -460,6 +474,13 @@ public class SelectLetterController implements ActionListener {
 		System.out.println(numSelected);
 	}
 	*/
+	
+	/**
+	 * Sets parameters for SelectLetterController
+	 * <p>
+	 * @param app LevelApplication, m LevelModel, levelNumber int, x int, y int
+	 */
+	
 
 	public SelectLetterController(LevelApplication app, LevelModel m, int levelNumber, int x, int y) {
 		this.app = app;
