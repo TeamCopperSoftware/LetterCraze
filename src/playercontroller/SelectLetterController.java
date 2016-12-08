@@ -24,7 +24,7 @@ public class SelectLetterController implements ActionListener {
 	/**
 	 * Provides all actions to tile/letters. Checks if button is selected, and make sure 
 	 * nonTile entities are un-selectable. Marks tile as yellow when selected and keeps 
-	 * track of selected path of tiles
+	 * track of selected path of tiles in all directions within 1 tile difference. 
 	 * <p>
 	 * @param ae ActionEvent
 	 */
