@@ -6,8 +6,8 @@ public class TestSquare extends TestCase {
 
 	public void testSquareValid() {
 		Position p1 = new Position(2, 1);
-		Tile t1 = new Tile("a", 3);
-		Tile t2 = new Tile("b", 4);
+		Tile t1 = new Tile("A");
+		Tile t2 = new Tile("B");
 		Square s1 = new Square(p1, true, t1);
 		assertEquals(s1.tile.toString(), "A");
 		
@@ -25,8 +25,8 @@ public class TestSquare extends TestCase {
 	
 	public void testSquareNotValid() {
 		Position p1 = new Position(2, 1);
-		Tile t1 = new Tile("@", 3);
-		Square s1 = new Square(p1, true, t1);
+		//Tile t1 = new Tile("@");  //TODO: Can't test if bad tile are auto null
+		//Square s1 = new Square(p1, true, t1);
 		//assertNotSame(s1.tile.toString(), "@"); //Needs not to happen
 		//assertTrue(s1.isValid()); //Need a "isValid()" method or similar
 	}

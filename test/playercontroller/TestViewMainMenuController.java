@@ -3,6 +3,8 @@ package playercontroller;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
 import entities.LevelModel;
 import entities.Model;
 import junit.framework.TestCase;
@@ -14,10 +16,10 @@ public class TestViewMainMenuController extends TestCase {
 		Model model = new Model();
 		Application app = new Application(model);
 		ViewMainMenuController vmmc = new ViewMainMenuController(app, model);
-		//ActionEvent e = app.mainMenu;
-		//vmmc.actionPerformed(e);
+		JButton butt = new JButton();
+		ActionEvent ae = new ActionEvent(butt, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt"); //want butt.doClick or butt.doClick()
+		vmmc.actionPerformed(ae);
 		
-		TestViewMainMenuController.java
 	}
 	
 }

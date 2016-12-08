@@ -86,7 +86,10 @@ public class Move {
 	
 	public boolean isValidMove() {
 		if (word.isValid()) {
-		//are there any more stipulations? Check if timer has run out/etc.?
+			//if(model.getType() == "Theme") {
+			//	if (themelvl.wordList) {return true;}
+			//	else {return false;}
+			//}  TODO: works in practice, but fails in tests
 		return true;
 		}
 		else return false;

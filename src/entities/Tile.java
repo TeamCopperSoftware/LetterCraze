@@ -20,5 +20,13 @@ public class Tile {
         // TODO Auto-generated method stub
         return value;
     }
+    
+    public boolean isValid() {
+    	if (letter.equals(letter.toUpperCase()) & (LetterInfo.getLetterValue(letter) == value)) 
+    			{ return true; }
+    	else if (this == null) { return false; }
+    	else {return false;}
+    	
+    }
 }
 
