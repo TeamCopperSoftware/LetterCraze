@@ -2,6 +2,7 @@ package playerboundary;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.util.Stack;
 
 import javax.swing.*;
@@ -23,6 +24,7 @@ public abstract class LevelApplication extends JPanel {
 	JButton resetButton;
 	JButton undoButton;
 	Stack<JButton> selectedButtons;
+	JLabel starLabel;
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -68,12 +70,15 @@ public abstract class LevelApplication extends JPanel {
 		progressBar.setMaximum(10000);
 		progressBar.setEnabled(false);
 		progressBar.setValue(3333);
-		progressBar.setBounds(50, 547, 438, 20);
+		progressBar.setBounds(50, 547, 400, 20);
 		leftPanel.add(progressBar);
 		
-		JLabel starLabel = new JLabel("StarIcons");
-		starLabel.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
-		starLabel.setBounds(500, 547, 58, 16);
+		starLabel = new JLabel();
+		//starLabel.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
+		starLabel.setBounds(480, 537, 81, 27);
+		Image image = new ImageIcon("image/StarsEmpty.png").getImage();
+		image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+		starLabel.setIcon(new ImageIcon(image));
 		leftPanel.add(starLabel);
 		
 		exitButton = new JButton("Exit");
@@ -149,6 +154,29 @@ public abstract class LevelApplication extends JPanel {
 		
 		// update score
 		scoreLabel.setText(String.valueOf(level.getCurrentScore().getScore()));
+		
+		// update stars
+		if (level.getCurrentScore().getStar() == 0) {
+			Image image = new ImageIcon("image/StarsEmpty.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else if (level.getCurrentScore().getStar() == 1) {
+			Image image = new ImageIcon("image/StarsOne.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else if (level.getCurrentScore().getStar() == 2) {
+			Image image = new ImageIcon("image/StarsTwo.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else {
+			Image image = new ImageIcon("image/StarsThree.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		
 		
 		// deselect panels
 		for (int x = 0; x < 6; x++) {
