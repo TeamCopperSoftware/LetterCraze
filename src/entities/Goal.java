@@ -9,13 +9,13 @@ public class Goal {
         this.star3 = star3;
     }
     
-    int getStar1() {
+    public int getStar1() {
         return star1;
     }
-    int getStar2() {
+    public int getStar2() {
         return star2;
     }
-    int getStar3() {
+    public int getStar3() {
         return star3;
     }
     

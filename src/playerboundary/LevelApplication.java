@@ -25,6 +25,7 @@ public abstract class LevelApplication extends JPanel {
 	JButton undoButton;
 	Stack<JButton> selectedButtons;
 	JLabel starLabel;
+	JProgressBar progressBar;
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -66,10 +67,10 @@ public abstract class LevelApplication extends JPanel {
 		scoreLabel.setBounds(50, 520, 508, 16);
 		leftPanel.add(scoreLabel);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setMaximum(10000);
+		progressBar = new JProgressBar();
+		progressBar.setMaximum(model.getGoals().getStar3());
 		progressBar.setEnabled(false);
-		progressBar.setValue(3333);
+		progressBar.setValue(0);
 		progressBar.setBounds(50, 547, 400, 20);
 		leftPanel.add(progressBar);
 		
@@ -154,6 +155,8 @@ public abstract class LevelApplication extends JPanel {
 		
 		// update score
 		scoreLabel.setText(String.valueOf(level.getCurrentScore().getScore()));
+		
+		progressBar.setValue(level.getCurrentScore().getScore());
 		
 		// update stars
 		if (level.getCurrentScore().getStar() == 0) {

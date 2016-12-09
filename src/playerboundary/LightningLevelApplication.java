@@ -79,6 +79,8 @@ public class LightningLevelApplication extends LevelApplication {
 		// update score
 		scoreLabel.setText(String.valueOf(level.getCurrentScore().getScore()));
 		
+		progressBar.setValue(level.getCurrentScore().getScore());
+		
 		// update stars
 		if (level.getCurrentScore().getStar() == 0) {
 			Image image = new ImageIcon("image/StarsEmpty.png").getImage();

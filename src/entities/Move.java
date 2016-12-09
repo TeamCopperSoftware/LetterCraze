@@ -83,6 +83,9 @@ public class Move {
 		if (model.getHistorySize() == 0) {
 			return false;
 		} else {
+			Move m = model.history.pop();
+			Word w = m.word;
+			
 			return true;
 		}
 	}
