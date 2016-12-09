@@ -161,6 +161,16 @@ public class Main {
 			app.getCustomLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
 		
+		// set controllers for undo buttons on main levels
+		for (int i = 0; i < numMainLevels; i++) {
+			app.getLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
+
+		// set controllers for undo buttons on custom levels
+		for (int i = 0; i < numCustomLevels; i++) {
+			app.getCustomLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
+		}
+		
 	}
 
 }
