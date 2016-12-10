@@ -28,14 +28,14 @@ public class UndoMoveController {
      * @param LevelModel m 
      * @param LevelApplication app
      */
-    public void UndoMoveController(void LevelModel m, void LevelApplication app) {
+    public void UndoMoveController(LevelModel m, void LevelApplication app) {
         // TODO implement here
     }
 
     /**
      * @param ActionEvent ae
      */
-    public void ActionEvent(void ActionEvent ae) {
+    public void ActionEvent(ActionEvent ae) {
         // TODO implement here
     }
 

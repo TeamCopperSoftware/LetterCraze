@@ -28,14 +28,14 @@ public class DeleteLevelController {
      * @param EditSavedLevelsModel m 
      * @param EditSavedLevelsApplication app
      */
-    public void DeleteLevelController(void EditSavedLevelsModel m, void EditSavedLevelsApplication app) {
+    public void DeleteLevelController(EditSavedLevelsModel m, EditSavedLevelsApplication app) {
         // TODO implement here
     }
 
     /**
      * @param MouseEvent me
      */
-    public void ButtonPressed(void MouseEvent me) {
+    public void ButtonPressed(MouseEvent me) {
         // TODO implement here
     }
 

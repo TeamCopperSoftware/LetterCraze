@@ -28,14 +28,14 @@ public class BuilderLevelButtonController {
      * @param EditSavedLevelsModel m 
      * @param EditSavedLevelsApplication app
      */
-    public void BuilderLevelButtonController(void EditSavedLevelsModel m, void EditSavedLevelsApplication app) {
+    public void BuilderLevelButtonController(EditSavedLevelsModel m, EditSavedLevelsApplication app) {
         // TODO implement here
     }
 
     /**
      * @param MouseEvent me
      */
-    public void ButtonPressed(void MouseEvent me) {
+    public void ButtonPressed(MouseEvent me) {
         // TODO implement here
     }
 

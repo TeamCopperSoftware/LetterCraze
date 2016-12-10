@@ -27,14 +27,14 @@ public class GameModeSelectionController {
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void GameModeSelectionController(void LevelModel m, void CreateNewLevelApplication app) {
+    public void GameModeSelectionController(LevelModel m, CreateNewLevelApplication app) {
         // TODO implement here
     }
 
     /**
      * @param MouseEvent me
      */
-    public void ButtonPressed(void MouseEvent me) {
+    public void ButtonPressed(MouseEvent me) {
         // TODO implement here
     }
 
