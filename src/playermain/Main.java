@@ -79,6 +79,15 @@ public class Main {
 		model = new Model();
 	}
 
+	
+	/**
+	 * Getter method for model.
+	 */
+	public Model getModel() {
+		return model;
+	}
+
+	
 	/**
 	 * Initialize the boundary objects.
 	 */
@@ -86,6 +95,14 @@ public class Main {
 		app = new Application(model);
 	}
 
+	
+	/**
+	 * Getter method for application
+	 */
+	public Application getApp() {
+		return app;
+	}
+	
 	/**
 	 * Initialize the controllers.
 	 */
@@ -159,6 +176,16 @@ public class Main {
 		// set controllers for reset buttons on custom levels
 		for (int i = 0; i < numCustomLevels; i++) {
 			app.getCustomLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
+		}
+		
+		// set controllers for undo buttons on main levels
+		for (int i = 0; i < numMainLevels; i++) {
+			app.getLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+		}
+
+		// set controllers for undo buttons on custom levels
+		for (int i = 0; i < numCustomLevels; i++) {
+			app.getCustomLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
 		
 	}

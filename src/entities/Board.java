@@ -7,6 +7,7 @@ public class Board {
 	Word currentWord;  //TODO: Never used anywhere???
 
 	public Board () {
+		
 	}
 
 	public Board (Square[] squares) {
@@ -139,5 +140,24 @@ public class Board {
 			}
 		}
 	}
+	
+	/* Possible method that could be called when undoing move, currently unfinished
+	public void putWordBack(Word w) {
+		int wordSize = w.getSquares().size();
+		for (int i = 0; i < wordSize; i++) {
+			Square oldSquare = w.getSquares().get(i);
+			Square currentSquare = squares[oldSquare.position.getX()][oldSquare.position.getY()];
+			Tile t = currentSquare.tilePop();
+			currentSquare.tileAdd(oldSquare.tilePop());
+			for (int j = currentSquare.position.getY()+1; j < 5; j++) {
+				Square s = squares[currentSquare.position.getX()][j];
+				s.tileAdd(t);
+				t = squares[currentSquare.position.getX()][j+1].tilePop();
+			}
+			
+			
+		}
+	}
+	*/
 
 }

@@ -28,5 +28,9 @@ public class Tile {
     	else {return false;}
     	
     }
+    
+    public String getLetter() {
+    	return letter;
+    }
 }
 

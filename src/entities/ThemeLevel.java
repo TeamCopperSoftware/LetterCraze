@@ -13,7 +13,20 @@ public class ThemeLevel extends LevelModel {
         super(b, g, "Theme");
         this.theme = theme;
         this.validWords = validWords;
-        this.startingBoard = b;
+        Square[] squares = new Square[36];
+        int i = 0;
+        for (int y = 0; y < 6; y++) {
+        	for (int x = 0; x < 6; x++) {
+        		if (b.lookUpSquare(x, y).enabled) {
+        			squares[i] = new Square(b.lookUpSquare(x, y).position, b.lookUpSquare(x, y).enabled, new Tile(b.lookUpSquare(x, y).tilePeek().letter));
+        		}
+        		else {
+        			squares[i] = new Square(b.lookUpSquare(x, y).position, false);
+        		}
+        		i++;
+        	}
+        }
+        this.startingBoard = new Board(squares);
     }
     
     @Override
@@ -23,7 +36,20 @@ public class ThemeLevel extends LevelModel {
     
     @Override
     public void resetLevel() {
-    	this.board = startingBoard;
+    	Square[] squares = new Square[36];
+    	int i = 0;
+    	for (int y = 0; y < 6; y++) {
+    		for (int x = 0; x < 6; x++) {
+    			if (startingBoard.lookUpSquare(x, y).enabled) {
+    				squares[i] = new Square(startingBoard.lookUpSquare(x, y).position, startingBoard.lookUpSquare(x, y).enabled, new Tile(startingBoard.lookUpSquare(x, y).tilePeek().letter));
+    			}
+    			else {
+    				squares[i] = new Square(startingBoard.lookUpSquare(x, y).position, false);
+    			}
+    			i++;
+    		}
+    	}
+    	this.board = new Board(squares);
     	currentScore = new Score(); // set currentScore to 0;
     	history.clear(); // clear move history
     	wordList.clear();

@@ -17,6 +17,8 @@ public class Move {
 	
 	LevelApplication app;
 	
+	Tile[][] tileSetup;
+	
 	/**
 	 * Constructor for Move
 	 * 
@@ -27,6 +29,14 @@ public class Move {
 		this.word = word;
 		this.app = app;
 		this.model = model;
+		tileSetup = new Tile[6][6];
+		for (int y = 0; y < 6; y++) {
+			for (int x = 0; x < 6; x++) {
+				if (model.getBoard().lookUpSquare(x, y).isEnabled() && model.getBoard().lookUpSquare(x, y).hasTile()) {
+					tileSetup[x][y] = new Tile(model.getBoard().lookUpSquare(x, y).tilePeek().getLetter());
+				}
+			}
+		}
 	}
 	
 	public boolean doMove() {
@@ -57,6 +67,9 @@ public class Move {
 				model.getCurrentScore().setStar(1);
 			}
 			
+			// possibly update Best Score
+			model.updateBestScore();
+			
 			// remove word from board
 			model.getBoard().removeWord(word);
 			
@@ -77,12 +90,63 @@ public class Move {
 	}
 	
 	public boolean undoMove() {
-		if (model.getHistorySize() == 0) {
-			return false;
-		} else {
-			return true;
+
+		// remove word from model's word list
+		int wordListSize = model.getWordList().size();
+		model.getWordList().removeElementAt(wordListSize-1);
+
+		// update numscore
+		if (!model.getType().equals("Theme")) {
+			int wordScore = word.getScore();
+			model.getCurrentScore().updateScore(-1*wordScore);
+			if (model.getBestScore().getScore() > model.getStartingBestScore().getScore()) {
+				model.getBestScore().updateScore(-1*wordScore);
+			}
 		}
+		// in theme levels score is based on how many words you find
+		else {
+			model.getCurrentScore().updateScore(-1);
+			if (model.getBestScore().getScore() > model.getStartingBestScore().getScore()) {
+				model.getBestScore().updateScore(-1);
+			}
+		}
+
+
+		// update star score for current score (if necessary)
+		if (model.getCurrentScore().getScore() < model.getGoals().getStar1()) {
+			model.getCurrentScore().setStar(0);
+		} else if (model.getCurrentScore().getScore() < model.getGoals().getStar2()) {
+			model.getCurrentScore().setStar(1);
+		} else if (model.getCurrentScore().getScore() < model.getGoals().getStar3()) {
+			model.getCurrentScore().setStar(2);
+		}
+		else {
+			model.getCurrentScore().setStar(3);
+		}
+		
+		// update star score for best score (if necessary)
+		if (model.getBestScore().getScore() < model.getGoals().getStar1()) {
+			model.getBestScore().setStar(0);
+		} else if (model.getBestScore().getScore() < model.getGoals().getStar2()) {
+			model.getBestScore().setStar(1);
+		} else if (model.getBestScore().getScore() < model.getGoals().getStar3()) {
+			model.getBestScore().setStar(2);
+		}
+		else {
+			model.getBestScore().setStar(3);
+		}
+
+		for (int y = 0; y < 6; y++) {
+			for (int x = 0; x < 6; x++) {
+				if (tileSetup[x][y] != null) {
+					model.getBoard().lookUpSquare(x, y).tileAdd(tileSetup[x][y]);
+				}
+			}
+		}
+
+		return true;
 	}
+
 	
 	public boolean isValidMove() {
 		if (word.isValid()) {

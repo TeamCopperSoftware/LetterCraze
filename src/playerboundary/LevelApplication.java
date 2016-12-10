@@ -2,6 +2,7 @@ package playerboundary;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.util.Stack;
 
 import javax.swing.*;
@@ -23,6 +24,8 @@ public abstract class LevelApplication extends JPanel {
 	JButton resetButton;
 	JButton undoButton;
 	Stack<JButton> selectedButtons;
+	JLabel starLabel;
+	JProgressBar progressBar;
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -47,7 +50,7 @@ public abstract class LevelApplication extends JPanel {
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				JButton b = new JButton();
-				b.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+				b.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 				b.setBounds(120+(x*60), 120+(y*60), 60, 60);
 				b.setOpaque(true);
 				b.setBorderPainted(false);
@@ -64,16 +67,19 @@ public abstract class LevelApplication extends JPanel {
 		scoreLabel.setBounds(50, 520, 508, 16);
 		leftPanel.add(scoreLabel);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setMaximum(10000);
+		progressBar = new JProgressBar();
+		progressBar.setMaximum(model.getGoals().getStar3());
 		progressBar.setEnabled(false);
-		progressBar.setValue(3333);
-		progressBar.setBounds(50, 547, 438, 20);
+		progressBar.setValue(0);
+		progressBar.setBounds(50, 547, 400, 20);
 		leftPanel.add(progressBar);
 		
-		JLabel starLabel = new JLabel("StarIcons");
-		starLabel.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
-		starLabel.setBounds(500, 547, 58, 16);
+		starLabel = new JLabel();
+		//starLabel.setFont(new Font("Lucida Grande", Font.ITALIC, 13));
+		starLabel.setBounds(480, 537, 81, 27);
+		Image image = new ImageIcon("image/StarsEmpty.png").getImage();
+		image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+		starLabel.setIcon(new ImageIcon(image));
 		leftPanel.add(starLabel);
 		
 		exitButton = new JButton("Exit");
@@ -150,6 +156,31 @@ public abstract class LevelApplication extends JPanel {
 		// update score
 		scoreLabel.setText(String.valueOf(level.getCurrentScore().getScore()));
 		
+		progressBar.setValue(level.getCurrentScore().getScore());
+		
+		// update stars
+		if (level.getCurrentScore().getStar() == 0) {
+			Image image = new ImageIcon("image/StarsEmpty.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else if (level.getCurrentScore().getStar() == 1) {
+			Image image = new ImageIcon("image/StarsOne.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else if (level.getCurrentScore().getStar() == 2) {
+			Image image = new ImageIcon("image/StarsTwo.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else {
+			Image image = new ImageIcon("image/StarsThree.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		
+		
 		// deselect panels
 		for (int x = 0; x < 6; x++) {
 			for (int y = 0; y < 6; y++) {
@@ -194,6 +225,10 @@ public abstract class LevelApplication extends JPanel {
 	
 	public void resetObjectiveValue(int resetTo) {
 		objectiveValueLabel.setText(String.valueOf(resetTo));
+	}
+	
+	public void incrementObjectiveValue() {
+		objectiveValueLabel.setText(String.valueOf(Integer.valueOf(objectiveValueLabel.getText())+1));
 	}
 	
 	public JButton getResetButton() {

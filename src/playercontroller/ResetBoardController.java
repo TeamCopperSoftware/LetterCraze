@@ -27,6 +27,13 @@ public class ResetBoardController implements ActionListener {
 	 */
 	
 	public void actionPerformed(ActionEvent ae) {
+		
+		// Reset current score to 0 and best score to what it was when level opened
+		m.getCurrentScore().setScore(0);
+		m.getCurrentScore().setStar(0);
+		m.getBestScore().setScore(m.getStartingBestScore().getScore());
+		m.getBestScore().setStar(m.getStartingBestScore().getStar());
+		
 		// reset board with new letters if it's not a theme level
 		if (!m.getType().equals("Theme")) {
 			m.getBoard().reset();

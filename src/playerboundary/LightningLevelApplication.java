@@ -22,6 +22,8 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -77,6 +79,30 @@ public class LightningLevelApplication extends LevelApplication {
 		// update score
 		scoreLabel.setText(String.valueOf(level.getCurrentScore().getScore()));
 		
+		progressBar.setValue(level.getCurrentScore().getScore());
+		
+		// update stars
+		if (level.getCurrentScore().getStar() == 0) {
+			Image image = new ImageIcon("image/StarsEmpty.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else if (level.getCurrentScore().getStar() == 1) {
+			Image image = new ImageIcon("image/StarsOne.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else if (level.getCurrentScore().getStar() == 2) {
+			Image image = new ImageIcon("image/StarsTwo.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		else {
+			Image image = new ImageIcon("image/StarsThree.png").getImage();
+			image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH);
+			starLabel.setIcon(new ImageIcon(image));
+		}
+		
 		// deselect panels
 		for (int x = 0; x < 6; x++) {
 			for (int y = 0; y < 6; y++) {
@@ -101,6 +127,10 @@ public class LightningLevelApplication extends LevelApplication {
 	
 	public Timer getTimer() {
 		return timer;
+	}
+	
+	public JButton[][] getButtonList() {
+		return squareButtons;
 	}
 
 	public JButton getExitButton() {

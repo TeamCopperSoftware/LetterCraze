@@ -12,6 +12,7 @@ public abstract class LevelModel {
     
     Stack<Move> history;
     Score bestScore, currentScore;
+    Score startingBestScore;
     Boolean isUnlocked;
     String type;
     DefaultListModel<String> wordList;
@@ -21,6 +22,7 @@ public abstract class LevelModel {
         this.goals = g;
         bestScore = new Score();
         currentScore = new Score();
+        startingBestScore = new Score();
         isUnlocked = false;
         this.type = type;
         history = new Stack<Move>();
@@ -40,6 +42,9 @@ public abstract class LevelModel {
      */
     public void initializeLevel() {
     	initializeWordTable();
+    	// keep track of what the best score was when the level is opened.
+    	startingBestScore.setScore(bestScore.getScore());
+    	startingBestScore.setStar(bestScore.getStar());
         resetLevel();
     }
     
@@ -57,7 +62,7 @@ public abstract class LevelModel {
      * called whenever player requests to leave level or level is over
      * updates best score if current score is better
      */
-    public void exitLevel() {
+    public void updateBestScore() {
     	if (currentScore.getScore() > bestScore.getScore()) {
     		bestScore.setScore(currentScore.getScore());
     		bestScore.setStar(currentScore.getStar());
@@ -108,8 +113,8 @@ public abstract class LevelModel {
     	history.push(move);
     }
     
-    public void popFromHistory(Move move) {
-    	history.pop();
+    public Move popFromHistory() {
+    	return history.pop();
     }
     
     public void unlock() {
@@ -118,6 +123,10 @@ public abstract class LevelModel {
     
     public boolean getLockStatus() {
         return isUnlocked;
+    }
+    
+    public Score getStartingBestScore() {
+    	return startingBestScore;
     }
 
     

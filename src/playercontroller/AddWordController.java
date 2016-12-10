@@ -41,7 +41,7 @@ public class AddWordController implements ActionListener {
 				level.updateObjectiveValue(-1);
 				int currentLabel = level.getObjectiveValue();
 				if (currentLabel == 0) {
-					model.exitLevel();
+					
 					// reset levelModel
 					model.resetLevel();
 					// reset application views
@@ -64,7 +64,7 @@ public class AddWordController implements ActionListener {
 				level.updateObjectiveValue(-1);
 				int currentLabel = level.getObjectiveValue();
 				if (currentLabel == 0) {
-					model.exitLevel();
+					
 					// reset levelModel
 					model.resetLevel();
 					// reset application views

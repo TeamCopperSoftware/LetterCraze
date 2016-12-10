@@ -5,6 +5,11 @@ import playerboundary.Application;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controls all actions when initializing custom levels controller
+ * <p>
+ */
+
 public class ViewCustomLevelsController implements ActionListener {
 	
 	Application app;
@@ -14,6 +19,13 @@ public class ViewCustomLevelsController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		app.setContentPane(app.getViewCustomLevelsApplication());
 	}
+	
+	/**
+	 * Sets parameters for ViewCustomLevelsController
+	 * <p>
+	 * @param app Application, m model, levelNumber int
+	 */
+	
 	
 	public ViewCustomLevelsController(Application app, Model m) {
 		this.app = app;
