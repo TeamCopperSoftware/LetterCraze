@@ -30,7 +30,7 @@ public class UndoController implements ActionListener {
 			// if it is puzzle
 			if (model.getType().equals("Puzzle")) {
 				PuzzleLevel thisLevel1 = (PuzzleLevel)(model);
-				level.resetObjectiveValue(thisLevel1.getMoveLimit());
+				level.incrementObjectiveValue();
 				level.refreshPanel(model);
 			}
 			// if it is lightning
@@ -40,7 +40,7 @@ public class UndoController implements ActionListener {
 			// if it is theme
 			if (model.getType().equals("Theme")) {
 				ThemeLevel thisLevel3 = (ThemeLevel)(model);
-				level.resetObjectiveValue(thisLevel3.getValidWords().size());
+				level.incrementObjectiveValue();
 				level.refreshPanel(model);
 				
 			}

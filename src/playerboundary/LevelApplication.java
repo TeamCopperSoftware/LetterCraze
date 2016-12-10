@@ -227,6 +227,10 @@ public abstract class LevelApplication extends JPanel {
 		objectiveValueLabel.setText(String.valueOf(resetTo));
 	}
 	
+	public void incrementObjectiveValue() {
+		objectiveValueLabel.setText(String.valueOf(Integer.valueOf(objectiveValueLabel.getText())+1));
+	}
+	
 	public JButton getResetButton() {
 		return resetButton;
 	}

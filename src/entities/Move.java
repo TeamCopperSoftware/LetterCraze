@@ -99,24 +99,41 @@ public class Move {
 		if (!model.getType().equals("Theme")) {
 			int wordScore = word.getScore();
 			model.getCurrentScore().updateScore(-1*wordScore);
+			if (model.getBestScore().getScore() > model.getStartingBestScore().getScore()) {
+				model.getBestScore().updateScore(-1*wordScore);
+			}
 		}
 		// in theme levels score is based on how many words you find
 		else {
 			model.getCurrentScore().updateScore(-1);
+			if (model.getBestScore().getScore() > model.getStartingBestScore().getScore()) {
+				model.getBestScore().updateScore(-1);
+			}
 		}
 
 
-		// update star score (if necessary)
-		// if current score is greater than star1 goal
-		if (model.getCurrentScore().getScore() <= model.getGoals().getStar1()) {
+		// update star score for current score (if necessary)
+		if (model.getCurrentScore().getScore() < model.getGoals().getStar1()) {
 			model.getCurrentScore().setStar(0);
-		} else if (model.getCurrentScore().getScore() <= model.getGoals().getStar2()) {
+		} else if (model.getCurrentScore().getScore() < model.getGoals().getStar2()) {
 			model.getCurrentScore().setStar(1);
-		} else if (model.getCurrentScore().getScore() <= model.getGoals().getStar3()) {
+		} else if (model.getCurrentScore().getScore() < model.getGoals().getStar3()) {
 			model.getCurrentScore().setStar(2);
 		}
 		else {
 			model.getCurrentScore().setStar(3);
+		}
+		
+		// update star score for best score (if necessary)
+		if (model.getBestScore().getScore() < model.getGoals().getStar1()) {
+			model.getBestScore().setStar(0);
+		} else if (model.getBestScore().getScore() < model.getGoals().getStar2()) {
+			model.getBestScore().setStar(1);
+		} else if (model.getBestScore().getScore() < model.getGoals().getStar3()) {
+			model.getBestScore().setStar(2);
+		}
+		else {
+			model.getBestScore().setStar(3);
 		}
 
 		for (int y = 0; y < 6; y++) {
