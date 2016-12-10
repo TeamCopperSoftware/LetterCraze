@@ -350,7 +350,7 @@ public class Model {
 		words2.add("south");
 
 		ThemeLevel l6 = new ThemeLevel(b6, g6, theme2, words2);
-		l6.isUnlocked = false; // locked
+		l6.isUnlocked = false; 
 		getMainLevels().addLevel(l6);
 		
 		// Create Level 7
