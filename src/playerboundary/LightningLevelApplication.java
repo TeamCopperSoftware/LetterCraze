@@ -128,6 +128,10 @@ public class LightningLevelApplication extends LevelApplication {
 	public Timer getTimer() {
 		return timer;
 	}
+	
+	public JButton[][] getButtonList() {
+		return squareButtons;
+	}
 
 	public JButton getExitButton() {
 		return exitButton;
