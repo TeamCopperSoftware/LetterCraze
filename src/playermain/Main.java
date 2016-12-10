@@ -79,6 +79,15 @@ public class Main {
 		model = new Model();
 	}
 
+	
+	/**
+	 * Getter method for model.
+	 */
+	public Model getModel() {
+		return model;
+	}
+
+	
 	/**
 	 * Initialize the boundary objects.
 	 */
@@ -86,6 +95,14 @@ public class Main {
 		app = new Application(model);
 	}
 
+	
+	/**
+	 * Getter method for application
+	 */
+	public Application getApp() {
+		return app;
+	}
+	
 	/**
 	 * Initialize the controllers.
 	 */
