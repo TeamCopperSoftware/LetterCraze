@@ -50,7 +50,7 @@ public abstract class LevelApplication extends JPanel {
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				JButton b = new JButton();
-				b.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+				b.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 				b.setBounds(120+(x*60), 120+(y*60), 60, 60);
 				b.setOpaque(true);
 				b.setBorderPainted(false);
