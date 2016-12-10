@@ -113,8 +113,8 @@ public abstract class LevelModel {
     	history.push(move);
     }
     
-    public void popFromHistory(Move move) {
-    	history.pop();
+    public Move popFromHistory() {
+    	return history.pop();
     }
     
     public void unlock() {
