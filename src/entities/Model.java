@@ -297,45 +297,45 @@ public class Model {
 		getMainLevels().addLevel(l5);
 		
 		// Create Level 6
-		squaresArray[0] = new Square(new Position(0,0), true, new Tile("T"));
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("P"));
 		squaresArray[1] = new Square(new Position(1,0), true, new Tile("A"));
-		squaresArray[2] = new Square(new Position(2,0), true, new Tile("T"));
-		squaresArray[3] = new Square(new Position(3,0), true, new Tile("I"));
-		squaresArray[4] = new Square(new Position(4,0), true, new Tile("A"));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("I"));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("D"));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("I"));
 		squaresArray[5] = new Square(new Position(5,0), true, new Tile("S"));
 
-		squaresArray[6] = new Square(new Position(0,1), true, new Tile("L"));
+		squaresArray[6] = new Square(new Position(0,1), true, new Tile("F"));
 		squaresArray[7] = new Square(new Position(1,1), true, new Tile("A"));
 		squaresArray[8] = new Square(new Position(2,1), true, new Tile("R"));
-		squaresArray[9] = new Square(new Position(3,1), true, new Tile("I"));
-		squaresArray[10] = new Square(new Position(4,1), true, new Tile("N"));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("N"));
+		squaresArray[10] = new Square(new Position(4,1), true, new Tile("A"));
 		squaresArray[11] = new Square(new Position(5,1), true, new Tile("O"));
 
-		squaresArray[12] = new Square(new Position(0,2), true, new Tile("A"));
-		squaresArray[13] = new Square(new Position(1,2), true, new Tile("N"));
-		squaresArray[14] = new Square(new Position(2,2), true, new Tile("N"));
+		squaresArray[12] = new Square(new Position(0,2), true, new Tile("I"));
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("I"));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("C"));
 		squaresArray[15] = new Square(new Position(3,2), true, new Tile("C"));
-		squaresArray[16] = new Square(new Position(4,2), true, new Tile("D"));
+		squaresArray[16] = new Square(new Position(4,2), true, new Tile("N"));
 		squaresArray[17] = new Square(new Position(5,2), true, new Tile("U"));
 
-		squaresArray[18] = new Square(new Position(0,3), true, new Tile("I"));
-		squaresArray[19] = new Square(new Position(1,3), true, new Tile("T"));
-		squaresArray[20] = new Square(new Position(2,3), true, new Tile("P"));
-		squaresArray[21] = new Square(new Position(3,3), true, new Tile("A"));
-		squaresArray[22] = new Square(new Position(4,3), true, new Tile("I"));
+		squaresArray[18] = new Square(new Position(0,3), true, new Tile("C"));
+		squaresArray[19] = new Square(new Position(1,3), true, new Tile("A"));
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("C"));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("T"));
+		squaresArray[22] = new Square(new Position(4,3), true, new Tile("H"));
 		squaresArray[23] = new Square(new Position(5,3), true, new Tile("T"));
 
-		squaresArray[24] = new Square(new Position(0,4), true, new Tile("C"));
-		squaresArray[25] = new Square(new Position(1,4), true, new Tile("A"));
-		squaresArray[26] = new Square(new Position(2,4), true, new Tile("C"));
-		squaresArray[27] = new Square(new Position(3,4), true, new Tile("I"));
-		squaresArray[28] = new Square(new Position(4,4), true, new Tile("H"));
-		squaresArray[29] = new Square(new Position(5,4), false);
+		squaresArray[24] = new Square(new Position(0,4), true, new Tile("T"));
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("L"));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("I"));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("N"));
+		squaresArray[28] = new Square(new Position(4,4), true, new Tile("T"));
+		squaresArray[29] = new Square(new Position(5,4), true, new Tile("I"));
 
 		squaresArray[30] = new Square(new Position(0,5), false);
 		squaresArray[31] = new Square(new Position(1,5), false);
-		squaresArray[32] = new Square(new Position(2,5), true, new Tile("F"));
-		squaresArray[33] = new Square(new Position(3,5), true, new Tile("I"));
+		squaresArray[32] = new Square(new Position(2,5), true, new Tile("A"));
+		squaresArray[33] = new Square(new Position(3,5), false);
 		squaresArray[34] = new Square(new Position(4,5), true, new Tile("C"));
 		squaresArray[35] = new Square(new Position(5,5), false);
 		
@@ -344,7 +344,7 @@ public class Model {
 		String theme2 = "Oceans";
 		ArrayList<String> words2 = new ArrayList<String>();
 		words2.add("atlantic");
-		words2.add("artic");
+		words2.add("arctic");
 		words2.add("indian");
 		words2.add("pacific");
 		words2.add("south");
