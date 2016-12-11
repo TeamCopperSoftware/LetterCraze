@@ -9,6 +9,7 @@ import javax.swing.UIManager;
 import entities.*;
 import entities.Model;
 import playerboundary.SplashScreenApplication;
+import playercontroller.CustomLightningTimerController;
 import playercontroller.LightningTimerController;
 import playercontroller.SplashScreenTimerController;
 
@@ -88,7 +89,7 @@ public class Application extends JFrame {
 				customLevelApplications.add(pApp);
 			}
 			else if (l.getType().equals("Lightning")) {
-				lightningLevelTimer = new Timer(1000, new LightningTimerController(this, this.model, i));
+				lightningLevelTimer = new Timer(1000, new CustomLightningTimerController(this, this.model, i));
 				LightningLevelApplication lApp = new LightningLevelApplication((LightningLevel)l, lightningLevelTimer);
 				lApp.setName("customlevel" + (i+1));
 				customLevelApplications.add(lApp);

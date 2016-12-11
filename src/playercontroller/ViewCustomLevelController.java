@@ -33,8 +33,8 @@ public class ViewCustomLevelController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		LevelModel level = model.getCustomLevels().get(levelNumber);
 		if (level.getIsUnlocked()) {
+			level.initializeLevel();
 			if (level.getType().equals("Puzzle")) {
-				level.initializeLevel();
 				app.getCustomLevelApplications().get(levelNumber).refreshPanel((PuzzleLevel)level);
 				app.setContentPane(app.getCustomLevelApplications().get(levelNumber));
 			}

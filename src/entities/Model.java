@@ -836,7 +836,7 @@ public class Model {
 	public void importCustomLevels() {
 		// looks for custom level files, creates Level objects, adds them to list
 		
-		// This level is just a placeholder
+		// These levels are just a placeholder
 		Square[] squaresArray = new Square[36];
 		squaresArray[0] = new Square(new Position(0,0), true);
 		squaresArray[1] = new Square(new Position(1,0), true);
@@ -883,6 +883,62 @@ public class Model {
 		Board b = new Board(squaresArray);
 		PuzzleLevel l1 = new PuzzleLevel(b, new Goal(25, 50, 75), 6);
 		customLevels.add(l1);
+		
+		Board b2 = new Board(squaresArray);
+		LightningLevel l2 = new LightningLevel(b2, new Goal(25, 50, 75), 30);
+		customLevels.add(l2);
+		
+		squaresArray[0] = new Square(new Position(0,0), true, new Tile("G"));
+		squaresArray[1] = new Square(new Position(1,0), true, new Tile("O"));
+		squaresArray[2] = new Square(new Position(2,0), true, new Tile("U"));
+		squaresArray[3] = new Square(new Position(3,0), true, new Tile("T"));
+		squaresArray[4] = new Square(new Position(4,0), true, new Tile("H"));
+		squaresArray[5] = new Square(new Position(5,0), true, new Tile("A"));
+
+		squaresArray[6] = new Square(new Position(0,1), true, new Tile("J"));
+		squaresArray[7] = new Square(new Position(1,1), true, new Tile("A"));
+		squaresArray[8] = new Square(new Position(2,1), true, new Tile("M"));
+		squaresArray[9] = new Square(new Position(3,1), true, new Tile("E"));
+		squaresArray[10] = new Square(new Position(4,1), true, new Tile("S"));
+		squaresArray[11] = new Square(new Position(5,1), true, new Tile("M"));
+
+		squaresArray[12] = new Square(new Position(0,2), true, new Tile("A"));
+		squaresArray[13] = new Square(new Position(1,2), true, new Tile("N"));
+		squaresArray[14] = new Square(new Position(2,2), true, new Tile("T"));
+		squaresArray[15] = new Square(new Position(3,2), true, new Tile("H"));
+		squaresArray[16] = new Square(new Position(4,2), true, new Tile("O"));
+		squaresArray[17] = new Square(new Position(5,2), true, new Tile("N"));
+
+		squaresArray[18] = new Square(new Position(0,3), true, new Tile("A"));
+		squaresArray[19] = new Square(new Position(1,3), true, new Tile("N"));
+		squaresArray[20] = new Square(new Position(2,3), true, new Tile("N"));
+		squaresArray[21] = new Square(new Position(3,3), true, new Tile("I"));
+		squaresArray[22] = new Square(new Position(4,3), true, new Tile("E"));
+		squaresArray[23] = new Square(new Position(5,3), true, new Tile("Y"));
+
+		squaresArray[24] = new Square(new Position(0,4), true, new Tile("J"));
+		squaresArray[25] = new Square(new Position(1,4), true, new Tile("O"));
+		squaresArray[26] = new Square(new Position(2,4), true, new Tile("H"));
+		squaresArray[27] = new Square(new Position(3,4), true, new Tile("N"));
+		squaresArray[28] = new Square(new Position(4,4), false);
+		squaresArray[29] = new Square(new Position(5,4), false);
+
+		squaresArray[30] = new Square(new Position(0,5), false);
+		squaresArray[31] = new Square(new Position(1,5), false);
+		squaresArray[32] = new Square(new Position(2,5), false);
+		squaresArray[33] = new Square(new Position(3,5), false);
+		squaresArray[34] = new Square(new Position(4,5), false);
+		squaresArray[35] = new Square(new Position(5,5), false);
+		
+		Board b3 = new Board(squaresArray);
+		ArrayList<String> words = new ArrayList<String>();
+		words.add("goutham");
+		words.add("anthony");
+		words.add("john");
+		words.add("annie");
+		words.add("james");
+		ThemeLevel l3 = new ThemeLevel(b3, new Goal(3, 4, 5), "Team Copper", words);
+		customLevels.add(l3);
 		
 		// all custom levels should always be unlocked
 		int numCustomLevels = customLevels.size();
