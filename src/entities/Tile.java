@@ -1,8 +1,9 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Tile {
+public class Tile implements Serializable {
 
     String letter;
     int value;

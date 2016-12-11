@@ -1,8 +1,9 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Map {
+public class Map implements Serializable {
 
     ArrayList<LevelModel> levels;
     int numUnlockedLevels; // probably should keep track of how many levels are locked/unlocked

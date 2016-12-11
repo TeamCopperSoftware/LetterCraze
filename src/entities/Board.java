@@ -1,6 +1,8 @@
 package entities;
 
-public class Board {
+import java.io.Serializable;
+
+public class Board implements Serializable {
 
 	//Hashtable<Position, Square> squares;
 	Square[][] squares;

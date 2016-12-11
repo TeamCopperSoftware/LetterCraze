@@ -1,6 +1,8 @@
 package entities;
 
-public class Square {
+import java.io.Serializable;
+
+public class Square implements Serializable {
 
 	Position position;
 	Tile tile;

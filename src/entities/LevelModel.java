@@ -1,11 +1,12 @@
 package entities;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Stack;
 
 import javax.swing.DefaultListModel;
 
-public abstract class LevelModel {
+public abstract class LevelModel implements Serializable {
     
     Board board;
     Goal goals;

@@ -1,6 +1,9 @@
 package playermain;
 
 import java.awt.EventQueue;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.*;
 import java.util.Hashtable;
 
 import javax.swing.UIManager;
@@ -34,8 +37,8 @@ import entities.Square;
 
 public class Main {
 
-	private Application app;
-	private Model model;
+	public Application app;
+	public static Model model;
 
 	/**
 	 * Launch the application.
@@ -77,9 +80,26 @@ public class Main {
 	 */
 	private void initializeModel() {
 		model = new Model();
+
+		try {
+			FileInputStream fileIn = new FileInputStream("playersave.ser");
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			model = (Model) in.readObject();
+			in.close();
+			fileIn.close();
+			System.out.println("playersave found. Loading file...");
+		}catch(IOException i) {
+			//i.printStackTrace();
+			System.out.println("playersave file not found, starting new game");
+			return;
+		}catch(ClassNotFoundException c) {
+			System.out.println("playersave not found");
+			c.printStackTrace();
+			return;
+		}
 	}
 
-	
+
 	/**
 	 * Getter method for model.
 	 */
@@ -87,7 +107,7 @@ public class Main {
 		return model;
 	}
 
-	
+
 	/**
 	 * Initialize the boundary objects.
 	 */
@@ -95,14 +115,14 @@ public class Main {
 		app = new Application(model);
 	}
 
-	
+
 	/**
 	 * Getter method for application
 	 */
 	public Application getApp() {
 		return app;
 	}
-	
+
 	/**
 	 * Initialize the controllers.
 	 */
@@ -147,7 +167,7 @@ public class Main {
 				}
 			}
 		}
-		
+
 
 		// set controllers for square buttons in customLevelApplications
 		for (int i = 0; i < numCustomLevels; i++) {
@@ -157,27 +177,27 @@ public class Main {
 				}
 			}
 		}
-		
+
 		// set controllers for add word buttons in LevelApplications
 		for (int i = 0; i < 15; i++) {
 			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
 		}
-		
+
 		// set controllers for add word buttons in custom LevelApplications
 		for (int i = 0; i < numCustomLevels; i++) {
 			app.getCustomLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
-		
+
 		// set controllers for reset buttons on main levels
 		for (int i = 0; i < numMainLevels; i++) {
 			app.getLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
 		}
-		
+
 		// set controllers for reset buttons on custom levels
 		for (int i = 0; i < numCustomLevels; i++) {
 			app.getCustomLevelApplications().get(i).getResetButton().addActionListener(new ResetBoardController(app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
-		
+
 		// set controllers for undo buttons on main levels
 		for (int i = 0; i < numMainLevels; i++) {
 			app.getLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
@@ -187,7 +207,7 @@ public class Main {
 		for (int i = 0; i < numCustomLevels; i++) {
 			app.getCustomLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
-		
+
 	}
 
 }

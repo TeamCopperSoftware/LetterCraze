@@ -1,8 +1,16 @@
 package playerboundary;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.UIManager;
 
@@ -45,6 +53,22 @@ public class Application extends JFrame {
 	 */
 	public Application(Model model) {
 		//pack(); not really sure what pack does
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+		    @Override
+		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+		    	try {
+		            FileOutputStream fileOut =
+		            new FileOutputStream("playersave.ser");
+		            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+		            out.writeObject(model);
+		            out.close();
+		            fileOut.close();
+		            System.out.printf("Serialized data is saved in playersave.ser");
+		         }catch(IOException i) {
+		            i.printStackTrace();
+		         }
+		    }
+		});
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		setTitle("LetterCraze Player");

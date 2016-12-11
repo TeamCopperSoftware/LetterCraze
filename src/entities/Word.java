@@ -1,8 +1,9 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Word {
+public class Word implements Serializable {
 
     private ArrayList<Square> squares;
     private String letters;

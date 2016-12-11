@@ -1,6 +1,8 @@
 package entities;
 
-public class Goal {
+import java.io.Serializable;
+
+public class Goal implements Serializable {
     int star1, star2, star3; //array?, final?
 
     public Goal(int star1, int star2, int star3) {
