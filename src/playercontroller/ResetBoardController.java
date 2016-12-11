@@ -18,22 +18,22 @@ public class ResetBoardController implements ActionListener {
 
 	LevelApplication app;
 	LevelModel m;
-	
+
 	/**
 	 * Provides all actions that reset board in level. Resets board with random letters
 	 * and random words based on level type. Also resets score and list of words found.
 	 * <p>
 	 * @param ae ActionEvent
 	 */
-	
+
 	public void actionPerformed(ActionEvent ae) {
-		
+
 		// Reset current score to 0 and best score to what it was when level opened
 		m.getCurrentScore().setScore(0);
 		m.getCurrentScore().setStar(0);
 		m.getBestScore().setScore(m.getStartingBestScore().getScore());
 		m.getBestScore().setStar(m.getStartingBestScore().getStar());
-		
+
 		// reset board with new letters if it's not a theme level
 		if (!m.getType().equals("Theme")) {
 			m.getBoard().reset();
@@ -63,16 +63,16 @@ public class ResetBoardController implements ActionListener {
 			ThemeLevel thisLevel3 = (ThemeLevel)(m);
 			app.resetObjectiveValue(thisLevel3.getValidWords().size());
 			app.refreshPanel(m);
-			
+
 		}
 	}
-	
+
 	/**
 	 * Sets parameters for ResetBoardController.
 	 * <p>
 	 * @param app LevelApplication, m LevelModel
 	 */
-	
+
 	public ResetBoardController(LevelApplication app, LevelModel m) {
 		this.app = app;
 		this.m = m;

@@ -1,9 +1,12 @@
 package entities;
 
 import playerboundary.LevelApplication;
+
+import java.io.Serializable;
+
 import entities.PuzzleLevel;
 
-public class Move {
+public class Move implements Serializable {
 	
 	/**
 	 * the selected word

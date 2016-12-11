@@ -75,6 +75,7 @@ public class Application extends JFrame {
 						i.printStackTrace();
 					}
 					dispose();
+					System.exit(0);
 				}
 			}
 		});
