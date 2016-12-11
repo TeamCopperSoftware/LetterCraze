@@ -43,6 +43,7 @@ public class ResetBoardController implements ActionListener {
 		}
 		// clear list
 		app.clearList();
+		m.getWordList().clear();
 		// clear score
 		m.getCurrentScore().setScore(0);
 		m.getCurrentScore().setStar(0);
