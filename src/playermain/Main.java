@@ -160,12 +160,12 @@ public class Main {
 		
 		// set controllers for add word buttons in LevelApplications
 		for (int i = 0; i < 15; i++) {
-			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getMapApplication(), app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
 		}
 		
 		// set controllers for add word buttons in custom LevelApplications
 		for (int i = 0; i < numCustomLevels; i++) {
-			app.getCustomLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
+			app.getCustomLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getViewCustomLevelsApplication(), app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
 		
 		// set controllers for reset buttons on main levels
