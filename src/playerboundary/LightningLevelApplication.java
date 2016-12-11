@@ -28,6 +28,10 @@ import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
+/**
+ * The containing Frame for only Lightning type letters in LetterCraze.
+ */
+
 public class LightningLevelApplication extends LevelApplication {
 
 	Timer timer;
