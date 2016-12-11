@@ -10,15 +10,20 @@ public class ViewEditSavedLevelController implements ActionListener {
 	
 	Application app;
 	BuilderModel model;
+	int levelNumber;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		app.setContentPane(app.getEditSavedLevelApplication());
+		// if level exists open it, otherwise do nothing
+		if (levelNumber < model.getSavedLevels().size()) {
+			app.setContentPane(app.getEditSavedLevelApplication());
+		}
 	}
 	
-	public ViewEditSavedLevelController(Application app, BuilderModel m) {
+	public ViewEditSavedLevelController(Application app, BuilderModel m, int levelNumber) {
 		this.app = app;
 		this.model = m;
+		this.levelNumber = levelNumber;
 	}
 
 }

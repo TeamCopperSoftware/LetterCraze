@@ -75,8 +75,13 @@ public class Main {
 		app.getInitializeBuilderApplication().getEditSavedLevelsButton().addActionListener(new ViewSavedLevelsMapController(app, model));
 		// get back to menu from edit saved levels screen
 		app.getSavedLevelsMapApplication().getBackButton().addActionListener(new ViewMainMenuController(app, model));
+		
 		// get to the edit level screen from the edit saved levels screen
-		app.getSavedLevelsMapApplication().getLevel1Button().addActionListener(new ViewEditSavedLevelController(app, model));
+		for (int i = 0; i < 15; i++) {
+			app.getSavedLevelsMapApplication().getLevelButtons().get(i).addActionListener(new ViewEditSavedLevelController(app, model, i));
+		}
+		
+		
 		// get back to the map from the edit level screen
 		app.getEditSavedLevelApplication().getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
 		

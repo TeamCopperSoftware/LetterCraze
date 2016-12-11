@@ -5,6 +5,7 @@ import entities.Model;
 import builderboundary.Application;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import entities.LevelModel;
 
 public class ViewCreateLevelController implements ActionListener {
 	

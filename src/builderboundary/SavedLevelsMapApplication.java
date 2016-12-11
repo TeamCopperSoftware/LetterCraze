@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import entities.BuilderModel;
+import entities.LevelModel;
 import entities.Model;
 
 import javax.swing.JTextPane;
@@ -19,6 +20,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
@@ -62,6 +64,8 @@ public class SavedLevelsMapApplication extends JPanel {
 	JLabel level13NumScore;
 	JLabel level14NumScore;
 	JLabel level15NumScore;
+	
+	ArrayList<JButton> levelButtons;
 
 	/**
 	 * Create the frame.
@@ -89,6 +93,8 @@ public class SavedLevelsMapApplication extends JPanel {
 		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 		backButton.setBounds(10, 10, 75, 29);
 		this.add(backButton);
+		
+		/* We have a for loop to create buttons now
 
 		level1Button = new JButton("Puzzle! \r\n1");
 		level1Button.setForeground(new Color(0, 0, 0));
@@ -194,61 +200,57 @@ public class SavedLevelsMapApplication extends JPanel {
 		level15Button.setBackground(new Color(0, 128, 128));
 		level15Button.setBounds(625, 425, 125, 100);
 		this.add(level15Button);
-
-		// NUM SCORES
-		// Are we displaying scores on the builder?
-		/*
-		level1NumScore = new JLabel("0000000000");
-		level1NumScore.setHorizontalAlignment(SwingConstants.CENTER);
-		level1NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
-		level1NumScore.setBounds(50, 107, 125, 14);
-		this.add(level1NumScore);
-
-		level2NumScore = new JLabel("0000000000");
-		level2NumScore.setHorizontalAlignment(SwingConstants.CENTER);
-		level2NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
-		level2NumScore.setBounds(193, 107, 125, 14);
-		this.add(level2NumScore);
-
-		level3NumScore = new JLabel("0000000000");
-		level3NumScore.setHorizontalAlignment(SwingConstants.CENTER);
-		level3NumScore.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
-		level3NumScore.setBounds(336, 107, 125, 14);
-		this.add(level3NumScore);
-		*/
-
-		//STAR IMAGES 
-		// Are we displaying scores on the builder?
-		/*
-		JLabel level1Stars = new JLabel("");
-		Image image = new ImageIcon("image/StarsEmpty.png").getImage();
-		image = image.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
-		level1Stars.setIcon(new ImageIcon(image));
-		level1Stars.setBounds(70, 225, 81, 27);
-		this.add(level1Stars);
-
-		JLabel level2Stars = new JLabel("");
-		Image image2 = new ImageIcon("image/StarsEmpty.png").getImage();
-		image2 = image2.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
-		level2Stars.setIcon(new ImageIcon(image2));
-		level2Stars.setBounds(213, 225, 81, 27);
-		this.add(level2Stars);
-
-		JLabel level3Stars = new JLabel("");
-		Image image3 = new ImageIcon("image/StarsEmpty.png").getImage();
-		image3 = image3.getScaledInstance(80, 30, java.awt.Image.SCALE_SMOOTH); // scale the image when necessary
-		level3Stars.setIcon(new ImageIcon(image3));
-		level3Stars.setBounds(356, 225, 81, 27);
-		this.add(level3Stars);
+		
 		*/
 		
+		levelButtons = new ArrayList<JButton>();
+		// Creates 15 buttons for levels
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 5; x++) {
+				JButton b = new JButton();
+				b.setForeground(Color.BLACK);
+				b.setFont(new Font("Corbel", Font.BOLD, 11));
+				b.setBackground(new Color(0, 128, 128));
+				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
+				levelButtons.add(b);
+				this.add(b);
+			}
+		}
+		
+		refreshPanel();
+
+
+		
 	}
+
+	/**
+	 * Updates buttons based on data in the entity classes.
+	 */
+
+	public void refreshPanel() {
+
+		int currentLevel = 0;
+		for (int y = 0; y < 3; y++) {
+			for (int x = 0; x < 5; x++) {
+				if (currentLevel < model.getSavedLevels().size()) {
+					String levelType = model.getSavedLevels().get(currentLevel).getType();
+					levelButtons.get(currentLevel).setText("Custom " + (currentLevel+1) + " \n" + levelType);
+				}
+				else {
+					levelButtons.get(currentLevel).setText("Empty");
+				}
+				currentLevel++;
+			}
+
+		}
+	}
+
 
 	public JButton getBackButton() {
 		return backButton;
 	}
 
-	public JButton getLevel1Button() {
-		return level1Button;
+	public ArrayList<JButton> getLevelButtons() {
+		return levelButtons;
 	}
 }
