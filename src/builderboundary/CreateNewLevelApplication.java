@@ -1,39 +1,23 @@
 package builderboundary;
 
-import javax.swing.JFrame;
-import javax.swing.JSplitPane;
-import java.awt.GridBagLayout;
-import javax.swing.JButton;
-import java.awt.GridBagConstraints;
-import javax.swing.JPanel;
-import java.awt.Insets;
-import javax.swing.SwingConstants;
 import java.awt.CardLayout;
-import java.awt.GridLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
-import java.awt.event.ActionEvent;
-import java.awt.BorderLayout;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ItemListener;
-import javax.swing.JSpinner;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.AbstractListModel;
-import javax.swing.ListSelectionModel;
-import javax.swing.JTextPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-import buildercontroller.LevelButtonController;
 import entities.Model;
-
-import java.awt.Color;
 
 public class CreateNewLevelApplication extends JPanel {
 
@@ -91,32 +75,6 @@ public class CreateNewLevelApplication extends JPanel {
                 lettersArray[x][y].setBackground(Color.WHITE);
                 lettersArray[x][y].setVisible(false);
                 boardSquares.add(lettersArray[x][y]);
-                
-                
-                // We shouldn't need this commented out code here because everything's in LevelButtonController
-                
-   //             squaresArray[x][y].addActionListener(new LevelButtonController() {
-  //                  public void actionPerformed(ActionEvent e) {
-               
-//                        char buttonChar = ((JButton) e.getSource()).getText().toUpperCase().charAt(0);
-////                        ((JButton) e.getSource()).setText((String)(buttonChar == 'Q' ? "Qu" : (char)('0' + buttonChar + 1)));
-//                        ((JButton) e.getSource()).setText((String)(buttonChar == 'Q' ? "Qu" : (char)('0' + buttonChar + 1)));
-//                        if (buttonChar == ' ') {
-//                            ((JButton) e.getSource()).setBackground(new Color(0xFF0000));
-//                            ((JButton) e.getSource()).setOpaque(false);
-//                        } else {
-//                            ((JButton) e.getSource()).setBackground(new Color(0xFF0000));
-//                            ((JButton) e.getSource()).setOpaque(true);
-//                            
-//                        }
-//                        
-//                        
-//                        ((JButton) e.getSource()).repaint();
-                        
-  //                  }
-                    
-  //              });
- 
                 
             }
         }
