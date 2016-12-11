@@ -87,6 +87,8 @@ public class CreateNewLevelApplication extends JPanel {
                
                 lettersArray[x][y].setMaximumRowCount(10);
                 lettersArray[x][y].setBounds(60*x, 60*y+30, 60, 30);
+                lettersArray[x][y].setOpaque(true);
+                lettersArray[x][y].setBackground(Color.WHITE);
                 lettersArray[x][y].setVisible(false);
                 boardSquares.add(lettersArray[x][y]);
                 
