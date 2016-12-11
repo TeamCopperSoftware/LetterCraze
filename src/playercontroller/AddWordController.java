@@ -20,7 +20,7 @@ public class AddWordController implements ActionListener {
 
 	/**
 	 * Provides all actions to add word button. Adds words to lists that were found.
-	 * Updates history of added words when board is refreshed and score updates
+	 * Updates history of added words when board is refreshed and score updates.
 	 * <p>
 	 * @param ae ActionEvent
 	 */
@@ -94,7 +94,7 @@ public class AddWordController implements ActionListener {
 
 	/**
 	 * Sets parameters for AddWordController setting up application, abstract level application
-	 * and all levels in model
+	 * and all levels in model.
 	 * <p>
 	 * @param topLevelApp Application, level LevelApplication, model LevelModel
 	 */

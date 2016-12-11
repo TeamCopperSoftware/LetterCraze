@@ -8,7 +8,7 @@ import playerboundary.SplashScreenApplication;
 
 /**
  * Controls length of time Splash screen appears on screen
- * when running the application
+ * when running the application.
  * <p>
  */
 
@@ -18,7 +18,7 @@ public class SplashScreenTimerController implements ActionListener {
 	Model model;
 
 	/**
-	 * Provides action that controls time of splash screen
+	 * Provides action that controls time of splash screen.
 	 * <p>
 	 * @param ae ActionEvent
 	 */
@@ -37,7 +37,7 @@ public class SplashScreenTimerController implements ActionListener {
 	}
 
 	/**
-	 * Sets parameters for SplashScreenTimerController
+	 * Sets parameters for SplashScreenTimerController.
 	 * <p>
 	 * @param app Application, m Model
 	 */

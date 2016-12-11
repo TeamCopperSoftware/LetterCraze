@@ -21,7 +21,7 @@ public class LightningTimerController implements ActionListener {
 
 	/**
 	 * Provides all actions to timer in lightning levels. Includes timer kicking user out
-	 * of level when time runs out, refreshing level, and keeping track of best time
+	 * of level when time runs out, refreshing level, and keeping track of best time.
 	 * <p>
 	 * @param ae ActionEvent
 	 */
@@ -53,7 +53,7 @@ public class LightningTimerController implements ActionListener {
 	}
 	
 	/**
-	 * Sets parameters for LightningTimerController
+	 * Sets parameters for LightningTimerController.
 	 * <p>
 	 * @param app Application, m Model, levelNumber int
 	 */
