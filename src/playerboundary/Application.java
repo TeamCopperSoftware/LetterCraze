@@ -12,6 +12,10 @@ import playerboundary.SplashScreenApplication;
 import playercontroller.LightningTimerController;
 import playercontroller.SplashScreenTimerController;
 
+/**
+ * The containing Frame for LetterCraze Player. Big GUI Shell
+ */
+
 public class Application extends JFrame {
 
 	Model model;
@@ -21,14 +25,7 @@ public class Application extends JFrame {
 	InitializeGameApplication mainMenu;
 	MapApplication mapMenu;
 	ViewCustomLevelsApplication customMenu;
-	/*
-	PuzzleLevelApplication puzzleLevelApplication;
-	LightningLevelApplication lightningLevelApplication;
-	ThemeLevelApplication themeLevelApplication;
-	PuzzleLevelApplication customPuzzleLevelApplication;
-	LightningLevelApplication customLightningLevelApplication;
-	ThemeLevelApplication customThemeLevelApplication;
-	 */
+
 
 	ArrayList<LevelApplication> levelApplications;
 	ArrayList<LevelApplication> customLevelApplications;
@@ -41,8 +38,9 @@ public class Application extends JFrame {
 
 
 	/**
-	 * Create the frame.
+	 * Default constructor for LetterCraze Player Application
 	 */
+	
 	public Application(Model model) {
 		//pack(); not really sure what pack does
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -56,14 +54,6 @@ public class Application extends JFrame {
 		mainMenu = new InitializeGameApplication(model);
 		mapMenu = new MapApplication(model);
 		customMenu = new ViewCustomLevelsApplication(model);
-		/*
-		puzzleLevelApplication = new PuzzleLevelApplication(model);
-		lightningLevelApplication = new LightningLevelApplication(model);
-		themeLevelApplication = new ThemeLevelApplication(model);
-		customPuzzleLevelApplication = new PuzzleLevelApplication(model);
-		customLightningLevelApplication = new LightningLevelApplication(model);
-		customThemeLevelApplication = new ThemeLevelApplication(model);
-		 */
 		levelApplications = new ArrayList<LevelApplication>();
 		customLevelApplications = new ArrayList<LevelApplication>();
 
@@ -119,63 +109,74 @@ public class Application extends JFrame {
 
 	}
 
+	/**
+	 * Getter for how many seconds to display Splash Screen
+	 */
+	
 	public int getDisplayTime() {
 		return displayTime;
 	}
 
+	/**
+	 * Getter for Timer for determining how long Splash Screen should be displayed
+	 */
+	
 	public Timer getSplashScreenTimer() {
 		return splashScreenTimer;
 	}
+	
+	/**
+	 * Getter for decrementing time of Splash Screen
+	 */
+	
 
 	public void decrementDisplayTime() {
 		displayTime--;
 	}
+	
+	/**
+	 * Getter for Main Menu GUI after Splash Screen is implemented
+	 */
 
 	public InitializeGameApplication getMainMenu() {
 		return mainMenu;
 	}
+	
+	/**
+	 * Getter for Map GUI
+	 */
 
 	public MapApplication getMapApplication() {
 		return mapMenu;
 	}
 
+	/**
+	 * Getter for Custom Map GUI
+	 */
+	
 	public ViewCustomLevelsApplication getViewCustomLevelsApplication() {
 		return customMenu;
 	}
 
-	/*
-	public PuzzleLevelApplication getPuzzleLevelApplication() {
-		return puzzleLevelApplication;
-	}
-
-	public LightningLevelApplication getLightningLevelApplication() {
-		return lightningLevelApplication;
-	}
-
-	public ThemeLevelApplication getThemeLevelApplication() {
-		return themeLevelApplication;
-	}
-
-	public PuzzleLevelApplication getCustomPuzzleLevelApplication() {
-		return customPuzzleLevelApplication;
-	}
-
-	public LightningLevelApplication getCustomLightningLevelApplication() {
-		return customLightningLevelApplication;
-	}
-
-	public ThemeLevelApplication getCustomThemeLevelApplication() {
-		return customThemeLevelApplication;
-	}
+	/**
+	 * Getter for Level GUI
 	 */
-
+	
 	public ArrayList<LevelApplication> getLevelApplications() {
 		return levelApplications;
 	}
+	
+	/**
+	 * Getter for Custom Level GUI
+	 */
 
 	public ArrayList<LevelApplication> getCustomLevelApplications() {
 		return customLevelApplications;
 	}
+	
+	/**
+	 * Getter for Model Entities which contains adventure mode level information
+	 */
 	
 	public Model getModel() {
 		return model;
