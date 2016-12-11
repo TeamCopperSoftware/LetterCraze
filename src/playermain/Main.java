@@ -81,10 +81,11 @@ public class Main {
 	private void initializeModel() {
 		model = new Model();
 
+		// load up playersave
 		try {
 			FileInputStream fileIn = new FileInputStream("playersave.ser");
 			ObjectInputStream in = new ObjectInputStream(fileIn);
-			model = (Model) in.readObject();
+			model = ((Model) in.readObject());
 			in.close();
 			fileIn.close();
 			System.out.println("playersave found. Loading file...");
