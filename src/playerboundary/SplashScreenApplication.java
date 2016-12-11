@@ -24,9 +24,16 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Font;
 
+/**
+ * The containing Frame for SplashScreen in LetterCraze Player.
+ */
+
 public class SplashScreenApplication extends JPanel {
 
+	/** Model of PlayerApplication. */
 	Model model;
+	
+	/** All Team, members, and type of application text for Splash Screen. */
 	JLabel lblNewLabel;
 	JLabel lblNewLabel_1;
 	JLabel lblNewLabel_3;
@@ -35,9 +42,10 @@ public class SplashScreenApplication extends JPanel {
 	JLabel lblNewLabel_2;
 
 
-    /**
-     * Create the frame.
-     */
+	/**
+	 * Default constructor for Splash Screen View.
+	 */
+	
     public SplashScreenApplication(Model m) {
     	
     	model = m;

@@ -141,7 +141,7 @@ public abstract class LevelApplication extends JPanel {
 	}
 	
 	/**
-	 * Refreshes Tile Setup after entering a level until level is completed.
+	 * Resets all level entities when entering a non-completed level.
 	 */
 
 	public void refreshPanel(LevelModel level) {

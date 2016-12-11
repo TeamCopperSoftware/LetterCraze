@@ -29,7 +29,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 
 /**
- * The containing Frame for only Lightning type letters in LetterCraze.
+ * The containing Frame for only Lightning type levels in LetterCraze.
  */
 
 public class LightningLevelApplication extends LevelApplication {
@@ -38,8 +38,9 @@ public class LightningLevelApplication extends LevelApplication {
 	int timeLeft;
 	
 	/**
-	 * Create the panel.
+	 * Default constructor for Lightning Level Application.
 	 */
+	
 	public LightningLevelApplication(LightningLevel m, Timer t) {
 		super(m);
 		titleLabel.setText("Lightning");
@@ -59,6 +60,10 @@ public class LightningLevelApplication extends LevelApplication {
 		}
 		*/
 	}
+	
+	/**
+	 * Resets all lightning level entities when entering a non-completed level.
+	 */
 	
 	@Override
 	public void refreshPanel(LevelModel level) {
@@ -116,27 +121,51 @@ public class LightningLevelApplication extends LevelApplication {
 		
 	}
 	
+	/**
+	 * Initializes timer for lightning levels.
+	 */
+	
 	public void initializeTimeLeft() {
 		LightningLevel l = (LightningLevel)model;
 		timeLeft = l.getTimeLimit();
 	}
 	
+	/**
+	 * 	Decrements timer for lightning levels by seconds.
+	 */
+	
 	public void decrementTimeLeft() {
 		timeLeft--;
 	}
+	
+	/**
+	 * Gets amount of time left when level is complete.
+	 */
 	
 	public int getTimeLeft() {
 		return timeLeft;
 	}
 	
+	/**
+	 * Gets controllers for Timer which kicks player out of level if timer ends.
+	 */
+	
 	public Timer getTimer() {
 		return timer;
 	}
+	
+	/**
+	 * Gets list of Tiles selected.
+	 */
 	
 	public JButton[][] getButtonList() {
 		return squareButtons;
 	}
 
+	/**
+	 * Gets controllers for exit button.
+	 */
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}

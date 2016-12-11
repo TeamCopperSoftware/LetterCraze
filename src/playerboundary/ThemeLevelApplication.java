@@ -25,11 +25,16 @@ import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
+/**
+ * The containing Frame for only Theme type levels in LetterCraze.
+ */
+
 public class ThemeLevelApplication extends LevelApplication {
 
 	/**
-	 * Create the panel.
+	 * Default constructor for Theme Level Application.
 	 */
+	
 	public ThemeLevelApplication(ThemeLevel m) {
 		super(m);
 		titleLabel.setText("Theme - " + m.getTheme());
@@ -38,9 +43,17 @@ public class ThemeLevelApplication extends LevelApplication {
 
 	}
 
+	/**
+	 * Gets controllers for exit button.
+	 */
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	
+	/**
+	 * Updates entities for list of words found in objective for theme.
+	 */
 	
 	public void refreshObjective(ThemeLevel level) {
 		objectiveValueLabel.setText(String.valueOf(level.getValidWords().size() - level.getHistorySize()));
