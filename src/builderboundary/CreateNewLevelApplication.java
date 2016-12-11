@@ -30,6 +30,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 
+import buildercontroller.LevelButtonController;
 import entities.Model;
 
 import java.awt.Color;
@@ -199,7 +200,7 @@ public class CreateNewLevelApplication extends JPanel {
             public void itemStateChanged(ItemEvent e) {
                 CardLayout cl = (CardLayout)(cards.getLayout());
                 cl.show(cards, (String)e.getItem());
-                //System.out.print((String)e.getItem());
+                
             }
         });
         gameModeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Puzzle", "Lightning", "Theme"}));
