@@ -27,7 +27,7 @@ public class PublishController {
     /**
      * 
      */
-    public LevelModel model;
+    public BuilderModel model;
 
     /**
      * 
@@ -39,7 +39,7 @@ public class PublishController {
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void PublishController(LevelModel m, CreateNewLevelApplication app) {
+    public void PublishController(BuilderModel m, CreateNewLevelApplication app) {
         // TODO implement here
     }
 

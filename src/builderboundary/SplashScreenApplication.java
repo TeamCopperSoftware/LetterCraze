@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import entities.BuilderModel;
 import entities.Model;
 import playercontroller.SplashScreenTimerController;
 
@@ -26,7 +27,7 @@ import java.awt.Font;
 
 public class SplashScreenApplication extends JPanel {
 
-	Model model;
+	BuilderModel model;
 	JLabel lblNewLabel;
 	JLabel lblNewLabel_1;
 	JLabel lblNewLabel_3;
@@ -39,9 +40,9 @@ public class SplashScreenApplication extends JPanel {
     /**
      * Create the frame.
      */
-    public SplashScreenApplication(Model m) {
+    public SplashScreenApplication(BuilderModel model2) {
     	
-    	model = m;
+    	model = model2;
         setBounds(0, 0, 800, 600);
         //this.setBackground(Color.BLUE);
         this.setBorder(new EmptyBorder(5, 5, 5, 5));

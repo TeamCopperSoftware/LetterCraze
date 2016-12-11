@@ -27,7 +27,7 @@ public class DeleteWordController {
     /**
      * 
      */
-    public LevelModel model;
+    public BuilderModel model;
 
     /**
      * 
@@ -39,7 +39,7 @@ public class DeleteWordController {
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void DeleteWordController(LevelModel m, CreateNewLevelApplication app) {
+    public void DeleteWordController(BuilderModel m, CreateNewLevelApplication app) {
         // TODO implement here
     }
 

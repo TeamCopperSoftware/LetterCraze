@@ -25,7 +25,7 @@ public class SaveController {
     /**
      * 
      */
-    public LevelModel model;
+    public BuilderModel model;
 
     /**
      * 
@@ -37,7 +37,7 @@ public class SaveController {
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void SaveController(LevelModel m, CreateNewLevelApplication app) {
+    public void SaveController(BuilderModel m, CreateNewLevelApplication app) {
         // TODO implement here
     }
 

@@ -27,7 +27,7 @@ public class GameModeSelectionController {
     /**
      * 
      */
-    public LevelModel model;
+    public BuilderModel model;
 
     /**
      * 
@@ -39,7 +39,7 @@ public class GameModeSelectionController {
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void GameModeSelectionController(LevelModel m, CreateNewLevelApplication app) {
+    public void GameModeSelectionController(BuilderModel m, CreateNewLevelApplication app) {
         // TODO implement here
     }
 

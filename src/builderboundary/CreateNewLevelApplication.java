@@ -17,18 +17,19 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import entities.BuilderModel;
 import entities.Model;
 
 public class CreateNewLevelApplication extends JPanel {
 
-    Model model;
+    BuilderModel model;
     JPanel cards;
     JButton backButton;
     JButton[][] squaresArray;
     JComboBox[][] lettersArray;
 
-    public CreateNewLevelApplication(Model m) {
-        model = m;
+    public CreateNewLevelApplication(BuilderModel model2) {
+        model = model2;
         setLayout(null);
         setBounds(0, 0, 800, 600);
 

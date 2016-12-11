@@ -1,27 +1,27 @@
+package buildercontroller;
+
 
 import java.awt.event.MouseEvent;
 import java.util.*;
+
+import builderboundary.Application;
+import entities.BuilderModel;
 
 /**
  * 
  */
 public class DeleteLevelController {
 
-    /**
-     * Default constructor
-     */
-    public DeleteLevelController() {
-    }
 
     /**
      * 
      */
-    public EditSavedLevelsModel model;
+    public BuilderModel model;
 
     /**
      * 
      */
-    public EditSavedLevelsApplication application;
+    public Application application;
 
 
 
@@ -29,7 +29,7 @@ public class DeleteLevelController {
      * @param EditSavedLevelsModel m 
      * @param EditSavedLevelsApplication app
      */
-    public void DeleteLevelController(EditSavedLevelsModel m, EditSavedLevelsApplication app) {
+    public void DeleteLevelController(BuilderModel model, Application app) {
         // TODO implement here
     }
 

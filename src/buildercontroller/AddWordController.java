@@ -21,27 +21,21 @@ import builderboundary.CreateNewLevelApplication;
 public class AddWordController {
 
     /**
-     * Default constructor
+     * 
      */
-    public AddWordController() {
-    }
+    public BuilderModel model;
 
     /**
      * 
      */
-    public LevelModel model;
-
-    /**
-     * 
-     */
-    public CreateNewLevelApplication application;
+    public Application application;
 
 
     /**
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void AddWordController(LevelModel m, CreateNewLevelApplication app) {
+    public AddWordController(BuilderModel m, Application app) {
         // TODO implement here
     }
 

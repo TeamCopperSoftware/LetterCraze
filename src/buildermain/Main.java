@@ -7,13 +7,14 @@ import javax.swing.JComboBox;
 
 import builderboundary.Application;
 import buildercontroller.*;
+import entities.BuilderModel;
 import entities.Model;
 
 
 public class Main {
 	
 	private Application app;
-	private Model model;
+	private BuilderModel model;
 
 	/**
 	 * Launch the application.
@@ -51,7 +52,7 @@ public class Main {
 	 * Initialize the entity objects.
 	 */
 	private void initializeModel() {
-		model = new Model();
+		model = new BuilderModel();
 	}
 
 	/**

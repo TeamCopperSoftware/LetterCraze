@@ -6,17 +6,18 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
+import entities.BuilderModel;
 import entities.Model;
 
 public class InitializeBuilderApplication extends JPanel {
-	Model model;
+	BuilderModel model;
 
 	JButton createLevelButton;
 	JButton editSavedLevelsButton;
 
-	public InitializeBuilderApplication(Model m) {
+	public InitializeBuilderApplication(BuilderModel model2) {
 		
-		model = m;
+		model = model2;
 		setBounds(0, 0, 800, 600);
 		this.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.setLayout(null);

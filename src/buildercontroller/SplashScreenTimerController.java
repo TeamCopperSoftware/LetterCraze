@@ -2,6 +2,7 @@ package buildercontroller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import entities.BuilderModel;
 import entities.Model;
 import builderboundary.Application;
 import builderboundary.SplashScreenApplication;
@@ -9,7 +10,7 @@ import builderboundary.SplashScreenApplication;
 public class SplashScreenTimerController implements ActionListener {
 	
 	Application app;
-	Model model;
+	BuilderModel model;
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -24,7 +25,7 @@ public class SplashScreenTimerController implements ActionListener {
         }
 	}
 	
-	public SplashScreenTimerController(Application app, Model m) {
+	public SplashScreenTimerController(Application app, BuilderModel m) {
 		this.app = app;
 		this.model = m;
 	}

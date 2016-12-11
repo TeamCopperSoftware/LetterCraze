@@ -23,7 +23,7 @@ public class LevelButtonController implements ActionListener {
     /**
      * 
      */
-    public Model model;
+    public BuilderModel model;
 
     /**
      * 
@@ -45,7 +45,7 @@ public class LevelButtonController implements ActionListener {
      * @param MapModel m 
      * @param MapApplication app
      */
-    public LevelButtonController(Model m, Application app, JButton b, JComboBox c) {
+    public LevelButtonController(BuilderModel m, Application app, JButton b, JComboBox c) {
         this.model = m;
         this.application = app;
         this.button = b;

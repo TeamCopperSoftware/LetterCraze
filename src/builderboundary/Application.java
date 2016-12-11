@@ -3,13 +3,14 @@ package builderboundary;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
+import entities.BuilderModel;
 import entities.Model;
 import builderboundary.InitializeBuilderApplication;
 import buildercontroller.SplashScreenTimerController;
 
 public class Application extends JFrame {
 
-	Model model;
+	BuilderModel model;
 	
 	// All the other views should be stored as properties here
 	SplashScreenApplication splashScreen;
@@ -27,7 +28,7 @@ public class Application extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Application(Model model) {
+	public Application(BuilderModel model) {
 		//pack();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
