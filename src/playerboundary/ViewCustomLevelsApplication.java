@@ -25,61 +25,31 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
+/**
+ * The containing Frame in all Custom Levels for LetterCraze Player.
+ */
+
 public class ViewCustomLevelsApplication extends JPanel {
 	
+	/** Model of PlayerApplication. */
 	Model model;
-	
-	// Back button
+
+	/** Back button. */
 	JButton backButton;
 	
-	// Level Buttons
+	/** Level Buttons. */
 	ArrayList<JButton> levelButtons;
-	// Level Num Scores
+	
+	/** Level Scores Number. */
 	ArrayList<JLabel> levelScores;
-	// Labels to display stars
+	
+	/** Labels to display stars. */
 	ArrayList<JLabel> stars;
 
-	/*
-	// Level Buttons
-	JButton level1Button;
-	JButton level2Button;
-	JButton level3Button;
-	JButton level4Button;
-	JButton level5Button;
-	JButton level6Button;
-	JButton level7Button;
-	JButton level8Button;
-	JButton level9Button;
-	JButton level10Button;
-	JButton level11Button;
-	JButton level12Button;
-	JButton level13Button;
-	JButton level14Button;
-	JButton level15Button;
-	
-
-	// Level Num Scores
-	JLabel level1NumScore;
-	JLabel level2NumScore;
-	JLabel level3NumScore;
-	JLabel level4NumScore;
-	JLabel level5NumScore;
-	JLabel level6NumScore;
-	JLabel level7NumScore;
-	JLabel level8NumScore;
-	JLabel level9NumScore;
-	JLabel level10NumScore;
-	JLabel level11NumScore;
-	JLabel level12NumScore;
-	JLabel level13NumScore;
-	JLabel level14NumScore;
-	JLabel level15NumScore;
-	
-	*/
-
 	/**
-	 * Create the frame.
+	 * Default constructor for Custom Levels View.
 	 */
+	
 	public ViewCustomLevelsApplication(Model m) {
 		
 		model = m;
@@ -287,8 +257,11 @@ public class ViewCustomLevelsApplication extends JPanel {
 		this.add(level3Stars);
 		*/
 	}
-	
-	// updates buttons and labels based on data in the entity classes
+
+	/**
+	 * Updates buttons and labels based on data in the entity classes.
+	 */
+	 
 	public void refreshPanel() {
 
 		int currentLevel = 0;
@@ -327,16 +300,18 @@ public class ViewCustomLevelsApplication extends JPanel {
 
 	}
 
+	/**
+	 * Get controller for back button which takes user back to Main Application Menu.
+	 */
+	
 	public JButton getBackButton() {
 		return backButton;
 	}
 
-	/*
-	public JButton getCustomLevel1Button() {
-		return level1Button;
-	}
-	*/
-	
+	/**
+	 * Gets controllers for all level selection buttons in Custom Mode Map.
+	 */
+		
 	public ArrayList<JButton> getLevelButtons() {
 		return levelButtons;
 	}

@@ -31,7 +31,7 @@ import entities.Square;
  * at least one star in each level. Custom levels can also be played by going back to the Main Menu and 
  * selecting custom levels. Same level rules apply for custom levels.
  * <p>
- * @author: Annie Hernandez, Anthony Gringeri, James Kradjian, John Dyer, and Goutham Deva
+ * @author: Annie Hernandez, Anthony Gringeri, James Kradjian, John Dyer, and Goutham Deva.
  */
 
 
@@ -117,7 +117,7 @@ public class Main {
 
 
 	/**
-	 * Getter method for application
+	 * Getter method for application.
 	 */
 	public Application getApp() {
 		return app;
@@ -180,12 +180,12 @@ public class Main {
 
 		// set controllers for add word buttons in LevelApplications
 		for (int i = 0; i < 15; i++) {
-			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
+			app.getLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getMapApplication(), app.getLevelApplications().get(i), model.getMainLevels().getLevels().get(i)));
 		}
 
 		// set controllers for add word buttons in custom LevelApplications
 		for (int i = 0; i < numCustomLevels; i++) {
-			app.getCustomLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
+			app.getCustomLevelApplications().get(i).getConfirmButton().addActionListener(new AddWordController(app, app.getViewCustomLevelsApplication(), app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
 
 		// set controllers for reset buttons on main levels

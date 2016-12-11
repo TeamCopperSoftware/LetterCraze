@@ -90,6 +90,10 @@ public class Move {
 	}
 	
 	public boolean undoMove() {
+		
+		if (model.getWordList().isEmpty()) {
+			return false;
+		}
 
 		// remove word from model's word list
 		int wordListSize = model.getWordList().size();

@@ -8,6 +8,10 @@ import java.util.Stack;
 import javax.swing.*;
 import entities.*;
 
+/**
+ * The containing Frame in all Levels for LetterCraze Player.
+ */
+
 public abstract class LevelApplication extends JPanel {
 	
 	LevelModel model;
@@ -26,6 +30,10 @@ public abstract class LevelApplication extends JPanel {
 	Stack<JButton> selectedButtons;
 	JLabel starLabel;
 	JProgressBar progressBar;
+	
+	/**
+	 * Default constructor for Level Application.
+	 */
 	
 	public LevelApplication(LevelModel m) {
 		model = m;
@@ -50,7 +58,7 @@ public abstract class LevelApplication extends JPanel {
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				JButton b = new JButton();
-				b.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+				b.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 				b.setBounds(120+(x*60), 120+(y*60), 60, 60);
 				b.setOpaque(true);
 				b.setBorderPainted(false);
@@ -131,6 +139,10 @@ public abstract class LevelApplication extends JPanel {
 		
 		selectedButtons = new Stack<JButton>();
 	}
+	
+	/**
+	 * Resets all level entities when entering a non-completed level.
+	 */
 
 	public void refreshPanel(LevelModel level) {
 
@@ -189,18 +201,33 @@ public abstract class LevelApplication extends JPanel {
 		}
 	}
 	
+	/**
+	 * Gets controllers for Exit Button.
+	 */
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	
+	/**
+	 * Gets Button list.
+	 */
 	
 	public JButton[][] getButtonList() {
 		return squareButtons;
 	}
 	
+	/**
+	 * Controls button that confirming a valid word selection of tiles.
+	 */
+	
 	public JButton getConfirmButton() {
 		return confirmButton;
 	}
-	
+
+	/**
+	 * Controls de-selection of tiles if already selected.
+	 */
 	public void deselectButtons() {
 		for (int x = 0; x < 6; x++) {
 			for (int y = 0; y < 6; y++) {
@@ -209,13 +236,25 @@ public abstract class LevelApplication extends JPanel {
 		}
 	}
 	
+	/**
+	 * Controls keeping element of list
+	 */
+	
 	public DefaultListModel<String> getListModel() {
 		return listModel;
 	}
 	
+	/**
+	 * Clears lists of words.
+	 */
+	
 	public void clearList() {
 		listModel.clear();
 	}
+
+	/**
+	 * Updates object value.
+	 */
 	
 	public void updateObjectiveValue(int change) {
 		int currentValue = Integer.parseInt(objectiveValueLabel.getText());
@@ -223,45 +262,89 @@ public abstract class LevelApplication extends JPanel {
 		objectiveValueLabel.setText(String.valueOf(newValue));
 	}
 	
+	/**
+	 * Resets value of object.
+	 */
+	
 	public void resetObjectiveValue(int resetTo) {
 		objectiveValueLabel.setText(String.valueOf(resetTo));
 	}
+	
+	/**
+	 * Increments object value.
+	 */
 	
 	public void incrementObjectiveValue() {
 		objectiveValueLabel.setText(String.valueOf(Integer.valueOf(objectiveValueLabel.getText())+1));
 	}
 	
+	/**
+	 * Gets controls for reset button.
+	 */
+	
 	public JButton getResetButton() {
 		return resetButton;
 	}
+
+	/**
+	 * Gets controls for undo button.
+	 */
 	
 	public JButton getUndoButton() {
 		return undoButton;
 	}
 	
+	/**
+	 * Gets Level Model information.
+	 */
+	
 	public LevelModel getLevelModel() {
 		return model;
 	}
 	
+	/**
+	 * Displays number moves left.
+	 */
+
 	public JLabel getObjectiveValueLabel() {
 		return objectiveValueLabel;
 	}
+
+	/**
+	 * Gets number of moves left.
+	 */
 	
 	public int getObjectiveValue() {
 		return Integer.parseInt(objectiveValueLabel.getText());
 	}
+
+	/**
+	 * Gets valid selected tiles.
+	 */
 	
 	public Stack<JButton> getSelectedButtons() {
 		return selectedButtons;
 	}
 	
+	/**
+	 * Removes recently selected tile if de-selected. 
+	 */
+	
 	public JButton popSelectedButton() {
 		return selectedButtons.pop();
 	}
 	
+	/**
+	 * Access to the most recently added letter of selected tiles.
+	 */
+	
 	public JButton peekSelectedButton() {
 		return selectedButtons.peek();
 	}
+	
+	/**
+	 * Adds a selected tile to the selected tiles.
+	 */
 	
 	public void pushSelectedButton(JButton b) {
 		selectedButtons.push(b);

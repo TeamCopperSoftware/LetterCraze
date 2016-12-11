@@ -13,7 +13,7 @@ import playerboundary.SplashScreenApplication;
  * <p>
  */
 
-public class LightningTimerController implements ActionListener {
+public class CustomLightningTimerController implements ActionListener {
 	
 	Application app;
 	Model model;
@@ -28,7 +28,7 @@ public class LightningTimerController implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		LightningLevelApplication l = (LightningLevelApplication) app.getLevelApplications().get(levelNumber);
+		LightningLevelApplication l = (LightningLevelApplication) app.getCustomLevelApplications().get(levelNumber);
 		if(l.getTimeLeft() == 0)
         {
             l.getTimer().stop();
@@ -37,12 +37,11 @@ public class LightningTimerController implements ActionListener {
             if (app.getContentPane().equals(l)) {
             	l.clearList();
                 l.getLevelModel().updateBestScore();
-                LevelModel lm = model.getMainLevels().getLevels().get(levelNumber);
+                LevelModel lm = model.getCustomLevels().get(levelNumber);
                 System.out.println("Score: " + lm.getBestScore().getScore());
 				System.out.println("Stars: " + lm.getBestScore().getStar());
-				model.getMainLevels().unlockNextLevel(); //possibly unlock next level
-                app.getMapApplication().refreshPanel();
-            	app.setContentPane(app.getMapApplication());
+                app.getViewCustomLevelsApplication().refreshPanel();
+            	app.setContentPane(app.getViewCustomLevelsApplication());
             }
         }
         else
@@ -58,7 +57,7 @@ public class LightningTimerController implements ActionListener {
 	 * @param app Application, m Model, levelNumber int
 	 */
 	
-	public LightningTimerController(Application app, Model m, int levelNumber) {
+	public CustomLightningTimerController(Application app, Model m, int levelNumber) {
 		this.app = app;
 		this.model = m;
 		this.levelNumber = levelNumber;

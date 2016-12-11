@@ -24,26 +24,29 @@ public class UndoController implements ActionListener {
 		
 		if (model.getHistorySize() > 0) {
 			Move m = model.popFromHistory();
-			m.undoMove();
-			// remove undone word from completed words list
-			level.getListModel().removeElementAt(model.getWordList().size());
-			// if it is puzzle
-			if (model.getType().equals("Puzzle")) {
-				PuzzleLevel thisLevel1 = (PuzzleLevel)(model);
-				level.incrementObjectiveValue();
-				level.refreshPanel(model);
+			boolean undoPerformed = m.undoMove();
+			if (undoPerformed) {
+				// remove undone word from completed words list
+				level.getListModel().removeElementAt(model.getWordList().size());
+				// if it is puzzle
+				if (model.getType().equals("Puzzle")) {
+					PuzzleLevel thisLevel1 = (PuzzleLevel)(model);
+					level.incrementObjectiveValue();
+					level.refreshPanel(model);
+				}
+				// if it is lightning
+				if (model.getType().equals("Lightning")) {
+					level.refreshPanel(model);
+				}
+				// if it is theme
+				if (model.getType().equals("Theme")) {
+					ThemeLevel thisLevel3 = (ThemeLevel)(model);
+					level.incrementObjectiveValue();
+					level.refreshPanel(model);
+
+				}
 			}
-			// if it is lightning
-			if (model.getType().equals("Lightning")) {
-				level.refreshPanel(model);
-			}
-			// if it is theme
-			if (model.getType().equals("Theme")) {
-				ThemeLevel thisLevel3 = (ThemeLevel)(model);
-				level.incrementObjectiveValue();
-				level.refreshPanel(model);
-				
-			}
+			
 			
 		}
 		

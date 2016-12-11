@@ -25,6 +25,10 @@ import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
+/**
+ * The containing Frame for only Puzzle type levels in LetterCraze.
+ */
+
 public class PuzzleLevelApplication extends LevelApplication {
 	
 	public PuzzleLevelApplication(PuzzleLevel m) {
@@ -34,9 +38,18 @@ public class PuzzleLevelApplication extends LevelApplication {
 		objectiveValueLabel.setText(String.valueOf(m.getMoveLimit()));
 	}
 	
+
+	/**
+	 * Gets controllers for exit button.
+	 */
+	
 	public JButton getExitButton() {
 		return exitButton;
 	}
+	
+	/**
+	 * Gets list of Tiles selected.
+	 */
 	
 	public JButton[][] getButtonList() {
 		return squareButtons;
