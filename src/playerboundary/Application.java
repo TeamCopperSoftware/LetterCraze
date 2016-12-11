@@ -91,7 +91,7 @@ public class Application extends JFrame {
 
 		int numCustomLevels = model.getCustomLevels().size();
 		for (int i = 0; i < numCustomLevels; i++) {
-			LevelModel l = model.getMainLevels().getLevels().get(i);
+			LevelModel l = model.getCustomLevels().get(i);
 			if (l.getType().equals("Puzzle")) {
 				PuzzleLevelApplication pApp = new PuzzleLevelApplication((PuzzleLevel)l);
 				pApp.setName("customlevel" + (i+1));

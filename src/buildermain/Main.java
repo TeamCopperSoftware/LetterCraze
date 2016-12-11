@@ -1,6 +1,10 @@
 package buildermain;
 
 import java.awt.EventQueue;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+
 import builderboundary.Application;
 import buildercontroller.*;
 import entities.Model;
@@ -74,6 +78,15 @@ public class Main {
 		app.getSavedLevelsMapApplication().getLevel1Button().addActionListener(new ViewEditSavedLevelController(app, model));
 		// get back to the map from the edit level screen
 		app.getEditSavedLevelApplication().getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
+		
+		for (int y = 0; y < 6; y++) {
+			for (int x = 0; x < 6; x++) {
+				JButton b = app.getCreateNewLevelApplication().getSquareButtons()[x][y];
+				JComboBox c = app.getCreateNewLevelApplication().getLetterBoxes()[x][y];
+				b.addActionListener(new LevelButtonController(model, app, b, c));
+			}
+		}
+		
 	}
 
 }

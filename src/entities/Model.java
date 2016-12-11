@@ -850,37 +850,38 @@ public class Model {
 		squaresArray[8] = new Square(new Position(2,1), true);
 		squaresArray[9] = new Square(new Position(3,1), true);
 		squaresArray[10] = new Square(new Position(4,1), true);
-		squaresArray[11] = new Square(new Position(5,1), false);
+		squaresArray[11] = new Square(new Position(5,1), true);
 
 		squaresArray[12] = new Square(new Position(0,2), true);
 		squaresArray[13] = new Square(new Position(1,2), true);
 		squaresArray[14] = new Square(new Position(2,2), true);
 		squaresArray[15] = new Square(new Position(3,2), true);
-		squaresArray[16] = new Square(new Position(4,2), false);
-		squaresArray[17] = new Square(new Position(5,2), false);
+		squaresArray[16] = new Square(new Position(4,2), true);
+		squaresArray[17] = new Square(new Position(5,2), true);
 
 		squaresArray[18] = new Square(new Position(0,3), true);
 		squaresArray[19] = new Square(new Position(1,3), true);
 		squaresArray[20] = new Square(new Position(2,3), true);
-		squaresArray[21] = new Square(new Position(3,3), false);
-		squaresArray[22] = new Square(new Position(4,3), false);
-		squaresArray[23] = new Square(new Position(5,3), false);
+		squaresArray[21] = new Square(new Position(3,3), true);
+		squaresArray[22] = new Square(new Position(4,3), true);
+		squaresArray[23] = new Square(new Position(5,3), true);
 
 		squaresArray[24] = new Square(new Position(0,4), true);
 		squaresArray[25] = new Square(new Position(1,4), true);
-		squaresArray[26] = new Square(new Position(2,4), false);
-		squaresArray[27] = new Square(new Position(3,4), false);
-		squaresArray[28] = new Square(new Position(4,4), false);
-		squaresArray[29] = new Square(new Position(5,4), false);
+		squaresArray[26] = new Square(new Position(2,4), true);
+		squaresArray[27] = new Square(new Position(3,4), true);
+		squaresArray[28] = new Square(new Position(4,4), true);
+		squaresArray[29] = new Square(new Position(5,4), true);
 
 		squaresArray[30] = new Square(new Position(0,5), true);
-		squaresArray[31] = new Square(new Position(1,5), false);
-		squaresArray[32] = new Square(new Position(2,5), false);
-		squaresArray[33] = new Square(new Position(3,5), false);
-		squaresArray[34] = new Square(new Position(4,5), false);
-		squaresArray[35] = new Square(new Position(5,5), false);
+		squaresArray[31] = new Square(new Position(1,5), true);
+		squaresArray[32] = new Square(new Position(2,5), true);
+		squaresArray[33] = new Square(new Position(3,5), true);
+		squaresArray[34] = new Square(new Position(4,5), true);
+		squaresArray[35] = new Square(new Position(5,5), true);
+		
 		Board b = new Board(squaresArray);
-		PuzzleLevel l1 = new PuzzleLevel(b, new Goal(25, 50, 100), 5);
+		PuzzleLevel l1 = new PuzzleLevel(b, new Goal(25, 50, 75), 6);
 		customLevels.add(l1);
 		
 		// all custom levels should always be unlocked

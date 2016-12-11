@@ -39,7 +39,7 @@ public class ViewCustomLevelController implements ActionListener {
 				app.setContentPane(app.getCustomLevelApplications().get(levelNumber));
 			}
 			else if (level.getType().equals("Lightning")) {
-				LightningLevelApplication l = (LightningLevelApplication)app.getLevelApplications().get(levelNumber);
+				LightningLevelApplication l = (LightningLevelApplication)app.getCustomLevelApplications().get(levelNumber);
 				l.refreshPanel((LightningLevel)level);
 				l.initializeTimeLeft();
 				l.getTimer().start();

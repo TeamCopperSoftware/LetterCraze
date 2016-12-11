@@ -39,6 +39,8 @@ public class CreateNewLevelApplication extends JPanel {
     Model model;
     JPanel cards;
     JButton backButton;
+    JButton[][] squaresArray;
+    JComboBox[][] lettersArray;
 
     public CreateNewLevelApplication(Model m) {
         model = m;
@@ -63,15 +65,36 @@ public class CreateNewLevelApplication extends JPanel {
         this.add(boardSquares);
         boardSquares.setLayout(null);
 
-        JButton[][] squaresArray = new JButton[6][6];
+       squaresArray = new JButton[6][6];
+       lettersArray = new JComboBox[6][6];
 //        char[][] charArray = new char[squaresArray.length][squaresArray[0].length];
 
         for (int x = 0; x < squaresArray.length; x++) {
             for (int y = 0; y < squaresArray[x].length; y++) {
                 squaresArray[x][y] = new JButton(" ");
-                squaresArray[x][y].addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
+                squaresArray[x][y].setOpaque(true);
+                squaresArray[x][y].setBounds(60*x, 60*y, 60, 30);
+                boardSquares.add(squaresArray[x][y]);
+                
+                lettersArray[x][y] = new JComboBox<String>();
+                lettersArray[x][y].addItemListener(new ItemListener() {
+                    public void itemStateChanged(ItemEvent e) {
                         
+                    }
+                });
+                lettersArray[x][y].setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "QU", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
+               
+                lettersArray[x][y].setMaximumRowCount(10);
+                lettersArray[x][y].setBounds(60*x, 60*y+30, 60, 30);
+                lettersArray[x][y].setVisible(false);
+                boardSquares.add(lettersArray[x][y]);
+                
+                
+                // We shouldn't need this commented out code here because everything's in LevelButtonController
+                
+   //             squaresArray[x][y].addActionListener(new LevelButtonController() {
+  //                  public void actionPerformed(ActionEvent e) {
+               
 //                        char buttonChar = ((JButton) e.getSource()).getText().toUpperCase().charAt(0);
 ////                        ((JButton) e.getSource()).setText((String)(buttonChar == 'Q' ? "Qu" : (char)('0' + buttonChar + 1)));
 //                        ((JButton) e.getSource()).setText((String)(buttonChar == 'Q' ? "Qu" : (char)('0' + buttonChar + 1)));
@@ -87,11 +110,11 @@ public class CreateNewLevelApplication extends JPanel {
 //                        
 //                        ((JButton) e.getSource()).repaint();
                         
-                    }
+  //                  }
                     
-                });
-                squaresArray[x][y].setBounds(60*x, 60*y, 60, 60);
-                boardSquares.add(squaresArray[x][y]);
+  //              });
+ 
+                
             }
         }
 
@@ -224,5 +247,13 @@ public class CreateNewLevelApplication extends JPanel {
 
     public JButton getBackButton() {
         return backButton;
+    }
+    
+    public JButton[][] getSquareButtons() {
+    	return squaresArray;
+    }
+    
+    public JComboBox[][] getLetterBoxes() {
+    	return lettersArray;
     }
 }
