@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import entities.*;
@@ -47,6 +48,11 @@ public class AddWordController implements ActionListener {
 				int currentLabel = level.getObjectiveValue();
 				if (currentLabel == 0) {
 					
+					// Let the player know they have run out of moves
+					JOptionPane.showConfirmDialog(null, 
+							"Move limit reached.", "",
+							JOptionPane.DEFAULT_OPTION);
+					
 					// reset levelModel
 					model.resetLevel();
 					// reset application views
@@ -74,6 +80,11 @@ public class AddWordController implements ActionListener {
 				level.updateObjectiveValue(-1);
 				int currentLabel = level.getObjectiveValue();
 				if (currentLabel == 0) {
+					
+					// Let the player know they have run out of moves
+					JOptionPane.showConfirmDialog(null, 
+							"All words found.", "",
+							JOptionPane.DEFAULT_OPTION);
 					
 					// reset levelModel
 					model.resetLevel();

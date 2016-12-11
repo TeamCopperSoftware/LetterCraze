@@ -2,6 +2,8 @@ package playercontroller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import entities.LevelModel;
 import entities.Model;
 import playerboundary.Application;
@@ -35,6 +37,12 @@ public class CustomLightningTimerController implements ActionListener {
             // make sure we're still in the level before kicking us out to main menu
             // if we're somewhere else do't do anything
             if (app.getContentPane().equals(l)) {
+            	
+            	// Let the player know they have run out of time
+				JOptionPane.showConfirmDialog(null, 
+						"Time up!", "",
+						JOptionPane.DEFAULT_OPTION);
+				
             	l.clearList();
                 l.getLevelModel().updateBestScore();
                 LevelModel lm = model.getCustomLevels().get(levelNumber);
