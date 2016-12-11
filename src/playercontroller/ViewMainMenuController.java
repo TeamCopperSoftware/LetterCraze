@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Controls all actions when initializing Main menu
+ * Controls all actions when initializing Main menu.
  * <p>
  */
 
@@ -16,7 +16,7 @@ public class ViewMainMenuController implements ActionListener {
 	Model model;
 	
 	/**
-	 * Provides main menu to application
+	 * Provides main menu to application.
 	 * <p>
 	 * @param ae ActionEvent
 	 */
@@ -27,7 +27,7 @@ public class ViewMainMenuController implements ActionListener {
 	}
 	
 	/**
-	 * Sets parameters for ViewMainMenuController
+	 * Sets parameters for ViewMainMenuController.
 	 * <p>
 	 * @param app Application, m model
 	 */

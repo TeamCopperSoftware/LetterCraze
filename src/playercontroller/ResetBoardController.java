@@ -10,7 +10,7 @@ import entities.ThemeLevel;
 import playerboundary.LevelApplication;
 
 /**
- * Controls all actions to do with Reseting Board in all levels
+ * Controls all actions to do with Reseting Board in all levels.
  * <p>
  */
 
@@ -68,7 +68,7 @@ public class ResetBoardController implements ActionListener {
 	}
 	
 	/**
-	 * Sets parameters for ResetBoardController
+	 * Sets parameters for ResetBoardController.
 	 * <p>
 	 * @param app LevelApplication, m LevelModel
 	 */

@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Controls all actions when interacting with Adventure Map interface
+ * Controls all actions when interacting with Adventure Map interface.
  * <p>
  */
 
@@ -71,7 +71,7 @@ public class ViewAdventureMapController implements ActionListener {
 	}
 	
 	/**
-	 * Sets parameters for ViewAdventureMapController
+	 * Sets parameters for ViewAdventureMapController.
 	 * <p>
 	 * @param app Application, m model
 	 */

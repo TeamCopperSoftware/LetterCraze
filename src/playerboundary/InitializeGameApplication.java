@@ -22,12 +22,20 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
 
+/**
+ * The containing Frame for LetterCraze Main Menu View.
+ */
+
 public class InitializeGameApplication extends JPanel {
 
 	Model model;
 	JButton playGameButton;
 	JButton playCustomLevelsButton;
 
+	/**
+	 * This is the default constructor.
+	 */
+	
 	public InitializeGameApplication(Model m) {
 		setBounds(0, 0, 800, 600);
 		this.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -52,12 +60,12 @@ public class InitializeGameApplication extends JPanel {
 		this.add(playCustomLevelsButton);
 	}
 
-	// return button for getting to Main Game
+	/**Getter that returns button for getting to Main Game. */
 	public JButton getMapButton() {
 		return playGameButton;
 	}
-
-	// return button for getting to CustomLevelsMap
+		
+	/**Getter that returns button for getting to CustomLevelsMap. */
 	public JButton getCustomLevelsButton() {
 		return playCustomLevelsButton;
 	}

@@ -476,7 +476,7 @@ public class SelectLetterController implements ActionListener {
 	*/
 	
 	/**
-	 * Sets parameters for SelectLetterController
+	 * Sets parameters for SelectLetterController.
 	 * <p>
 	 * @param app LevelApplication, m LevelModel, levelNumber int, x int, y int
 	 */

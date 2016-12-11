@@ -28,7 +28,7 @@ import entities.Square;
  * at least one star in each level. Custom levels can also be played by going back to the Main Menu and 
  * selecting custom levels. Same level rules apply for custom levels.
  * <p>
- * @author: Annie Hernandez, Anthony Gringeri, James Kradjian, John Dyer, and Goutham Deva
+ * @author: Annie Hernandez, Anthony Gringeri, James Kradjian, John Dyer, and Goutham Deva.
  */
 
 
@@ -97,7 +97,7 @@ public class Main {
 
 	
 	/**
-	 * Getter method for application
+	 * Getter method for application.
 	 */
 	public Application getApp() {
 		return app;

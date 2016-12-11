@@ -13,7 +13,7 @@ import playercontroller.LightningTimerController;
 import playercontroller.SplashScreenTimerController;
 
 /**
- * The containing Frame for LetterCraze Player. Big GUI Shell
+ * The containing Frame for LetterCraze Player.
  */
 
 public class Application extends JFrame {
@@ -38,7 +38,7 @@ public class Application extends JFrame {
 
 
 	/**
-	 * Default constructor for LetterCraze Player Application
+	 * Default constructor for LetterCraze Player Application.
 	 */
 	
 	public Application(Model model) {
@@ -110,7 +110,7 @@ public class Application extends JFrame {
 	}
 
 	/**
-	 * Getter for how many seconds to display Splash Screen
+	 * Getter for how many seconds to display Splash Screen.
 	 */
 	
 	public int getDisplayTime() {
@@ -118,7 +118,7 @@ public class Application extends JFrame {
 	}
 
 	/**
-	 * Getter for Timer for determining how long Splash Screen should be displayed
+	 * Getter for Timer for determining how long Splash Screen should be displayed.
 	 */
 	
 	public Timer getSplashScreenTimer() {
@@ -126,7 +126,7 @@ public class Application extends JFrame {
 	}
 	
 	/**
-	 * Getter for decrementing time of Splash Screen
+	 * Getter for decrementing time of Splash Screen.
 	 */
 	
 
@@ -135,7 +135,7 @@ public class Application extends JFrame {
 	}
 	
 	/**
-	 * Getter for Main Menu GUI after Splash Screen is implemented
+	 * Getter for Main Menu GUI after Splash Screen is implemented.
 	 */
 
 	public InitializeGameApplication getMainMenu() {
@@ -143,7 +143,7 @@ public class Application extends JFrame {
 	}
 	
 	/**
-	 * Getter for Map GUI
+	 * Getter for Map GUI.
 	 */
 
 	public MapApplication getMapApplication() {
@@ -151,7 +151,7 @@ public class Application extends JFrame {
 	}
 
 	/**
-	 * Getter for Custom Map GUI
+	 * Getter for Custom Map GUI.
 	 */
 	
 	public ViewCustomLevelsApplication getViewCustomLevelsApplication() {
@@ -159,7 +159,7 @@ public class Application extends JFrame {
 	}
 
 	/**
-	 * Getter for Level GUI
+	 * Getter for Level GUI.
 	 */
 	
 	public ArrayList<LevelApplication> getLevelApplications() {
@@ -167,7 +167,7 @@ public class Application extends JFrame {
 	}
 	
 	/**
-	 * Getter for Custom Level GUI
+	 * Getter for Custom Level GUI.
 	 */
 
 	public ArrayList<LevelApplication> getCustomLevelApplications() {
@@ -175,7 +175,7 @@ public class Application extends JFrame {
 	}
 	
 	/**
-	 * Getter for Model Entities which contains adventure mode level information
+	 * Getter for Model Entities which contains adventure mode level information.
 	 */
 	
 	public Model getModel() {
