@@ -91,7 +91,10 @@ public class Main {
 		
 		
 		// get back to the map from the edit level screen
-		app.getEditSavedLevelApplication().getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
+		for (int i = 0; i < app.getEditSavedLevelApplications().size(); i++) {
+			app.getEditSavedLevelApplications().get(i).getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
+		}
+		
 		
 		// set controllers for square buttons in CreateNewLevelApplication
 		for (int y = 0; y < 6; y++) {

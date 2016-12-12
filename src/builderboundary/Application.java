@@ -1,5 +1,7 @@
 package builderboundary;
 
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
@@ -17,7 +19,7 @@ public class Application extends JFrame {
 	InitializeBuilderApplication initializeBuilderApplication;
 	CreateNewLevelApplication createNewLevelApplication;
 	SavedLevelsMapApplication savedLevelsMapApplication;
-	EditSavedLevelApplication editSavedLevelApplication;
+	ArrayList<EditSavedLevelApplication> editSavedLevelApplications;
 
 	// how many seconds to display splash screen
 	int displayTime;
@@ -41,7 +43,10 @@ public class Application extends JFrame {
 		initializeBuilderApplication = new InitializeBuilderApplication(model);
 		createNewLevelApplication = new CreateNewLevelApplication(model);
 		savedLevelsMapApplication = new SavedLevelsMapApplication(model);
-		editSavedLevelApplication = new EditSavedLevelApplication(model);
+		editSavedLevelApplications = new ArrayList<EditSavedLevelApplication>();
+		for (int i = 0; i < model.getSavedLevels().size(); i++) {
+			editSavedLevelApplications.add(new EditSavedLevelApplication(model, i));
+		}
 		
 		// display splash screen for 4 seconds
 		displayTime = 4;  
@@ -75,8 +80,8 @@ public class Application extends JFrame {
 		return savedLevelsMapApplication;
 	}
 	
-	public EditSavedLevelApplication getEditSavedLevelApplication() {
-		return editSavedLevelApplication;
+	public ArrayList<EditSavedLevelApplication> getEditSavedLevelApplications() {
+		return editSavedLevelApplications;
 	}
 
 }

@@ -74,7 +74,7 @@ public class SaveController implements ActionListener {
     		int moveLimit = (int)level.getNumMovesSpinner().getValue();
     		PuzzleLevel pl = new PuzzleLevel(b, g, moveLimit);
     		// if creating a new level, add to next spot in saved levels ArrayList (if spot is available)
-    		if (levelNumber == -1 && model.getSavedLevels().size() <= 15) {
+    		if (levelNumber == -1 && model.getSavedLevels().size() < 15) {
     			model.getSavedLevels().add(pl);
     		}
     		// if editing a saved level, overwrite that saved level
@@ -90,7 +90,7 @@ public class SaveController implements ActionListener {
     		int timeLimit = (int)level.getTimeSpinner().getValue();
     		LightningLevel ll = new LightningLevel(b, g, 30);
     		// if creating a new level, add to next spot in saved levels ArrayList (if spot is available)
-    		if (levelNumber == -1 && model.getSavedLevels().size() <= 15) {
+    		if (levelNumber == -1 && model.getSavedLevels().size() < 15) {
     			model.getSavedLevels().add(ll);
     		}
     		// if editing a saved level, overwrite that saved level
@@ -110,7 +110,7 @@ public class SaveController implements ActionListener {
     		}
     		ThemeLevel tl = new ThemeLevel(b, g, theme, words);
     		// if creating a new level, add to next spot in saved levels ArrayList (if spot is available)
-    		if (levelNumber == -1 && model.getSavedLevels().size() <= 15) {
+    		if (levelNumber == -1 && model.getSavedLevels().size() < 15) {
     			model.getSavedLevels().add(tl);
     		}
     		// if editing a saved level, overwrite that saved level

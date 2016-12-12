@@ -7,6 +7,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -36,6 +37,7 @@ public class CreateNewLevelApplication extends JPanel {
     JSpinner starGoal3Spinner;
     JSpinner numMovesSpinner;
     JSpinner timeSpinner;
+    DefaultListModel listModel;
     JList wordList;
     JTextField wordField;
     JTextField themeField;
@@ -164,7 +166,8 @@ public class CreateNewLevelApplication extends JPanel {
         addWordButton.setBounds(144, 103, 50, 29);
         themePanel.add(addWordButton);
 
-        wordList = new JList();
+        listModel = new DefaultListModel();
+        wordList = new JList(listModel);
         wordList.setBorder(new LineBorder(new Color(0, 0, 0)));
         wordList.setBounds(6, 143, 188, 247);
         themePanel.add(wordList);
