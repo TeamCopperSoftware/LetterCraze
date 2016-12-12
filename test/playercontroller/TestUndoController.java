@@ -4,21 +4,18 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import entities.LevelModel;
 import entities.Model;
-import entities.PuzzleLevel;
+import entities.Move;
 import entities.ThemeLevel;
 import entities.Word;
 import junit.framework.TestCase;
 import playerboundary.Application;
-import playerboundary.LevelApplication;
-import playerboundary.PuzzleLevelApplication;
 import playerboundary.ThemeLevelApplication;
 
-public class TestAddWordController extends TestCase {
-
+public class TestUndoController extends TestCase {
+	
 	public void testInThemeLvl() {
 		Model model = new Model();
 		ArrayList<LevelModel> lvlList = model.getMainLevels().getLevels();
@@ -55,11 +52,18 @@ public class TestAddWordController extends TestCase {
 		assertTrue(lvlMod.getBoard().getWord().isValid());
 		
 		AddWordController awc = new AddWordController(app, app.getMapApplication(), temeLvlApp, lvlMod);
-		JButton butt = temeLvlApp.getConfirmButton();
-		ActionEvent ae = new ActionEvent(butt, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt"); //want butt.doClick or butt.doClick()
-		awc.actionPerformed(ae); //app.getMapApplication() or getMainLevels
-	
+		JButton butt6 = temeLvlApp.getConfirmButton();
+		butt6.addActionListener(awc);
+		ActionEvent ae6 = new ActionEvent(butt6, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt"); //want butt.doClick or butt.doClick()
+		awc.actionPerformed(ae6);
+		//assertEquals(lvlMod.getHistorySize(), 1);
+			
+		UndoController ucon = new UndoController(app, temeLvlApp, lvlMod);
+		JButton butt9 = temeLvlApp.getUndoButton();
+		butt9.addActionListener(ucon);
+		ActionEvent ae9 = new ActionEvent(butt9, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt"); //want butt.doClick or butt.doClick()
+		ucon.actionPerformed(ae9);
+		
 	}
 
-	
 }
