@@ -27,6 +27,7 @@ public class CreateNewLevelApplication extends JPanel {
     JPanel cards;
     JButton backButton;
     JButton addWordButton;
+    JButton deleteWordButton;
     JButton[][] squaresArray;
     JComboBox[][] lettersArray;
     JButton btnSaveLevel;
@@ -165,11 +166,15 @@ public class CreateNewLevelApplication extends JPanel {
         addWordButton = new JButton("Add");
         addWordButton.setBounds(144, 103, 50, 29);
         themePanel.add(addWordButton);
+        
+        deleteWordButton = new JButton("Delete");
+        deleteWordButton.setBounds(124, 135, 70, 29);
+        themePanel.add(deleteWordButton);
 
         listModel = new DefaultListModel();
         wordList = new JList(listModel);
         wordList.setBorder(new LineBorder(new Color(0, 0, 0)));
-        wordList.setBounds(6, 143, 188, 247);
+        wordList.setBounds(6, 172, 188, 218);
         themePanel.add(wordList);
 
         // code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
@@ -261,6 +266,10 @@ public class CreateNewLevelApplication extends JPanel {
     
     public JButton getAddWordButton() {
     	return addWordButton;
+    }
+    
+    public JButton getDeleteWordButton() {
+    	return deleteWordButton;
     }
     
     public JSpinner getTimeSpinner() {

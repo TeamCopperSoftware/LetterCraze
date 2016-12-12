@@ -5,7 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JTextField;
+
 import entities.*;
 import playerboundary.LevelApplication;
 import builderboundary.Application;
@@ -16,13 +19,7 @@ import java.util.*;
 /**
  * 
  */
-public class DeleteWordController {
-
-    /**
-     * Default constructor
-     */
-    public DeleteWordController() {
-    }
+public class DeleteWordController implements ActionListener {
 
     /**
      * 
@@ -32,22 +29,53 @@ public class DeleteWordController {
     /**
      * 
      */
-    public CreateNewLevelApplication application;
+    public Application application;
+    
+    int levelNumber;
 
 
     /**
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public void DeleteWordController(BuilderModel m, CreateNewLevelApplication app) {
-        // TODO implement here
+    public DeleteWordController(BuilderModel m, Application app, int levelNumber) {
+        this.model = m;
+        this.application = app;
+        this.levelNumber = levelNumber;
     }
 
-    /**
-     * @param MouseEvent me
-     */
-    public void ButtonPressed(MouseEvent me) {
-        // TODO implement here
-    }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JTextField wordField;
+	    DefaultListModel listModel;
+		if (levelNumber == -1) {
+			wordField = application.getCreateNewLevelApplication().getWordField();
+			listModel = application.getCreateNewLevelApplication().getDefaultListModel();
+			// if there is a word in the word box and the word is also in the list, remove it from list
+			if (!wordField.getText().isEmpty() && listModel.contains(wordField.getText().toUpperCase())) {
+				listModel.removeElement(wordField.getText().toUpperCase());
+			}
+			// if there is no word in the word box and there are elements in the list, remove last element from list
+			else if (wordField.getText().isEmpty() && !listModel.isEmpty()) {
+				listModel.removeElementAt(listModel.size()-1);
+			}
+		}
+		else {
+			wordField = application.getEditSavedLevelApplications().get(levelNumber).getWordField();
+			listModel = application.getEditSavedLevelApplications().get(levelNumber).getDefaultListModel();
+			// if there is a word in the word box and the word is also in the list, remove it from list
+			if (!wordField.getText().isEmpty() && listModel.contains(wordField.getText().toUpperCase())) {
+				listModel.removeElement(wordField.getText().toUpperCase());
+			}
+			// if there is no word in the word box and there are elements in the list, remove last element from list
+			else if (wordField.getText().isEmpty() && !listModel.isEmpty()) {
+				listModel.removeElementAt(listModel.size()-1);
+			}
+		}
+		
+	}
+
+    
 
 }

@@ -106,6 +106,12 @@ public class Main {
 		}
 		app.getCreateNewLevelApplication().getAddWordButton().addActionListener(new AddWordController(model, app, -1));
 		
+		// remove words from wordlist for theme levels
+		for (int i = 0; i < 15; i++) {
+			app.getEditSavedLevelApplications().get(i).getDeleteWordButton().addActionListener(new DeleteWordController(model, app, i));
+		}
+		app.getCreateNewLevelApplication().getDeleteWordButton().addActionListener(new DeleteWordController(model, app, -1));
+		
 		
 		// set controllers for square buttons in CreateNewLevelApplication
 		for (int y = 0; y < 6; y++) {
