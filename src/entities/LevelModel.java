@@ -6,16 +6,26 @@ import java.util.Stack;
 
 import javax.swing.DefaultListModel;
 
+/**
+ * Represents all entity information for level model.
+ */
 public abstract class LevelModel implements Serializable {
-    
+   
+	/** Level Board. */
     Board board;
+    /** Goals for each level. */
     Goal goals;
-    
+	/** Keeps track of move made for selecting tiles. */    
     Stack<Move> history;
+	/** Keeps track for current and best score. */
     Score bestScore, currentScore;
+	/** Keeps track of original best score. */
     Score startingBestScore;
+	/** Controls whether level is unlocked. */
     Boolean isUnlocked;
+	/** Type of level based on level variation. */
     String type;
+	/** Keep track of words. */
     DefaultListModel<String> wordList;
     
     LevelModel(Board b, Goal g, String type) {

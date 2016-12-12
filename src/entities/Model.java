@@ -3,12 +3,19 @@ package entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
+/**
+ * The model which contains all entity objects.
+ */
+
 public class Model implements Serializable {
 
-	Map mainLevels; // main levels are stored in a map in order to keep track of player's progress
-	ArrayList<LevelModel> customLevels; // custom levels are always unlocked so they can be stored in an ArrayList
-
-	// creates default levels and organizes them into a Map
+	/** Main levels are stored in a map in order to keep track of player's progress. */
+	Map mainLevels;
+	/** Custom levels are always unlocked so they can be stored in an ArrayList. */
+	ArrayList<LevelModel> customLevels; 
+	
+	/** Creates default levels and organizes them into a Map. */
 	public Model() {		
 
 		setMainLevels(new Map());
@@ -17,7 +24,8 @@ public class Model implements Serializable {
 		importCustomLevels();
 		
 	}
-	
+
+	/** Creates default levels and organizes them into a Map. */
 	public void initializeDefaultLevels() {
 		
 		Square[] squaresArray = new Square[36];
@@ -834,8 +842,8 @@ public class Model implements Serializable {
 	
 	}
 
+	/** Looks for custom level files, creates Level objects, adds them to list */
 	public void importCustomLevels() {
-		// looks for custom level files, creates Level objects, adds them to list
 		
 		// These levels are just a placeholder
 		Square[] squaresArray = new Square[36];
@@ -948,14 +956,17 @@ public class Model implements Serializable {
 		}
 	}
 
+	/** Gets all Main Levels for Adventure Map. */
 	public Map getMainLevels() {
 		return mainLevels;
 	}
 	
+	/** Gets all Custom Levels for Custom Map. */
 	public ArrayList<LevelModel> getCustomLevels() {
 		return customLevels;
 	}
 
+	/** Sets all Main Levels for Adventure Map. */
 	public void setMainLevels(Map mainLevels) {
 		this.mainLevels = mainLevels;
 	}

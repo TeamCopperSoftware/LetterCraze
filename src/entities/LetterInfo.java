@@ -3,6 +3,10 @@ package entities;
 import java.io.IOException;
 import java.util.HashMap;
 
+/**
+ * Represents all entity information for Letters and their respective scores.
+ */
+
 public class LetterInfo {
 	
 	static HashMap<String, Integer> letterValues;
