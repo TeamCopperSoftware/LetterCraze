@@ -25,10 +25,25 @@ public class CreateNewLevelApplication extends JPanel {
     BuilderModel model;
     JPanel cards;
     JButton backButton;
+    JButton addWordButton;
     JButton[][] squaresArray;
     JComboBox[][] lettersArray;
+    JButton btnSaveLevel;
+    String levelType;
+    
+    JSpinner starGoal1Spinner;
+    JSpinner starGoal2Spinner;
+    JSpinner starGoal3Spinner;
+    JSpinner numMovesSpinner;
+    JSpinner timeSpinner;
+    JList wordList;
+    JTextField wordField;
+    JTextField themeField;
 
     public CreateNewLevelApplication(BuilderModel model2) {
+    	
+    	levelType = "Puzzle";
+    	
         model = model2;
         setLayout(null);
         setBounds(0, 0, 800, 600);
@@ -104,7 +119,7 @@ public class CreateNewLevelApplication extends JPanel {
         numMovesLabel.setBounds(6, 6, 188, 16);
         puzzlePanel.add(numMovesLabel);
 
-        JSpinner numMovesSpinner = new JSpinner();
+        numMovesSpinner = new JSpinner();
         numMovesSpinner.setBounds(134, 34, 60, 28);
         puzzlePanel.add(numMovesSpinner);
 
@@ -117,7 +132,7 @@ public class CreateNewLevelApplication extends JPanel {
         timeLabel.setBounds(6, 6, 188, 16);
         lightningPanel.add(timeLabel);
 
-        JSpinner timeSpinner = new JSpinner();
+        timeSpinner = new JSpinner();
         timeSpinner.setBounds(134, 34, 60, 28);
         lightningPanel.add(timeSpinner);
 
@@ -130,29 +145,29 @@ public class CreateNewLevelApplication extends JPanel {
         themeLabel.setBounds(6, 6, 188, 16);
         themePanel.add(themeLabel);
 
-        JTextField textField = new JTextField();
-        textField.setBounds(6, 34, 188, 28);
-        themePanel.add(textField);
-        textField.setColumns(10);
+        themeField = new JTextField();
+        themeField.setBounds(6, 34, 188, 28);
+        themePanel.add(themeField);
+        themeField.setColumns(10);
 
         JLabel lblWords = new JLabel("Words:");
         lblWords.setHorizontalAlignment(SwingConstants.CENTER);
         lblWords.setBounds(6, 75, 188, 16);
         themePanel.add(lblWords);
 
-        JTextField textField_1 = new JTextField();
-        textField_1.setBounds(6, 103, 134, 28);
-        themePanel.add(textField_1);
-        textField_1.setColumns(10);
+        wordField = new JTextField();
+        wordField.setBounds(6, 103, 134, 28);
+        themePanel.add(wordField);
+        wordField.setColumns(10);
 
-        JButton btnNewButton = new JButton("Add");
-        btnNewButton.setBounds(144, 103, 50, 29);
-        themePanel.add(btnNewButton);
+        addWordButton = new JButton("Add");
+        addWordButton.setBounds(144, 103, 50, 29);
+        themePanel.add(addWordButton);
 
-        JList list = new JList();
-        list.setBorder(new LineBorder(new Color(0, 0, 0)));
-        list.setBounds(6, 143, 188, 247);
-        themePanel.add(list);
+        wordList = new JList();
+        wordList.setBorder(new LineBorder(new Color(0, 0, 0)));
+        wordList.setBounds(6, 143, 188, 247);
+        themePanel.add(wordList);
 
         // code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
         // this should maybe be separated out into a new controller class?
@@ -161,6 +176,8 @@ public class CreateNewLevelApplication extends JPanel {
             public void itemStateChanged(ItemEvent e) {
                 CardLayout cl = (CardLayout)(cards.getLayout());
                 cl.show(cards, (String)e.getItem());
+                levelType = (String)e.getItem();
+                //System.out.println("Leveltype: " + levelType);
                 
             }
         });
@@ -186,19 +203,19 @@ public class CreateNewLevelApplication extends JPanel {
         starGoal3Label.setBounds(6, 129, 72, 16);
         settingsPanel.add(starGoal3Label);
 
-        JSpinner starGoal1Spinner = new JSpinner();
+        starGoal1Spinner = new JSpinner();
         starGoal1Spinner.setBounds(134, 67, 60, 28);
         settingsPanel.add(starGoal1Spinner);
 
-        JSpinner starGoal2Spinner = new JSpinner();
+        starGoal2Spinner = new JSpinner();
         starGoal2Spinner.setBounds(134, 95, 60, 28);
         settingsPanel.add(starGoal2Spinner);
 
-        JSpinner starGoal3Spinner = new JSpinner();
+        starGoal3Spinner = new JSpinner();
         starGoal3Spinner.setBounds(134, 123, 60, 28);
         settingsPanel.add(starGoal3Spinner);
 
-        JButton btnSaveLevel = new JButton("Save Level");
+        btnSaveLevel = new JButton("Save Level");
         btnSaveLevel.setBounds(120, 520, 170, 37);
         add(btnSaveLevel);
 
@@ -217,5 +234,41 @@ public class CreateNewLevelApplication extends JPanel {
     
     public JComboBox[][] getLetterBoxes() {
     	return lettersArray;
+    }
+    
+    public String getLevelType() {
+    	return levelType;
+    }
+    
+    public int[] getStarGoals() {
+    	int[] goals = new int[3];
+    	goals[0] = (int)starGoal3Spinner.getValue();
+    	goals[1] = (int)starGoal3Spinner.getValue();
+    	goals[2] = (int)starGoal3Spinner.getValue();
+    	return goals;
+    }
+    
+    public JButton getSaveButton() {
+    	return btnSaveLevel;
+    }
+    
+    public JList getWordList() {
+    	return wordList;
+    }
+    
+    public JButton getAddWordButton() {
+    	return addWordButton;
+    }
+    
+    public JSpinner getTimeSpinner() {
+    	return timeSpinner;
+    }
+    
+    public JSpinner getNumMovesSpinner() {
+    	return numMovesSpinner;
+    }
+    
+    public JTextField getThemeField() {
+    	return themeField;
     }
 }

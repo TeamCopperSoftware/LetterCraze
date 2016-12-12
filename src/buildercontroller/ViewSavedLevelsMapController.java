@@ -13,6 +13,7 @@ public class ViewSavedLevelsMapController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		app.getSavedLevelsMapApplication().refreshPanel();
 		app.setContentPane(app.getSavedLevelsMapApplication());
 	}
 	

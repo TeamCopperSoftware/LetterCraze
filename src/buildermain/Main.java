@@ -81,6 +81,8 @@ public class Main {
 			app.getSavedLevelsMapApplication().getLevelButtons().get(i).addActionListener(new ViewEditSavedLevelController(app, model, i));
 		}
 		
+		app.getCreateNewLevelApplication().getSaveButton().addActionListener(new SaveController(model, app, app.getCreateNewLevelApplication(), -1));
+		
 		
 		// get back to the map from the edit level screen
 		app.getEditSavedLevelApplication().getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
