@@ -5,7 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextField;
+
 import entities.*;
 import playerboundary.LevelApplication;
 import builderboundary.Application;
@@ -18,7 +22,7 @@ import builderboundary.CreateNewLevelApplication;
 /**
  * 
  */
-public class AddWordController {
+public class AddWordController implements ActionListener {
 
     /**
      * 
@@ -29,21 +33,39 @@ public class AddWordController {
      * 
      */
     public Application application;
+    
+    int levelNumber;
 
 
     /**
      * @param LevelModel m 
      * @param CreateNewLevelApplication app
      */
-    public AddWordController(BuilderModel m, Application app) {
-        // TODO implement here
+    public AddWordController(BuilderModel m, Application app, int levelNumber) {
+        this.model = m;
+        this.application = app;
+        this.levelNumber = levelNumber;
     }
 
-    /**
-     * @param MouseEvent me
-     */
-    public void ButtonPressed(MouseEvent me) {
-        // TODO implement here
-    }
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	    JTextField wordField;
+	    DefaultListModel listModel;
+		if (levelNumber == -1) {
+			wordField = application.getCreateNewLevelApplication().getWordField();
+			listModel = application.getCreateNewLevelApplication().getDefaultListModel();
+			if (!wordField.getText().isEmpty() && !listModel.contains(wordField.getText())) {
+				listModel.addElement(wordField.getText());
+			}
+		}
+		else {
+			wordField = application.getEditSavedLevelApplications().get(levelNumber).getWordField();
+			listModel = application.getEditSavedLevelApplications().get(levelNumber).getDefaultListModel();
+			if (!wordField.getText().isEmpty() && !listModel.contains(wordField.getText())) {
+				listModel.addElement(wordField.getText());
+			}
+		}
+		
+	}
 
 }

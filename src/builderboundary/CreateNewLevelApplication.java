@@ -274,4 +274,12 @@ public class CreateNewLevelApplication extends JPanel {
     public JTextField getThemeField() {
     	return themeField;
     }
+    
+    public JTextField getWordField() {
+    	return wordField;
+    }
+    
+    public DefaultListModel getDefaultListModel() {
+    	return listModel;
+    }
 }

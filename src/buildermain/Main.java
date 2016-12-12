@@ -91,14 +91,20 @@ public class Main {
 		
 		
 		// get back to the map from the edit level screen
-		for (int i = 0; i < app.getEditSavedLevelApplications().size(); i++) {
+		for (int i = 0; i < 15; i++) {
 			app.getEditSavedLevelApplications().get(i).getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
 		}
 		
 		// save existing levels
-		for (int i = 0; i < app.getEditSavedLevelApplications().size(); i++) {
+		for (int i = 0; i < 15; i++) {
 			app.getEditSavedLevelApplications().get(i).getSaveButton().addActionListener(new SaveEditedController(model, app, app.getEditSavedLevelApplications().get(i), i));
 		}
+		
+		// add words to wordlist for theme levels
+		for (int i = 0; i < 15; i++) {
+			app.getEditSavedLevelApplications().get(i).getAddWordButton().addActionListener(new AddWordController(model, app, i));
+		}
+		app.getCreateNewLevelApplication().getAddWordButton().addActionListener(new AddWordController(model, app, -1));
 		
 		
 		// set controllers for square buttons in CreateNewLevelApplication
