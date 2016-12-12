@@ -46,6 +46,7 @@ public class EditSavedLevelApplication extends JPanel {
     DefaultListModel listModel;
     JTextField wordField;
     JTextField themeField;
+    JComboBox gameModeComboBox;
     
     int levelNumber;
 
@@ -53,8 +54,6 @@ public class EditSavedLevelApplication extends JPanel {
     	
         this.model = model2;
         this.levelNumber = levelNumber;
-        
-        LevelModel l = model.getSavedLevels().get(levelNumber);
         
         setLayout(null);
         setBounds(0, 0, 800, 600);
@@ -184,7 +183,7 @@ public class EditSavedLevelApplication extends JPanel {
 
         // code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
         // this should maybe be separated out into a new controller class?
-        JComboBox gameModeComboBox = new JComboBox();
+        gameModeComboBox = new JComboBox();
         gameModeComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 CardLayout cl = (CardLayout)(cards.getLayout());
@@ -218,17 +217,17 @@ public class EditSavedLevelApplication extends JPanel {
 
         starGoal1Spinner = new JSpinner();
         starGoal1Spinner.setBounds(134, 67, 60, 28);
-        starGoal1Spinner.setValue(l.getGoals().getStar1());
+        
         settingsPanel.add(starGoal1Spinner);
 
         starGoal2Spinner = new JSpinner();
         starGoal2Spinner.setBounds(134, 95, 60, 28);
-        starGoal2Spinner.setValue(l.getGoals().getStar2());
+        
         settingsPanel.add(starGoal2Spinner);
 
         starGoal3Spinner = new JSpinner();
         starGoal3Spinner.setBounds(134, 123, 60, 28);
-        starGoal3Spinner.setValue(l.getGoals().getStar3());
+        
         settingsPanel.add(starGoal3Spinner);
 
         btnSaveLevel = new JButton("Save Level");
@@ -239,7 +238,17 @@ public class EditSavedLevelApplication extends JPanel {
         btnPublishToLettercraze.setBounds(310, 520, 170, 37);
         add(btnPublishToLettercraze);
         
-        if (l.getType().equals("Puzzle")) {
+        
+
+    }
+    
+    public void resetPanel() {
+    	LevelModel l = model.getSavedLevels().get(levelNumber);
+    	starGoal1Spinner.setValue(l.getGoals().getStar1());
+    	starGoal2Spinner.setValue(l.getGoals().getStar2());
+    	starGoal3Spinner.setValue(l.getGoals().getStar3());
+    	
+    	if (l.getType().equals("Puzzle")) {
         	gameModeComboBox.setSelectedIndex(0);
         	numMovesSpinner.setValue(((PuzzleLevel)l).getMoveLimit());
         }
@@ -257,7 +266,6 @@ public class EditSavedLevelApplication extends JPanel {
         	
 
         }
-
     }
 
     public JButton getBackButton() {

@@ -16,6 +16,7 @@ public class ViewEditSavedLevelController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// if level exists open it, otherwise do nothing
 		if (levelNumber < model.getSavedLevels().size()) {
+			app.getEditSavedLevelApplications().get(levelNumber).resetPanel();
 			app.setContentPane(app.getEditSavedLevelApplications().get(levelNumber));
 		}
 	}
