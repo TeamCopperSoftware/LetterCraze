@@ -25,8 +25,8 @@ import entities.Square;
  * <p>
  * Selecting words in a level are performed by clicking on letters in the tiles and following that
  * tile path till it forms a word. Each tile has to be clicked and must be next to each other either
- * across left, right, up, down, or diagonal of preceding tile. Words should also be no more than 3 
- * letters. Once you selected a valid word by highlight the letter tiles in yellow in order, press
+ * across left, right, up, down, or diagonal of preceding tile. Words should also be no less than 3 
+ * letters. Once you selected a valid word by highlighting the letter tiles in yellow in order, press
  * the add word button to sucessfully add a word if valid. Levels can be unlocked one by one by achieving 
  * at least one star in each level. Custom levels can also be played by going back to the Main Menu and 
  * selecting custom levels. Same level rules apply for custom levels.
@@ -211,6 +211,9 @@ public class Main {
 		
 		// set controller for reset progress on main menu
 		app.getMainMenu().getResetProgressButton().addActionListener(new ResetProgressController(app, model));
+		
+		// set controller for how to play button
+		app.getMainMenu().getHowToPlayButton().addActionListener(new HowToPlayController(app, model));
 
 	}
 

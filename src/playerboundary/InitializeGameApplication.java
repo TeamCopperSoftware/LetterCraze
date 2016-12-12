@@ -32,6 +32,7 @@ public class InitializeGameApplication extends JPanel {
 	JButton playGameButton;
 	JButton playCustomLevelsButton;
 	JButton resetProgressButton;
+	JButton howToPlayButton;
 
 	/**
 	 * This is the default constructor.
@@ -63,6 +64,10 @@ public class InitializeGameApplication extends JPanel {
 		resetProgressButton = new JButton("Reset Progress");
 		resetProgressButton.setBounds(644, 6, 150, 40);
 		add(resetProgressButton);
+		
+		howToPlayButton = new JButton("How To Play");
+		howToPlayButton.setBounds(6, 6, 150, 40);
+		add(howToPlayButton);
 	}
 
 	/**Getter that returns button for getting to Main Game. */
@@ -77,5 +82,9 @@ public class InitializeGameApplication extends JPanel {
 	
 	public JButton getResetProgressButton() {
 		return resetProgressButton;
+	}
+	
+	public JButton getHowToPlayButton() {
+		return howToPlayButton;
 	}
 }
