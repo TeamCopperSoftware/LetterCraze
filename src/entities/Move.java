@@ -6,27 +6,25 @@ import java.io.Serializable;
 
 import entities.PuzzleLevel;
 
+/**
+ * Represents all entity information for Move.
+ */
 public class Move implements Serializable {
 	
-	/**
-	 * the selected word
-	 */
+	/** The selected word. */
 	Word word;
-	
-	/**
-	 * the selected word
-	 */
+	/** Contains all entity objects. */
 	LevelModel model;
-	
+	/** The containing Frame for LetterCraze Player. */	
 	LevelApplication app;
-	
+	/** Sets tiles for each individual level. */		
 	Tile[][] tileSetup;
 	
 	/**
-	 * Constructor for Move
+	 * Constructor for Move.
 	 * 
 	 * @param word the selected word
-	 * @param level the level in which the move is made
+	 * @param model the level in which the move is made
 	 */
 	public Move(Word word, LevelModel model) {
 		this.word = word;
@@ -42,6 +40,11 @@ public class Move implements Serializable {
 		}
 	}
 	
+	/**
+	 * Allows move to be made.
+	 * Adds words to model's word list, updates Score, Stars, Best Score,
+	 * removes word from board, and repopulates word based on type.
+	 */
 	public boolean doMove() {
 		if (isValidMove()) {
 			//TODO: do Move
@@ -91,7 +94,10 @@ public class Move implements Serializable {
 		}
 		return false;
 	}
-	
+
+	/**
+	 * Undo's move back to previous move and restores previous entity information.
+	 */
 	public boolean undoMove() {
 		
 		if (model.getWordList().isEmpty()) {
@@ -154,7 +160,9 @@ public class Move implements Serializable {
 		return true;
 	}
 
-	
+	/**
+	 * Checks whether move made was valid.
+	 */
 	public boolean isValidMove() {
 		if (word.isValid()) {
 			//if(model.getType() == "Theme") {
