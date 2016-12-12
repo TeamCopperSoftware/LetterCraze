@@ -31,6 +31,7 @@ public class InitializeGameApplication extends JPanel {
 	Model model;
 	JButton playGameButton;
 	JButton playCustomLevelsButton;
+	JButton resetProgressButton;
 
 	/**
 	 * This is the default constructor.
@@ -58,6 +59,10 @@ public class InitializeGameApplication extends JPanel {
 		playCustomLevelsButton = new JButton("Play Custom Levels");
 		playCustomLevelsButton.setBounds(325, 360, 150, 100);
 		this.add(playCustomLevelsButton);
+		
+		resetProgressButton = new JButton("Reset Progress");
+		resetProgressButton.setBounds(644, 6, 150, 40);
+		add(resetProgressButton);
 	}
 
 	/**Getter that returns button for getting to Main Game. */
@@ -69,5 +74,8 @@ public class InitializeGameApplication extends JPanel {
 	public JButton getCustomLevelsButton() {
 		return playCustomLevelsButton;
 	}
-
+	
+	public JButton getResetProgressButton() {
+		return resetProgressButton;
+	}
 }

@@ -208,6 +208,9 @@ public class Main {
 		for (int i = 0; i < numCustomLevels; i++) {
 			app.getCustomLevelApplications().get(i).getUndoButton().addActionListener(new UndoController(app, app.getCustomLevelApplications().get(i), model.getCustomLevels().get(i)));
 		}
+		
+		// set controller for reset progress on main menu
+		app.getMainMenu().getResetProgressButton().addActionListener(new ResetProgressController(app, model));
 
 	}
 
