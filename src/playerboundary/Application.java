@@ -59,7 +59,7 @@ public class Application extends JFrame {
 			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
 				int confirmed = JOptionPane.showConfirmDialog(null, 
 						"Are you sure you want to exit LetterCraze?\n"
-						, "",
+						+ "All data will be saved when you exit.", "",
 						JOptionPane.YES_NO_OPTION);
 
 				if (confirmed == JOptionPane.YES_OPTION) {

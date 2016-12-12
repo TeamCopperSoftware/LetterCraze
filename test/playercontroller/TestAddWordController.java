@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 import entities.LevelModel;
 import entities.Model;
@@ -53,12 +54,10 @@ public class TestAddWordController extends TestCase {
 		assertEquals(lvlMod.getBoard().getWord().toString(), "BEAN");
 		assertTrue(lvlMod.getBoard().getWord().isValid());
 		
-		
-		//TODO: Find how to grab the JPanel for AddWordController?
-		AddWordController awc = new AddWordController(app, null, temeLvlApp, lvlMod);
+		AddWordController awc = new AddWordController(app, app.getMapApplication(), temeLvlApp, lvlMod);
 		JButton butt = new JButton();
 		ActionEvent ae = new ActionEvent(butt, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt"); //want butt.doClick or butt.doClick()
-		//awc.actionPerformed(ae);
+		awc.actionPerformed(ae); //app.getMapApplication() or getMainLevels
 	
 	}
 
