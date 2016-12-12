@@ -44,7 +44,7 @@ public class Application extends JFrame {
 		createNewLevelApplication = new CreateNewLevelApplication(model);
 		savedLevelsMapApplication = new SavedLevelsMapApplication(model);
 		editSavedLevelApplications = new ArrayList<EditSavedLevelApplication>();
-		for (int i = 0; i < model.getSavedLevels().size(); i++) {
+		for (int i = 0; i < 15; i++) {
 			editSavedLevelApplications.add(new EditSavedLevelApplication(model, i));
 		}
 		

@@ -95,6 +95,11 @@ public class Main {
 			app.getEditSavedLevelApplications().get(i).getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
 		}
 		
+		// save existing levels
+		for (int i = 0; i < app.getEditSavedLevelApplications().size(); i++) {
+			app.getEditSavedLevelApplications().get(i).getSaveButton().addActionListener(new SaveEditedController(model, app, app.getEditSavedLevelApplications().get(i), i));
+		}
+		
 		
 		// set controllers for square buttons in CreateNewLevelApplication
 		for (int y = 0; y < 6; y++) {
