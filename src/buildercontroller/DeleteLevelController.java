@@ -1,6 +1,8 @@
 package buildercontroller;
 
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.*;
 
@@ -10,7 +12,7 @@ import entities.BuilderModel;
 /**
  * 
  */
-public class DeleteLevelController {
+public class DeleteLevelController implements ActionListener {
 
 
     /**
@@ -22,6 +24,8 @@ public class DeleteLevelController {
      * 
      */
     public Application application;
+    
+    int number;
 
 
 
@@ -29,15 +33,17 @@ public class DeleteLevelController {
      * @param EditSavedLevelsModel m 
      * @param EditSavedLevelsApplication app
      */
-    public void DeleteLevelController(BuilderModel model, Application app) {
-        // TODO implement here
+    public DeleteLevelController(BuilderModel model, Application app, int number) {
+        this.model = model;
+        this.application = app;
+        this.number = number;
     }
 
-    /**
-     * @param MouseEvent me
-     */
-    public void ButtonPressed(MouseEvent me) {
-        // TODO implement here
-    }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		model.getSavedLevels().remove(number);
+		application.getSavedLevelsMapApplication().refreshPanel();
+	}
 
 }

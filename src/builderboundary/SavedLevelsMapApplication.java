@@ -33,6 +33,9 @@ public class SavedLevelsMapApplication extends JPanel {
 	
 	// Buttons for saved levels
 	ArrayList<JButton> levelButtons;
+	
+	// Buttons for deleting saved levels
+	ArrayList<JButton> deleteButtons;
 
 	/**
 	 * Create the frame.
@@ -62,6 +65,7 @@ public class SavedLevelsMapApplication extends JPanel {
 		this.add(backButton);
 		
 		levelButtons = new ArrayList<JButton>();
+		deleteButtons = new ArrayList<JButton>();
 		// Creates 15 buttons for levels
 		for (int y = 0; y < 3; y++) {
 			for (int x = 0; x < 5; x++) {
@@ -70,8 +74,14 @@ public class SavedLevelsMapApplication extends JPanel {
 				b.setFont(new Font("Corbel", Font.BOLD, 11));
 				b.setBackground(new Color(0, 128, 128));
 				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
+				JButton delete = new JButton("x");
+				delete.setOpaque(true);
+				delete.setBackground(Color.RED); // this isn't working for me, idk why
+				delete.setBounds(50+(x*143), 95+(y*150), 30, 30);
 				levelButtons.add(b);
+				deleteButtons.add(delete);
 				this.add(b);
+				this.add(delete);
 			}
 		}
 		
@@ -93,9 +103,11 @@ public class SavedLevelsMapApplication extends JPanel {
 				if (currentLevel < model.getSavedLevels().size()) {
 					String levelType = model.getSavedLevels().get(currentLevel).getType();
 					levelButtons.get(currentLevel).setText("Custom " + (currentLevel+1) + " " + levelType);
+					deleteButtons.get(currentLevel).setVisible(true);
 				}
 				else {
 					levelButtons.get(currentLevel).setText("Empty");
+					deleteButtons.get(currentLevel).setVisible(false);
 				}
 				currentLevel++;
 			}
@@ -110,5 +122,9 @@ public class SavedLevelsMapApplication extends JPanel {
 
 	public ArrayList<JButton> getLevelButtons() {
 		return levelButtons;
+	}
+	
+	public ArrayList<JButton> getDeleteButtons() {
+		return deleteButtons;
 	}
 }

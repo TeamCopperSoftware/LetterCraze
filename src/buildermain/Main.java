@@ -81,12 +81,19 @@ public class Main {
 			app.getSavedLevelsMapApplication().getLevelButtons().get(i).addActionListener(new ViewEditSavedLevelController(app, model, i));
 		}
 		
+		// delete saved levels
+		for (int i = 0; i < 15; i++) {
+			app.getSavedLevelsMapApplication().getDeleteButtons().get(i).addActionListener(new DeleteLevelController(model, app, i));
+		}
+		
+		// save a level
 		app.getCreateNewLevelApplication().getSaveButton().addActionListener(new SaveController(model, app, app.getCreateNewLevelApplication(), -1));
 		
 		
 		// get back to the map from the edit level screen
 		app.getEditSavedLevelApplication().getBackButton().addActionListener(new ViewSavedLevelsMapController(app, model));
 		
+		// set controllers for square buttons in CreateNewLevelApplication
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				JButton b = app.getCreateNewLevelApplication().getSquareButtons()[x][y];
