@@ -31,7 +31,7 @@ public abstract class LevelModel implements Serializable {
    
     
 	/** 
-	 * Construct full level with the board, goals, and specific level type parameters
+	 * Construct full level with the board, goals, and specific level type parameters.
 	 * 
 	 * Initial value is given.
 	 * @param b    Arrangement of tiles in board

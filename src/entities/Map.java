@@ -3,29 +3,50 @@ package entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Represents all entity information for Level maps.
+ */
 public class Map implements Serializable {
 
+	/** All levels on the map. */
     ArrayList<LevelModel> levels;
+	/** Keeps track of how many levels are unlocked. */
     int numUnlockedLevels; // probably should keep track of how many levels are locked/unlocked
 
-    // this is the constructor used when creating Map object in Model class
+    /**
+     * Constructor for creating Map objects in Model Class.
+     */
     public Map() {
         levels = new ArrayList<LevelModel>();
     }
 
+	/** 
+	 * Constructs Adventure Map.
+	 * 
+	 * @param levels    All 15 premade levels from model
+	 */
     // probably don't need this constructor
     public Map(ArrayList<LevelModel> levels) {
         this.levels = levels;
     }
 
+    /**
+     * Adds level to the map.
+     */
     public void addLevel(LevelModel level) {
         levels.add(level);
     }
 
+    /**
+     *  Removes level from the map.
+     */
     public void removeLevel(int levelNumber) {
         levels.remove(levelNumber);
     }
 
+    /**
+     * Checks conditions and verifies whether level is unlocked.
+     */
     public boolean unlockNextLevel() {
         //TODO
         // 1) check whether conditions are met for the next locked level to be unlocked
@@ -45,6 +66,9 @@ public class Map implements Serializable {
         return false;
     }
 
+    /**
+     * Retrieves Levels to be accessed in map.
+     */
     public ArrayList<LevelModel> getLevels() {
         return levels;
     }
