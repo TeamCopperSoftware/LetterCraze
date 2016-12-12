@@ -2,6 +2,10 @@ package entities;
 
 import java.io.Serializable;
 
+/**
+ * Represents all entity information for the level boards.
+ */
+
 public class Board implements Serializable {
 
 	//Hashtable<Position, Square> squares;
@@ -11,6 +15,13 @@ public class Board implements Serializable {
 	public Board () {
 		
 	}
+	
+	/** 
+	 * Construct board capable of retaining value in squares.
+	 * 
+	 * Initial value is given.
+	 * @param squares    36 valid tiles for all level boards
+	 */
 
 	public Board (Square[] squares) {
 
@@ -21,37 +32,76 @@ public class Board implements Serializable {
 		}
 	}
 
+	/**
+	 * Makes new position of Square.
+	 * 
+	 * @param x    x position of square
+	 * @param y    y position of square
+	 */
+	
 	public Square makeSquare (int x, int y) {
 		//TODO Need a check to ensure new pos is valid
 		return makeSquare (new Position(x, y));
 	}
 
+	/**
+	 * Makes a square appear on the board
+	 * 
+	 * @param pos    Position of Square
+	 */
+	
 	public Square makeSquare (Position pos) {
 		//TODO Need a check to ensure new pos is valid
 		return new Square(pos, true);
 	}
 
+	/**
+	 * Looks up position of Square.
+	 * 
+	 * @param x    x position of square
+	 * @param y    y position of square
+	 */
+	
+	
 	public Square lookUpSquare (int x, int y) {
 		return squares[x][y];
 	}
+	
+	/**
+	 * Looks up if square should appear on board with position
+	 * 
+	 * @param pos    Position of Square
+	 */
 
 	public Square lookUpSquare (Position pos) {
 		return lookUpSquare(pos.getX(), pos.getY());
 	}
 
+	/**
+	 * Removes all tiles that formed valid word on the board once added
+	 * 
+	 * @param w    Selected group of tiles that form a valid word
+	 */
+	
 	public void removeWord (Word w) {
 		for (int i = 0; i < w.getSquares().size(); i++) {
 			removeTile(w.getSquares().get(i));
 		}
 	}
 
+	/**
+	 * Floats tiles up and repopulates empty squares with random generated tiles.
+	 * @param sq   Most recent square selected
+	 */
+	
 	public Tile removeTile (Square sq) {
 		return sq.tilePop();
 	}
 
 	/**
-	 * floats tiles up and repopulates empty squares with random generated tiles
+	 * Floats tiles up and repopulates empty squares with random generated tiles.
 	 */
+	
 	public void repopulate () {
 		// Iterate over every square on board (except bottom row)
 		// don't need to check bottom squares because we know they don't have squares beneath them to take tiles from
@@ -91,8 +141,9 @@ public class Board implements Serializable {
 	}
 
 	/**
-	 * generates a new tile for each square on the board
+	 * Generates a new tile for each square on the board.
 	 */
+	
 	public void reset() {
 		// Iterate over every square on board
 		for (int y = 0; y < 6; y++) {
@@ -121,7 +172,7 @@ public class Board implements Serializable {
 	}
 
 	/** 
-	 * Just float the tiles up (used for theme levels)
+	 * Just float the tiles up (used for theme levels).
 	 */
 	public void justFloatUp() {
 		// Iterate over every square on board (except bottom row)
