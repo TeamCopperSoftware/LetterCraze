@@ -7,6 +7,7 @@ import entities.PuzzleLevel;
 import entities.ThemeLevel;
 import playerboundary.Application;
 import playerboundary.LightningLevelApplication;
+import playerboundary.ThemeLevelApplication;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,6 +48,7 @@ public class ViewCustomLevelController implements ActionListener {
 			}
 			else {
 				app.getCustomLevelApplications().get(levelNumber).refreshPanel((ThemeLevel)level);
+				((ThemeLevelApplication) app.getCustomLevelApplications().get(levelNumber)).refreshObjective((ThemeLevel)level);
 				app.setContentPane(app.getCustomLevelApplications().get(levelNumber));
 			}
 		}

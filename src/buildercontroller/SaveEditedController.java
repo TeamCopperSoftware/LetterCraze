@@ -16,36 +16,31 @@ import builderboundary.CreateNewLevelApplication;
 import builderboundary.EditSavedLevelApplication;
 
 /**
- * 
+ * Controls all actions for editing saving levels in LetterCraze Builder.
+ * <p>
  */
 public class SaveEditedController implements ActionListener {
 
-    /**
-     * 
-     */
+	/** Builder Model/Level information. */
     public BuilderModel model;
-    
-    /**
-     * 
-     */
+    /** The main frame for LevelCraze. */
     public Application app;
-
-    /**
-     * 
-     */
+    /** Frame for saved level. */
     public EditSavedLevelApplication level;
-    
-    /**
-     * The position of the level in the model's ArrayList of saved levels, or -1 if creating a new level
-     */
+    /** The position of the level in the model's ArrayList of saved levels, or -1 if creating a new level */
     int levelNumber;
 
 
-    /**
-     * @param LevelModel m 
-     * @param CreateNewLevelApplication app
-     */
-    public SaveEditedController(BuilderModel m, Application app, EditSavedLevelApplication level, int levelNumber) {
+	/** 
+	 * Constructs SaveEditedController.
+	 * 
+	 * Initial value is given.
+	 * @param m     		Model information for Builder
+	 * @param app			Main frame of LetterCraze
+	 * @param level			Frame for saved level
+	 * @param levelNumber	Position of Level in list of levels
+	 */
+   public SaveEditedController(BuilderModel m, Application app, EditSavedLevelApplication level, int levelNumber) {
     	this.model = m;
     	this.app = app;
     	this.level = level;

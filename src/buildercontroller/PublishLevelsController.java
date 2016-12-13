@@ -11,11 +11,24 @@ import javax.swing.JOptionPane;
 import builderboundary.Application;
 import entities.BuilderModel;
 
+/**
+ * Controls all actions for Publishing a level to LetterCraze Player.
+ * <p>
+ */
 public class PublishLevelsController implements ActionListener {
 
+	/** Builder Model/Level information. */
 	BuilderModel model;
+	/** The main frame for LevelCraze. */
 	Application app;
 
+	/** 
+	 * Constructs PublishLevelsController.
+	 * 
+	 * Initial value is given.
+	 * @param model     Model information for Builder
+	 * @param app		Main frame of LetterCraze
+	 */
 	public PublishLevelsController(BuilderModel model, Application app) {
 		this.model = model;
 		this.app = app;

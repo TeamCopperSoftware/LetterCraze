@@ -15,34 +15,29 @@ import builderboundary.Application;
 import builderboundary.CreateNewLevelApplication;
 
 /**
- * 
+ * Controls all actions for Saving levels to LetterCraze Builder.
+ * <p>
  */
 public class SaveController implements ActionListener {
 
-	/**
-	 * 
-	 */
+	/** Builder Model/Level information. */
 	public BuilderModel model;
-
-	/**
-	 * 
-	 */
+	/** The main frame for LevelCraze. */
 	public Application app;
-
-	/**
-	 * 
-	 */
+	/** Frame for creating a new level.*/
 	public CreateNewLevelApplication level;
-
-	/**
-	 * The position of the level in the model's ArrayList of saved levels, or -1 if creating a new level
-	 */
+	/** The position of the level in the model's ArrayList of saved levels, or -1 if creating a new level.*/
 	int levelNumber;
 
 
-	/**
-	 * @param LevelModel m 
-	 * @param CreateNewLevelApplication app
+	/** 
+	 * Constructs SaveController.
+	 * 
+	 * Initial value is given.
+	 * @param m     		Model information for Builder
+	 * @param app			Main frame of LetterCraze
+	 * @param level			Frame for creating a new level
+	 * @param levelNumber	Position of Level in list of levels
 	 */
 	public SaveController(BuilderModel m, Application app, CreateNewLevelApplication level, int levelNumber) {
 		this.model = m;
