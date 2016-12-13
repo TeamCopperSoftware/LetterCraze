@@ -114,7 +114,7 @@ public class SavedLevelsMapApplication extends JPanel {
 			for (int x = 0; x < 5; x++) {
 				if (currentLevel < model.getSavedLevels().size()) {
 					String levelType = model.getSavedLevels().get(currentLevel).getType();
-					levelButtons.get(currentLevel).setText("<html><center>" + "Custom " + (currentLevel+1) + "<br>" + levelType + "</html></center>");
+					levelButtons.get(currentLevel).setText("<html><center>" + "Custom " + (currentLevel+1) + "<br><br>" + levelType + "</html></center>");
 					deleteButtons.get(currentLevel).setVisible(true);
 				}
 				else {

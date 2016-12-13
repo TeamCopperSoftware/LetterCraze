@@ -270,7 +270,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 				LevelModel lm = model.getCustomLevels().get(currentLevel);
 				Image image;
 				if (lm.getIsUnlocked()) {
-					levelButtons.get(currentLevel).setText("<html><center>" + lm.getType() + "!" + "<br>" + (currentLevel+1) + "</html></center>");
+					levelButtons.get(currentLevel).setText("<html><center>" + "Custom " + (currentLevel+1) + "<br><br>" + lm.getType() + "!" + "</html></center>");
 					levelScores.get(currentLevel).setText(String.valueOf(lm.getBestScore().getScore()));
 					if (lm.getBestScore().getStar() == 0) {
 						image = new ImageIcon("image/StarsEmpty.png").getImage();
