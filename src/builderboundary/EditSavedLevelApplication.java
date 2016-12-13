@@ -255,9 +255,13 @@ public class EditSavedLevelApplication extends JPanel {
     
     public void resetPanel() {
     	LevelModel l = model.getSavedLevels().get(levelNumber);
+    	System.out.println(levelNumber);
     	starGoal1Spinner.setValue(l.getGoals().getStar1());
+    	System.out.println(l.getGoals().getStar1());
     	starGoal2Spinner.setValue(l.getGoals().getStar2());
+    	System.out.println(l.getGoals().getStar2());
     	starGoal3Spinner.setValue(l.getGoals().getStar3());
+    	System.out.println(l.getGoals().getStar3());
     	
     	if (l.getType().equals("Puzzle")) {
         	gameModeComboBox.setSelectedIndex(0);
@@ -297,8 +301,8 @@ public class EditSavedLevelApplication extends JPanel {
     
     public int[] getStarGoals() {
     	int[] goals = new int[3];
-    	goals[0] = (int)starGoal3Spinner.getValue();
-    	goals[1] = (int)starGoal3Spinner.getValue();
+    	goals[0] = (int)starGoal1Spinner.getValue();
+    	goals[1] = (int)starGoal2Spinner.getValue();
     	goals[2] = (int)starGoal3Spinner.getValue();
     	return goals;
     }
