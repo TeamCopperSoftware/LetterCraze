@@ -193,6 +193,14 @@ public class Main {
 		
 		// set publish levels controller
 		app.getSavedLevelsMapApplication().getPublishButton().addActionListener(new PublishLevelsController(model, app));
+		
+		// set controller for previewButtons
+		for (int i = 0; i < 15; i++) {
+			app.getEditSavedLevelApplications().get(i).getPreviewButton().addActionListener(new PreviewController(app, model, i));
+		}
+		app.getCreateNewLevelApplication().getPreviewButton().addActionListener(new PreviewController(app, model, -1));
+
+		
 	}
 
 }

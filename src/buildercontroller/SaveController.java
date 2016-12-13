@@ -48,6 +48,7 @@ public class SaveController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		// create board
 		Square[] squareArray = new Square[36];
 		int i = 0;
