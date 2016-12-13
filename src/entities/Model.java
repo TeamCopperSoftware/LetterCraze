@@ -21,7 +21,6 @@ public class Model implements Serializable {
 		setMainLevels(new Map());
 		customLevels = new ArrayList<LevelModel>();
 		initializeDefaultLevels();
-		importCustomLevels();
 		
 	}
 
@@ -843,9 +842,10 @@ public class Model implements Serializable {
 	}
 
 	/** Looks for custom level files, creates Level objects, adds them to list */
-	public void importCustomLevels() {
+	public void importCustomLevels(ArrayList<LevelModel> levels) {
 		
 		// These levels are just a placeholder
+		/*
 		Square[] squaresArray = new Square[36];
 		squaresArray[0] = new Square(new Position(0,0), true);
 		squaresArray[1] = new Square(new Position(1,0), true);
@@ -948,9 +948,14 @@ public class Model implements Serializable {
 		words.add("james");
 		ThemeLevel l3 = new ThemeLevel(b3, new Goal(3, 4, 5), "Team Copper", words);
 		customLevels.add(l3);
+		*/
+		
+		// set the custom levels to what is passed in
+		customLevels = levels;
+		
+		int numCustomLevels = customLevels.size();
 		
 		// all custom levels should always be unlocked
-		int numCustomLevels = customLevels.size();
 		for (int i = 0; i < numCustomLevels; i++) {
 			customLevels.get(i).isUnlocked = true;
 		}

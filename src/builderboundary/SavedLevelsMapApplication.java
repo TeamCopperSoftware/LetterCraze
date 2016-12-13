@@ -134,4 +134,8 @@ public class SavedLevelsMapApplication extends JPanel {
 	public ArrayList<JButton> getDeleteButtons() {
 		return deleteButtons;
 	}
+	
+	public JButton getPublishButton() {
+		return publishLevelsButton;
+	}
 }

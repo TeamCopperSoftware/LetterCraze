@@ -160,7 +160,8 @@ public class Main {
 		}
 		app.getCreateNewLevelApplication().getGameModeComboBox().addItemListener(new GameModeSelectionController(model, app, -1));
 		
-		
+		// set publish levels controller
+		app.getSavedLevelsMapApplication().getPublishButton().addActionListener(new PublishLevelsController(model, app));
 	}
 
 }

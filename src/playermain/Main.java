@@ -4,15 +4,13 @@ import java.awt.EventQueue;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.*;
-import java.util.Hashtable;
+import java.util.*;
 
 import javax.swing.UIManager;
 
 import playerboundary.Application;
 import playercontroller.*;
-import entities.Model;
-import entities.Position;
-import entities.Square;
+import entities.*;
 
 /**
  * LetterCraze Player PlugIn.
@@ -83,18 +81,34 @@ public class Main {
 
 		// load up playersave
 		try {
-			FileInputStream fileIn = new FileInputStream("playersave.ser");
-			ObjectInputStream in = new ObjectInputStream(fileIn);
+			FileInputStream save = new FileInputStream("playersave.ser");
+			ObjectInputStream in = new ObjectInputStream(save);
 			model = ((Model) in.readObject());
 			in.close();
-			fileIn.close();
+			save.close();
 			System.out.println("playersave found. Loading file...");
 		}catch(IOException i) {
 			//i.printStackTrace();
 			System.out.println("playersave file not found, starting new game");
-			return;
 		}catch(ClassNotFoundException c) {
 			System.out.println("playersave not found");
+			c.printStackTrace();
+		}
+		
+		// load up customlevels
+		try {
+			FileInputStream fileIn = new FileInputStream("customlevels.ser");
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			model.importCustomLevels(((ArrayList<LevelModel>) in.readObject()));
+			in.close();
+			fileIn.close();
+			System.out.println("customlevels found. Loading file...");
+		}catch(IOException i) {
+			//i.printStackTrace();
+			System.out.println("customlevels file not found, starting new game");
+			return;
+		}catch(ClassNotFoundException c) {
+			System.out.println("customlevels not found");
 			c.printStackTrace();
 			return;
 		}
