@@ -15,7 +15,7 @@ import builderboundary.InitializeBuilderApplication;
 import buildercontroller.SplashScreenTimerController;
 
 /**
- * The containing Frame for LetterCraze Builder Main Menu.
+ * The containing Frame for LetterCraze Builder.
  */
 
 public class Application extends JFrame {
