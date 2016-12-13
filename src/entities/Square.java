@@ -2,6 +2,11 @@ package entities;
 
 import java.io.Serializable;
 
+/**
+ * Represents all entity information for square.
+ */
+
+
 public class Square implements Serializable {
 
 	/** Location of each square based on (X,Y) Coordinates. */

@@ -1,5 +1,8 @@
 package entities;
 
+/**
+ * Represents all entity information for WordTable.
+ */
 
 import java.io.File;
 import java.io.IOException;
