@@ -15,38 +15,34 @@ import builderboundary.CreateNewLevelApplication;
 import java.util.*;
 
 /**
- * 
+ * Controls all actions to do with mouse events over Level Buttons in Saved levels map.
+ * <p>
  */
 public class LevelButtonController implements ActionListener {
 
 
-    /**
-     * 
-     */
-    BuilderModel model;
-
-    /**
-     * 
-     */
+	/** Builder Model/Level information. */
+   BuilderModel model;
+	/** The main frame for LevelCraze. */
     Application application;
-    
-    /**
-     * 
-     */
+	/** The level button on the map. */    
     JButton button;
-
-    /**
-     * 
-     */
+	/** The type selection option for each level. */    
     JComboBox box;
-    
+	/** The level number. */        
     int levelNumber;
 
 
-    /**
-     * @param MapModel m 
-     * @param MapApplication app
-     */
+	/** 
+	 * Constructs Level button to navigate from map to saved levels.
+	 * 
+	 * Initial value is given.
+	 * @param m    Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 * @param b  Button in map to access level
+	 * @param c  Drop down box used to select type of level
+	 * @param levelNumber Level Number
+	 */
     public LevelButtonController(BuilderModel m, Application app, JButton b, JComboBox c, int levelNumber) {
         this.model = m;
         this.application = app;

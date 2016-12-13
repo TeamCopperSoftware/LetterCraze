@@ -20,27 +20,29 @@ import java.util.*;
 import builderboundary.CreateNewLevelApplication;
 
 /**
- * 
+ * Controls all actions when adding words to theme levels.
+ * <p>
  */
+
 public class AddWordController implements ActionListener {
 
-    /**
-     * 
-     */
+	/** Builder Model/Level information. */
     public BuilderModel model;
-
-    /**
-     * 
-     */
+	/** The main frame for LevelCraze. */
     public Application application;
+	/** The level number. */
+        int levelNumber;
+
+
+	/** 
+	 * Constructs Add Word Button Functionality.
+	 * 
+	 * Initial value is given.
+	 * @param m    Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 * @param levelNumber Level Number
+	 */
     
-    int levelNumber;
-
-
-    /**
-     * @param LevelModel m 
-     * @param CreateNewLevelApplication app
-     */
     public AddWordController(BuilderModel m, Application app, int levelNumber) {
         this.model = m;
         this.application = app;

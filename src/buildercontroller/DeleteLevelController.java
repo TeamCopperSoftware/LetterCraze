@@ -10,29 +10,28 @@ import builderboundary.Application;
 import entities.BuilderModel;
 
 /**
- * 
+ * Controls all actions when deleting levels in the saved levels map frame.
+ * <p>
  */
 public class DeleteLevelController implements ActionListener {
 
-
-    /**
-     * 
-     */
-    public BuilderModel model;
-
-    /**
-     * 
-     */
+	/** Builder Model/Level information. */
+	public BuilderModel model;
+	/** The main frame for LevelCraze. */
     public Application application;
-    
+	/** The level number. */        
     int number;
 
 
 
-    /**
-     * @param EditSavedLevelsModel m 
-     * @param EditSavedLevelsApplication app
-     */
+	/** 
+	 * Constructs DeleteLevelController.
+	 * 
+	 * Initial value is given.
+	 * @param model    Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 * @param number Level Number
+	 */ 
     public DeleteLevelController(BuilderModel model, Application app, int number) {
         this.model = model;
         this.application = app;

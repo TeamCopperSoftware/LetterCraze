@@ -17,27 +17,28 @@ import builderboundary.CreateNewLevelApplication;
 import java.util.*;
 
 /**
- * 
+ * Controls all actions to do with mouse events over the Game Mode Selection Drop box when editing a level.
+ * <p>
  */
 public class GameModeSelectionController implements ItemListener {
 
-    /**
-     * 
-     */
-    public BuilderModel model;
-
-    /**
-     * 
-     */
+	/** Builder Model/Level information. */
+   public BuilderModel model;
+	/** The main frame for LevelCraze. */
     public Application application;
-    
+	/** The level number. */    
     int levelNumber;
 
 
-    /**
-     * @param LevelModel m 
-     * @param CreateNewLevelApplication app
-     */
+
+	/** 
+	 * Constructs Drop Box Functionality for selecting game mode.
+	 * 
+	 * Initial value is given.
+	 * @param m    Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 * @param levelNumber Level Number
+	 */
     public GameModeSelectionController(BuilderModel m, Application app, int levelNumber) {
         this.model = m;
         this.application = app;

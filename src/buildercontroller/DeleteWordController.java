@@ -17,28 +17,28 @@ import builderboundary.CreateNewLevelApplication;
 import java.util.*;
 
 /**
- * 
+ * Controls all actions when deleting a word in the WordBox when creating new Level.
+ * <p>
  */
 public class DeleteWordController implements ActionListener {
 
-    /**
-     * 
-     */
-    public BuilderModel model;
-
-    /**
-     * 
-     */
+	/** Builder Model/Level information. */
+   public BuilderModel model;
+	/** The main frame for LevelCraze. */
     public Application application;
-    
+	/** The level number. */    
     int levelNumber;
 
 
-    /**
-     * @param LevelModel m 
-     * @param CreateNewLevelApplication app
-     */
-    public DeleteWordController(BuilderModel m, Application app, int levelNumber) {
+	/** 
+	 * Constructs DeleteWordController.
+	 * 
+	 * Initial value is given.
+	 * @param m    Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 * @param levelNumber Level Number
+	 */
+   public DeleteWordController(BuilderModel m, Application app, int levelNumber) {
         this.model = m;
         this.application = app;
         this.levelNumber = levelNumber;
