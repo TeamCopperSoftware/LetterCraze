@@ -16,6 +16,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -130,6 +131,7 @@ public class CreateNewLevelApplication extends JPanel {
 
         numMovesSpinner = new JSpinner();
         numMovesSpinner.setBounds(134, 34, 60, 28);
+        numMovesSpinner.setModel(new SpinnerNumberModel(1, 1, 10000, 1));
         puzzlePanel.add(numMovesSpinner);
 
         JPanel lightningPanel = new JPanel();
@@ -143,6 +145,7 @@ public class CreateNewLevelApplication extends JPanel {
 
         timeSpinner = new JSpinner();
         timeSpinner.setBounds(134, 34, 60, 28);
+        timeSpinner.setModel(new SpinnerNumberModel(1, 1, 10000, 1));
         lightningPanel.add(timeSpinner);
 
         JPanel themePanel = new JPanel();
@@ -219,14 +222,17 @@ public class CreateNewLevelApplication extends JPanel {
 
         starGoal1Spinner = new JSpinner();
         starGoal1Spinner.setBounds(134, 67, 60, 28);
+        starGoal1Spinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
         settingsPanel.add(starGoal1Spinner);
 
         starGoal2Spinner = new JSpinner();
         starGoal2Spinner.setBounds(134, 95, 60, 28);
+        starGoal2Spinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
         settingsPanel.add(starGoal2Spinner);
 
         starGoal3Spinner = new JSpinner();
         starGoal3Spinner.setBounds(134, 123, 60, 28);
+        starGoal3Spinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
         settingsPanel.add(starGoal3Spinner);
 
         btnSaveLevel = new JButton("Save Level");
