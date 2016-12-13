@@ -250,8 +250,8 @@ public class CreateNewLevelApplication extends JPanel {
     
     public int[] getStarGoals() {
     	int[] goals = new int[3];
-    	goals[0] = (int)starGoal3Spinner.getValue();
-    	goals[1] = (int)starGoal3Spinner.getValue();
+    	goals[0] = (int)starGoal1Spinner.getValue();
+    	goals[1] = (int)starGoal2Spinner.getValue();
     	goals[2] = (int)starGoal3Spinner.getValue();
     	return goals;
     }

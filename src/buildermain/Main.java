@@ -122,6 +122,18 @@ public class Main {
 			}
 		}
 		
+		// set controllers for square buttons in EditSavedLevelApplications
+		for (int i = 0; i < 15; i++) {
+			for (int y = 0; y < 6; y++) {
+				for (int x = 0; x < 6; x++) {
+					JButton b = app.getEditSavedLevelApplications().get(i).getSquareButtons()[x][y];
+					JComboBox c = app.getEditSavedLevelApplications().get(i).getLetterBoxes()[x][y];
+					b.addActionListener(new LevelButtonController(model, app, b, c));
+				}
+			}
+		}
+		
+		
 	}
 
 }
