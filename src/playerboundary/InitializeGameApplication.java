@@ -47,26 +47,30 @@ public class InitializeGameApplication extends JPanel {
 		// Title
 		JLabel title = new JLabel("LetterCraze");
 		title.setHorizontalAlignment(SwingConstants.CENTER);
-		title.setFont(new Font("Tahoma", Font.BOLD, 26));
+		title.setFont(new Font("Trebuchet MS", Font.BOLD, 26));
 		title.setBounds(0, 150, 800, 26);
 		this.add(title); 
 		
 		// Play Main Game Button
 		playGameButton = new JButton("Play Game");
+		playGameButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		playGameButton.setBounds(325, 250, 150, 100);
 		this.add(playGameButton);		
 		
 		// Play Custom Levels Button
 		playCustomLevelsButton = new JButton("Play Custom Levels");
+		playCustomLevelsButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		playCustomLevelsButton.setBounds(325, 360, 150, 100);
 		this.add(playCustomLevelsButton);
 		
-		resetProgressButton = new JButton("Reset Progress");
-		resetProgressButton.setBounds(644, 6, 150, 40);
+		resetProgressButton = new JButton("<html><center>" + "Reset Main" + "<br>" + "Game Progress" + "</center></html>");
+		resetProgressButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
+		resetProgressButton.setBounds(644, 6, 150, 50);
 		add(resetProgressButton);
 		
 		howToPlayButton = new JButton("How To Play");
-		howToPlayButton.setBounds(6, 6, 150, 40);
+		howToPlayButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
+		howToPlayButton.setBounds(6, 6, 150, 50);
 		add(howToPlayButton);
 	}
 

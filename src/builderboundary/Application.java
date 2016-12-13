@@ -15,7 +15,7 @@ import builderboundary.InitializeBuilderApplication;
 import buildercontroller.SplashScreenTimerController;
 
 /**
- * The containing Frame for LetterCraze Builder Main Menu.
+ * The containing Frame for LetterCraze Builder.
  */
 
 public class Application extends JFrame {
@@ -53,10 +53,10 @@ public class Application extends JFrame {
 						FileOutputStream fileOut =
 								new FileOutputStream("buildersave.ser");
 						ObjectOutputStream out = new ObjectOutputStream(fileOut);
-						out.writeObject(model);
+						out.writeObject(model.getSavedLevels());
 						out.close();
 						fileOut.close();
-						System.out.printf("Serialized data is saved in buildersave.ser");
+						System.out.printf("Builder ArrayList<LevelModel> saved in buildersave.ser");
 					}catch(IOException i) {
 						i.printStackTrace();
 					}

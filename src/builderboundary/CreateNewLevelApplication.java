@@ -65,6 +65,7 @@ public class CreateNewLevelApplication extends JPanel {
 		setBounds(0, 0, 800, 600);
 
 		backButton = new JButton("Back");
+		backButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		backButton.setBounds(10, 10, 75, 29);
 
 		JPanel boardSquares = new JPanel();
@@ -119,11 +120,13 @@ public class CreateNewLevelApplication extends JPanel {
 		puzzlePanel.setLayout(null);
 
 		JLabel numMovesLabel = new JLabel("Number of Moves Allowed:");
+		numMovesLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		numMovesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		numMovesLabel.setBounds(6, 6, 188, 16);
 		puzzlePanel.add(numMovesLabel);
 
 		numMovesSpinner = new JSpinner();
+		numMovesSpinner.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		numMovesSpinner.setBounds(134, 34, 60, 28);
 		numMovesSpinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
 		puzzlePanel.add(numMovesSpinner);
@@ -133,11 +136,13 @@ public class CreateNewLevelApplication extends JPanel {
 		lightningPanel.setLayout(null);
 
 		JLabel timeLabel = new JLabel("Time Allowed (secs):");
+		timeLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		timeLabel.setBounds(6, 6, 188, 16);
 		lightningPanel.add(timeLabel);
 
 		timeSpinner = new JSpinner();
+		timeSpinner.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		timeSpinner.setBounds(134, 34, 60, 28);
 		timeSpinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
 		lightningPanel.add(timeSpinner);
@@ -147,41 +152,49 @@ public class CreateNewLevelApplication extends JPanel {
 		themePanel.setLayout(null);
 
 		JLabel themeLabel = new JLabel("Theme:");
+		themeLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		themeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		themeLabel.setBounds(6, 6, 188, 16);
 		themePanel.add(themeLabel);
 
 		themeField = new JTextField();
+		themeField.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		themeField.setBounds(6, 34, 188, 28);
 		themePanel.add(themeField);
 		themeField.setColumns(10);
 
 		JLabel lblWords = new JLabel("Words:");
+		lblWords.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		lblWords.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWords.setBounds(6, 75, 188, 16);
 		themePanel.add(lblWords);
 
 		wordField = new JTextField();
-		wordField.setBounds(6, 103, 134, 28);
+		wordField.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
+		wordField.setBounds(6, 103, 188, 28);
 		themePanel.add(wordField);
 		wordField.setColumns(10);
 
 		addWordButton = new JButton("Add");
-		addWordButton.setBounds(144, 103, 50, 29);
+		addWordButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
+		addWordButton.setBounds(6, 135, 90, 29);
 		themePanel.add(addWordButton);
 
 		deleteWordButton = new JButton("Delete");
-		deleteWordButton.setBounds(124, 135, 70, 29);
+		deleteWordButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
+		deleteWordButton.setBounds(108, 135, 86, 29);
 		themePanel.add(deleteWordButton);
 
 		listModel = new DefaultListModel();
 		wordList = new JList(listModel);
-		wordList.setBorder(new LineBorder(new Color(0, 0, 0)));
+		wordList.setBorder(new LineBorder(Color.LIGHT_GRAY));
+		wordList.setFont(new Font("Trebuchet MS", Font.PLAIN, 12));
 		wordList.setBounds(6, 172, 188, 218);
 		themePanel.add(wordList);
 
 
 		gameModeComboBox = new JComboBox();
+		gameModeComboBox.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 
 		/* created GameModeSelectionController to do this
         gameModeComboBox.addItemListener(new ItemListener() {
@@ -201,47 +214,56 @@ public class CreateNewLevelApplication extends JPanel {
 		settingsPanel.add(gameModeComboBox);
 
 		JLabel gameModeLabel = new JLabel("Game Mode:");
+		gameModeLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		gameModeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		gameModeLabel.setBounds(6, 6, 188, 27);
 		settingsPanel.add(gameModeLabel);
 
 		JLabel starGoal1Label = new JLabel("Star 1 Goal:");
+		starGoal1Label.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		starGoal1Label.setBounds(6, 73, 72, 16);
 		settingsPanel.add(starGoal1Label);
 
 		JLabel starGoal2Label = new JLabel("Star 2 Goal:");
+		starGoal2Label.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		starGoal2Label.setBounds(6, 101, 72, 16);
 		settingsPanel.add(starGoal2Label);
 
 		JLabel starGoal3Label = new JLabel("Star 3 Goal:");
+		starGoal3Label.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		starGoal3Label.setBounds(6, 129, 72, 16);
 		settingsPanel.add(starGoal3Label);
 
 		starGoal1Spinner = new JSpinner();
+		starGoal1Spinner.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		starGoal1Spinner.setBounds(134, 67, 60, 28);
 		starGoal1Spinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
 		settingsPanel.add(starGoal1Spinner);
 
 		starGoal2Spinner = new JSpinner();
+		starGoal2Spinner.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		starGoal2Spinner.setBounds(134, 95, 60, 28);
 		starGoal2Spinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
 		settingsPanel.add(starGoal2Spinner);
 
 		starGoal3Spinner = new JSpinner();
+		starGoal3Spinner.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		starGoal3Spinner.setBounds(134, 123, 60, 28);
 		starGoal3Spinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
 		settingsPanel.add(starGoal3Spinner);
 
 		btnSaveLevel = new JButton("Save Level");
+		btnSaveLevel.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		btnSaveLevel.setBounds(120, 520, 360, 37);
 		add(btnSaveLevel);
 
 		levelNameLabel = new JLabel("");
-		levelNameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+		levelNameLabel.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
 		levelNameLabel.setBounds(120, 78, 360, 30);
 		add(levelNameLabel);
 
 		JLabel lblLevelYouAre = new JLabel("You are working on:");
+		lblLevelYouAre.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		lblLevelYouAre.setBounds(120, 50, 200, 16);
 		add(lblLevelYouAre);
 		

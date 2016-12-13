@@ -58,7 +58,7 @@ public class SavedLevelsMapApplication extends JPanel {
 		this.setLayout(null);
 
 		JLabel lblPlayerMap = new JLabel("Saved Levels");
-		lblPlayerMap.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+		lblPlayerMap.setFont(new Font("Trebuchet MS", Font.BOLD, 20));
 		//lblPlayerMap.setForeground(new Color(0, 0, 205));
 		//lblPlayerMap.setFont(new Font("Snap ITC", Font.BOLD, 25));
 		lblPlayerMap.setHorizontalAlignment(SwingConstants.CENTER);
@@ -67,11 +67,12 @@ public class SavedLevelsMapApplication extends JPanel {
 		this.add(lblPlayerMap);
 
 		backButton = new JButton("Back");
-		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
+		backButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		backButton.setBounds(10, 10, 75, 29);
 		this.add(backButton);
 		
 		publishLevelsButton = new JButton("Publish Levels to LetterCraze");
+		publishLevelsButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		publishLevelsButton.setBounds(544, 10, 250, 29);
 		add(publishLevelsButton);
 		
@@ -82,8 +83,8 @@ public class SavedLevelsMapApplication extends JPanel {
 			for (int x = 0; x < 5; x++) {
 				JButton b = new JButton();
 				b.setForeground(Color.BLACK);
-				b.setFont(new Font("Corbel", Font.BOLD, 11));
-				b.setBackground(new Color(0, 128, 128));
+				b.setFont(new Font("Trebuchet MS", Font.PLAIN, 14));
+				//b.setBackground(new Color(0, 128, 128));
 				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
 				JButton delete = new JButton("x");
 				delete.setOpaque(true);
@@ -113,7 +114,7 @@ public class SavedLevelsMapApplication extends JPanel {
 			for (int x = 0; x < 5; x++) {
 				if (currentLevel < model.getSavedLevels().size()) {
 					String levelType = model.getSavedLevels().get(currentLevel).getType();
-					levelButtons.get(currentLevel).setText("Custom " + (currentLevel+1) + " " + levelType);
+					levelButtons.get(currentLevel).setText("<html><center>" + "Custom " + (currentLevel+1) + "<br><br>" + levelType + "</html></center>");
 					deleteButtons.get(currentLevel).setVisible(true);
 				}
 				else {

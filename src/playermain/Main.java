@@ -97,18 +97,18 @@ public class Main {
 		
 		// load up customlevels
 		try {
-			FileInputStream fileIn = new FileInputStream("customlevels.ser");
+			FileInputStream fileIn = new FileInputStream("buildersave.ser");
 			ObjectInputStream in = new ObjectInputStream(fileIn);
 			model.importCustomLevels(((ArrayList<LevelModel>) in.readObject()));
 			in.close();
 			fileIn.close();
-			System.out.println("customlevels found. Loading file...");
+			System.out.println("Builder ArrayList<LevelModel> found. Loading file...");
 		}catch(IOException i) {
 			//i.printStackTrace();
-			System.out.println("customlevels file not found, starting new game");
+			System.out.println("Builder ArrayList<LevelModel> file not found, starting new game");
 			return;
 		}catch(ClassNotFoundException c) {
-			System.out.println("customlevels not found");
+			System.out.println("Builder ArrayList<LevelModel> not found");
 			c.printStackTrace();
 			return;
 		}

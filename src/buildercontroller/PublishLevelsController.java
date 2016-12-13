@@ -35,9 +35,7 @@ public class PublishLevelsController implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// we want to serialize this
-		//model.getSavedLevels()
-
+		// confirm that the user wants to publish the levels to LetterCraze
 		int confirmed = JOptionPane.showConfirmDialog(null, 
 				"Are you sure you want to publish your built levels to LetterCraze?\n"
 						+ "Your Custom Levels in the player application will be overridden.", "",
@@ -46,12 +44,12 @@ public class PublishLevelsController implements ActionListener {
 		if (confirmed == JOptionPane.YES_OPTION) {
 			try {
 				FileOutputStream fileOut =
-						new FileOutputStream("customlevels.ser");
+						new FileOutputStream("buildersave.ser");
 				ObjectOutputStream out = new ObjectOutputStream(fileOut);
 				out.writeObject(model.getSavedLevels());
 				out.close();
 				fileOut.close();
-				System.out.println("Serialized data is saved in customlevels.ser");
+				System.out.println("Builder ArrayList<LevelModel> saved in buildersave.ser");
 			}catch(IOException i) {
 				i.printStackTrace();
 			}

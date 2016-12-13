@@ -11,15 +11,12 @@ public class BuilderModel implements Serializable {
 	
 	/** All levels that are saved. */
 	ArrayList<LevelModel> savedLevels;
-	/** All levels that are published. */
-	ArrayList<LevelModel> publishedLevels;
 	
 	/** 
 	 * Constructs Builder Model.
 	 */	
 	public BuilderModel() {
 		savedLevels = new ArrayList<LevelModel>();
-		publishedLevels = new ArrayList<LevelModel>();
 		
 	}
 	
@@ -30,11 +27,9 @@ public class BuilderModel implements Serializable {
 		return savedLevels;
 	}
 	
-	/** 
-	 * Gets information for Published Levels.
-	 */
-	public ArrayList<LevelModel> getPublishedLevels() {
-		return publishedLevels;
+	public void setSavedLevels(ArrayList<LevelModel> levels) {
+		savedLevels = levels;
 	}
+
 
 }

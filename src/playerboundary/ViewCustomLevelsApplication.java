@@ -63,7 +63,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 		this.setLayout(null);
 
 		JLabel lblPlayerMap = new JLabel("Custom Levels");
-		lblPlayerMap.setFont(new Font("Lucida Grande", Font.BOLD, 20));
+		lblPlayerMap.setFont(new Font("Trebuchet MS", Font.BOLD, 20));
 		//lblPlayerMap.setForeground(new Color(0, 0, 205));
 		//lblPlayerMap.setFont(new Font("Snap ITC", Font.BOLD, 25));
 		lblPlayerMap.setHorizontalAlignment(SwingConstants.CENTER);
@@ -72,7 +72,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 		this.add(lblPlayerMap);
 
 		backButton = new JButton("Back");
-		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
+		backButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		backButton.setBounds(20, 20, 75, 29);
 		this.add(backButton);
 		
@@ -87,8 +87,8 @@ public class ViewCustomLevelsApplication extends JPanel {
 				JLabel l = new JLabel();
 				JLabel s = new JLabel();
 				b.setForeground(Color.BLACK);
-				b.setFont(new Font("Corbel", Font.BOLD, 11));
-				b.setBackground(new Color(0, 128, 128));
+				b.setFont(new Font("Trebuchet MS", Font.PLAIN, 14));
+				//b.setBackground(new Color(0, 128, 128));
 				b.setBounds(50+(x*143), 125+(y*150), 125, 100);
 				b.setText("Empty");
 				levelButtons.add(b);
@@ -270,7 +270,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 				LevelModel lm = model.getCustomLevels().get(currentLevel);
 				Image image;
 				if (lm.getIsUnlocked()) {
-					levelButtons.get(currentLevel).setText(lm.getType() + "! \r\n" + (currentLevel+1));
+					levelButtons.get(currentLevel).setText("<html><center>" + "Custom " + (currentLevel+1) + "<br><br>" + lm.getType() + "!" + "</html></center>");
 					levelScores.get(currentLevel).setText(String.valueOf(lm.getBestScore().getScore()));
 					if (lm.getBestScore().getStar() == 0) {
 						image = new ImageIcon("image/StarsEmpty.png").getImage();
@@ -292,7 +292,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 
 				}
 				else {
-					levelButtons.get(currentLevel).setText("Locked");
+					levelButtons.get(currentLevel).setText("Empty");
 				}
 				currentLevel++;
 			}

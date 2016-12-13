@@ -64,13 +64,22 @@ public class Application extends JFrame {
 
 				if (confirmed == JOptionPane.YES_OPTION) {
 					try {
+						// save player's entire model to its file
 						FileOutputStream fileOut =
 								new FileOutputStream("playersave.ser");
 						ObjectOutputStream out = new ObjectOutputStream(fileOut);
 						out.writeObject(model);
 						out.close();
 						fileOut.close();
-						System.out.printf("Serialized data is saved in playersave.ser");
+						System.out.println("Serialized model data is saved in playersave.ser");
+						
+						// save the custom levels to buildersave.ser file 
+						FileOutputStream fileOut2 = new FileOutputStream("buildersave.ser");
+						ObjectOutputStream out2 = new ObjectOutputStream(fileOut2);
+						out2.writeObject(model.getCustomLevels());
+						out2.close();
+						fileOut2.close();
+						System.out.println("Builder ArrayList<LevelModel> saved in buildersave.ser");
 					}catch(IOException i) {
 						i.printStackTrace();
 					}

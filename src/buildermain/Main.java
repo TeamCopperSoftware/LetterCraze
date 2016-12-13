@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -11,6 +12,7 @@ import javax.swing.JComboBox;
 import builderboundary.Application;
 import buildercontroller.*;
 import entities.BuilderModel;
+import entities.LevelModel;
 import entities.Model;
 
 /**
@@ -92,16 +94,17 @@ public class Main {
 		try {
 			FileInputStream fileIn = new FileInputStream("buildersave.ser");
 			ObjectInputStream in = new ObjectInputStream(fileIn);
-			model = ((BuilderModel) in.readObject());
+			ArrayList<LevelModel> levels = (ArrayList<LevelModel>) (in.readObject());
+			model.setSavedLevels(levels);
 			in.close();
 			fileIn.close();
-			System.out.println("buildersave found. Loading file...");
+			System.out.println("Builder ArrayList<LevelModel> found. Loading file...");
 		}catch(IOException i) {
 			//i.printStackTrace();
-			System.out.println("buildersave file not found, starting new game");
+			System.out.println("Builder ArrayList<LevelModel> file not found, starting new game");
 			return;
 		}catch(ClassNotFoundException c) {
-			System.out.println("buildersave not found");
+			System.out.println("Builder ArrayList<LevelModel> not found");
 			c.printStackTrace();
 			return;
 		}
