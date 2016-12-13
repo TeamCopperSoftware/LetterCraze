@@ -7,6 +7,8 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 import entities.*;
 import playerboundary.LevelApplication;
 import builderboundary.Application;
@@ -82,6 +84,8 @@ public class SaveEditedController implements ActionListener {
     		else if (levelNumber >= 0 && levelNumber <= 15) {
     			model.getSavedLevels().remove(levelNumber);
     			model.getSavedLevels().add(levelNumber, pl);
+				JOptionPane.showConfirmDialog(null, "Custom level " + (levelNumber+1) + " updated.", "Save Successful", JOptionPane.DEFAULT_OPTION);
+
     		}
     		else {
     			// do nothing, user is limited to 15 custom levels (for now)
@@ -98,6 +102,8 @@ public class SaveEditedController implements ActionListener {
     		else if (levelNumber >= 0 && levelNumber <= 15) {
     			model.getSavedLevels().remove(levelNumber);
     			model.getSavedLevels().add(levelNumber, ll);
+				JOptionPane.showConfirmDialog(null, "Custom level " + (levelNumber+1) + " updated.", "Save Successful", JOptionPane.DEFAULT_OPTION);
+
     		}
     		else {
     			// do nothing, user is limited to 15 custom levels (for now)
@@ -118,6 +124,8 @@ public class SaveEditedController implements ActionListener {
     		else if (levelNumber >= 0 && levelNumber <= 15) {
     			model.getSavedLevels().remove(levelNumber);
     			model.getSavedLevels().add(levelNumber, tl);
+				JOptionPane.showConfirmDialog(null, "Custom level " + (levelNumber+1) + " updated.", "Save Successful", JOptionPane.DEFAULT_OPTION);
+
     		}
     		else {
     			// do nothing, user is limited to 15 custom levels (for now)
