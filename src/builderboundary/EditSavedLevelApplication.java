@@ -261,6 +261,7 @@ public class EditSavedLevelApplication extends JPanel {
     	starGoal1Spinner.setValue(l.getGoals().getStar1());
     	starGoal2Spinner.setValue(l.getGoals().getStar2());
     	starGoal3Spinner.setValue(l.getGoals().getStar3());
+    	listModel.clear();
     	
     	if (l.getType().equals("Puzzle")) {
         	gameModeComboBox.setSelectedIndex(0);
@@ -269,6 +270,7 @@ public class EditSavedLevelApplication extends JPanel {
         else if (l.getType().equals("Lightning")) {
         	gameModeComboBox.setSelectedIndex(1);
         	timeSpinner.setValue(((LightningLevel)l).getTimeLimit());
+        	
         }
         else if (l.getType().equals("Theme")) {
         	gameModeComboBox.setSelectedIndex(2);
