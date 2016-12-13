@@ -131,7 +131,7 @@ public class CreateNewLevelApplication extends JPanel {
 
         numMovesSpinner = new JSpinner();
         numMovesSpinner.setBounds(134, 34, 60, 28);
-        numMovesSpinner.setModel(new SpinnerNumberModel(1, 1, 10000, 1));
+        numMovesSpinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
         puzzlePanel.add(numMovesSpinner);
 
         JPanel lightningPanel = new JPanel();
@@ -145,7 +145,7 @@ public class CreateNewLevelApplication extends JPanel {
 
         timeSpinner = new JSpinner();
         timeSpinner.setBounds(134, 34, 60, 28);
-        timeSpinner.setModel(new SpinnerNumberModel(1, 1, 10000, 1));
+        timeSpinner.setModel(new SpinnerNumberModel(0, 0, 10000, 1));
         lightningPanel.add(timeSpinner);
 
         JPanel themePanel = new JPanel();
