@@ -1,6 +1,9 @@
 package buildermain;
 
 import java.awt.EventQueue;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -14,7 +17,7 @@ import entities.Model;
 public class Main {
 	
 	private Application app;
-	private BuilderModel model;
+	private static BuilderModel model;
 
 	/**
 	 * Launch the application.
@@ -53,6 +56,24 @@ public class Main {
 	 */
 	private void initializeModel() {
 		model = new BuilderModel();
+
+		// load up playersave
+		try {
+			FileInputStream fileIn = new FileInputStream("buildersave.ser");
+			ObjectInputStream in = new ObjectInputStream(fileIn);
+			model = ((BuilderModel) in.readObject());
+			in.close();
+			fileIn.close();
+			System.out.println("buildersave found. Loading file...");
+		}catch(IOException i) {
+			//i.printStackTrace();
+			System.out.println("buildersave file not found, starting new game");
+			return;
+		}catch(ClassNotFoundException c) {
+			System.out.println("buildersave not found");
+			c.printStackTrace();
+			return;
+		}
 	}
 
 	/**

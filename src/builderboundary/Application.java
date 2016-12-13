@@ -1,8 +1,12 @@
 package builderboundary;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 import entities.BuilderModel;
@@ -32,7 +36,32 @@ public class Application extends JFrame {
 	 */
 	public Application(BuilderModel model) {
 		//pack();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.addWindowListener(new java.awt.event.WindowAdapter() {
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				int confirmed = JOptionPane.showConfirmDialog(null, 
+						"Are you sure you want to exit LetterCraze Builder?\n"
+						+ "All data will be saved when you exit.", "",
+						JOptionPane.YES_NO_OPTION);
+
+				if (confirmed == JOptionPane.YES_OPTION) {
+					try {
+						FileOutputStream fileOut =
+								new FileOutputStream("buildersave.ser");
+						ObjectOutputStream out = new ObjectOutputStream(fileOut);
+						out.writeObject(model);
+						out.close();
+						fileOut.close();
+						System.out.printf("Serialized data is saved in buildersave.ser");
+					}catch(IOException i) {
+						i.printStackTrace();
+					}
+					dispose();
+					System.exit(0);
+				}
+			}
+		});
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		setTitle("LetterCraze Builder");
 		
