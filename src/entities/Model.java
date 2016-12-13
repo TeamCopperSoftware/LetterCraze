@@ -186,7 +186,7 @@ public class Model implements Serializable {
 		
 		Board b3 = new Board(squaresArray);
 		Goal g3 = new Goal(3, 4, 5);
-		String theme1 = "Vegetables";
+		String theme1 = "Vegetables/Fruits";
 		ArrayList<String> words1 = new ArrayList<String>();
 		words1.add("bean");
 		words1.add("corn");
