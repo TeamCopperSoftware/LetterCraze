@@ -192,9 +192,10 @@ public class EditSavedLevelApplication extends JPanel {
         wordList.setBounds(6, 172, 188, 218);
         themePanel.add(wordList);
 
-        // code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
-        // this should maybe be separated out into a new controller class?
+        
         gameModeComboBox = new JComboBox();
+        
+        /* created GameModeSelectionController to do this
         gameModeComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 CardLayout cl = (CardLayout)(cards.getLayout());
@@ -204,6 +205,7 @@ public class EditSavedLevelApplication extends JPanel {
                 
             }
         });
+        */
         gameModeComboBox.setModel(new DefaultComboBoxModel(new String[] {"Puzzle", "Lightning", "Theme"}));
         gameModeComboBox.setMaximumRowCount(3);
         gameModeComboBox.setBounds(6, 34, 188, 27);
@@ -286,8 +288,11 @@ public class EditSavedLevelApplication extends JPanel {
     		for (int x = 0; x < 6; x++) {
     			if (l.getBoard().lookUpSquare(x, y).isEnabled()) {
     				squaresArray[x][y].setBackground(Color.WHITE);
-    				lettersArray[x][y].setVisible(true);
-    				lettersArray[x][y].setSelectedItem(l.getBoard().lookUpSquare(x,y).tilePeek().getLetter());
+    				if (l.getType().equals("Theme")) {
+    					lettersArray[x][y].setVisible(true);
+        				lettersArray[x][y].setSelectedItem(l.getBoard().lookUpSquare(x,y).tilePeek().getLetter());
+    				}
+    				
     			}
     			else {
     				squaresArray[x][y].setBackground(null);
@@ -314,6 +319,10 @@ public class EditSavedLevelApplication extends JPanel {
     
     public String getLevelType() {
     	return levelType;
+    }
+    
+    public void setLevelType(String type) {
+    	this.levelType = type;
     }
     
     public int[] getStarGoals() {
@@ -358,5 +367,13 @@ public class EditSavedLevelApplication extends JPanel {
     
     public DefaultListModel getDefaultListModel() {
     	return listModel;
+    }
+    
+    public JPanel getCards() {
+    	return cards;
+    }
+    
+    public JComboBox getGameModeComboBox() {
+    	return gameModeComboBox;
     }
 }
