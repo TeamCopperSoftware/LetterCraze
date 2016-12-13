@@ -44,6 +44,7 @@ public class ViewLevelController implements ActionListener {
 			}
 			else {
 				app.getLevelApplications().get(levelNumber).refreshPanel((ThemeLevel)level);
+				((ThemeLevelApplication) app.getLevelApplications().get(levelNumber)).refreshObjective((ThemeLevel)level);
 				app.setContentPane(app.getLevelApplications().get(levelNumber));
 			}
 		}

@@ -44,6 +44,7 @@ public class WordTable {
 		for (int i = 0; i < numWords; i++) {
 			String word = words.get(i);
 			word = word.trim();
+			word = word.toLowerCase();
 			table.put(word, Boolean.TRUE);
 		}
 	}
