@@ -23,8 +23,11 @@ import entities.BuilderModel;
 import entities.LevelModel;
 import entities.LightningLevel;
 import entities.Model;
+import entities.Position;
 import entities.PuzzleLevel;
+import entities.Square;
 import entities.ThemeLevel;
+import entities.Tile;
 
 public class EditSavedLevelApplication extends JPanel {
 
@@ -249,13 +252,9 @@ public class EditSavedLevelApplication extends JPanel {
     
     public void resetPanel() {
     	LevelModel l = model.getSavedLevels().get(levelNumber);
-    	System.out.println(levelNumber);
     	starGoal1Spinner.setValue(l.getGoals().getStar1());
-    	System.out.println(l.getGoals().getStar1());
     	starGoal2Spinner.setValue(l.getGoals().getStar2());
-    	System.out.println(l.getGoals().getStar2());
     	starGoal3Spinner.setValue(l.getGoals().getStar3());
-    	System.out.println(l.getGoals().getStar3());
     	
     	if (l.getType().equals("Puzzle")) {
         	gameModeComboBox.setSelectedIndex(0);
@@ -272,9 +271,25 @@ public class EditSavedLevelApplication extends JPanel {
         	for (String s: words) {
         		listModel.addElement(s);
         	}
-        	
-
+        
         }
+    	int i = 0;
+    	for (int y = 0; y < 6; y++) {
+    		for (int x = 0; x < 6; x++) {
+    			if (l.getBoard().lookUpSquare(x, y).isEnabled()) {
+    				squaresArray[x][y].setBackground(Color.WHITE);
+    				lettersArray[x][y].setVisible(true);
+    				lettersArray[x][y].setSelectedItem(l.getBoard().lookUpSquare(x,y).tilePeek().getLetter());
+    			}
+    			else {
+    				squaresArray[x][y].setBackground(null);
+    				lettersArray[x][y].setVisible(false);
+    				lettersArray[x][y].setSelectedItem("A");
+    			}
+    		}
+    	}
+    	
+    	
     }
 
     public JButton getBackButton() {

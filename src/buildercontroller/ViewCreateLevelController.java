@@ -14,6 +14,7 @@ public class ViewCreateLevelController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		app.getCreateNewLevelApplication().resetPanel();
 		app.setContentPane(app.getCreateNewLevelApplication());
 	}
 	

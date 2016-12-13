@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -19,7 +20,11 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import entities.BuilderModel;
+import entities.LevelModel;
+import entities.LightningLevel;
 import entities.Model;
+import entities.PuzzleLevel;
+import entities.ThemeLevel;
 
 public class CreateNewLevelApplication extends JPanel {
 
@@ -32,6 +37,7 @@ public class CreateNewLevelApplication extends JPanel {
     JComboBox[][] lettersArray;
     JButton btnSaveLevel;
     String levelType;
+    JComboBox gameModeComboBox;
     
     JSpinner starGoal1Spinner;
     JSpinner starGoal2Spinner;
@@ -87,7 +93,7 @@ public class CreateNewLevelApplication extends JPanel {
                     }
                 });
                 lettersArray[x][y].setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "QU", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}));
-               
+                // lettersArray[x][y].setFont(new Font("Lucida Grande", Font.PLAIN, 7)); this is the size needed for QU to show up on mac but its really small
                 lettersArray[x][y].setMaximumRowCount(10);
                 lettersArray[x][y].setBounds(60*x, 60*y+30, 60, 30);
                 lettersArray[x][y].setOpaque(true);
@@ -179,7 +185,7 @@ public class CreateNewLevelApplication extends JPanel {
 
         // code inside here magically changes view depending on whether "Puzzle", "Lightning", or "Theme" is selected
         // this should maybe be separated out into a new controller class?
-        JComboBox gameModeComboBox = new JComboBox();
+        gameModeComboBox = new JComboBox();
         gameModeComboBox.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 CardLayout cl = (CardLayout)(cards.getLayout());
@@ -230,6 +236,31 @@ public class CreateNewLevelApplication extends JPanel {
         JButton btnPublishToLettercraze = new JButton("Publish to LetterCraze");
         btnPublishToLettercraze.setBounds(310, 520, 170, 37);
         add(btnPublishToLettercraze);
+    }
+    
+    public void resetPanel() {
+    	
+    	starGoal1Spinner.setValue(0);
+    	
+    	starGoal2Spinner.setValue(0);
+    	
+    	starGoal3Spinner.setValue(0);
+    	
+    	gameModeComboBox.setSelectedIndex(0);
+    	numMovesSpinner.setValue(0);	
+    	timeSpinner.setValue(0);
+    	themeField.setText("");
+    	wordField.setText("");
+    	listModel.clear();
+
+    	for (int y = 0; y < 6; y++) {
+    		for (int x = 0; x < 6; x++) {
+    				squaresArray[x][y].setBackground(null);
+    				lettersArray[x][y].setVisible(false);
+    				lettersArray[x][y].setSelectedItem("A");
+    			}
+    		}
+    	
     }
 
     public JButton getBackButton() {
