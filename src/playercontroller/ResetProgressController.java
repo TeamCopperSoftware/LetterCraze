@@ -27,7 +27,7 @@ public class ResetProgressController implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 
 		int confirmed = JOptionPane.showConfirmDialog(null, 
-				"Are you sure you want to reset your progress?\n"
+				"Are you sure you want to reset your main game progress?\n"
 						+ "This will quit the game and require you to restart it.", "",
 						JOptionPane.YES_NO_OPTION);
 
@@ -37,7 +37,7 @@ public class ResetProgressController implements ActionListener {
 				fileOut.write("");
 				fileOut.close();
 				// progress reset
-				System.out.println("Progress reset. Quitting game...");
+				System.out.println("Main Game progress reset. Quitting game...");
 				System.exit(0);
 			}catch(IOException i) {
 				System.out.println("Error - playersave.ser not configured correctly.");

@@ -49,7 +49,7 @@ public abstract class LevelApplication extends JPanel {
 		titleLabel = new JLabel("");
 		titleLabel.setVerticalAlignment(SwingConstants.TOP);
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		titleLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 24));
+		titleLabel.setFont(new Font("Trebuchet MS", Font.BOLD, 24));
 		titleLabel.setBounds(6, 50, 588, 29);
 		leftPanel.add(titleLabel);
 		
@@ -71,7 +71,7 @@ public abstract class LevelApplication extends JPanel {
 		
 		scoreLabel = new JLabel("0");
 		scoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		scoreLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+		scoreLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 18));
 		scoreLabel.setBounds(50, 520, 508, 16);
 		leftPanel.add(scoreLabel);
 		
@@ -91,6 +91,7 @@ public abstract class LevelApplication extends JPanel {
 		leftPanel.add(starLabel);
 		
 		exitButton = new JButton("Exit");
+		exitButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		exitButton.setBounds(20, 20, 70, 29);
 		leftPanel.add(exitButton);
 		
@@ -108,32 +109,37 @@ public abstract class LevelApplication extends JPanel {
 		rightPanel.add(objectiveLabel);
 		
 		objectiveValueLabel = new JLabel("0");
-		objectiveValueLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 24));
+		objectiveValueLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 24));
 		objectiveValueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		objectiveValueLabel.setBounds(6, 60, 188, 40);
 		rightPanel.add(objectiveValueLabel);
 		
 		JLabel wordsLabel = new JLabel("Completed Words:");
+		wordsLabel.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		wordsLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		wordsLabel.setBounds(15, 130, 170, 16);
 		rightPanel.add(wordsLabel);
 		
 		resetButton = new JButton("Reset");
+		resetButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		resetButton.setBounds(120, 525, 70, 29);
 		rightPanel.add(resetButton);
 		
 		undoButton = new JButton("Undo");
+		undoButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		undoButton.setBounds(10, 525, 70, 29);
 		rightPanel.add(undoButton);
 		
 		listModel = new DefaultListModel<String>();
 		wordsList = new JList<String>(listModel);
+		wordsList.setFont(new Font("Trebuchet MS", Font.PLAIN, 12));
 		scrollPane = new JScrollPane(wordsList);
 		scrollPane.setViewportView(wordsList);
 		scrollPane.setBounds(15, 150, 170, 360);
 		rightPanel.add(scrollPane);
 		
 		confirmButton = new JButton("Add word");
+		confirmButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		confirmButton.setBounds(470, 20, 110, 29);
 		leftPanel.add(confirmButton);
 		

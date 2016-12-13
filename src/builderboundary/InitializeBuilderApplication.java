@@ -28,15 +28,17 @@ public class InitializeBuilderApplication extends JPanel {
 
 		JLabel title = new JLabel("LetterCraze Builder");
 		title.setHorizontalAlignment(SwingConstants.CENTER);
-		title.setFont(new Font("Tahoma", Font.BOLD, 26));
+		title.setFont(new Font("Trebuchet MS", Font.BOLD, 26));
 		title.setBounds(0, 150, 800, 26);
 		this.add(title);
 
 		createLevelButton = new JButton("Create New Level");
+		createLevelButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		createLevelButton.setBounds(325, 250, 150, 100);
 		this.add(createLevelButton);
 
 		editSavedLevelsButton = new JButton("Edit Saved Level");
+		editSavedLevelsButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		editSavedLevelsButton.setBounds(325, 360, 150, 100);
 		this.add(editSavedLevelsButton);
 	}
