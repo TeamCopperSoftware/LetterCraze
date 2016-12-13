@@ -25,7 +25,7 @@ import entities.*;
  * tile path till it forms a word. Each tile has to be clicked and must be next to each other either
  * across left, right, up, down, or diagonal of preceding tile. Words should also be no less than 3 
  * letters. Once you selected a valid word by highlighting the letter tiles in yellow in order, press
- * the add word button to sucessfully add a word if valid. Levels can be unlocked one by one by achieving 
+ * the add word button to successfully add a word if valid. Levels can be unlocked one by one by achieving 
  * at least one star in each level. Custom levels can also be played by going back to the Main Menu and 
  * selecting custom levels. Same level rules apply for custom levels.
  * <p>

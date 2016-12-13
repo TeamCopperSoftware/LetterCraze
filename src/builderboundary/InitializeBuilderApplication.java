@@ -9,6 +9,10 @@ import javax.swing.border.*;
 import entities.BuilderModel;
 import entities.Model;
 
+/**
+ * The containing Frame for LetterCraze Player.
+ */
+
 public class InitializeBuilderApplication extends JPanel {
 	BuilderModel model;
 

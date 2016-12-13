@@ -27,6 +27,10 @@ import entities.Model;
 import entities.PuzzleLevel;
 import entities.ThemeLevel;
 
+/**
+ * The containing Frame for Creating a New Level.
+ */
+
 public class CreateNewLevelApplication extends JPanel {
 
 	BuilderModel model;

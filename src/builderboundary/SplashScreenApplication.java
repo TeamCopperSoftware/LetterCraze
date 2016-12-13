@@ -25,6 +25,9 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Font;
 
+/**
+ * The containing Frame for LetterCraze Builder Splash Screen.
+ */
 public class SplashScreenApplication extends JPanel {
 
 	BuilderModel model;

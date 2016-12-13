@@ -24,6 +24,10 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JProgressBar;
 
+/**
+ * The containing frame for edit saved levels map.
+ */
+
 public class SavedLevelsMapApplication extends JPanel {
 	
 	BuilderModel model;

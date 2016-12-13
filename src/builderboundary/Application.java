@@ -14,6 +14,10 @@ import entities.Model;
 import builderboundary.InitializeBuilderApplication;
 import buildercontroller.SplashScreenTimerController;
 
+/**
+ * The containing Frame for LetterCraze Builder Main Menu.
+ */
+
 public class Application extends JFrame {
 
 	BuilderModel model;

@@ -13,6 +13,37 @@ import buildercontroller.*;
 import entities.BuilderModel;
 import entities.Model;
 
+/**
+ * LetterCraze Builder PlugIn.
+ * <p>
+ * Instructions: LetterCraze Builder allows you to customize your own LetterCraze 
+ * levels and import them to LetterCraze player.
+ * <p>
+ * To create a new level, click on "Create New Level" on the main menu. From here you
+ *  can select/deselect the tiles placement on the level board, select the type of 
+ *  level, set star goals, and set goals based on the level type you choose. To select 
+ *  star goals, enter the number based on the type of level you desire to make. Puzzle 
+ *  is number of moves, Lightning is time, and Theme is words completed. To select a level 
+ *  type, click on the drop down box on the top right and select the level you wish to make. 
+ *  For puzzle, you must select the number of moves a player can make. For lightning, you 
+ *  must select the amount of time the player has to complete the level. For theme, you must 
+ *  add a theme description, a list of words (at least more than or equal to three letters) 
+ *  that match the theme description and must manually add them for each tile placement. 
+ *  Once you have entered all of your information, click the "Save Level" below the tiles 
+ *  to save your level.
+ * <p>
+ * To edit a saved level, head back to the main menu and click on "Edit Saved Level". From here 
+ * you can navigate through a map of all the levels you saved based on when you saved them. Order 
+ * of levels saved goes left to right from oldest to newest level saved. Click on the level you wish 
+ * to edit and continue to work on the level from there. If you wish to delete a level, click on the 
+ * icon located on the top left of each level button. To publish your saved levels to LetterCraze player, 
+ * click the "Publish Levels to LetterCraze" button on the top right corner of the screen. Doing this will 
+ * published all of your levels that were saved to LetterCraze Player under Custom Levels for you and your 
+ * friends to play. Enjoy!
+ * <p>
+ * @author: Annie Hernandez, Anthony Gringeri, James Kradjian, John Dyer, and Goutham Deva.
+ */
+
 
 public class Main {
 	

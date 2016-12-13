@@ -30,6 +30,10 @@ import entities.Square;
 import entities.ThemeLevel;
 import entities.Tile;
 
+/**
+ * The containing Frame for editing a saved level.
+ */
+
 public class EditSavedLevelApplication extends JPanel {
 
 	BuilderModel model;
