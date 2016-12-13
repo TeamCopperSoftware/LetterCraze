@@ -147,6 +147,8 @@ public class SaveController implements ActionListener {
 			}
 
 		}
+		// reset panel for next level
+		app.getCreateNewLevelApplication().resetPanel();
 
 	}
 

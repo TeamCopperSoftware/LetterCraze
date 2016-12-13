@@ -49,6 +49,7 @@ public class CreateNewLevelApplication extends JPanel {
     JList wordList;
     JTextField wordField;
     JTextField themeField;
+    JLabel levelNameLabel;
 
     public CreateNewLevelApplication(BuilderModel model2) {
     	
@@ -60,16 +61,6 @@ public class CreateNewLevelApplication extends JPanel {
 
         backButton = new JButton("Back");
         backButton.setBounds(10, 10, 75, 29);
-
-        JLabel nameLabel = new JLabel("Name:");
-        nameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-        nameLabel.setBounds(120, 50, 74, 37);
-
-        JTextField nameTextField = new JTextField();
-        nameTextField.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
-        nameTextField.setBounds(196, 50, 284, 37);
-        nameTextField.setToolTipText("Gives your level a name");
-        nameTextField.setColumns(1);
 
         JPanel boardSquares = new JPanel();
         boardSquares.setBounds(120, 120, 360, 360);
@@ -107,8 +98,6 @@ public class CreateNewLevelApplication extends JPanel {
 
 
         this.add(backButton);
-        this.add(nameLabel);
-        this.add(nameTextField);
 
         JPanel settingsPanel = new JPanel();
         settingsPanel.setBounds(600, 0, 200, 600);
@@ -236,15 +225,22 @@ public class CreateNewLevelApplication extends JPanel {
         settingsPanel.add(starGoal3Spinner);
 
         btnSaveLevel = new JButton("Save Level");
-        btnSaveLevel.setBounds(120, 520, 170, 37);
+        btnSaveLevel.setBounds(120, 520, 360, 37);
         add(btnSaveLevel);
-
-        JButton btnPublishToLettercraze = new JButton("Publish to LetterCraze");
-        btnPublishToLettercraze.setBounds(310, 520, 170, 37);
-        add(btnPublishToLettercraze);
+        
+        levelNameLabel = new JLabel("");
+        levelNameLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 18));
+        levelNameLabel.setBounds(120, 78, 360, 30);
+        add(levelNameLabel);
+        
+        JLabel lblLevelYouAre = new JLabel("You are working on:");
+        lblLevelYouAre.setBounds(120, 50, 200, 16);
+        add(lblLevelYouAre);
     }
     
     public void resetPanel() {
+    	
+    	levelNameLabel.setText("Custom Level " + (model.getSavedLevels().size()+1));
     	
     	starGoal1Spinner.setValue(0);
     	
@@ -327,5 +323,9 @@ public class CreateNewLevelApplication extends JPanel {
     
     public DefaultListModel getDefaultListModel() {
     	return listModel;
+    }
+    
+    public JLabel getLevelNameLabel() {
+    	return levelNameLabel;
     }
 }

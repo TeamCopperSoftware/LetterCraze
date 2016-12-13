@@ -28,7 +28,7 @@ public class InitializeBuilderApplication extends JPanel {
 		title.setBounds(0, 150, 800, 26);
 		this.add(title);
 
-		createLevelButton = new JButton("Create Level");
+		createLevelButton = new JButton("Create New Level");
 		createLevelButton.setBounds(325, 250, 150, 100);
 		this.add(createLevelButton);
 

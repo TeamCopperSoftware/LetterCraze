@@ -31,6 +31,9 @@ public class SavedLevelsMapApplication extends JPanel {
 	// Back button
 	JButton backButton;
 	
+	// Publish levels button
+	JButton publishLevelsButton;
+	
 	// Buttons for saved levels
 	ArrayList<JButton> levelButtons;
 	
@@ -63,6 +66,10 @@ public class SavedLevelsMapApplication extends JPanel {
 		backButton.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 		backButton.setBounds(10, 10, 75, 29);
 		this.add(backButton);
+		
+		publishLevelsButton = new JButton("Publish Levels to LetterCraze");
+		publishLevelsButton.setBounds(544, 10, 250, 29);
+		add(publishLevelsButton);
 		
 		levelButtons = new ArrayList<JButton>();
 		deleteButtons = new ArrayList<JButton>();
