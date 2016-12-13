@@ -2,59 +2,57 @@ package entities;
 
 import java.io.Serializable;
 
+/**
+ * Represents all entity information for score.
+ */
+
 public class Score implements Serializable {
 
+	/** Number of stars currently achieved in level. */
     int star;
+	/** Current score number. */
     int numScore;
-    //int firstStarGoalScore; Score class doesn't need information about goals, we have Goal class for that.
-    //int secondStarGoalScore;
-    //int thirdStarGoalScore;
 
+    /**
+     * Constructs Score.
+     */
     public Score() {
         this.star = 0;
         this.numScore = 0;
-        //this.firstStarGoalScore = firstStarGoalScore;
-        //this.secondStarGoalScore = secondStarGoalScore;
-        //this.thirdStarGoalScore = thirdStarGoalScore;
 
     }
 
+    /**
+     * Updates score based on points received.
+     */
     public void updateScore(int change) {
         numScore +=change;
     }
 
-    /* Use setStart to update the star value
-     * LevelModel should be responsible for comparing Score to Goal and updating the stars in Score
-	public int updateStar() {
-		if(numScore >= thirdStarGoalScore) {
-			star = 3; 
-		}
-		else if(numScore >= secondStarGoalScore) {
-			star = 2; 
-		}
-		else if(numScore >= firstStarGoalScore) {
-			star = 1; 
-		}
-		else { 
-			star = 0; 
-		}
-		return star;
-	}
+    /**
+     * Retrieves number of stars.
      */
-
     public int getStar () {
         return star;
     }
 
+    /**
+     * Retrieves score number.
+     */
     public int getScore () {
         return numScore;
     }
 
-
+    /**
+     * Sets number of stars.
+     */
     public void setStar (int n) {
         star = n;
     }
 
+    /**
+     * Sets score number.
+     */
     public void setScore (int n) {
         numScore = n;
     }

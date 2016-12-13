@@ -4,16 +4,34 @@ import java.io.Serializable;
 
 public class Square implements Serializable {
 
+	/** Location of each square based on (X,Y) Coordinates. */
 	Position position;
+	/** Tile for each square. */
 	Tile tile;
+	/** Enables square. */
 	boolean enabled;
 
+	/** 
+	 * Constructs square.
+	 * 
+	 * Initial value is given.
+	 * @param p    		Position of the square
+	 * @param enabled   Whether the square is enabled
+	 * @param t 		Adds tile and its properties to each square
+	 */
 	public Square(Position p, boolean enabled, Tile t) {
 		this.position = p;
 		this.enabled = enabled;
 		this.tile = t;
 	}
 
+	/** 
+	 * Constructs square.
+	 * 
+	 * Initial value is given.
+	 * @param p    		Position of the square
+	 * @param enabled   Whether the square is enabled
+	 */
 	public Square(Position p, boolean enabled) {
 		this.position = p;
 		this.enabled = enabled;
@@ -22,10 +40,9 @@ public class Square implements Serializable {
 
 	public Square() {
 		//TODO remove at a later time;
-
 	}
 
-
+	/** Sets frequency of each letter appearing randomly in puzzle or lightning level. */
 	void generateRandomTile () {
 		int[] weights = {12702,
 				9056,
@@ -53,6 +70,7 @@ public class Square implements Serializable {
 				150,
 				95,
 				74};
+		
 		String[] letters = {"E",
 				"T",
 				"A",
@@ -123,37 +141,45 @@ public class Square implements Serializable {
 
 	}
 
+	/** Adds tile. */
 	void tileAdd (Tile t) {
 		this.tile = t;
 	}
 
+	/** Checks most recent tile. */
 	public Tile tilePeek () {
 		return tile;
 	}
 
+	/** Removes most recently added tile. */
 	Tile tilePop () {
 		Tile t = tile;
 		tileRemove();
 		return t;
 	}
 
+	/** Sets tile to null. */
 	void tileRemove () {
 		tile = null;
 	}
 
+	/** Position of square. */
 	Position position() {
 		return position;
 
 	}
 
+	/** Checks if square is enabled. */
 	public boolean isEnabled() {
 		return enabled;
 	}
 
+	/** Checks if square has tile. */
 	public boolean hasTile() {
 		return tile != null;
 	}
 
+	/** Retrieves tile. */
 	public Tile getTile() {
 		return tile;
 	}

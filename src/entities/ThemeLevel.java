@@ -3,12 +3,28 @@ package entities;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Represents all entity information for theme levels.
+ */
 public class ThemeLevel extends LevelModel {
 
+	/** Name of the theme for each levels. */
     String theme;
+	/** List of valid words based on theme. */
     ArrayList<String> validWords;
-    Board startingBoard; // keeps track of the initial Board setup in case player wants to reset board;
+	/** Keeps track of the initial Board setup in case player wants to reset board. */
+    Board startingBoard; 
     
+
+	/** 
+	 * Constructs full theme level.
+	 * 
+	 * Initial value is given.
+	 * @param b    Arrangement of tiles in board
+	 * @param g    Goals for the theme level (Amount of words found)
+	 * @param theme Adds Theme description
+	 * @param validWords Adds valid words based on theme description
+	 */
     public ThemeLevel(Board b, Goal g, String theme, ArrayList<String> validWords) {
         super(b, g, "Theme");
         this.theme = theme;
@@ -29,11 +45,18 @@ public class ThemeLevel extends LevelModel {
         this.startingBoard = new Board(squares);
     }
     
+    /**
+     * Initializes valid words for each theme level.
+     */
     @Override
     void initializeWordTable() {
     	WordTable.loadWordTable(validWords);
     }
     
+    
+    /**
+     * Resets all entities in level.
+     */
     @Override
     public void resetLevel() {
     	Square[] squares = new Square[36];
@@ -55,14 +78,24 @@ public class ThemeLevel extends LevelModel {
     	wordList.clear();
     }
     
+    
+    /**
+     * Retrieves theme description.
+     */
     public String getTheme() {
         return theme;
     }
     
+    /**
+     * Retrieves valid words for each theme level.
+     */
     public ArrayList<String> getValidWords() {
     	return validWords;
     }
     
+    /**
+     * Retrieves the starting theme board.
+     */
     public Board getStartingBoard() {
     	return startingBoard;
     }
