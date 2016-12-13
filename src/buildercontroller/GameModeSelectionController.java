@@ -56,6 +56,7 @@ public class GameModeSelectionController implements ItemListener {
 	        if (levelType.equals("Puzzle") || levelType.equals("Lightning")) {
 				for (int y = 0; y < 6; y++) {
 					for (int x = 0; x < 6; x++) {
+						application.getCreateNewLevelApplication().getSquareButtons()[x][y].setBounds(60*x, 60*y, 60, 60);
 						application.getCreateNewLevelApplication().getLetterBoxes()[x][y].setVisible(false);
 					}
 				}
@@ -63,7 +64,9 @@ public class GameModeSelectionController implements ItemListener {
 			else {
 				for (int y = 0; y < 6; y++) {
 					for (int x = 0; x < 6; x++) {
+						application.getCreateNewLevelApplication().getSquareButtons()[x][y].setBounds(60*x, 60*y, 60, 60);
 						if (application.getCreateNewLevelApplication().getSquareButtons()[x][y].getBackground().equals(Color.WHITE)) {
+							application.getCreateNewLevelApplication().getSquareButtons()[x][y].setBounds(60*x, 60*y, 60, 30);
 							application.getCreateNewLevelApplication().getLetterBoxes()[x][y].setVisible(true);
 						}
 					}
@@ -78,6 +81,7 @@ public class GameModeSelectionController implements ItemListener {
 	        if (levelType.equals("Puzzle") || levelType.equals("Lightning")) {
 				for (int y = 0; y < 6; y++) {
 					for (int x = 0; x < 6; x++) {
+						application.getEditSavedLevelApplications().get(levelNumber).getSquareButtons()[x][y].setBounds(60*x, 60*y, 60, 60);
 						application.getEditSavedLevelApplications().get(levelNumber).getLetterBoxes()[x][y].setVisible(false);
 					}
 				}
@@ -85,7 +89,9 @@ public class GameModeSelectionController implements ItemListener {
 			else {
 				for (int y = 0; y < 6; y++) {
 					for (int x = 0; x < 6; x++) {
+						application.getEditSavedLevelApplications().get(levelNumber).getSquareButtons()[x][y].setBounds(60*x, 60*y, 60, 60);
 						if (application.getEditSavedLevelApplications().get(levelNumber).getSquareButtons()[x][y].getBackground().equals(Color.WHITE)) {
+							application.getEditSavedLevelApplications().get(levelNumber).getSquareButtons()[x][y].setBounds(60*x, 60*y, 60, 30);
 							application.getEditSavedLevelApplications().get(levelNumber).getLetterBoxes()[x][y].setVisible(true);
 						}
 					}

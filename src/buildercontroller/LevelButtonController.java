@@ -61,15 +61,21 @@ public class LevelButtonController implements ActionListener {
 		if (button.getBackground().equals(Color.WHITE)) {
 			button.setBackground(null);
 			box.setVisible(false);
+			button.setSize(60, 60);
 		}
 		else {
 			button.setBackground(Color.WHITE);
 			
 			if (levelNumber == -1 && application.getCreateNewLevelApplication().getLevelType().equals("Theme")) {
+				button.setSize(60, 30);
 				box.setVisible(true);
 			}
 			else if (levelNumber != -1 && application.getEditSavedLevelApplications().get(levelNumber).getLevelType().equals("Theme")) {
+				button.setSize(60, 30);
 				box.setVisible(true);
+			}
+			else {
+				button.setSize(60, 60);
 			}
 			
 			

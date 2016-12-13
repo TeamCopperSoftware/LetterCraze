@@ -75,7 +75,7 @@ public class CreateNewLevelApplication extends JPanel {
 			for (int y = 0; y < squaresArray[x].length; y++) {
 				squaresArray[x][y] = new JButton(" ");
 				squaresArray[x][y].setOpaque(true);
-				squaresArray[x][y].setBounds(60*x, 60*y, 60, 30);
+				squaresArray[x][y].setBounds(60*x, 60*y, 60, 60);
 				boardSquares.add(squaresArray[x][y]);
 
 				lettersArray[x][y] = new JComboBox<String>();
@@ -261,6 +261,7 @@ public class CreateNewLevelApplication extends JPanel {
 		for (int y = 0; y < 6; y++) {
 			for (int x = 0; x < 6; x++) {
 				squaresArray[x][y].setBackground(null);
+				squaresArray[x][y].setBounds(60*x, 60*y, 60, 60);
 				lettersArray[x][y].setVisible(false);
 				lettersArray[x][y].setSelectedItem("A");
 			}

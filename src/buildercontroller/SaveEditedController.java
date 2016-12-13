@@ -93,7 +93,7 @@ public class SaveEditedController implements ActionListener {
     	}
     	else if (level.getLevelType().equals("Lightning")) {
     		int timeLimit = (int)level.getTimeSpinner().getValue();
-    		LightningLevel ll = new LightningLevel(b, g, 30);
+    		LightningLevel ll = new LightningLevel(b, g, timeLimit);
     		// if creating a new level, add to next spot in saved levels ArrayList (if spot is available)
     		if (levelNumber == -1 && model.getSavedLevels().size() < 15) {
     			model.getSavedLevels().add(ll);

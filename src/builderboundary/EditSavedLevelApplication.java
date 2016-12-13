@@ -81,7 +81,7 @@ public class EditSavedLevelApplication extends JPanel {
 			for (int y = 0; y < squaresArray[x].length; y++) {
 				squaresArray[x][y] = new JButton(" ");
 				squaresArray[x][y].setOpaque(true);
-				squaresArray[x][y].setBounds(60*x, 60*y, 60, 30);
+				squaresArray[x][y].setBounds(60*x, 60*y, 60, 60);
 				boardSquares.add(squaresArray[x][y]);
 
 				lettersArray[x][y] = new JComboBox<String>();
@@ -284,16 +284,22 @@ public class EditSavedLevelApplication extends JPanel {
 			for (int x = 0; x < 6; x++) {
 				if (l.getBoard().lookUpSquare(x, y).isEnabled()) {
 					squaresArray[x][y].setBackground(Color.WHITE);
+					squaresArray[x][y].setBounds(60*x, 60*y, 60, 60);
 					if (l.getType().equals("Theme")) {
+						squaresArray[x][y].setBounds(60*x, 60*y, 60, 30);
 						lettersArray[x][y].setVisible(true);
 						lettersArray[x][y].setSelectedItem(l.getBoard().lookUpSquare(x,y).tilePeek().getLetter());
 					}
 
 				}
 				else {
+					squaresArray[x][y].setBounds(60*x, 60*y, 60, 60);
 					squaresArray[x][y].setBackground(null);
 					lettersArray[x][y].setVisible(false);
 					lettersArray[x][y].setSelectedItem("A");
+					if (l.getType().equals("Theme")) {
+						lettersArray[x][y].setSelectedItem(l.getBoard().lookUpSquare(x,y).tilePeek().getLetter());
+					}
 				}
 			}
 		}
