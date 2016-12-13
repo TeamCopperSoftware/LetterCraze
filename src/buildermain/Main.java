@@ -139,7 +139,7 @@ public class Main {
 			for (int x = 0; x < 6; x++) {
 				JButton b = app.getCreateNewLevelApplication().getSquareButtons()[x][y];
 				JComboBox c = app.getCreateNewLevelApplication().getLetterBoxes()[x][y];
-				b.addActionListener(new LevelButtonController(model, app, b, c));
+				b.addActionListener(new LevelButtonController(model, app, b, c, -1));
 			}
 		}
 		
@@ -149,10 +149,16 @@ public class Main {
 				for (int x = 0; x < 6; x++) {
 					JButton b = app.getEditSavedLevelApplications().get(i).getSquareButtons()[x][y];
 					JComboBox c = app.getEditSavedLevelApplications().get(i).getLetterBoxes()[x][y];
-					b.addActionListener(new LevelButtonController(model, app, b, c));
+					b.addActionListener(new LevelButtonController(model, app, b, c, i));
 				}
 			}
 		}
+		
+		// set controller for choosing level type
+		for (int i = 0; i < 15; i++) {
+			app.getEditSavedLevelApplications().get(i).getGameModeComboBox().addItemListener(new GameModeSelectionController(model, app, i));
+		}
+		app.getCreateNewLevelApplication().getGameModeComboBox().addItemListener(new GameModeSelectionController(model, app, -1));
 		
 		
 	}

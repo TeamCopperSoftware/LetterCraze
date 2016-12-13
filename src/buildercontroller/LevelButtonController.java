@@ -23,33 +23,36 @@ public class LevelButtonController implements ActionListener {
     /**
      * 
      */
-    public BuilderModel model;
+    BuilderModel model;
 
     /**
      * 
      */
-    public Application application;
+    Application application;
     
     /**
      * 
      */
-    public JButton button;
+    JButton button;
 
     /**
      * 
      */
-    public JComboBox box;
+    JComboBox box;
+    
+    int levelNumber;
 
 
     /**
      * @param MapModel m 
      * @param MapApplication app
      */
-    public LevelButtonController(BuilderModel m, Application app, JButton b, JComboBox c) {
+    public LevelButtonController(BuilderModel m, Application app, JButton b, JComboBox c, int levelNumber) {
         this.model = m;
         this.application = app;
         this.button = b;
         this.box = c;
+        this.levelNumber = levelNumber;
     }
 
 
@@ -61,7 +64,15 @@ public class LevelButtonController implements ActionListener {
 		}
 		else {
 			button.setBackground(Color.WHITE);
-			box.setVisible(true);
+			
+			if (levelNumber == -1 && application.getCreateNewLevelApplication().getLevelType().equals("Theme")) {
+				box.setVisible(true);
+			}
+			else if (levelNumber != -1 && application.getEditSavedLevelApplications().get(levelNumber).getLevelType().equals("Theme")) {
+				box.setVisible(true);
+			}
+			
+			
 		}
 	}
 
