@@ -18,14 +18,15 @@ public class TestAddWordController extends TestCase {
 	
 
 	public void testInThemeLvl() {
+		//TODO: Change to BuiderModel and such
 		Model model = new Model();
 		ArrayList<LevelModel> lvlList = model.getMainLevels().getLevels();
-		LevelModel lvlMod = lvlList.get(2);
+		//LevelModel lvlMod = lvlList.get(2);
 		Application app = new Application(model);
-		ArrayList<String> wordList = new ArrayList<String>();
-		wordList.add("BEAN");
-		ThemeLevel temeLvl = new ThemeLevel(lvlMod.getBoard(), lvlMod.getGoals(), "Vegetables", wordList);
-		ThemeLevelApplication temeLvlApp = new ThemeLevelApplication(temeLvl);
+		//ArrayList<String> wordList = new ArrayList<String>();
+		//wordList.add("BEAN");
+		//ThemeLevel temeLvl = new ThemeLevel(lvlMod.getBoard(), lvlMod.getGoals(), "Vegetables", wordList);
+		//ThemeLevelApplication temeLvlApp = new ThemeLevelApplication(temeLvl);
 		
 		//Simulate model.getBoard().getWord(); to test
 		//Button 1
