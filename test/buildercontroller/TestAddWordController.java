@@ -4,60 +4,42 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
+import entities.BuilderModel;
 import entities.LevelModel;
 import entities.Model;
 import entities.ThemeLevel;
 import junit.framework.TestCase;
-import playerboundary.Application;
-import playerboundary.ThemeLevelApplication;
-import playercontroller.AddWordController;
-import playercontroller.SelectLetterController;
+import builderboundary.Application;
+import builderboundary.CreateNewLevelApplication;
+import buildercontroller.AddWordController;
 
 public class TestAddWordController extends TestCase {
 	
 
 	public void testInThemeLvl() {
 		//TODO: Change to BuiderModel and such
-		Model model = new Model();
-		ArrayList<LevelModel> lvlList = model.getMainLevels().getLevels();
-		//LevelModel lvlMod = lvlList.get(2);
+		BuilderModel model = new BuilderModel();
 		Application app = new Application(model);
-		//ArrayList<String> wordList = new ArrayList<String>();
-		//wordList.add("BEAN");
-		//ThemeLevel temeLvl = new ThemeLevel(lvlMod.getBoard(), lvlMod.getGoals(), "Vegetables", wordList);
-		//ThemeLevelApplication temeLvlApp = new ThemeLevelApplication(temeLvl);
+		CreateNewLevelApplication lvlApp = app.getCreateNewLevelApplication();
 		
-		//Simulate model.getBoard().getWord(); to test
-		//Button 1
-		JButton butt1 = temeLvlApp.getButtonList()[2][2];
-		SelectLetterController slc1 = new SelectLetterController(temeLvlApp, lvlMod, 0, 2, 2);
-		ActionEvent ae1 = new ActionEvent(butt1, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt1"); //want butt.doClick or butt.doClick()
-		slc1.actionPerformed(ae1);
-		assertEquals(lvlMod.getBoard().getWord().toString(), "B");
-		//Button 2
-		JButton butt2 = temeLvlApp.getButtonList()[3][1];
-		SelectLetterController slc2 = new SelectLetterController(temeLvlApp, lvlMod, 0, 3, 1);
-		ActionEvent ae2 = new ActionEvent(butt2, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt2"); //want butt.doClick or butt.doClick()
-		slc2.actionPerformed(ae2);
-		//Button 3
-		JButton butt3 = temeLvlApp.getButtonList()[3][0];
-		SelectLetterController slc3 = new SelectLetterController(temeLvlApp, lvlMod, 0, 3, 0);
-		ActionEvent ae3 = new ActionEvent(butt3, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt3"); //want butt.doClick or butt.doClick()
-		slc3.actionPerformed(ae3);
-		//Button 4
-		JButton butt4 = temeLvlApp.getButtonList()[4][1];
-		SelectLetterController slc4 = new SelectLetterController(temeLvlApp, lvlMod, 0, 4, 1);
-		ActionEvent ae4 = new ActionEvent(butt4, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt4"); //want butt.doClick or butt.doClick()
-		slc4.actionPerformed(ae4);
-		assertEquals(lvlMod.getBoard().getWord().toString(), "BEAN");
-		assertTrue(lvlMod.getBoard().getWord().isValid());
+		//make level a theme by selecting it
+		JComboBox box = lvlApp.getGameModeComboBox();
+		ActionEvent ae4 = new ActionEvent(box, (int) ActionEvent.MOUSE_EVENT_MASK, "change to theme"); //want butt.doClick or butt.doClick()
+		box.actionPerformed(ae4);
+		lvlApp.setLevelType("Theme");
+		assertEquals(lvlApp.getLevelType(), "Theme");
 		
-		AddWordController awc = new AddWordController(app, app.getMapApplication(), temeLvlApp, lvlMod);
-		JButton butt = temeLvlApp.getConfirmButton();
-		ActionEvent ae = new ActionEvent(butt, (int) ActionEvent.MOUSE_EVENT_MASK, "click butt"); //want butt.doClick or butt.doClick()
-		awc.actionPerformed(ae); //app.getMapApplication() or getMainLevels
-	
+		JTextField jtextbox = lvlApp.getWordField();
+		jtextbox.setText("Testing");
+		JButton butt0 = lvlApp.getAddWordButton();
+		AddWordController awc = new AddWordController(model, app, 1);
+		ActionEvent ae0 = new ActionEvent(butt0, (int) ActionEvent.MOUSE_EVENT_MASK, "change to theme"); //want butt.doClick or butt.doClick()
+		awc.actionPerformed(ae0);
+		assertNotSame(lvlApp.getWordList(), null);
+
 	}
 
 	
