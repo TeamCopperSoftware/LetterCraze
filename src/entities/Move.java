@@ -96,7 +96,7 @@ public class Move implements Serializable {
 	}
 
 	/**
-	 * Undo's move back to previous move and restores previous entity information.
+	 * Undoes move back to previous move and restores previous entity information.
 	 */
 	public boolean undoMove() {
 		
