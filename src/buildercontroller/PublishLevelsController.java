@@ -37,8 +37,7 @@ public class PublishLevelsController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// confirm that the user wants to publish the levels to LetterCraze
 		int confirmed = JOptionPane.showConfirmDialog(null, 
-				"Are you sure you want to publish your built levels to LetterCraze?\n"
-						+ "Your Custom Levels in the player application will be overridden.", "",
+				"Are you sure you want to publish your built levels to LetterCraze?\n", "",
 						JOptionPane.YES_NO_OPTION);
 
 		if (confirmed == JOptionPane.YES_OPTION) {
