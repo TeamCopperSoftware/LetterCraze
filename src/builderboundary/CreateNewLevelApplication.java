@@ -31,6 +31,7 @@ import entities.ThemeLevel;
  * The containing Frame for Creating a New Level.
  */
 
+@SuppressWarnings("serial")
 public class CreateNewLevelApplication extends JPanel {
 
 	BuilderModel model;

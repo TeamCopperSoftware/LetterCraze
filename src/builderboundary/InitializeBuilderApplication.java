@@ -18,9 +18,10 @@ public class InitializeBuilderApplication extends JPanel {
 
 	JButton createLevelButton;
 	JButton editSavedLevelsButton;
+	JButton howToPlayButton;
 
 	public InitializeBuilderApplication(BuilderModel model2) {
-		
+
 		model = model2;
 		setBounds(0, 0, 800, 600);
 		this.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -41,14 +42,23 @@ public class InitializeBuilderApplication extends JPanel {
 		editSavedLevelsButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		editSavedLevelsButton.setBounds(325, 360, 150, 100);
 		this.add(editSavedLevelsButton);
+
+		howToPlayButton = new JButton("How To Build");
+		howToPlayButton.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
+		howToPlayButton.setBounds(6, 6, 150, 50);
+		add(howToPlayButton);
 	}
 
 	public JButton getCreateLevelButton() {
 		return createLevelButton;
 	}
-	
+
 	public JButton getEditSavedLevelsButton() {
 		return editSavedLevelsButton;
+	}
+
+	public JButton getHowToPlayButton() {
+		return howToPlayButton;
 	}
 
 }

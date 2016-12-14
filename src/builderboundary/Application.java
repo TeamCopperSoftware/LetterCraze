@@ -4,15 +4,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
-
-import entities.BuilderModel;
-import entities.Model;
-import builderboundary.InitializeBuilderApplication;
 import buildercontroller.SplashScreenTimerController;
+import entities.*;
 
 /**
  * The containing Frame for LetterCraze Builder.

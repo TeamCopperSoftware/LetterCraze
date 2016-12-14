@@ -196,6 +196,9 @@ public class Main {
 		
 		// set publish levels controller
 		app.getSavedLevelsMapApplication().getPublishButton().addActionListener(new PublishLevelsController(model, app));
+		
+		// set how to play controller
+		app.getInitializeBuilderApplication().getHowToPlayButton().addActionListener(new HowToPlayController(model, app));
 	}
 
 }

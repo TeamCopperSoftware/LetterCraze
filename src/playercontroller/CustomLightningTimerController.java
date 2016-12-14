@@ -25,7 +25,7 @@ public class CustomLightningTimerController implements ActionListener {
 	 * Provides all actions to timer in lightning levels. Includes timer kicking user out
 	 * of level when time runs out, refreshing level, and keeping track of best time.
 	 * <p>
-	 * @param ae ActionEvent
+	 * @param e ActionEvent
 	 */
 	
 	@Override

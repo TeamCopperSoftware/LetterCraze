@@ -20,7 +20,7 @@ public class SplashScreenTimerController implements ActionListener {
 	/**
 	 * Provides action that controls time of splash screen.
 	 * <p>
-	 * @param ae ActionEvent
+	 * @param e ActionEvent
 	 */
 	
 	@Override
