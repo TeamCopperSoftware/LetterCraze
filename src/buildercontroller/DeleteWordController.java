@@ -55,6 +55,7 @@ public class DeleteWordController implements ActionListener {
 			// if there is a word in the word box and the word is also in the list, remove it from list
 			if (!wordField.getText().isEmpty() && listModel.contains(wordField.getText().toUpperCase())) {
 				listModel.removeElement(wordField.getText().toUpperCase());
+				wordField.setText("");
 			}
 			// if there is no word in the word box and there are elements in the list, remove last element from list
 			else if (wordField.getText().isEmpty() && !listModel.isEmpty()) {
@@ -67,6 +68,7 @@ public class DeleteWordController implements ActionListener {
 			// if there is a word in the word box and the word is also in the list, remove it from list
 			if (!wordField.getText().isEmpty() && listModel.contains(wordField.getText().toUpperCase())) {
 				listModel.removeElement(wordField.getText().toUpperCase());
+				wordField.setText("");
 			}
 			// if there is no word in the word box and there are elements in the list, remove last element from list
 			else if (wordField.getText().isEmpty() && !listModel.isEmpty()) {
