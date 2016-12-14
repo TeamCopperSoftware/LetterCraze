@@ -146,17 +146,19 @@ public class Square implements Serializable {
 
 	}
 
-	/** Adds tile. */
+	/** Adds tile. 
+	 *  @param t   the Tile to be added to the square 
+	 */
 	void tileAdd (Tile t) {
 		this.tile = t;
 	}
 
-	/** Checks most recent tile. */
+	/** Returns the current tile. */
 	public Tile tilePeek () {
 		return tile;
 	}
 
-	/** Removes most recently added tile. */
+	/** Removes and returns the current tile. */
 	Tile tilePop () {
 		Tile t = tile;
 		tileRemove();
