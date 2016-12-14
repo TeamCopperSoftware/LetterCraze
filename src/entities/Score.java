@@ -8,9 +8,9 @@ import java.io.Serializable;
 
 public class Score implements Serializable {
 
-	/** Number of stars currently achieved in level. */
+    /** Number of stars currently achieved in level. */
     int star;
-	/** Current score number. */
+    /** Current score number. */
     int numScore;
 
     /**
@@ -39,6 +39,7 @@ public class Score implements Serializable {
 
     /**
      * Retrieves score number.
+     * @return     returns numScore.
      */
     public int getScore () {
         return numScore;
