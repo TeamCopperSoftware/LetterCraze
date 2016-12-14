@@ -56,15 +56,17 @@ public class AddWordController implements ActionListener {
 		if (levelNumber == -1) {
 			wordField = application.getCreateNewLevelApplication().getWordField();
 			listModel = application.getCreateNewLevelApplication().getDefaultListModel();
-			if (!wordField.getText().isEmpty() && !listModel.contains(wordField.getText().toUpperCase())) {
+			if (wordField.getText().length() >= 3 && !listModel.contains(wordField.getText().toUpperCase())) {
 				listModel.addElement(wordField.getText().toUpperCase());
+				wordField.setText("");
 			}
 		}
 		else {
 			wordField = application.getEditSavedLevelApplications().get(levelNumber).getWordField();
 			listModel = application.getEditSavedLevelApplications().get(levelNumber).getDefaultListModel();
-			if (!wordField.getText().isEmpty() && !listModel.contains(wordField.getText().toUpperCase())) {
+			if (wordField.getText().length() >= 3 && !listModel.contains(wordField.getText().toUpperCase())) {
 				listModel.addElement(wordField.getText().toUpperCase());
+				wordField.setText("");
 			}
 		}
 		

@@ -45,6 +45,7 @@ public class EditSavedLevelApplication extends JPanel {
 	JComboBox[][] lettersArray;
 	JButton btnSaveLevel;
 	String levelType;
+	JButton previewButton;
 
 	JSpinner starGoal1Spinner;
 	JSpinner starGoal2Spinner;
@@ -274,7 +275,9 @@ public class EditSavedLevelApplication extends JPanel {
 		lblLevelYouAre.setBounds(120, 50, 200, 16);
 		add(lblLevelYouAre);
 
-
+		previewButton = new JButton("Preview");
+		previewButton.setBounds(299, 71, 175, 37);
+		add(previewButton);
 
 	}
 
@@ -406,5 +409,9 @@ public class EditSavedLevelApplication extends JPanel {
 
 	public JComboBox getGameModeComboBox() {
 		return gameModeComboBox;
+	}
+	
+	public JButton getPreviewButton() {
+		return previewButton;
 	}
 }

@@ -44,6 +44,7 @@ public class CreateNewLevelApplication extends JPanel {
 	JButton btnSaveLevel;
 	String levelType;
 	JComboBox gameModeComboBox;
+	JButton previewButton;
 
 	JSpinner starGoal1Spinner;
 	JSpinner starGoal2Spinner;
@@ -266,6 +267,10 @@ public class CreateNewLevelApplication extends JPanel {
 		lblLevelYouAre.setFont(new Font("Trebuchet MS", Font.PLAIN, 13));
 		lblLevelYouAre.setBounds(120, 50, 200, 16);
 		add(lblLevelYouAre);
+		
+		previewButton = new JButton("Preview");
+		previewButton.setBounds(299, 71, 175, 37);
+		add(previewButton);
 	}
 
 	public void resetPanel() {
@@ -371,5 +376,9 @@ public class CreateNewLevelApplication extends JPanel {
 	public JComboBox getGameModeComboBox() {
 		return gameModeComboBox;
 
+	}
+	
+	public JButton getPreviewButton() {
+		return previewButton;
 	}
 }

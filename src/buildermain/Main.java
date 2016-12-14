@@ -199,6 +199,14 @@ public class Main {
 		
 		// set how to play controller
 		app.getInitializeBuilderApplication().getHowToPlayButton().addActionListener(new HowToPlayController(model, app));
+		
+		// set controller for previewButtons
+		for (int i = 0; i < 15; i++) {
+			app.getEditSavedLevelApplications().get(i).getPreviewButton().addActionListener(new PreviewController(app, model, i));
+		}
+		app.getCreateNewLevelApplication().getPreviewButton().addActionListener(new PreviewController(app, model, -1));
+
+
 	}
 
 }
