@@ -24,6 +24,7 @@ public class Score implements Serializable {
 
     /**
      * Updates score based on points received.
+     * @param change    changes score by given value
      */
     public void updateScore(int change) {
         numScore +=change;
