@@ -10,6 +10,9 @@ Made by Team Copper:
 * Annie Hernandez
 * James Kradjian
 
+[Github repository link] 
+(https://github.com/TeamCopperSoftware/LetterCraze#lettercraze)
+
 ##Importing the project into Eclipse
 To import this project, open Eclipse. Navigate to File -> Import -> General -> Archive File. Select our project.
 
