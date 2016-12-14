@@ -13,7 +13,7 @@ import playercontroller.*;
 import entities.*;
 
 /**
- * LetterCraze Player PlugIn.
+ * LetterCraze Player
  * <p>
  * Instructions: Selecting Play game takes you to the adventure map menu where 
  * you can play 15 levels with 3 different variations types being Puzzle, Lightning, 

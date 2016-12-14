@@ -16,7 +16,7 @@ import entities.LevelModel;
 import entities.Model;
 
 /**
- * LetterCraze Builder PlugIn.
+ * LetterCraze Builder
  * <p>
  * Instructions: LetterCraze Builder allows you to customize your own LetterCraze 
  * levels and import them to LetterCraze player.
