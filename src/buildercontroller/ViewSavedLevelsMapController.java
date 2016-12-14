@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 /**
  * Controls all actions for viewing edit saving levels map in LetterCraze Builder.
- * <p>
  */
 public class ViewSavedLevelsMapController implements ActionListener {
 	

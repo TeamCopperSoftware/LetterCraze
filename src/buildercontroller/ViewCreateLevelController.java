@@ -9,7 +9,6 @@ import entities.LevelModel;
 
 /**
  * Controls all actions for Creating a New Level Button in LetterCraze Builder Main Menu.
- * <p>
  */
 public class ViewCreateLevelController implements ActionListener {
 	

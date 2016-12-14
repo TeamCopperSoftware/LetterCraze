@@ -36,6 +36,7 @@ public class InitializeGameApplication extends JPanel {
 
 	/**
 	 * This is the default constructor.
+	 * @param Model which contains all entity objects
 	 */
 	
 	public InitializeGameApplication(Model m) {
@@ -74,12 +75,16 @@ public class InitializeGameApplication extends JPanel {
 		add(howToPlayButton);
 	}
 
-	/**Getter that returns button for getting to Main Game. */
+	/**Getter that returns button for getting to Main Game.
+	 * @return Play Main Game Button
+	 */
 	public JButton getMapButton() {
 		return playGameButton;
 	}
 		
-	/**Getter that returns button for getting to CustomLevelsMap. */
+	/**Getter that returns button for getting to CustomLevelsMap.
+	 * @return Play Custom Levels Button
+	 */
 	public JButton getCustomLevelsButton() {
 		return playCustomLevelsButton;
 	}

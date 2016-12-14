@@ -9,7 +9,6 @@ import builderboundary.SplashScreenApplication;
 
 /**
  * Controls all actions for Splash Screen properties in LetterCraze Builder.
- * <p>
  */
 public class SplashScreenTimerController implements ActionListener {
 

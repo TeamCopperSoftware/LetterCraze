@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 /**
  * Controls all actions for viewing Main Menu in LetterCraze Builder.
- * <p>
  */
 public class ViewMainMenuController implements ActionListener {
 	

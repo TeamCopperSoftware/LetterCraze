@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 /**
  * Controls all actions for viewing editing saving levels in LetterCraze Builder.
- * <p>
  */
 public class ViewEditSavedLevelController implements ActionListener {
 	

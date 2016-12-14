@@ -13,7 +13,6 @@ import entities.BuilderModel;
 
 /**
  * Controls all actions for Publishing a level to LetterCraze Player.
- * <p>
  */
 public class PublishLevelsController implements ActionListener {
 

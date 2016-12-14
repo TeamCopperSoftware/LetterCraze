@@ -18,7 +18,6 @@ import java.util.*;
 
 /**
  * Controls all actions to do with mouse events over the Game Mode Selection Drop box when editing a level.
- * <p>
  */
 public class GameModeSelectionController implements ItemListener {
 

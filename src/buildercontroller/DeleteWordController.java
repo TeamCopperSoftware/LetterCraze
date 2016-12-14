@@ -18,7 +18,6 @@ import java.util.*;
 
 /**
  * Controls all actions when deleting a word in the WordBox when creating new Level.
- * <p>
  */
 public class DeleteWordController implements ActionListener {
 

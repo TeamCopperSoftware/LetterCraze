@@ -21,7 +21,6 @@ import builderboundary.CreateNewLevelApplication;
 
 /**
  * Controls all actions when adding words to theme levels.
- * <p>
  */
 
 public class AddWordController implements ActionListener {

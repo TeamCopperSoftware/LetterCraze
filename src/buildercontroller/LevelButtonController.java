@@ -16,7 +16,6 @@ import java.util.*;
 
 /**
  * Controls all actions to do with mouse events over Level Buttons in Saved levels map.
- * <p>
  */
 public class LevelButtonController implements ActionListener {
 

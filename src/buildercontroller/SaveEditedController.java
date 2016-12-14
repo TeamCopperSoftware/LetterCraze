@@ -17,7 +17,6 @@ import builderboundary.EditSavedLevelApplication;
 
 /**
  * Controls all actions for editing saving levels in LetterCraze Builder.
- * <p>
  */
 public class SaveEditedController implements ActionListener {
 

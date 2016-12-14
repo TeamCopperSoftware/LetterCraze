@@ -9,7 +9,6 @@ import builderboundary.Application;
 
 /**
  * Prompts instructions for playing LetterCraze Builder.
- * <p>
  */
 
 public class HowToPlayController implements ActionListener {

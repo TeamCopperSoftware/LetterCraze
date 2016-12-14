@@ -11,7 +11,6 @@ import entities.BuilderModel;
 
 /**
  * Controls all actions when deleting levels in the saved levels map frame.
- * <p>
  */
 public class DeleteLevelController implements ActionListener {
 

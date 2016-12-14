@@ -33,6 +33,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Default constructor for Level Application.
+	 * @param m
 	 */
 	
 	public LevelApplication(LevelModel m) {
@@ -148,6 +149,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Resets all level entities when entering a non-completed level.
+	 * @param Player level
 	 */
 
 	public void refreshPanel(LevelModel level) {
@@ -209,6 +211,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Gets controllers for Exit Button.
+	 * @return Exit button button and controls
 	 */
 	
 	public JButton getExitButton() {
@@ -217,6 +220,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Gets Button list.
+	 * @return Square Button list for level
 	 */
 	
 	public JButton[][] getButtonList() {
@@ -225,6 +229,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Controls button that confirming a valid word selection of tiles.
+	 * @return Frame for confirming word button
 	 */
 	
 	public JButton getConfirmButton() {
@@ -244,6 +249,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Controls keeping element of list
+	 * @return Element of list
 	 */
 	
 	public DefaultListModel<String> getListModel() {
@@ -259,7 +265,8 @@ public abstract class LevelApplication extends JPanel {
 	}
 
 	/**
-	 * Updates object value.
+	 * Updates current score value.
+	 * @param change	Number of points achieved from each move
 	 */
 	
 	public void updateObjectiveValue(int change) {
@@ -270,6 +277,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Resets value of object.
+	 * @param resetTo	Number of points changed from previous move
 	 */
 	
 	public void resetObjectiveValue(int resetTo) {
@@ -286,6 +294,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Gets controls for reset button.
+	 * @return Controls for reset button
 	 */
 	
 	public JButton getResetButton() {
@@ -294,6 +303,7 @@ public abstract class LevelApplication extends JPanel {
 
 	/**
 	 * Gets controls for undo button.
+	 * @return Controls for undo button
 	 */
 	
 	public JButton getUndoButton() {
@@ -302,6 +312,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Gets Level Model information.
+	 * @return Level Information from Model
 	 */
 	
 	public LevelModel getLevelModel() {
@@ -310,6 +321,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Displays number moves left.
+	 * @return Label for Current Score in Level
 	 */
 
 	public JLabel getObjectiveValueLabel() {
@@ -318,6 +330,7 @@ public abstract class LevelApplication extends JPanel {
 
 	/**
 	 * Gets number of moves left.
+	 * @return Number of moves left in level
 	 */
 	
 	public int getObjectiveValue() {
@@ -326,6 +339,7 @@ public abstract class LevelApplication extends JPanel {
 
 	/**
 	 * Gets valid selected tiles.
+	 * @return Selected Tiles from User
 	 */
 	
 	public Stack<JButton> getSelectedButtons() {
@@ -334,6 +348,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Removes recently selected tile if de-selected. 
+	 * @return De-selected Tiles from player
 	 */
 	
 	public JButton popSelectedButton() {
@@ -342,6 +357,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Access to the most recently added letter of selected tiles.
+	 * @return Most recent selected tile in selection of tiles
 	 */
 	
 	public JButton peekSelectedButton() {
@@ -350,6 +366,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Adds a selected tile to the selected tiles.
+	 * @param b Selected Button/Tile
 	 */
 	
 	public void pushSelectedButton(JButton b) {

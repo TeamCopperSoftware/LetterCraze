@@ -48,6 +48,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Default constructor for LetterCraze Player Application.
+	 * @param Model which contains all entity objects
 	 */
 
 	public Application(Model model) {
@@ -156,6 +157,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for how many seconds to display Splash Screen.
+	 * @return Number of seconds to display splash screen
 	 */
 
 	public int getDisplayTime() {
@@ -164,6 +166,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Timer for determining how long Splash Screen should be displayed.
+	 * @return Timer for determining how long splash screen should be displayed
 	 */
 
 	public Timer getSplashScreenTimer() {
@@ -171,7 +174,7 @@ public class Application extends JFrame {
 	}
 
 	/**
-	 * Getter for decrementing time of Splash Screen.
+	 * Getter for decrementing time of Splash Screen. 
 	 */
 
 
@@ -181,6 +184,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Main Menu GUI after Splash Screen is implemented.
+	 * @return Frame for Player Main Menu
 	 */
 
 	public InitializeGameApplication getMainMenu() {
@@ -189,6 +193,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Map GUI.
+	 * @return Frame for Adventure Level Map
 	 */
 
 	public MapApplication getMapApplication() {
@@ -197,6 +202,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Custom Map GUI.
+	 * @return Frame for Custom Level Map
 	 */
 
 	public ViewCustomLevelsApplication getViewCustomLevelsApplication() {
@@ -205,6 +211,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Level GUI.
+	 * @return All Adventure Levels for LetterCraze Player
 	 */
 
 	public ArrayList<LevelApplication> getLevelApplications() {
@@ -213,6 +220,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Custom Level GUI.
+	 * @return All Custom Levels for LetterCraze Player
 	 */
 
 	public ArrayList<LevelApplication> getCustomLevelApplications() {
@@ -221,6 +229,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Getter for Model Entities which contains adventure mode level information.
+	 * @return Model which contains all entity objects
 	 */
 
 	public Model getModel() {

@@ -16,7 +16,6 @@ import builderboundary.CreateNewLevelApplication;
 
 /**
  * Controls all actions for Saving levels to LetterCraze Builder.
- * <p>
  */
 public class SaveController implements ActionListener {
 
