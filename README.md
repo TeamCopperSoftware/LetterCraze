@@ -57,6 +57,7 @@ To edit a saved level, navigate back to the main menu and click on "Edit Saved L
 
 ##Beating the first three levels
 Both the first Puzzle level and the first Lightning level should be able to be beaten fairly easily. For first theme level, one correct way to solve it is to select words in this order:
+
 1. CORN (Near the top left corner, forms 2x2)
 2. PUMPKIN (Bottom right corner)
 3. BEAN (Top right corner)
