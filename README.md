@@ -11,10 +11,11 @@ Made by Team Copper:
 * James Kradjian
 
 ##Importing the project into Eclipse
-To import this project, open Eclipse. Navigate to File -> Import -> General -> Archive File.
+To import this project, open Eclipse. Navigate to File -> Import -> General -> Archive File. Select our project.
 
 ##Running the application
-To run the player application, navigate to src -> playermain. Right click on Main.java and hover over "Run as Java Application". 
+###LetterCraze
+To run the LetterCraze player application, navigate to the playermain package. Right click on Main.java and select "Run as -> Java Application". 
 
 On execution, a splash screen with team credits should appear.
 
@@ -24,7 +25,8 @@ If you return to the main menu, clicking on "Play Custom Levels" which will take
 
 On the main menu, there is also an option to reset your main game progress. This will quit the application and erase your scores and all other progress in the main game. Note that this will not erase high scores in the custom levels. Open the application back up to see that you have reset your progress. 
 
-To run the builder application, navigate to src -> buildermain. Right click on Main.java and hover over "Run as Java Application". 
+###LetterCraze Builder
+To run the builder application, navigate to the buildermain package. Right click on Main.java and select "Run as -> Java Application". 
 
 On execution, splash screen with team credits should appear.
 
