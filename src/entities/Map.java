@@ -8,9 +8,9 @@ import java.util.ArrayList;
  */
 public class Map implements Serializable {
 
-	/** All levels on the map. */
+    /** All levels on the map. */
     ArrayList<LevelModel> levels;
-	/** Keeps track of how many levels are unlocked. */
+    /** Keeps track of how many levels are unlocked. */
     int numUnlockedLevels; // probably should keep track of how many levels are locked/unlocked
 
     /**
@@ -20,12 +20,11 @@ public class Map implements Serializable {
         levels = new ArrayList<LevelModel>();
     }
 
-	/** 
-	 * Constructs Adventure Map.
-	 * 
-	 * @param levels    All 15 premade levels from model
-	 */
-    // probably don't need this constructor
+    /** 
+     * Constructs Adventure Map.
+     * 
+     * @param levels    All 15 premade levels from model
+     */
     public Map(ArrayList<LevelModel> levels) {
         this.levels = levels;
     }
@@ -48,12 +47,6 @@ public class Map implements Serializable {
      * Checks conditions and verifies whether level is unlocked.
      */
     public boolean unlockNextLevel() {
-        //TODO
-        // 1) check whether conditions are met for the next locked level to be unlocked
-        // 2) if they are met unlock the level and update numUnlocked levels
-        
-        
-        //java.util.Iterator<LevelModel> iter = levels.iterator();
 
         for (int i = 1; i < levels.size(); i++) {
             if (levels.get(i-1).getBestScore().getStar() >= 1 && !levels.get(i).isUnlocked) {
@@ -61,8 +54,8 @@ public class Map implements Serializable {
                 return true;
             }
         }
-        
-        
+
+
         return false;
     }
 

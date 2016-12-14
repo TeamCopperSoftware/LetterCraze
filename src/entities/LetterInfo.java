@@ -8,12 +8,12 @@ import java.util.HashMap;
  */
 
 public class LetterInfo {
-	
-	static HashMap<String, Integer> letterValues;
-	
-	public static void initializeLetterInfo() {
-		letterValues = new HashMap<String, Integer>();
-		letterValues.put("E", 1);
+
+    static HashMap<String, Integer> letterValues;
+
+    public static void initializeLetterInfo() {
+        letterValues = new HashMap<String, Integer>();
+        letterValues.put("E", 1);
         letterValues.put("T", 1);
         letterValues.put("A", 2);
         letterValues.put("O", 2);
@@ -40,19 +40,19 @@ public class LetterInfo {
         letterValues.put("QU", 11); // 11 because it counts as two letters
         letterValues.put("Z", 8);
         letterValues.put("", 0); // need this for a hack
-	}
-	
-	/**
-	 * calculates value of given letter
-	 * @param letter the letter
-	 * @return the point value of letter
-	 */
-	public static int getLetterValue(String letter) {
-		if (letterValues == null) {
-			initializeLetterInfo();
-		}
-		return letterValues.get(letter).intValue();
-	}
+    }
+
+    /**
+     * calculates value of given letter
+     * @param letter the letter
+     * @return the point value of letter
+     */
+    public static int getLetterValue(String letter) {
+        if (letterValues == null) {
+            initializeLetterInfo();
+        }
+        return letterValues.get(letter).intValue();
+    }
 
 }
 
