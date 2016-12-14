@@ -61,7 +61,7 @@ of levels saved goes left to right from oldest to newest level saved. Click on t
 to edit and continue to work on the level from there. If you wish to delete a level, click on the 
 icon located on the top left of each level button. To publish your saved levels to LetterCraze player, 
 click the "Publish Levels to LetterCraze" button on the top right corner of the screen. Doing this will 
-published all of your levels that were saved to LetterCraze Player under Custom Levels for you and your 
+publish all of your levels that were saved to LetterCraze Player under Custom Levels for you and your 
 friends to play. Enjoy!
 
 Have Fun! 
