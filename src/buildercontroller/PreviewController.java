@@ -24,6 +24,10 @@ import playerboundary.LightningLevelApplication;
 import playerboundary.PuzzleLevelApplication;
 import playerboundary.ThemeLevelApplication;
 
+/**
+ * Controls all actions when viewing preview of custom level in LetterCraze Builder.
+ */
+
 public class PreviewController implements ActionListener {
 
 	Application application;

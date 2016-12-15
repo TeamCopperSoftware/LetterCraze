@@ -14,6 +14,10 @@ import entities.Model;
 import playerboundary.Application;
 import playermain.Main;
 
+/**
+ * Controls all actions when reseting all users save data in LetterCraze Player.
+ */
+
 public class ResetProgressController implements ActionListener {
 
 	Application app;

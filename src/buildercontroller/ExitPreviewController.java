@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 import builderboundary.Application;
 import entities.BuilderModel;
 
+/**
+ * Controls all actions when exiting out of preview mode in LetterCraze Builder.
+ */
+
 public class ExitPreviewController implements ActionListener {
 	
 	Application application;
