@@ -34,7 +34,9 @@ import entities.ThemeLevel;
 @SuppressWarnings("serial")
 public class CreateNewLevelApplication extends JPanel {
 
+	/** All Builder information. */
 	BuilderModel model;
+	/** . */
 	JPanel cards;
 	JButton backButton;
 	JButton addWordButton;

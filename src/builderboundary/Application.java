@@ -93,30 +93,52 @@ public class Application extends JFrame {
 		
 	}
 	
+	
+	/** Retrieves number of seconds to display splash screen.
+	 * @return Number of seconds to display splash screen
+	 */
 	public int getDisplayTime() {
 		return displayTime;
 	}
-	
+
+	/** Retrieves timer for determining how long splash screen should be displayed.
+	 * @return Timer for determining how long splash screen should be displayed
+	 */
 	public Timer getSplashScreenTimer() {
 		return splashScreenTimer;
 	}
 	
+	/** Decreases display timer by 1 second every second.
+	 */
 	public void decrementDisplayTime() {
 		displayTime--;
 	}
-	
+
+	/** Retrieves frame for Builder Main Menu screen.
+	 * @return Frame for Builder Main Menu screen
+	 */
 	public InitializeBuilderApplication getInitializeBuilderApplication() {
 		return initializeBuilderApplication;
 	}
-	
+
+	/** Retrieves frame for New level creation screen.
+	 * @return Frame for New level creation screen
+	 */
+
 	public CreateNewLevelApplication getCreateNewLevelApplication() {
 		return createNewLevelApplication;
 	}
-	
+
+	/** Retrieves frame for Map with all saved levels screen.
+	 * @return Frame for Map with all saved levels screen
+	 */
 	public SavedLevelsMapApplication getSavedLevelsMapApplication() {
 		return savedLevelsMapApplication;
 	}
 	
+	/** Retrieves frame for saved custom levels screen.
+	 * @return Frame for saved custom levels screen
+	 */
 	public ArrayList<EditSavedLevelApplication> getEditSavedLevelApplications() {
 		return editSavedLevelApplications;
 	}
