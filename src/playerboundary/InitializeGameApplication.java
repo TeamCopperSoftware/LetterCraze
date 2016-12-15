@@ -28,10 +28,15 @@ import java.awt.Font;
 
 public class InitializeGameApplication extends JPanel {
 
+        /** All Player information. */
 	Model model;
+	/** Button to play game. */
 	JButton playGameButton;
+	/** Button to play custom levels. */
 	JButton playCustomLevelsButton;
+	/** Button to reset progress. */
 	JButton resetProgressButton;
+	/** Button to play custom levels. */
 	JButton howToPlayButton;
 
 	/**

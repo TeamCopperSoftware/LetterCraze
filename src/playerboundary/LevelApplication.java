@@ -13,22 +13,37 @@ import entities.*;
  */
 
 public abstract class LevelApplication extends JPanel {
-	
+        /** All Player information. */
 	LevelModel model;
+        /** Button to exit level. */
 	JButton exitButton;
+	/** Button to confirm. */
 	JButton confirmButton;
+	/** Buttons for the squares. */
 	JButton[][] squareButtons;
+	/** Title of game. */
 	JLabel titleLabel;
+	/** Score of game. */
 	JLabel scoreLabel;
+	/** Displays either moves left or time left based on the type of level. */
 	JLabel objectiveLabel;
+	/** Number of moves left. */
 	JLabel objectiveValueLabel; // displays moves left
+	/** Elements of list. */
 	DefaultListModel<String> listModel; // keeps element of list
+	/** Words scored. */
 	JList<String> wordsList;
+	/** Container for <code>JList<String> wordsList</code>. */
 	JScrollPane scrollPane;
+	/** Reset button */
 	JButton resetButton;
+	/** Undo button */
 	JButton undoButton;
+	/** Contains all the selected buttons of letters. */
 	Stack<JButton> selectedButtons;
+	/** Label of stars */
 	JLabel starLabel;
+	/** Progress bar at the bottom of a game. */
 	JProgressBar progressBar;
 	
 	/**
