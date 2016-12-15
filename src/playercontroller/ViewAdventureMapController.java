@@ -18,7 +18,9 @@ import java.awt.event.ActionListener;
 
 public class ViewAdventureMapController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Player Model/Level information. */
 	Model model;
 
 	/**

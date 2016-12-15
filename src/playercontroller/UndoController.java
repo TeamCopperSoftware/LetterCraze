@@ -13,8 +13,12 @@ import playerboundary.LevelApplication;
  */
 
 public class UndoController implements ActionListener {
+	
+	/** The main frame for LevelCraze. */
 	Application topLevelApp;
+	/** Level frame for all level types. */
 	LevelApplication level;
+	/** Player Model/Level information. */
 	public LevelModel model;
 
 	
@@ -53,6 +57,16 @@ public class UndoController implements ActionListener {
 
 	}
 
+	/** 
+	 * Constructs UndoController.
+	 * 
+	 * Initial value is given.
+	 * @param topLevelApp Main frame for LetterCraze
+	 * @param level  Level frame
+	 * @param model   Model information for Builder
+	 */
+
+	
 	public UndoController(Application topLevelApp, LevelApplication level, LevelModel model) {
 		this.topLevelApp = topLevelApp;
 		this.level = level;

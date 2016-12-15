@@ -14,13 +14,30 @@ import playerboundary.Application;
 
 public class HowToPlayController implements ActionListener {
 
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Player Model/Level information. */
 	Model model;
-
+	
+	
+	/** 
+	 * Constructs HowToPlayController.
+	 * 
+	 * Initial value is given.
+	 * @param model   Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 */
 	public HowToPlayController(Application app, Model model) {
 		this.app = app;
 		this.model = model;
 	}
+	
+	/**
+	 * Provides all actions for instructions on how to player LetterCraze Player.
+	 * <p>
+	 * @param ae ActionEvent
+	 */
+
 
 	public void actionPerformed(ActionEvent ae) {
 		JOptionPane.showConfirmDialog(null, 

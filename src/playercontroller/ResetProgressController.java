@@ -20,9 +20,18 @@ import playermain.Main;
 
 public class ResetProgressController implements ActionListener {
 
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Builder Model/Level information. */
 	Model model;
 
+	/** 
+	 * Constructs ResetProgressController.
+	 * 
+	 * Initial value is given.
+	 * @param app  Main frame of LetterCraze
+	 * @param model   Model information for Builder
+	 */
 	public ResetProgressController(Application app, Model model) {
 		this.app = app;
 		this.model = model;

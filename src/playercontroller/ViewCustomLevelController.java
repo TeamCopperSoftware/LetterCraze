@@ -19,8 +19,11 @@ import java.awt.event.ActionListener;
 
 public class ViewCustomLevelController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** LetterCraze information. */
 	Model model;
+	/** The level number. */
 	int levelNumber;
 
 	/**

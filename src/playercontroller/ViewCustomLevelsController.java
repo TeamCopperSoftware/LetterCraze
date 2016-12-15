@@ -17,7 +17,9 @@ import java.awt.event.ActionListener;
 
 public class ViewCustomLevelsController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Player Level information. */
 	Model model;
 
 	@Override

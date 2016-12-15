@@ -15,8 +15,11 @@ import java.awt.event.ActionListener;
 
 public class ViewLevelController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Player Model/Level information. */
 	Model model;
+	/** The level number. */
 	int levelNumber;
 
 	/**

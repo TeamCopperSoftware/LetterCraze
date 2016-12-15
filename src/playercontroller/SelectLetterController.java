@@ -7,6 +7,7 @@ import java.util.Stack;
 
 import javax.swing.JButton;
 import entities.*;
+import playerboundary.Application;
 import playerboundary.LevelApplication;
 
 /**
@@ -14,10 +15,16 @@ import playerboundary.LevelApplication;
  */
 
 public class SelectLetterController implements ActionListener {
+
+	/** The abstract level frame. */
 	LevelApplication app;
+	/** The level information. */
 	LevelModel model;
+	/** The level number. */
 	int levelNumber;
+	/** The horizontal coordinate. */
 	int x;
+	/** The vertical coordinate. */
 	int y;
 	
 	/**

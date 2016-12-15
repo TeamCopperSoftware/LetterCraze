@@ -18,9 +18,14 @@ import playerboundary.ViewCustomLevelsApplication;
  */
 
 public class AddWordController implements ActionListener {
+	
+	/** Frame for top level application in LetterCraze. */
 	Application topLevelApp;
+	/** The main frame for Level. */
 	LevelApplication level;
+	/** All level information. */
 	public LevelModel model;
+	/** GUI for exiting frame. */
 	public JPanel exitView;
 
 	/**

@@ -11,7 +11,9 @@ import java.awt.event.ActionListener;
 
 public class ViewMainMenuController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Player Level information. */
 	Model model;
 	
 	/**

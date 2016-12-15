@@ -16,8 +16,11 @@ import playerboundary.SplashScreenApplication;
 
 public class CustomLightningTimerController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Player Level information. */
 	Model model;
+	/** The level number. */
 	int levelNumber;
 
 	/**
@@ -59,10 +62,10 @@ public class CustomLightningTimerController implements ActionListener {
 	}
 	
 	/**
-	 * Sets parameters for LightningTimerController.
+	 * Sets parameters for CustomLightningTimerController.
 	 * @param app Application
 	 * @param m Model
-	 * @param levelNumber int
+	 * @param levelNumber level number
 	 */
 	
 	public CustomLightningTimerController(Application app, Model m, int levelNumber) {

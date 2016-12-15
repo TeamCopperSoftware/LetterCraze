@@ -15,7 +15,9 @@ import playerboundary.LevelApplication;
 
 public class ResetBoardController implements ActionListener {
 
+	/** The level frame for LevelCraze. */
 	LevelApplication app;
+	/** Level information. */
 	LevelModel m;
 
 	/**
