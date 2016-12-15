@@ -64,7 +64,9 @@ public class Word implements Serializable {
         return letters;
     }
 
-    /** Checks if word is equal to or more than three letters. */
+    /** Checks if word is equal to or more than three letters.
+     * @return validity of whether formed word is more than three tiles
+      */
     public boolean isValid () {
         if (WordTable.isWord(letters)) {
             if (letters.length() >= 3) { return true; }
@@ -72,12 +74,16 @@ public class Word implements Serializable {
         return false;
     }
 
-    /** Retrieves list of squares. */
+    /** Retrieves list of squares.
+     * @return  formed list of squares
+     */
     public ArrayList<Square> getSquares() {
         return squares;
     }
 
-    /** Retrieves score number. */
+    /** Retrieves score number.
+     * @return number of points earned from formed word
+     */
     public int getScore() {
         return value;
     }

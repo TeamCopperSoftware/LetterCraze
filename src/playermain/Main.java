@@ -40,6 +40,7 @@ public class Main {
 
 	/**
 	 * Launch the application.
+	 * @param args 		array of strings parameter
 	 */
 	public static void main(String[] args) {
 
@@ -117,6 +118,7 @@ public class Main {
 
 	/**
 	 * Getter method for model.
+	 * @return model information for LetterCraze
 	 */
 	public Model getModel() {
 		return model;
@@ -133,6 +135,7 @@ public class Main {
 
 	/**
 	 * Getter method for application.
+	 * @return application for LetterCraze player
 	 */
 	public Application getApp() {
 		return app;

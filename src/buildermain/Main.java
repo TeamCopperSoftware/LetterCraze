@@ -54,6 +54,7 @@ public class Main {
 
 	/**
 	 * Launch the application.
+	 * @param args 		array of strings parameter
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

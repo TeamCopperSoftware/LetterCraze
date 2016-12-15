@@ -30,13 +30,17 @@ public class Tile implements Serializable {
         return letter.toUpperCase();
     }
 
-    /** Retrieves points for each tile. */
+    /** Retrieves points for each tile.
+     * @return Number of points for each tile
+     */
     public int getPoints() {
         // TODO Auto-generated method stub
         return value;
     }
 
-    /** Checks if tile value is equal the letter value. */
+    /** Checks if tile value is equal the letter value.
+     * @return validity of whether selected letter matches value
+     */
     public boolean isValid() {
         if (letter.equals(letter.toUpperCase()) & (LetterInfo.getLetterValue(letter) == value)) 
         { return true; }
@@ -45,7 +49,9 @@ public class Tile implements Serializable {
 
     }
 
-    /** Retrieves letter for tile. */
+    /** Retrieves letter for tile. 
+     * @return  Letter of the tile
+     */
     public String getLetter() {
         return letter;
     }

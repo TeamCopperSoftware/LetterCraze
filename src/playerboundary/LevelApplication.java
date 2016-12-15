@@ -33,7 +33,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Default constructor for Level Application.
-	 * @param m
+	 * @param m		Model that contains all entity information for levels
 	 */
 	
 	public LevelApplication(LevelModel m) {
@@ -149,7 +149,7 @@ public abstract class LevelApplication extends JPanel {
 	
 	/**
 	 * Resets all level entities when entering a non-completed level.
-	 * @param Player level
+	 * @param level		Player level
 	 */
 
 	public void refreshPanel(LevelModel level) {

@@ -50,6 +50,7 @@ public class MapApplication extends JPanel {
 
 	/**
 	 * Default constructor for LetterCraze Player Adventure Map.
+	 * @param m 	All modeling information related to LetterCraze
 	 */
 
 	public MapApplication(Model m) {
@@ -152,6 +153,7 @@ public class MapApplication extends JPanel {
 
 	/**
 	 * Get controller for back button which takes user back to Main Application Menu.
+	 * @return Back button functionality in map
 	 */
 	
 	public JButton getBackButton() {
@@ -160,6 +162,7 @@ public class MapApplication extends JPanel {
 
 	/**
 	 * Gets controllers for all level selection buttons in Adventure Mode Map.
+	 * @return Buttons for all levels in Map
 	 */
 	
 	public ArrayList<JButton> getLevelButtons() {

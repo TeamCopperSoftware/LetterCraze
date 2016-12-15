@@ -26,6 +26,7 @@ public class PuzzleLevel extends LevelModel {
 
     /**
      * Retrieves move limit for each puzzle level.
+     * @return number of words a player must make to complete full progress in puzzle level
      */
     public int getMoveLimit() {
         return moveLimit;
@@ -33,6 +34,7 @@ public class PuzzleLevel extends LevelModel {
 
     /**
      * Retrieves the amount of valid words added by user for each puzzle level.
+     * @return number of valid move player has added
      */
     public int getMovesDone() {
         return movesDone;

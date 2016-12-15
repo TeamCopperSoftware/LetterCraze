@@ -110,6 +110,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves name of level type.
+     * @return name of level type
      */
     public String getType() {
         return type;
@@ -117,6 +118,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Checks whether Level is unlocked.
+     * @return true for unlocked, otherwise locked
      */
     public boolean getIsUnlocked() {
         return isUnlocked;
@@ -124,6 +126,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves the highest score achieved.
+     * @return highest score
      */
     public Score getBestScore() {
         return bestScore;
@@ -131,6 +134,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves the current level score.
+     * @return current score in level
      */
     public Score getCurrentScore() {
         return currentScore;
@@ -138,6 +142,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves Board for level.
+     * @return all board information
      */
     public Board getBoard() {
         return board;
@@ -145,6 +150,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves wordlist functionality for level.
+     * @return list of words being tracked
      */
     public DefaultListModel<String> getWordList() {
         return wordList;
@@ -152,6 +158,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves goals for level.
+     * @return goals for each level
      */
     public Goal getGoals() {
         return goals;
@@ -159,6 +166,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Retrieves amount of valid moves made in the level.
+     * @return number of valid words being tracked
      */
     public int getHistorySize() {
         return history.size();
@@ -166,6 +174,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Adds a move to stack of valid moves.
+     * @param move 		move that the player makes in level
      */
     public void pushToHistory(Move move) {
         history.push(move);
@@ -173,6 +182,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Removes most recent move from stack of valid moves.
+     * @return list of moves with most recent move removed
      */    
     public Move popFromHistory() {
         return history.pop();
@@ -187,6 +197,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Checks whether level is unlocked.
+     * @return status of unlocking level
      */    
     public boolean getLockStatus() {
         return isUnlocked;
@@ -194,6 +205,7 @@ public abstract class LevelModel implements Serializable {
 
     /**
      * Keeps track of highest score for level.
+     * @return Best score for level
      */    
     public Score getStartingBestScore() {
         return startingBestScore;

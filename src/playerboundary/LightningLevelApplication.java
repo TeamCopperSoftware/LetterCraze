@@ -39,6 +39,8 @@ public class LightningLevelApplication extends LevelApplication {
 	
 	/**
 	 * Default constructor for Lightning Level Application.
+	 * @param m		Lightning level design information
+	 * @param t		Timer that kicks player out when time runs out
 	 */
 	
 	public LightningLevelApplication(LightningLevel m, Timer t) {
@@ -140,6 +142,7 @@ public class LightningLevelApplication extends LevelApplication {
 	
 	/**
 	 * Gets amount of time left when level is complete.
+	 * @return number of seconds left after level is exited/completed
 	 */
 	
 	public int getTimeLeft() {
@@ -148,6 +151,7 @@ public class LightningLevelApplication extends LevelApplication {
 	
 	/**
 	 * Gets controllers for Timer which kicks player out of level if timer ends.
+	 * @return controller that kicks player out of lightning level when time runs out
 	 */
 	
 	public Timer getTimer() {

@@ -22,6 +22,7 @@ public class BuilderModel implements Serializable {
 
     /** 
      * Gets information for Saved Levels.
+     * @return All saved information for levels in builder
      */	
     public ArrayList<LevelModel> getSavedLevels() {
         return savedLevels;

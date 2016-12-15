@@ -36,7 +36,7 @@ public class InitializeGameApplication extends JPanel {
 
 	/**
 	 * This is the default constructor.
-	 * @param Model which contains all entity objects
+	 * @param m		Model which contains all entity objects
 	 */
 	
 	public InitializeGameApplication(Model m) {

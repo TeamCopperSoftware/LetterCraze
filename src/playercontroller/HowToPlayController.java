@@ -10,7 +10,6 @@ import playerboundary.Application;
 
 /**
  * Prompts instructions for playing LetterCraze Player.
- * <p>
  */
 
 public class HowToPlayController implements ActionListener {

@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 
 /**
  * Controls all actions when initializing Levels.
- * <p>
  */
 
 public class ViewLevelController implements ActionListener {
@@ -23,7 +22,7 @@ public class ViewLevelController implements ActionListener {
 	/**
 	 * Provides all actions to level when accessed.
 	 * <p>
-	 * @param ae ActionEvent
+	 * @param e ActionEvent
 	 */
 	
 	@Override
@@ -53,7 +52,9 @@ public class ViewLevelController implements ActionListener {
 	/**
 	 * Sets parameters for ViewLevelController.
 	 * <p>
-	 * @param app Application, m model, levelNumber int
+	 * @param app Application
+	 * @param m model
+	 * @param levelNumber level number
 	 */
 	
 	

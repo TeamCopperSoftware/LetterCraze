@@ -48,6 +48,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 
 	/**
 	 * Default constructor for Custom Levels View.
+	 * @param m		All information for level models
 	 */
 	
 	public ViewCustomLevelsApplication(Model m) {
@@ -302,6 +303,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 
 	/**
 	 * Get controller for back button which takes user back to Main Application Menu.
+	 * @return Controller for back button
 	 */
 	
 	public JButton getBackButton() {
@@ -310,6 +312,7 @@ public class ViewCustomLevelsApplication extends JPanel {
 
 	/**
 	 * Gets controllers for all level selection buttons in Custom Mode Map.
+	 * @return Level buttons for customs map
 	 */
 		
 	public ArrayList<JButton> getLevelButtons() {

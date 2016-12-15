@@ -858,12 +858,16 @@ public class Model implements Serializable {
 		}
 	}
 
-	/** Gets all Main Levels for Adventure Map. */
+	/** Gets all Main Levels for Adventure Map. 
+	 * @return  Main 15 levels for Adventure mode
+	 */
 	public Map getMainLevels() {
 		return mainLevels;
 	}
 	
-	/** Gets all Custom Levels for Custom Map.  */
+	/** Gets all Custom Levels for Custom Map.
+	 * @return  List of custom levels
+	 */
 	public ArrayList<LevelModel> getCustomLevels() {
 		return customLevels;
 	}

@@ -48,7 +48,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Default constructor for LetterCraze Player Application.
-	 * @param Model which contains all entity objects
+	 * @param model		Model which contains all entity objects
 	 */
 
 	public Application(Model model) {

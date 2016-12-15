@@ -184,12 +184,16 @@ public class Square implements Serializable {
         return enabled;
     }
 
-    /** Checks if square has tile. */
+    /** Checks if square has tile. 
+     * @return validity of whether square has a tile
+     */
     public boolean hasTile() {
         return tile != null;
     }
 
-    /** Retrieves tile. */
+    /** Retrieves tile. 
+     * @return Tile for each square
+     */
     public Tile getTile() {
         return tile;
     }

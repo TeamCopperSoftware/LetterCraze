@@ -45,6 +45,7 @@ public class SplashScreenApplication extends JPanel {
 
 	/**
 	 * Default constructor for Splash Screen View.
+	 * @param m 	All modeling information related to LetterCraze
 	 */
 	
     public SplashScreenApplication(Model m) {

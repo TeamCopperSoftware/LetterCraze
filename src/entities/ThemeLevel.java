@@ -81,6 +81,8 @@ public class ThemeLevel extends LevelModel {
 
     /**
      * Retrieves theme description.
+     * Name of the theme for each level
+     * @return name of the theme description
      */
     public String getTheme() {
         return theme;
@@ -88,6 +90,7 @@ public class ThemeLevel extends LevelModel {
 
     /**
      * Retrieves valid words for each theme level.
+     * @return list of valid words based on theme description 
      */
     public ArrayList<String> getValidWords() {
         return validWords;
@@ -95,6 +98,7 @@ public class ThemeLevel extends LevelModel {
 
     /**
      * Retrieves the starting theme board.
+     * @return initial board set up for theme levels 
      */
     public Board getStartingBoard() {
         return startingBoard;

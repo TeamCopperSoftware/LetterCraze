@@ -11,7 +11,6 @@ import playerboundary.LevelApplication;
 
 /**
  * Controls all actions to do with mouse events when selecting letter/Tiles in all levels.
- * <p>
  */
 
 public class SelectLetterController implements ActionListener {
@@ -478,7 +477,11 @@ public class SelectLetterController implements ActionListener {
 	/**
 	 * Sets parameters for SelectLetterController.
 	 * <p>
-	 * @param app LevelApplication, m LevelModel, levelNumber int, x int, y int
+	 * @param app LevelApplication
+	 * @param m LevelModel
+	 * @param levelNumber level number
+	 * @param x horizontal coordinate
+	 * @param y vertical coordinate
 	 */
 	
 

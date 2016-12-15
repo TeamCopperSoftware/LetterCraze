@@ -43,6 +43,7 @@ public class SplashScreenApplication extends JPanel {
 
     /**
      * Create the frame.
+     * @param model2 	All level model information for LetterCraze Builder
      */
     public SplashScreenApplication(BuilderModel model2) {
     	

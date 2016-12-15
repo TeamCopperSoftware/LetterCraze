@@ -31,6 +31,7 @@ public class LightningLevel extends LevelModel {
 
     /**
      * Retrieves time limit for lightning level.
+     * @return Number of Seconds in a lightning level
      */
     public int getTimeLimit() {
         return timeLimit;

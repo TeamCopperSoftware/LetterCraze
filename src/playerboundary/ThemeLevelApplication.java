@@ -33,6 +33,7 @@ public class ThemeLevelApplication extends LevelApplication {
 
 	/**
 	 * Default constructor for Theme Level Application.
+	 * @param m 	 All entity information required for theme levels
 	 */
 	
 	public ThemeLevelApplication(ThemeLevel m) {
@@ -53,6 +54,7 @@ public class ThemeLevelApplication extends LevelApplication {
 	
 	/**
 	 * Updates entities for list of words found in objective for theme.
+	 * @param level 	 All entity information required for theme levels
 	 */
 	
 	public void refreshObjective(ThemeLevel level) {

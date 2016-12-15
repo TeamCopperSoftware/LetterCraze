@@ -36,6 +36,7 @@ public class Board implements Serializable {
      * 
      * @param x    x position of square
      * @param y    y position of square
+     * @return 		Square with new set coordinate position
      */
 
     public Square makeSquare (int x, int y) {
@@ -47,6 +48,7 @@ public class Board implements Serializable {
      * Makes a square appear on the board
      * 
      * @param pos    Position of Square
+     * @return 		 Valid Square with position
      */
 
     public Square makeSquare (Position pos) {
@@ -59,6 +61,7 @@ public class Board implements Serializable {
      * 
      * @param x    x position of square
      * @param y    y position of square
+     * @return		Square position
      */
 
 
@@ -70,6 +73,7 @@ public class Board implements Serializable {
      * Looks up if square should appear on board with position
      * 
      * @param pos    Position of Square
+     * @return 		Square positions
      */
 
     public Square lookUpSquare (Position pos) {
@@ -91,6 +95,7 @@ public class Board implements Serializable {
     /**
      * Floats tiles up and repopulates empty squares with random generated tiles.
      * @param sq   Most recent square selected
+     * @return removed tile
      */
 
     public Tile removeTile (Square sq) {
@@ -133,6 +138,7 @@ public class Board implements Serializable {
 
     /**
      * Returns the current word
+     * @return formed word
      */
 
     public Word getWord() {

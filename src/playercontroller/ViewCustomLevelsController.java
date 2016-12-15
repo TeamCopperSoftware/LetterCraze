@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 
 /**
  * Controls all actions when initializing custom levels controller.
- * <p>
  */
 
 public class ViewCustomLevelsController implements ActionListener {
@@ -59,7 +58,8 @@ public class ViewCustomLevelsController implements ActionListener {
 	/**
 	 * Sets parameters for ViewCustomLevelsController.
 	 * <p>
-	 * @param app Application, m model, levelNumber int
+	 * @param app Application
+	 * @param m model
 	 */
 	
 	

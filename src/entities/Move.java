@@ -44,6 +44,7 @@ public class Move implements Serializable {
      * Allows move to be made.
      * Adds words to model's word list, updates Score, Stars, Best Score,
      * removes word from board, and repopulates word based on type.
+     * @return validity for valid move
      */
     public boolean doMove() {
         if (isValidMove()) {
@@ -96,7 +97,8 @@ public class Move implements Serializable {
     }
 
     /**
-     * Undoes move back to previous move and restores previous entity information.
+     * Undo's move back to previous move and restores previous entity information.
+     * @return validity for undo move
      */
     public boolean undoMove() {
 
@@ -162,6 +164,7 @@ public class Move implements Serializable {
 
     /**
      * Checks whether move made was valid.
+     * @return validity for valid move
      */
     public boolean isValidMove() {
         if (word.isValid()) {

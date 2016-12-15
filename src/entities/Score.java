@@ -32,6 +32,7 @@ public class Score implements Serializable {
 
     /**
      * Retrieves number of stars.
+     * @return numbre of stars achieved in a level
      */
     public int getStar () {
         return star;
@@ -47,6 +48,7 @@ public class Score implements Serializable {
 
     /**
      * Sets number of stars.
+     * @param n		number of stars achieved
      */
     public void setStar (int n) {
         star = n;
@@ -54,6 +56,7 @@ public class Score implements Serializable {
 
     /**
      * Sets score number.
+     * @param n		total number of points achieved
      */
     public void setScore (int n) {
         numScore = n;

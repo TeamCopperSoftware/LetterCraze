@@ -15,7 +15,6 @@ import playerboundary.ViewCustomLevelsApplication;
 
 /**
  * Controls all actions to do with mouse events over the Add Word Button in all levels.
- * <p>
  */
 
 public class AddWordController implements ActionListener {
@@ -121,8 +120,10 @@ public class AddWordController implements ActionListener {
 	/**
 	 * Sets parameters for AddWordController setting up application, abstract level application
 	 * and all levels in model.
-	 * <p>
-	 * @param topLevelApp Application, level LevelApplication, model LevelModel
+	 * @param topLevelApp Application
+	 * @param exitView Exit button frame
+	 * @param level LevelApplication
+	 * @param model LevelModel
 	 */
 
 	public AddWordController(Application topLevelApp, JPanel exitView, LevelApplication level, LevelModel model) {

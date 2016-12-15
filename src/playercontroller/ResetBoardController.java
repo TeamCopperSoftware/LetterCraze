@@ -11,7 +11,6 @@ import playerboundary.LevelApplication;
 
 /**
  * Controls all actions to do with Reseting Board in all levels.
- * <p>
  */
 
 public class ResetBoardController implements ActionListener {
@@ -69,8 +68,8 @@ public class ResetBoardController implements ActionListener {
 
 	/**
 	 * Sets parameters for ResetBoardController.
-	 * <p>
-	 * @param app LevelApplication, m LevelModel
+	 * @param app LevelApplication
+	 * @param m LevelModel
 	 */
 
 	public ResetBoardController(LevelApplication app, LevelModel m) {

@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
 
 /**
  * Controls all actions when interacting with Adventure Map interface.
- * <p>
  */
 
 public class ViewAdventureMapController implements ActionListener {
@@ -26,7 +25,7 @@ public class ViewAdventureMapController implements ActionListener {
 	 * Provides all actions to the main map. Resets levels when user exits.
 	 * Controls whether a level is accessible based on score.
 	 * <p>
-	 * @param ae ActionEvent
+	 * @param e ActionEvent
 	 */
 	
 	@Override
@@ -72,8 +71,8 @@ public class ViewAdventureMapController implements ActionListener {
 	
 	/**
 	 * Sets parameters for ViewAdventureMapController.
-	 * <p>
-	 * @param app Application, m model
+	 * @param app Application
+	 * @param m Model
 	 */
 	
 	

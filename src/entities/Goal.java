@@ -16,6 +16,7 @@ public class Goal implements Serializable {
     
     /**
      * Gets information for star goal one.
+     * @return number to reach goal one
      */
     public int getStar1() {
         return star1;
@@ -23,6 +24,7 @@ public class Goal implements Serializable {
 
     /**
      * Gets information for star goal two.
+     * @return number to reach goal two
      */
     public int getStar2() {
         return star2;
@@ -30,6 +32,7 @@ public class Goal implements Serializable {
     
     /**
      * Gets information for star goal three.
+     * @return number to reach goal three
      */
     public int getStar3() {
         return star3;

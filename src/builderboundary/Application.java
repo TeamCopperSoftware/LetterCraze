@@ -33,6 +33,7 @@ public class Application extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param model 	model information for Builder
 	 */
 	public Application(BuilderModel model) {
 		//pack();

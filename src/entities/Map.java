@@ -31,6 +31,7 @@ public class Map implements Serializable {
 
     /**
      * Adds level to the map.
+     * @param level 	LevelModel information
      */
     public void addLevel(LevelModel level) {
         levels.add(level);
@@ -38,6 +39,7 @@ public class Map implements Serializable {
 
     /**
      *  Removes level from the map.
+     *  @param levelNumber 	Level Number
      */
     public void removeLevel(int levelNumber) {
         levels.remove(levelNumber);
@@ -45,6 +47,7 @@ public class Map implements Serializable {
 
     /**
      * Checks conditions and verifies whether level is unlocked.
+     * @return 		valid unlock to next level
      */
     public boolean unlockNextLevel() {
 
@@ -61,6 +64,7 @@ public class Map implements Serializable {
 
     /**
      * Retrieves Levels to be accessed in map.
+     * @return List of Levels on the map
      */
     public ArrayList<LevelModel> getLevels() {
         return levels;

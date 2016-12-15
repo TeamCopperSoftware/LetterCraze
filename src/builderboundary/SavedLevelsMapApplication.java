@@ -46,6 +46,7 @@ public class SavedLevelsMapApplication extends JPanel {
 
 	/**
 	 * Create the frame.
+	 * @param model2 	entity information for saved level model
 	 */
 	public SavedLevelsMapApplication(BuilderModel model2) {
 		model = model2;

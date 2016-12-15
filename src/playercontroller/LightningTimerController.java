@@ -12,7 +12,6 @@ import playerboundary.SplashScreenApplication;
 
 /**
  * Controls all actions to do with Timer functionality in lightning levels.
- * <p>
  */
 
 public class LightningTimerController implements ActionListener {
@@ -63,7 +62,9 @@ public class LightningTimerController implements ActionListener {
 	/**
 	 * Sets parameters for LightningTimerController.
 	 * <p>
-	 * @param app Application, m Model, levelNumber int
+	 * @param app Application
+	 * @param m Model
+	 * @param levelNumber level number
 	 */
 	
 	public LightningTimerController(Application app, Model m, int levelNumber) {

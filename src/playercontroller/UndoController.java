@@ -10,7 +10,6 @@ import playerboundary.LevelApplication;
 
 /**
  * Controls all actions to do with mouse events over the Undo Button in all levels.
- * <p>
  */
 
 public class UndoController implements ActionListener {
