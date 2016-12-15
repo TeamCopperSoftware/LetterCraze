@@ -88,11 +88,17 @@ public class InitializeGameApplication extends JPanel {
 	public JButton getCustomLevelsButton() {
 		return playCustomLevelsButton;
 	}
-	
+
+	/**Getter that returns button for getting to ResetProgressButton.
+	 * @return Reset Progress Button
+	 */
 	public JButton getResetProgressButton() {
 		return resetProgressButton;
 	}
 	
+	/**Getter that returns button for getting to howToPlayButton.
+	 * @return How to Play Button
+	 */
 	public JButton getHowToPlayButton() {
 		return howToPlayButton;
 	}

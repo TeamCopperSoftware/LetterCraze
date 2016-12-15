@@ -49,14 +49,24 @@ public class InitializeBuilderApplication extends JPanel {
 		add(howToPlayButton);
 	}
 
+	/**Getter that returns button for getting to createLevelButton.
+	 * @return Create Level Button
+	 */
+	
 	public JButton getCreateLevelButton() {
 		return createLevelButton;
 	}
 
+	/**Getter that returns button for getting to editSavedLevelsButton.
+	 * @return Edit Saved Levels Button
+	 */
 	public JButton getEditSavedLevelsButton() {
 		return editSavedLevelsButton;
 	}
 
+	/**Getter that returns button for getting to howToPlayButton.
+	 * @return How to Play Button
+	 */
 	public JButton getHowToPlayButton() {
 		return howToPlayButton;
 	}
