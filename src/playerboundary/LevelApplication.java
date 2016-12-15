@@ -33,7 +33,7 @@ public abstract class LevelApplication extends JPanel {
 	DefaultListModel<String> listModel; // keeps element of list
 	/** Words scored. */
 	JList<String> wordsList;
-	/** Container for <code>JList<String> wordsList</code>. */
+	/** Container for wordsList. */
 	JScrollPane scrollPane;
 	/** Reset button */
 	JButton resetButton;
