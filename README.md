@@ -65,4 +65,4 @@ Both the first Puzzle level and the first Lightning level should be able to be b
 5. ONION
 
 ##Testing
-To run a suite of JUnit3 test cases on our project, right click on the project folder and select Coverage As -> JUnit Test. Note that this may take a few seconds. Navigate to the source folder "test" to view specific tests that were run on our project.
+To run a suite of JUnit3 test cases on our project, right click on the project folder and select Coverage As -> JUnit Test. If any dialog boxes with multiple options pop up, choose the "no" option. Note that this may take a few seconds. Navigate to the source folder "test" to view specific tests that were run on our project.
