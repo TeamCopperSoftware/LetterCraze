@@ -30,18 +30,15 @@ import javax.swing.JProgressBar;
 
 public class SavedLevelsMapApplication extends JPanel {
 	
+	/** All Builder information. */
 	BuilderModel model;
-	
-	// Back button
+	/** Back button. */
 	JButton backButton;
-	
-	// Publish levels button
+	/** Publish levels button. */	
 	JButton publishLevelsButton;
-	
-	// Buttons for saved levels
+	/** Buttons for saved levels. */	
 	ArrayList<JButton> levelButtons;
-	
-	// Buttons for deleting saved levels
+	/** Buttons for deleting saved levels. */	
 	ArrayList<JButton> deleteButtons;
 
 	/**

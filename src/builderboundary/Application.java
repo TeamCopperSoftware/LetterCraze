@@ -16,18 +16,25 @@ import entities.*;
 
 public class Application extends JFrame {
 
+	/** All Builder information. */
 	BuilderModel model;
 	
 	// All the other views should be stored as properties here
+	/** Frame for Splash Screen. */
 	SplashScreenApplication splashScreen;
+	/** Frame for Builder Main Menu screen. */
 	InitializeBuilderApplication initializeBuilderApplication;
+	/** Frame for New level creation screen. */
 	CreateNewLevelApplication createNewLevelApplication;
+	/** Frame for Map with all saved levels screen. */
 	SavedLevelsMapApplication savedLevelsMapApplication;
+	/** Frame for saved custom levels screen. */
 	ArrayList<EditSavedLevelApplication> editSavedLevelApplications;
 
-	// how many seconds to display splash screen
+	
+	/** Number of seconds to display splash screen. */
 	int displayTime;
-	// Timer for determining how long splash screen should be displayed
+	/** Timer for determining how long splash screen should be displayed. */	
 	Timer splashScreenTimer;
 
 

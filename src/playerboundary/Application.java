@@ -27,22 +27,29 @@ import playercontroller.SplashScreenTimerController;
 
 public class Application extends JFrame {
 
+	/** All Player information. */
 	Model model;
 
 	// All the other views should be stored as properties here
+	/** Frame for Splash Screen. */
 	SplashScreenApplication splashScreen;
+	/** Frame for Builder Main Menu screen. */
 	InitializeGameApplication mainMenu;
+	/** Frame for Map with all 15 pre-made levels screen. */
 	MapApplication mapMenu;
+	/** Frame for Map with all custom levels published from LetterCraze Builder. */
 	ViewCustomLevelsApplication customMenu;
 
-
+	/** Frame for level screen. */
 	ArrayList<LevelApplication> levelApplications;
+	/** Frame for custom levels screen. */
 	ArrayList<LevelApplication> customLevelApplications;
 
-	// how many seconds to display splash screen
+	/** Number of seconds to display splash screen. */
 	int displayTime;
-	// Timer for determining how long splash screen should be displayed
+	/** Timer for determining how long splash screen should be displayed. */	
 	Timer splashScreenTimer;
+	/** Timer for determining time limit for each lightning level. */	
 	Timer lightningLevelTimer;
 
 

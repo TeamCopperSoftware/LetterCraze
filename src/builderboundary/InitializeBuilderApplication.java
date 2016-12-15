@@ -10,7 +10,7 @@ import entities.BuilderModel;
 import entities.Model;
 
 /**
- * The containing Frame for LetterCraze Player.
+ * The containing Frame for LetterCraze Builder.
  */
 
 public class InitializeBuilderApplication extends JPanel {
