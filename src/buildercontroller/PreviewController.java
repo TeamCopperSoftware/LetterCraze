@@ -30,10 +30,22 @@ import playerboundary.ThemeLevelApplication;
 
 public class PreviewController implements ActionListener {
 
+	/** The main frame for LevelCraze. */
 	Application application;
+	/** Builder Model/Level information. */
 	BuilderModel model;
+	/** The level number. */    
 	int levelNumber;
 	
+	/** 
+	 * Constructs PreviewController.
+	 * 
+	 * Initial value is given.
+	 * @param app 		Main frame of LetterCraze
+	 * @param model    Model information for Builder
+	 * @param levelNumber 	Level Number
+	 */
+
 	public PreviewController(Application app, BuilderModel model, int levelNumber) {
 		this.application = app;
 		this.model = model;

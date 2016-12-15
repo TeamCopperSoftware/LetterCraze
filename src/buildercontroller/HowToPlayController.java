@@ -13,9 +13,18 @@ import builderboundary.Application;
 
 public class HowToPlayController implements ActionListener {
 
+	/** The main frame for LevelCraze. */
 	Application app;
+	/** Builder Model/Level information. */
 	BuilderModel model;
 
+	/** 
+	 * Constructs HowToPlayController.
+	 * 
+	 * Initial value is given.
+	 * @param model   Model information for Builder
+	 * @param app  Main frame of LetterCraze
+	 */
 	public HowToPlayController(BuilderModel model, Application app) {
 		this.app = app;
 		this.model = model;

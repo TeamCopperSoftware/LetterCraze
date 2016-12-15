@@ -12,10 +12,22 @@ import entities.BuilderModel;
 
 public class ExitPreviewController implements ActionListener {
 	
+	/** The main frame for LevelCraze. */
 	Application application;
+	/** Builder Model/Level information. */
 	BuilderModel model;
+	/** The level number. */    
 	int levelNumber;
-	
+
+	/** 
+	 * Constructs ExitPreviewController.
+	 * 
+	 * Initial value is given.
+	 * @param app  Main frame of LetterCraze
+	 * @param model   Model information for Builder
+	 * @param levelNumber Level Number
+	 */
+
 	public ExitPreviewController(Application app, BuilderModel model, int levelNumber) {
 		this.application = app;
 		this.model = model;
