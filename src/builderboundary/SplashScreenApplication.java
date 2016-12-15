@@ -30,14 +30,21 @@ import java.awt.Font;
  * The containing Frame for LetterCraze Builder Splash Screen.
  */
 public class SplashScreenApplication extends JPanel {
-
+    /** All Builder information. */
 	BuilderModel model;
+	/** Splashscreen label. */
 	JLabel lblNewLabel;
+	/** Splashscreen label. */
 	JLabel lblNewLabel_1;
+	/** Splashscreen label. */
 	JLabel lblNewLabel_3;
+	/** Splashscreen label. */
 	JLabel lblNewLabel_4;
+	/** Splashscreen label. */
 	JLabel lblNewLabel_5;
+	/** Splashscreen label. */
 	JLabel lblNewLabel_2;
+	/** Splashscreen label. */
 	private JLabel lblBuilder;
 
 

@@ -36,27 +36,45 @@ public class CreateNewLevelApplication extends JPanel {
 
 	/** All Builder information. */
 	BuilderModel model;
-	/** . */
+	/** Panel of cards */
 	JPanel cards;
+	/** Button to go back */
 	JButton backButton;
+	/** Button to add word */
 	JButton addWordButton;
+	/** Button to delete word */
 	JButton deleteWordButton;
+	/** Buttons for squares */
 	JButton[][] squaresArray;
+	/** Combo boxes to choose letters */
 	JComboBox[][] lettersArray;
+	/** Button to save level */
 	JButton btnSaveLevel;
+	/** Level type */
 	String levelType;
+	/** Combo box to select game mode */
 	JComboBox gameModeComboBox;
+	/** Button to preview level */
 	JButton previewButton;
-
+	/** Spinner for star 1 goal */
 	JSpinner starGoal1Spinner;
+	/** Spinner for star 2 goal */
 	JSpinner starGoal2Spinner;
+	/** Spinner for star 3 goal */
 	JSpinner starGoal3Spinner;
+	/** Spinner for number of moves */
 	JSpinner numMovesSpinner;
+	/** Spinner for time */
 	JSpinner timeSpinner;
+	/** Container for <code>JList wordList</code> */
 	DefaultListModel listModel;
+	/** List of words */
 	JList wordList;
+	/** Word field for theme levels */
 	JTextField wordField;
+	/** Theme field for theme levels */
 	JTextField themeField;
+	/** Level name */
 	JLabel levelNameLabel;
 
 	public CreateNewLevelApplication(BuilderModel model2) {

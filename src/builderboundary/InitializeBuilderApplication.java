@@ -14,10 +14,13 @@ import entities.Model;
  */
 
 public class InitializeBuilderApplication extends JPanel {
+        /** All Builder information. */
 	BuilderModel model;
-
+	/** Button to create level. */
 	JButton createLevelButton;
+	/** Button to edit level. */
 	JButton editSavedLevelsButton;
+	/** Button to see how to play. */
 	JButton howToPlayButton;
 
 	public InitializeBuilderApplication(BuilderModel model2) {
