@@ -1,14 +1,14 @@
 package entities;
 
-/**
- * Represents all entity information for WordTable.
- */
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
+
+/**
+ * Represents all entity information for WordTable.
+ */
 
 public class WordTable {
     static Hashtable<String,Boolean> table;
