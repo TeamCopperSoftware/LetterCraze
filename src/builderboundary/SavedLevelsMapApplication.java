@@ -126,18 +126,30 @@ public class SavedLevelsMapApplication extends JPanel {
 	}
 
 
+	/** Retrieves back button.
+	 * @return Back button
+	 */
 	public JButton getBackButton() {
 		return backButton;
 	}
 
+	/** Buttons for saved levels.
+	 * @return Buttons for saved levels
+	 */
 	public ArrayList<JButton> getLevelButtons() {
 		return levelButtons;
 	}
-	
+
+	/** Buttons for deleting saved levels.
+	 * @return Buttons for deleting saved levels. 
+	 */
 	public ArrayList<JButton> getDeleteButtons() {
 		return deleteButtons;
 	}
-	
+
+	/** Publish levels button. 
+	 * @return Publish levels button
+	 */
 	public JButton getPublishButton() {
 		return publishLevelsButton;
 	}

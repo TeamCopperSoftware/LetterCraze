@@ -364,53 +364,103 @@ public class EditSavedLevelApplication extends JPanel {
 		return goals;
 	}
 
+	/**Getter that returns button for getting to btnSaveLevel.
+	 * @return Save Level Button
+	 */
 	public JButton getSaveButton() {
 		return btnSaveLevel;
 	}
+	
+	/**Getter that returns button for getting to wordList.
+	 * @return Word List
+	 */
 
 	public JList getWordList() {
 		return wordList;
 	}
 
+	/**Getter that returns button for getting to addWordButton.
+	 * @return Add Word Button
+	 */
 	public JButton getAddWordButton() {
 		return addWordButton;
 	}
 
+	/**Getter that returns button for getting to deleteWordButton.
+	 * @return Delete Word Button
+	 */
 	public JButton getDeleteWordButton() {
 		return deleteWordButton;
 	}
+
+	/**Getter that returns spinner for getting to timeSpinner.
+	 * @return Time Spinner
+	 */
 
 	public JSpinner getTimeSpinner() {
 		return timeSpinner;
 	}
 
+	/**Getter that returns spinner for getting to numMovesSpinner.
+	 * @return Number of Moves Spinner
+	 */
+
 	public JSpinner getNumMovesSpinner() {
 		return numMovesSpinner;
 	}
+
+	/**Getter that returns field for getting to themeField.
+	 * @return Theme Field
+	 */
 
 	public JTextField getThemeField() {
 		return themeField;
 	}
 
+	/**Getter that returns field for getting to wordField.
+	 * @return Word Model
+	 */
+
 	public JTextField getWordField() {
 		return wordField;
 	}
+
+	/**Getter that returns model for getting to listModel.
+	 * @return List model
+	 */
 
 	public DefaultListModel getDefaultListModel() {
 		return listModel;
 	}
 
+	/**Getter that returns label for getting to levelNameLabel.
+	 * @return Level Name
+	 */
+
 	public JLabel getLevelNameLabel() {
 		return levelNameLabel;	
 	}
+
+	/**Getter that returns panel for getting to cards.
+	 * @return Cards
+	 */
+
 	public JPanel getCards() {
 		return cards;
 	}
+
+	/**Getter that returns drop down menu for getting to gameModeComboBox.
+	 * @return Game Type Combo Box
+	 */
 
 	public JComboBox getGameModeComboBox() {
 		return gameModeComboBox;
 	}
 	
+	/**Getter that returns button for getting to previewButton.
+	 * @return Preview Level Button
+	 */
+
 	public JButton getPreviewButton() {
 		return previewButton;
 	}
