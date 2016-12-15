@@ -32,7 +32,7 @@ import javax.swing.JProgressBar;
  */
 
 public class MapApplication extends JPanel {
-
+        /** All Player information. */
 	Model model;
 
 	/** Back button. */
